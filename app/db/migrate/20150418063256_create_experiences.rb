@@ -4,6 +4,9 @@ class CreateExperiences < ActiveRecord::Migration
     	t.string :tittle
     	t.text :description
     	t.timestamps
+  		t.references :user
+  		t.references :request
+  		t.references :service_offering
     end
   end
 end

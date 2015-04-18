@@ -5,6 +5,7 @@ class CreateMeetings < ActiveRecord::Migration
     	t.text :description
     	t.text :adress
     	t.timestamps
+    	t.references :user
     end
   end
 end

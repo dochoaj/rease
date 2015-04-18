@@ -4,5 +4,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :institution
+  belongs_to :category
+
   has_many :requests
+  has_many :events
+  has_many :meetings
+  has_many :service_offerings
+  has_and_belongs_to_many :messages
+  has_many :comments
+
+
+
 end

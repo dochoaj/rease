@@ -4,6 +4,10 @@ class CreateServiceOfferings < ActiveRecord::Migration
     	t.string :titlle
     	t.text :description
     	t.date :date
+		  t.references :user
+      t.references :experience
+      t.references :area    
+      t.references :community
     	t.timestamps
     end
   end

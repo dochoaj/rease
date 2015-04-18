@@ -11,12 +11,96 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418041836) do
+ActiveRecord::Schema.define(version: 20150418124239) do
 
-  create_table "requests", force: :cascade do |t|
+  create_table "areas", force: :cascade do |t|
+    t.string "description", limit: 255
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.text "description", limit: 65535
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "text",                limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",             limit: 4
+    t.integer  "request_id",          limit: 4
+    t.integer  "service_offering_id", limit: 4
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.integer "request_id",           limit: 4
+    t.integer "services_offering_id", limit: 4
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
+    t.text     "adress",      limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string   "tittle",              limit: 255
+    t.text     "description",         limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",             limit: 4
+    t.integer  "request_id",          limit: 4
+    t.integer  "service_offering_id", limit: 4
+  end
+
+  create_table "institutions", force: :cascade do |t|
+    t.text "description", limit: 65535
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.text     "adress",      limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id",     limit: 4
+  end
+
+  create_table "message_users", force: :cascade do |t|
+    t.integer  "message_id", limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "matters",    limit: 255
+    t.text     "text",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",    limit: 4
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "title",         limit: 255
+    t.text     "description",   limit: 65535
+    t.integer  "user_id",       limit: 4
+    t.integer  "experience_id", limit: 4
+    t.integer  "community_id",  limit: 4
+    t.integer  "area_id",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "service_offerings", force: :cascade do |t|
+    t.string   "titlle",        limit: 255
+    t.text     "description",   limit: 65535
+    t.date     "date"
+    t.integer  "user_id",       limit: 4
+    t.integer  "experience_id", limit: 4
+    t.integer  "area_id",       limit: 4
+    t.integer  "community_id",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +116,8 @@ ActiveRecord::Schema.define(version: 20150418041836) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.integer  "institution_id",         limit: 4
+    t.integer  "category_id",            limit: 4
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
