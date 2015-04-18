@@ -15,6 +15,16 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'requests#index'
+    end
+    unauthenticated :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+
+  end
+
   resources :requests
 
   # Example resource route with options:

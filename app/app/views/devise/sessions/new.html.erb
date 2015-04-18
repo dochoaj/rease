@@ -1,26 +1,24 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+      <h1 class="text-center login-title">Sign in to continue to REASE</h1>
+      <div class="account-wall">
+        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+            <%= f.email_field :email, :class => 'form-control', :placeholder => 'Email' %>
+            <%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Password'%>
+            <%= f.submit "Sign in", :class => 'btn btn-lg btn-primary btn-block' %>
+            <label class="checkbox pull-left">
+              <%= f.check_box :remember_me %>
+              Remember me
+            </label>
+            <!-- <a href="#" class="pull-right need-help">Need help? </a> -->
+            <span class="clearfix"></span>
+          <% end %>
+      </div>
+      <!-- <a href="#" class="text-center new-account">Create an account </a> -->
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
