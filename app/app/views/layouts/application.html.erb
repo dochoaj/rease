@@ -38,7 +38,78 @@
   </head>
 <body>
 
-<%= yield %>
+    <header>
+        <%= link_to(image_tag("logo.png", id: "logo"),root_path) %>
+        <nav>
+            <ul id="BarraNavegadora" class="nav nav-tabs navbar-fixed-top">
+                <li role="presentation" class="<%= 'active' if current_page?(root_path) %>">
+                    <%= link_to "Inicio", root_path %>
+                </li>
+                <li role="presentation" class="<%= 'active' if current_page?(presentation_aprendizaje_path) %>">
+                    <%= link_to "¿Qué es A+S?", presentation_aprendizaje_path %>
+                </li>
+                <li role="presentation" class="<%= 'active' if current_page?(presentation_hacemos_path) %>">
+                    <%= link_to "¿Qué hacemos?", presentation_hacemos_path %>
+                </li>
+                <li role="presentation" class="<%= 'active' if current_page?(presentation_somos_path) %>">
+                    <%= link_to "¿Quiénes somos?", presentation_somos_path %>
+                </li>
+                <li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
+                    <%= link_to "Contacto", presentation_contacto_path %>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
 
-</body>
+    <section id="contenido">
+    <article>
+        <%= yield %>
+    </article>
+    <aside>
+        <div id="panelAside" class="panel panel-default">
+            <div class="panel-heading">
+                INICIAR SESIÓN
+            </div>
+            <div class="panel-body">
+
+                <% if not user_signed_in? %>
+                    <li>
+                    <%= link_to "Conectarse", new_user_session_path, :id => 'boton' , :class => 'btn btn-lg btn-block'%>
+                    </li>
+                    <li>
+                    <%= link_to "Crear cuenta", new_user_registration_path, :id => 'boton' , :class => 'btn btn-lg btn-block' %>
+                    </li>
+                <%end%>
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+
+            </div>
+        </div>
+        <div id="panelAside" class="panel panel-default">
+            <div class="panel-heading">
+                LINKS DE INTERÉS
+            </div>
+            <div class="panel-body">
+                 <%= link_to "Facebook REASE", "https://es-es.facebook.com/reasechile", class:"linkInteres" %>
+                 <%= link_to "CLAYSS", "http://www.clayss.org.ar/", class:"linkInteres" %>
+                 <%= link_to "CREAS - U. Alberto Hurtado", "http://creas.uahurtado.cl/2012/04/documentos-sobre-educacion.html", class:"linkInteres" %>
+                 <%= link_to "Maristas Chile", "http://www.maristas.cl/evangelizacion_explicita/aprendizaje_servicio", class:"linkInteres" %>
+                 <%= link_to "Creador del A+S", "http://www.cehd.umn.edu/olpd/people/faculty/Furco.asp", class:"linkInteres" %>
+                 <%= link_to "El aprendizaje-servicio por Andrew Furco", "http://educacionglobalresearch.net/wp-content/uploads/03-Furco-1-Castellano.pdf", class:"linkInteres" %>
+
+            </div>
+        </div>
+    </aside>
+</section>
+
+    <footer>
+        <!--Pie de página-->
+        <div  id="pies" class = "navbar-default ">
+                REASE - Red Nacional de Aprendizaje y Servicio<br>
+                Contacto: reasechile@gmail.com
+        </div>
+    </footer>
+
+    </body>
 </html>

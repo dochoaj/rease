@@ -1,0 +1,29 @@
+<h1>Contacto</h1>
+	<p>
+		En nuestra página encontrarás nuestras actividades, links de interés y documentos sobre el Aprendizaje – Servicio. Si quieres contactarte con alguno de nuestros miembros, no dudes en enviar un mail a reasechile@gmail.com.
+		Si quieres unirte a nuestra organización, tienes sugerencias que hacer o simplemente tienes interés y quieres saber más sobre Aprendizaje y Servicio.
+		<br>¡ Muchas gracias !<br>
+	</p>
+
+	<div id="panelComentario" class="panel panel-default">	
+		<div class="panel-heading">
+		DEJA UN COMENTARIO
+		</div>
+		<div class="panel-body">
+			<form  method="post" action="send.php">
+				<input class="form-control" type="text" placeholder="Nombre (Obligatorio)" name="nombre" required>
+				<br>
+				<input class="form-control" type="email" placeholder="Correo Electrónico (Obligatorio)" name="correo" required>
+				<br>
+				<input class="form-control" type="text" placeholder="Página Web" name="web">
+				<br>
+				<textarea class="form-control" rows=6 placeholder="Ingrese aquí su Comentario..." name="coment" required></textarea>
+				<br>
+				<button id="boton" name="enviar" class="btn btn-default" input type="submit" value="Send">
+				<span class="glyphicon glyphicon-envelope"></span> Envíar</a>
+				</button>
+				<button id="boton" name="borrar" class="btn btn-default" input type="reset" value="Reset">
+				<span class="glyphicon glyphicon-remove"></span> Borrar</a>
+			</form>
+		</div>
+	</div>

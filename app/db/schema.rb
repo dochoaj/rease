@@ -67,13 +67,6 @@ ActiveRecord::Schema.define(version: 20150418124239) do
     t.integer  "user_id",     limit: 4
   end
 
-  create_table "message_users", force: :cascade do |t|
-    t.integer  "message_id", limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.string   "matters",    limit: 255
     t.text     "text",       limit: 65535
@@ -81,6 +74,16 @@ ActiveRecord::Schema.define(version: 20150418124239) do
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
   end
+
+  create_table "messages_users", force: :cascade do |t|
+    t.integer  "message_id", limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages_users", ["message_id"], name: "index_messages_users_on_message_id", using: :btree
+  add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.string   "title",         limit: 255

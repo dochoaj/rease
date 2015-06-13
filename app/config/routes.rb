@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'presentation/index'
+
+  get 'presentation/contacto'
+
+  get 'presentation/somos'
+
+  get 'presentation/hacemos'
+
+  get 'presentation/aprendizaje'
+
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,7 +31,8 @@ Rails.application.routes.draw do
       root :to => 'requests#index'
     end
     unauthenticated :user do
-      root :to => 'devise/sessions#new', as: :unauthenticated_root
+      root :to => 'presentation#index', as: :unauthenticated_root
+      #'devise/sessions#new'
     end
 
   end
