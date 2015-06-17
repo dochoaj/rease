@@ -82,12 +82,8 @@
             <div class="panel-body">
 
                 <% unless user_signed_in? %>
-                    <li>
                     <%= link_to "Conectarse", new_user_session_path, :id => 'boton' , :class => 'btn btn-lg btn-block'%>
-                    </li>
-                    <li>
                     <%= link_to "Nuevo usuario", new_user_registration_path, :id => 'boton' , :class => 'btn btn-lg btn-block' %>
-                    </li>
                 <%end%>
                 <p class="notice"><%= notice %></p>
                 <p class="alert"><%= alert %></p>

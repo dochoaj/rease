@@ -147,7 +147,7 @@ p
     margin-right: auto;
 }
 
-.linkInteres, .linkInteres:visited, #indiceEstatuto, #indiceEstatuto:visited
+.linkInteres, .linkInteres:visited
 {
 	color: #30aaaa;
 	font-style: inherit;
@@ -157,8 +157,19 @@ p
 	margin: 2%;
 	display: block;
 }
+#indiceEstatuto1, #indiceEstatuto2, #indiceEstatuto3, #indiceEstatuto4, #indiceEstatuto
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: left;
+	text-decoration:none;
+	font-size: 14px;
+	margin: 2%;
+	display: block;	
+}
 
-.linkInteres:hover, #indiceEstatuto:hover
+.linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover
+
 {	
 	color: #30aaaa;
 	font-weight: bold;
