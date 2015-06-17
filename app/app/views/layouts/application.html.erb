@@ -39,7 +39,7 @@
 <body>
 
     <header>
-        <%= link_to(image_tag("logo.png", id: "logo"),root_path) %>
+
         <nav>
             <ul id="BarraNavegadora" class="nav nav-tabs navbar-fixed-top">
                 <li role="presentation" class="<%= 'active' if current_page?(root_path) %>">
@@ -60,11 +60,11 @@
                 <li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
                     <%= link_to "Contacto", root_path %>
                 </li>
-                <li id="prueba">
-                    Miembros activos: 43
+                <li id="contadorUsuarios">
+                    Miembros activos: <%= User.count %>
                 </li>
 
-                
+
             </ul>
         </nav>
     </header>
@@ -74,6 +74,7 @@
         <%= yield %>
     </article>
     <aside>
+        <%= link_to(image_tag("LogoRease.png", id: "logo"),root_path) %>
         <div id="panelAside" class="panel panel-default">
             <div class="panel-heading">
                 INICIAR SESIÓN

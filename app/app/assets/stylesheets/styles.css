@@ -42,7 +42,6 @@ h1 /*Títulos de las páginas*/
 {
 	color: #30aaaa;
 	font-style: inherit;
-	font-family: Verdana;
 	font-weight: bold;
 	text-align: left;
 	text-decoration:none;
@@ -53,8 +52,7 @@ h1 /*Títulos de las páginas*/
 h2 /*Campos*/
 {
 	color: #30aaaa;
-	font-style: inherit;
-	font-family: Verdana;
+	font-style: inherit;	
 	font-weight: bold;
 	text-align: left;
 	text-decoration:none;
@@ -66,7 +64,6 @@ h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 	color: black;
 	font-weight: bold;
 	font-style: inherit;
-	font-family: Verdana;
 	text-align: justify;
 	font-size: 14px;
 	margin: 2%;
@@ -79,7 +76,6 @@ p
 }
 #BarraNavegadora
 {
-	margin-top: 8%;
 	font-weight: bold;
 	background-color: #30aaaa;
 }
@@ -117,7 +113,7 @@ p
 }
 #contenido
 {
-	padding-top: 12%;
+	margin-top: 4%;
 	min-height: 545px;
 }
 #imgAS
@@ -133,7 +129,7 @@ p
     margin-right: auto;
 }
 
-.linkInteres, .linkInteres:visited
+.linkInteres, .linkInteres:visited, #indiceEstatuto, #indiceEstatuto:visited
 {
 	color: #30aaaa;
 	font-style: inherit;
@@ -144,7 +140,7 @@ p
 	display: block;
 }
 
-.linkInteres:hover
+.linkInteres:hover, #indiceEstatuto:hover
 {	
 	color: #30aaaa;
 	font-weight: bold;
@@ -153,20 +149,28 @@ p
 
 #logo
 {
-	width: 100%;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
 	padding: 0;
-	position: fixed;
-	z-index: 1;
+	display: block;
+}
 
+#logoInstituciones
+{
+	margin-left: 15%;
+	margin-right: 15%;
+	max-width: 12%;
+	padding: 0;
 }
 #pies
 {
-	margin-top: 5%;
+	margin-top: 20px;
 	background: #30aaaa;
 	text-align: center;
 	font-weight: bold;
 	font-size: 11px;
-	font-family: verdana;
+	
 	color: white;
 
 }
@@ -221,7 +225,7 @@ p
 	margin-left: 2%;
 }
 
-#prueba
+#contadorUsuarios
 {
 	float: right !important;
     margin-right: 10px;

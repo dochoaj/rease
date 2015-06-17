@@ -19,6 +19,14 @@
           </div>
 
           <div class="field">
+            <% Category.all.each do |category| %>
+              <p><%= check_box_tag "users[category_ids][]", category.id%>
+              <%= category.description %></p>
+            <% end %>  
+          </div>
+
+
+          <div class="field">
             <p><%= f.label :email, "Correo electrónico" %></p>
             <%= f.email_field :email, :class => 'form-control',autofocus: true  %>
           </div>

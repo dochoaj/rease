@@ -1,22 +1,55 @@
-<h1>Contacto</h1>
-	<p>
-		En nuestra página encontrarás nuestras actividades, links de interés y documentos sobre el Aprendizaje – Servicio. Si quieres contactarte con alguno de nuestros miembros, no dudes en enviar un mail a reasechile@gmail.com.
-		Si quieres unirte a nuestra organización, tienes sugerencias que hacer o simplemente tienes interés y quieres saber más sobre Aprendizaje y Servicio.
-		<br>¡ Muchas gracias !<br>
-	</p>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-md-offset-3">
-    	<h1 class="tituloSesion">Deja un comentario</h1>
-		<%=form_for(@mensaje) do |f|%>
-			<div class="field">
-				<%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo electrónico' %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- IMPORTANDO BOOTSTRAP -->
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<!-- FAVICON = ícono que va en la parte superior del web browser-->
+	<link rel="icon" type="image/jpg" href="img/favicon.ico">
+	<!--IMPORTANDO ESTILOS-->
+	<link href="css/estilos.css" rel="stylesheet" media="screen">
+	<title>CONTACTO</title>
+</head>
+	<body>
+		<h1>Contacto</h1>
+		<p>
+			Si quieres unirte a nuestra organización, tienes sugerencias que hacer o simplemente tienes interés y quieres saber más sobre Aprendizaje y Servicio, por favor no dudes en enviar un correo a nuestro mail: reasechile@gmail.com.
+			<br>¡ Muchas gracias !<br>
+		</p>
+
+		<div id="panelComentario" class="panel panel-default">	
+			<div class="panel-heading">
+			DEJA UN COMENTARIO
 			</div>
-				<br>
-			<div class="actions">
-				<%= f.submit "Recuperar contraseña",:id => 'boton', :class => 'btn btn-lg btn-block' %>
+			<div class="panel-body">
+				<form  method="post" action="send.php">
+					<input class="form-control" type="text" placeholder="Nombre (Obligatorio)" name="nombre" required>
+					<br>
+					<input class="form-control" type="email" placeholder="Correo Electrónico (Obligatorio)" name="correo" required>
+					<br>
+					<input class="form-control" type="text" placeholder="Página Web" name="web">
+					<br>
+					<textarea class="form-control" rows=6 placeholder="Ingrese aquí su Comentario..." name="coment" required></textarea>
+					<br>
+					<button id="boton" name="enviar" class="btn btn-default" input type="submit" value="Send">
+					</span> Envíar</a>
+					</button>
+					<button id="boton" name="borrar" class="btn btn-default" input type="reset" value="Reset">
+					</span> Borrar</a>
+				</form>
 			</div>
-		<end%-->
-    </div>
-  </div>
-</div>
+		</div>
+
+		<footer>
+			<!--Pie de página-->
+			<div  id="pies" class = "navbar-default ">
+					REASE - Red Nacional de Aprendizaje y Servicio<br>
+					Contacto: reasechile@gmail.com
+			</div>
+		</footer>
+	</body>
+</html>
