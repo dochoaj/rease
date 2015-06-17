@@ -95,10 +95,24 @@ p
 	color: white;
 	margin-bottom: 15px;
 }
-#boton:hover, #boton a:hover
+#boton:hover, #boton a:hover, #botonSomos:hover
 {
 	background: #30bbbb;
 	font-weight: bold;
+}
+#botonCerrar
+{
+	margin-top: 2%;
+	margin-right: 4%;
+}
+#botonSomos
+{
+	margin: 30px;
+	background: #30aaaa;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 20%;
 }
 #cabezaTabla
 {
@@ -115,6 +129,10 @@ p
 {
 	margin-top: 4%;
 	min-height: 545px;
+}
+#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
+{
+	margin-top: 10%;
 }
 #imgAS
 {
@@ -158,10 +176,8 @@ p
 
 #logoInstituciones
 {
-	margin-left: 15%;
-	margin-right: 15%;
-	max-width: 12%;
-	padding: 0;
+	margin: 20px;
+	width: 12%;
 }
 #pies
 {

@@ -3,28 +3,154 @@
 La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiantes, universidades, colegios, agrupaciones civiles y en general a todas las personas y organizaciones en Chile que estén interesadas en esta metodología.
 </p>
 <p>REASE se organiza a través de secretarías, las cuales son: </p>
-<ul id="estatutos" >
-	<li>Secretaría Ejecutiva: Esta comisión está enfocada en hacer un seguimiento al trabajo de las demás comisiones y coordinar el trabajo de ellas, para ello cada miembro de esta comisión se encuentra también trabajando en algunas de las comisiones que se describirán a continuación. Además, se encarga de proponer temas y preparar las reuniones ampliadas de la red.</li><br>
-	<li>Comunicaciones: Está comisión busca difundir la labor realizada por REASE mediante diferentes mecanismos, como la elaboración de boletines o videos promocionales. El actual sitio web de la red y la presencia de la organización en las redes sociales, nace de la labor de esta comisión, como también el desarrollo de este trabajo.</li><br>
-	<li>Sistematización: Esta comisión busca estandarizar las experiencias de Aprendizaje y Servicio. Su trabajo generó durante el año pasado, la elaboración de un Formulario de Sistematización, el que durante este año ha sido aplicado a las experiencias de A+S en todas las instituciones pertenecientes a la red. </li><br>
-	<li>Talleres: Esta comisión busca llevar a cabo diferentes talleres de Aprendizaje y Servicio, que permitan acercar a los docentes y estudiantes a esta metodología. </li><br>
-	<li>Encuentro: Integrada por Gabriela Valenzuela, Gema Santander  (U Sto. Tomás), Rubén Vidal (H. de Cristo), Loreto Martínez (H. de Cristo) y Chantal Jouannet. Comisión encargada de organizar el encuentro anual de Aprendizaje y Servicio en Chile, además de gestionar los patrocinadores para el mismo. Actualmente se encuentra gestionando el próximo encuentro que se realizará en enero del próximo año.</li>
-</ul>
-<br>
 
-<h2>ORGANIZACIONES ADHERIDAS</h2>
-<%= link_to(image_tag("instituciones/hdc.png", id: "logoInstituciones"),"http://www.hogardecristo.cl/?show_home=1") %>
-<%= link_to(image_tag("instituciones/maristas.png", id: "logoInstituciones"),"http://www.maristas.cl/") %>
-<%= link_to(image_tag("instituciones/PUC.gif", id: "logoInstituciones"),"http://www.uc.cl/") %>
-<%= link_to(image_tag("instituciones/pucv.png", id: "logoInstituciones"),"http://www.ucv.cl/") %>
-<%= link_to(image_tag("instituciones/uadolfo.png", id: "logoInstituciones"),"http://www.uai.cl/") %>
-<%= link_to(image_tag("instituciones/uaustral.png", id: "logoInstituciones"),"https://www.uach.cl/") %>
-<%= link_to(image_tag("instituciones/ucentral.png", id: "logoInstituciones"),"http://www.ucentral.cl/prontus_ucentral2012/site/edic/base/port/inicio.html") %>
-<%= link_to(image_tag("instituciones/uchile.png", id: "logoInstituciones"),"http://www.uchile.cl/") %>
-<%= link_to(image_tag("instituciones/uconce.gif", id: "logoInstituciones"),"https://www.udec.cl/pexterno/") %>
-<%= link_to(image_tag("instituciones/UFRO.gif", id: "logoInstituciones"),"http://www.ufro.cl/") %>
-<%= link_to(image_tag("instituciones/uhurtado.png", id: "logoInstituciones"),"http://www.uahurtado.cl/") %>
-<%= link_to(image_tag("instituciones/unab.png", id: "logoInstituciones"),"http://www.unab.cl/") %>
-<%= link_to(image_tag("instituciones/usach.png", id: "logoInstituciones"),"http://www.usach.cl/") %>
-<%= link_to(image_tag("instituciones/usilvahenriquez.png", id: "logoInstituciones"),"http://ww3.ucsh.cl/") %>
-<%= link_to(image_tag("instituciones/utemuco.png", id: "logoInstituciones"),"http://www.uct.cl/") %>
+<center>
+	<button id="botonSomos" class = "btn" data-toggle="modal" data-target = "#ejecutiva" >
+		Comisión Ejecutiva
+	</button>
+	<button id="botonSomos" class = "btn" data-toggle="modal" data-target = "#comunicaciones" >
+		Comunicaciones
+	</button>
+	<button id="botonSomos" class = "btn" data-toggle="modal" data-target = "#sistematizacion" >
+		Sistematización
+	</button>
+	<button id="botonSomos" class = "btn" data-toggle="modal" data-target = "#talleres" >
+		Talleres
+	</button>
+	<button id="botonSomos" class = "btn" data-toggle="modal" data-target = "#encuentro" >
+		Encuentro
+	</button>
+</center>
+
+
+<div class="modal fade" id="ejecutiva" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modalbody">
+				<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">&times;</button>
+				<div class="panel panel-default" id="panelAside">
+					<div class="panel-heading">
+						Comisión Ejecutiva
+					</div>
+					<div class="panel-body">
+						<p>Esta comisión está enfocada en hacer un seguimiento al trabajo de las demás comisiones y coordinar el trabajo de ellas, para ello cada miembro de esta comisión se encuentra también trabajando en algunas de las comisiones que se describirán a continuación. Además, se encarga de proponer temas y preparar las reuniones ampliadas de la red.</p>
+
+						<button type="button" class="btn" id="boton" data-dismiss ="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="comunicaciones" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modalbody">
+				<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">&times;</button>
+				<div class="panel panel-default" id="panelAside">
+					<div class="panel-heading">
+						Secretaría de Comunicaciones
+					</div>
+					<div class="panel-body">
+						<p>Esta comisión busca difundir la labor realizada por REASE mediante diferentes mecanismos, como la elaboración de boletines o videos promocionales. El actual sitio web de la red y la presencia de la organización en las redes sociales, nace de la labor de esta comisión, como también el desarrollo de este trabajo.</p>
+
+						<button type="button" class="btn" id="boton" data-dismiss ="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="sistematizacion" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modalbody">
+				<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">&times;</button>
+				<div class="panel panel-default" id="panelAside">
+					<div class="panel-heading">
+						Secretaría de sistematización
+					</div>
+					<div class="panel-body">
+						<p>Esta comisión busca estandarizar las experiencias de Aprendizaje y Servicio. Su trabajo generó durante el año pasado, la elaboración de un Formulario de Sistematización, el que durante este año ha sido aplicado a las experiencias de A+S en todas las instituciones pertenecientes a la red.</p>
+
+						<button type="button" class="btn" id="boton" data-dismiss ="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="talleres" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modalbody">
+				<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">&times;</button>
+				<div class="panel panel-default" id="panelAside">
+					<div class="panel-heading">
+						Secretaría de talleres
+					</div>
+					<div class="panel-body">
+						<p>Esta comisión busca llevar a cabo diferentes talleres de Aprendizaje y Servicio, que permitan acercar a los docentes y estudiantes a esta metodología.</p>
+
+						<button type="button" class="btn" id="boton" data-dismiss ="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="encuentro" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modalbody">
+				<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">&times;</button>
+				<div class="panel panel-default" id="panelAside">
+					<div class="panel-heading">
+						Secretaría de Encuentro
+					</div>
+					<div class="panel-body">
+						<p>Esta comisión está encargada de organizar el encuentro anual de Aprendizaje y Servicio en Chile, además de gestionar los patrocinadores para el mismo. Actualmente se encuentra gestionando el próximo encuentro que se realizará en enero del próximo año.</p>
+
+						<button type="button" class="btn" id="boton" data-dismiss ="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<h1>Organizaciones adheridas</h1>
+<p> Las organizaciones que actualmente están activas dentro de REASE o alguno de los miembros activos pertenecen a ellas, son: </p>
+<center>
+	<%= link_to(image_tag("instituciones/hdc.png", id: "logoInstituciones"),"http://www.hogardecristo.cl/?show_home=1") %>
+	<%= link_to(image_tag("instituciones/maristas.png", id: "logoInstituciones"),"http://www.maristas.cl/") %>
+	<%= link_to(image_tag("instituciones/PUC.gif", id: "logoInstituciones"),"http://www.uc.cl/") %>
+	<%= link_to(image_tag("instituciones/pucv.png", id: "logoInstituciones"),"http://www.ucv.cl/") %>
+	<%= link_to(image_tag("instituciones/uadolfo.png", id: "logoInstituciones"),"http://www.uai.cl/") %>
+	<%= link_to(image_tag("instituciones/uaustral.png", id: "logoInstituciones"),"https://www.uach.cl/") %>
+	<%= link_to(image_tag("instituciones/uchile.png", id: "logoInstituciones"),"http://www.uchile.cl/") %>
+	<%= link_to(image_tag("instituciones/uconce.gif", id: "logoInstituciones"),"https://www.udec.cl/") %>
+	<%= link_to(image_tag("instituciones/UFRO.gif", id: "logoInstituciones"),"http://www.ufro.cl/") %>
+	<%= link_to(image_tag("instituciones/uhurtado.png", id: "logoInstituciones"),"http://www.uahurtado.cl/") %>
+	<%= link_to(image_tag("instituciones/unab.png", id: "logoInstituciones"),"http://www.unab.cl/") %>
+	<%= link_to(image_tag("instituciones/usach.png", id: "logoInstituciones"),"http://www.usach.cl/") %>
+	<%= link_to(image_tag("instituciones/usilvahenriquez.png", id: "logoInstituciones"),"http://ww3.ucsh.cl/") %>
+	<%= link_to(image_tag("instituciones/utemuco.png", id: "logoInstituciones"),"http://www.uct.cl/") %>
+	<%= link_to(image_tag("instituciones/ucentral.png", id: "logoInstituciones"),"http://www.ucentral.cl/") %>
+</center>
