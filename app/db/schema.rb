@@ -125,6 +125,9 @@ ActiveRecord::Schema.define(version: 20150418124239) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
+    t.string   "name",                   limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "autorization_level",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

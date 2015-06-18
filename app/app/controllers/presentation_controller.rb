@@ -13,4 +13,7 @@ class PresentationController < ApplicationController
 
   def aprendizaje
   end
+
+  def estatutos
+  end
 end

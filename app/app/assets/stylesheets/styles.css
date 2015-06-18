@@ -1,3 +1,4 @@
+
 article
 {
 	display: block;
@@ -51,7 +52,7 @@ h1 /*Títulos de las páginas*/
 
 h2 /*Campos*/
 {
-	color: #999;
+	color: #30aaaa;
 	font-style: inherit;
 	font-family: Verdana;
 	font-weight: bold;
@@ -63,6 +64,7 @@ h2 /*Campos*/
 h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 {
 	color: black;
+	font-weight: bold;
 	font-style: inherit;
 	font-family: Verdana;
 	text-align: justify;
@@ -72,8 +74,6 @@ h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 p
 {
 	color: black;
-	font-style: inherit;
-	font-family: Verdana;
 	text-align: justify;
 	margin: 2%;
 }
@@ -81,12 +81,17 @@ p
 {
 	margin-top: 8%;
 	font-weight: bold;
+	background-color: #30aaaa;
+}
+#BarraNavegadora > li
+{
 	border-color: #30cccc;
 }
 #BarraNavegadora > li > a:hover
 {
 	background-color: white;
 	border-color: #30bbbb;
+	color: #999;
 }
 #boton, #boton a
 {
@@ -140,7 +145,8 @@ p
 }
 
 .linkInteres:hover
-{
+{	
+	color: #30aaaa;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -207,4 +213,17 @@ p
 {
 	background: #30bbbb;
 }
+#estatutos > li
+{
+	color: black;
+	text-align: justify;
+	margin-right: 2%;
+	margin-left: 2%;
+}
 
+#prueba
+{
+	float: right !important;
+    margin-right: 10px;
+    margin-top: 10px;
+}

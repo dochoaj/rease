@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
       <!--h1 class="text-center login-title">Ingrese sus datos para conectarse a REASE</h1-->
-      <h1> Ingrese sus datos para conectarse a REASE </h1>
-      <div class="account-wall">
+      <h1 class="tituloSesion"> Ingrese sus datos para conectarse a REASE </h1>
+      <div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
           <%= image_tag("Conect.png", class: "inicioSesion") %>
             <%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo electrónico' %>
@@ -15,9 +15,11 @@
             </label>
             <!-- <a href="#" class="pull-right need-help">Need help? </a> -->
             <span class="clearfix"></span>
+            <%= render "devise/shared/links" %>
           <% end %>
       </div>
       <!-- <a href="#" class="text-center new-account">Create an account </a> -->
+
     </div>
   </div>
 </div>
