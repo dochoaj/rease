@@ -71,6 +71,8 @@
 
     <section id="contenido">
     <article>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
     </article>
     <aside>
@@ -82,12 +84,8 @@
             <div class="panel-body">
 
                 <% unless user_signed_in? %>
-                    <%= link_to "Conectarse", new_user_session_path, :id => 'boton' , :class => 'btn btn-lg btn-block'%>
-                    <%= link_to "Nuevo usuario", new_user_registration_path, :id => 'boton' , :class => 'btn btn-lg btn-block' %>
+                    <%= render "devise/sessions/inicio_sesion" %>
                 <%end%>
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
-
             </div>
         </div>
         <div id="panelAside" class="panel panel-default">

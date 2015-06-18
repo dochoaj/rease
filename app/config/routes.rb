@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   get 'presentation/estatutos'
 
+
   ###:controllers => { :registrations => "users/registrations" }
   ### preguntar qué realmente significa esto.
+
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
