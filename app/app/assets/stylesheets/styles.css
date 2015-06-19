@@ -74,6 +74,10 @@ p
 	text-align: justify;
 	margin: 2%;
 }
+.modal-estatuto
+{
+	min-width: 90%;
+}
 #BarraNavegadora
 {
 	font-weight: bold;
@@ -146,6 +150,15 @@ p
     margin-left: auto;
     margin-right: auto;
 }
+#linkEstatuto
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: right;
+	text-decoration:none;
+	font-size: 14px;
+	display: block;
+}
 
 .linkInteres, .linkInteres:visited
 {
@@ -168,7 +181,7 @@ p
 	display: block;	
 }
 
-.linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover
+.linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover, #linkEstatuto:hover
 
 {	
 	color: #30aaaa;
@@ -190,6 +203,7 @@ p
 	margin: 20px;
 	width: 12%;
 }
+
 #pies
 {
 	margin-top: 20px;
