@@ -1,0 +1,16 @@
+<h1>Bienvenido a Rease:</h1>
+<h2>El sitio de la Red Nacional de Aprendizaje y Servicio, Chile</h2>
+<% @secciones.each do |seccion| %>
+	<div id="panelAside" class="panel panel-default">
+		<div class="panel-heading">
+			<%= seccion.title %>
+		</div>
+		<div class="panel-body">
+			<p>Tipo: <%= seccion.order %></p>
+			<p><%= seccion.body %></p>
+		</div>
+		<div class="panel-footer">
+			<p>Fecha de Creacion: <%= seccion.created_at%></p> 
+		</div>
+	</div>
+<%end%>

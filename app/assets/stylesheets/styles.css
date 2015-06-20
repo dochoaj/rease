@@ -1,0 +1,284 @@
+
+article
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 75%;
+	float: left;
+
+}
+aside
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 25%;
+	float: right;
+
+}
+body
+{
+	/*Gradiente de Color*/
+	background: #ffffff;
+	background: -moz-linear-gradient(-45deg, #ffffff 0%, #ffffff 51%, #30aaaa 89%, #30aaaa 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffffff), color-stop(51%,#ffffff), color-stop(89%,#30aaaa), color-stop(100%,#30aaaa));
+	background: -webkit-linear-gradient(-45deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
+	background: -o-linear-gradient(-45deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
+	background: -ms-linear-gradient(-45deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
+	background: linear-gradient(135deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#30aaaa',GradientType=1 );
+	color: white;
+}
+/*p Texto en párrafos
+*/
+
+footer
+{
+	clear:both;
+	padding-top: 15px;
+}
+h1 /*Títulos de las páginas*/
+{
+	color: #30aaaa;
+	font-style: inherit;
+	font-weight: bold;
+	text-align: left;
+	text-decoration:none;
+	font-size: 20px;
+	margin: 2%;
+}
+
+h2 /*Campos*/
+{
+	color: #30aaaa;
+	font-style: inherit;	
+	font-weight: bold;
+	text-align: left;
+	text-decoration:none;
+	font-size: 14px;
+	margin: 2%;
+}
+h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
+{
+	color: black;
+	font-weight: bold;
+	font-style: inherit;
+	text-align: justify;
+	font-size: 14px;
+	margin: 2%;
+}
+p
+{
+	color: black;
+	text-align: justify;
+	margin: 2%;
+}
+.modal-estatuto
+{
+	min-width: 90%;
+}
+#BarraNavegadora
+{
+	font-weight: bold;
+	background-color: #30aaaa;
+}
+#BarraNavegadora > li
+{
+	border-color: #30cccc;
+}
+#BarraNavegadora > li > a:hover
+{
+	background-color: white;
+	border-color: #30bbbb;
+	color: #999;
+}
+#boton, #boton a
+{
+	background: #30aaaa;
+	color: white;
+	margin-bottom: 15px;
+}
+#boton:hover, #boton a:hover, #botonSomos:hover
+{
+	background: #30bbbb;
+	font-weight: bold;
+}
+#botonCerrar
+{
+	margin-top: 2%;
+	margin-right: 4%;
+}
+#botonSomos
+{
+	margin: 30px;
+	background: #30aaaa;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 20%;
+}
+#cabezaTabla
+{
+	background: #30AAAA;
+	border-radius: 5%;
+}
+#comentario
+{
+	width: 40%;
+	min-width: 400px;
+	padding-left: 5%;
+}
+#contenido
+{
+	margin-top: 4%;
+	min-height: 545px;
+}
+#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
+{
+	margin-top: 10%;
+}
+#imgAS
+{
+	width: 100%;
+}
+
+.inicioSesion
+{
+	padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#linkEstatuto
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: right;
+	text-decoration:none;
+	font-size: 14px;
+	display: block;
+}
+
+.linkInteres, .linkInteres:visited
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: center;
+	text-decoration:none;
+	font-size: 14px;
+	margin: 2%;
+	display: block;
+}
+#indiceEstatuto1, #indiceEstatuto2, #indiceEstatuto3, #indiceEstatuto4, #indiceEstatuto
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: left;
+	text-decoration:none;
+	font-size: 14px;
+	margin: 2%;
+	display: block;	
+}
+
+.linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover, #linkEstatuto:hover
+
+{	
+	color: #30aaaa;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#logo
+{
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+	padding: 0;
+	display: block;
+}
+
+#logoInstituciones
+{
+	margin: 20px;
+	width: 12%;
+}
+
+#pies
+{
+	margin-top: 20px;
+	background: #30aaaa;
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+	
+	color: white;
+
+}
+#pies:hover
+{
+	background: #30bbbb;
+}
+#panelRegistro
+{
+	max-width: 90%;
+	min-width: 500px;
+	margin-left: 5%;
+}
+#panelComentario
+{
+	max-width: 80%;
+	min-width: 300px;
+	margin-left: 10%;
+}
+#panelAside
+{
+	width: 96%;
+	margin: 2%;
+	text-align: center;
+}
+#panelHacemos
+{
+	width: 48%;
+	min-height: 300px;
+	float: right;
+	margin: 1%;
+	text-align: center;
+	display: block;
+	background: white;
+}
+#panelImg
+{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: center;
+}
+#panelRegistro .panel-heading, #panelComentario .panel-heading, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading
+{
+	background: #30aaaa;
+	color: white;
+	font-weight: bold;
+}
+#panelRegistro .panel-footer, #panelComentario .panel-footer, #panelAside .panel-footer, #panelHacemos .panel-footer
+{
+	background: white;
+}
+#panelRegistro .panel-heading:hover, #panelComentario .panel-heading:hover, #panelAside .panel-heading:hover, #panelImg .panel-heading:hover, #panelHacemos .panel-heading:hover
+{
+	background: #30bbbb;
+}
+#estatutos > li
+{
+	color: black;
+	text-align: justify;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+
+#contadorUsuarios
+{
+	float: right !important;
+    margin-right: 10px;
+    margin-top: 10px;
+}
