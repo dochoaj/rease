@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
   get 'presentation/index'
-
   get 'presentation/contacto'
-
   get 'presentation/somos'
-
   get 'presentation/hacemos'
-
   get 'presentation/aprendizaje'
-
   get 'presentation/estatutos'
+
+  resources :sections
+ # CRUD
+ # get "/articles" index
+ # post "/articles" create
+ # delete "/articles" detele
+ # get "/articles/:id" show
+ # get "/articles/new" new
+ # get "/articles/:id/edit" edit
+ # patch "/articles/:id" update
+ # put "/articles/:id" update
 
 
   ###:controllers => { :registrations => "users/registrations" }

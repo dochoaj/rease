@@ -86,9 +86,12 @@ ActiveRecord::Schema.define(version: 20150622173536) do
   add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.integer  "user_id",     limit: 4
+    t.string   "title",         limit: 255
+    t.text     "description",   limit: 65535
+    t.integer  "user_id",       limit: 4
+    t.integer  "experience_id", limit: 4
+    t.integer  "community_id",  limit: 4
+    t.integer  "area_id",       limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -124,10 +127,15 @@ ActiveRecord::Schema.define(version: 20150622173536) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.integer  "institution_id",         limit: 4
+    t.integer  "category_id",            limit: 4
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
+    t.string   "name",                   limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "autorization_level",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
