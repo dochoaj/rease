@@ -651,3 +651,14 @@ Started GET "/assets/LogoRease-71112cfe8987611e20e96c216550dc843fab6dc86a2f890ee
 
 
 Started GET "/assets/favicon-ce5627efc72aed78c2710d77c9a33e6ef53986acb368d00ebc5c4f6ceb1bf097.ico" for ::1 at 2015-06-20 16:32:47 -0300
+
+
+Started GET "/" for ::1 at 2015-06-20 19:13:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PresentationController#index as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/index.html.erb within layouts/application (37.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (47.5ms)
+Completed 200 OK in 1035ms (Views: 964.5ms | ActiveRecord: 67.6ms)
