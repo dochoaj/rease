@@ -1,19 +1,70 @@
-# config valid only for current version of Capistrano
-lock '3.4.0'
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+require 'mina/rbenv'
+require 'mina/unicorn'
 
-set :application, 'rease'
-set :repo_url, 'https://github.com/dochoaj/rease.git'
+# Basic settings:
+#   domain       - The hostname to SSH to.
+#   deploy_to    - Path to deploy into.
+#   repository   - Git repo to clone from. (needed by mina/git)
+#   branch       - Branch name to deploy. (needed by mina/git)
 
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :domain, '104.131.119.33'
+set :deploy_to, '/home/deployer/rease/'
+set :repository, 'https://github.com/dochoaj/rease.git'
+set :branch, 'develop'
+set :user, 'deployer'
+set :forward_agent, true
+set :port, '22'
+set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-set :use_sudo, false
-set :bundle_binstubs, nil
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
+# They will be linked in the 'deploy:link_shared_paths' step.
+set :shared_paths, ['config/database.yml', 'log', 'config/secrets.yml']
 
-after 'deploy:publishing', 'deploy:restart'
 
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:reload'
+# This task is the environment that is loaded for most commands, such as
+# `mina deploy` or `mina rake`.
+task :environment do
+  queue %{
+echo "-----> Loading environment"
+#{echo_cmd %[source ~/.bashrc]}
+}
+  invoke :'rbenv:load'
+  # If you're using rbenv, use this to load the rbenv environment.
+  # Be sure to commit your .rbenv-version to your repository.
+end
+
+# Put any custom mkdir's in here for when `mina setup` is ran.
+# For Rails apps, we'll make some of the shared paths that are shared between
+# all releases.
+task :setup => :environment do
+  queue! %[mkdir -p "#{deploy_to}/shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/config"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
+
+  queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
+
+  queue! %[touch "#{deploy_to}/shared/config/secrets.yml"]
+  queue %[echo "-----> Be sure to edit 'shared/config/secrets.yml'."]
+end
+
+desc "Deploys the current version to the server."
+task :deploy => :environment do
+  deploy do
+
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
+
+    to :launch do
+      invoke :'unicorn:restart'
+    end
   end
 end
