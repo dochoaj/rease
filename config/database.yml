@@ -23,16 +23,9 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-staging:
-  <<: *default
-  database: rease_staging
-  pool: 5
-  username: root
-  password: 123qwe
-
 production:
   <<: *default
-  database: rease_production
+  database: rease_staging
   pool: 5
   username: root
   password: 123qwe
