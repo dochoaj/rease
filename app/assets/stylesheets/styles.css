@@ -1,10 +1,10 @@
-
 article
 {
 	display: block;
 	margin: 0;
 	padding: 0;
-	width: 75%;
+	margin-left: 3%;
+	width: 65%;
 	float: left;
 
 }
@@ -13,6 +13,7 @@ aside
 	display: block;
 	margin: 0;
 	padding: 0;
+	margin-right: 3%;
 	width: 25%;
 	float: right;
 
@@ -74,75 +75,6 @@ p
 	text-align: justify;
 	margin: 2%;
 }
-.modal-estatuto
-{
-	min-width: 90%;
-}
-#BarraNavegadora
-{
-	font-weight: bold;
-	background-color: #30aaaa;
-}
-#BarraNavegadora > li
-{
-	border-color: #30cccc;
-}
-#BarraNavegadora > li > a:hover
-{
-	background-color: white;
-	border-color: #30bbbb;
-	color: #999;
-}
-#boton, #boton a
-{
-	background: #30aaaa;
-	color: white;
-	margin-bottom: 15px;
-}
-#boton:hover, #boton a:hover, #botonSomos:hover
-{
-	background: #30bbbb;
-	font-weight: bold;
-}
-#botonCerrar
-{
-	margin-top: 2%;
-	margin-right: 4%;
-}
-#botonSomos
-{
-	margin: 30px;
-	background: #30aaaa;
-	color: white;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width: 20%;
-}
-#cabezaTabla
-{
-	background: #30AAAA;
-	border-radius: 5%;
-}
-#comentario
-{
-	width: 40%;
-	min-width: 400px;
-	padding-left: 5%;
-}
-#contenido
-{
-	margin-top: 4%;
-	min-height: 545px;
-}
-#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
-{
-	margin-top: 10%;
-}
-#imgAS
-{
-	width: 100%;
-}
-
 .inicioSesion
 {
 	padding-bottom: 20px;
@@ -150,16 +82,6 @@ p
     margin-left: auto;
     margin-right: auto;
 }
-#linkEstatuto
-{
-	color: #30aaaa;
-	font-style: inherit;
-	text-align: right;
-	text-decoration:none;
-	font-size: 14px;
-	display: block;
-}
-
 .linkInteres, .linkInteres:visited
 {
 	color: #30aaaa;
@@ -170,6 +92,130 @@ p
 	margin: 2%;
 	display: block;
 }
+.modal-estatuto
+{
+	min-width: 90%;
+}
+
+#BarraNavegadora, #boton, #boton a, #botonSomos, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
+{
+	background: #30aaaa;
+	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+#BarraNavegadora
+{
+	-webkit-box-shadow: 3px 2px 5px #666666;
+	-moz-box-shadow: 3px 2px 5px #666666;
+	font-weight: bold;
+	border-color: #30cccc;
+}
+
+#boton, #boton a
+{
+	-webkit-border-radius: 6;
+	-moz-border-radius: 6;
+	border-radius: 6px;
+	-webkit-box-shadow: 3px 2px 5px #666666;
+	-moz-box-shadow: 3px 2px 5px #666666;
+	box-shadow: 3px 2px 5px #666666;
+	color: white;
+	margin-bottom: 15px;
+}
+#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover
+{
+	background: #30bbbb;
+	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -moz-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -ms-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -o-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: linear-gradient(to bottom, #30bbbb, #30cccc);
+	background: #30bbbb;
+	font-weight: bold;
+}
+
+#BarraNavegadora > li > a
+{
+	-webkit-box-shadow: 0px 0px 1px #666666;
+}
+
+#BarraNavegadora > li > a:hover
+{
+	background: #ffffff;
+	background-image: -webkit-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -moz-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -ms-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -o-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: linear-gradient(to bottom, #ffffff, #30bbbb);
+}
+#botonCerrar
+{
+
+	margin-top: 2%;
+	margin-right: 4%;
+}
+#botonSomos
+{
+	-webkit-border-radius: 6;
+	-moz-border-radius: 6;
+	border-radius: 6px;
+	-webkit-box-shadow: 3px 2px 5px #666666;
+	-moz-box-shadow: 3px 2px 5px #666666;
+	box-shadow: 3px 2px 5px #666666;
+	margin: 30px;
+	border: solid #30bbbb 1px;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 20%;
+}
+
+#comentario
+{
+	width: 40%;
+	min-width: 400px;
+	padding-left: 5%;
+}
+#contenido
+{
+	margin-top: 4%;
+}
+#contadorUsuarios
+{
+	float: right !important;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
+{
+	margin-top: 10%;
+}
+}
+#estatutos > li
+{
+	color: black;
+	text-align: justify;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+#imgAS
+{
+	max-width: 90%;
+}
+
+#linkEstatuto
+{
+	color: #30aaaa;
+	font-style: inherit;
+	text-align: right;
+	text-decoration:none;
+	font-size: 14px;
+	display: block;
+}
+
 #indiceEstatuto1, #indiceEstatuto2, #indiceEstatuto3, #indiceEstatuto4, #indiceEstatuto
 {
 	color: #30aaaa;
@@ -203,34 +249,22 @@ p
 	margin: 20px;
 	width: 12%;
 }
-
+#logout
+{
+	float: right !important;
+}
 #pies
 {
+	-webkit-box-shadow: -3px -2px 5px #666666;
+	-moz-box-shadow: -3px -2px 5px #666666;
 	margin-top: 20px;
-	background: #30aaaa;
 	text-align: center;
 	font-weight: bold;
-	font-size: 11px;
-	
+	font-size: 12px;	
 	color: white;
 
 }
-#pies:hover
-{
-	background: #30bbbb;
-}
-#panelRegistro
-{
-	max-width: 90%;
-	min-width: 500px;
-	margin-left: 5%;
-}
-#panelComentario
-{
-	max-width: 80%;
-	min-width: 300px;
-	margin-left: 10%;
-}
+
 #panelAside
 {
 	width: 96%;
@@ -254,31 +288,22 @@ p
 	margin-right: 10%;
 	text-align: center;
 }
-#panelRegistro .panel-heading, #panelComentario .panel-heading, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading
+#panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading
 {
-	background: #30aaaa;
 	color: white;
 	font-weight: bold;
+	font-size: 16px;
+	text-align: left;
 }
-#panelRegistro .panel-footer, #panelComentario .panel-footer, #panelAside .panel-footer, #panelHacemos .panel-footer
+#panelAside .panel-footer, #panelHacemos .panel-footer
 {
 	background: white;
 }
-#panelRegistro .panel-heading:hover, #panelComentario .panel-heading:hover, #panelAside .panel-heading:hover, #panelImg .panel-heading:hover, #panelHacemos .panel-heading:hover
+#panelAside .panel-heading:hover, #panelImg .panel-heading:hover, #panelHacemos .panel-heading:hover
 {
 	background: #30bbbb;
 }
-#estatutos > li
+#tablaSolicitud
 {
 	color: black;
-	text-align: justify;
-	margin-right: 2%;
-	margin-left: 2%;
-}
-
-#contadorUsuarios
-{
-	float: right !important;
-    margin-right: 10px;
-    margin-top: 10px;
 }

@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name)
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name, :category_id)
   end
 
   # GET /resource/sign_up

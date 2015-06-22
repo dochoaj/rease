@@ -1,0 +1,25 @@
+<%accion ||= "Trabajar"%> <!--valor default para la variable Accion-->
+<h1><%= accion %> sección</h1>
+<center>
+	<div style="width: 80%">
+		<%= form_for(@section) do |f| %>
+				<% @section.errors.full_messages.each do |mensaje|%>
+				<div>
+					<p><%= mensaje%></p>
+				</div>
+			<%end%>
+			<div class="field">
+				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+			</div>
+			<div class="field"> 
+				<%= f.text_field :order, :class => 'form-control', :placeholder => 'Orden' %>
+			</div>
+			<div class="field"> 
+				<%= f.text_area :body, :class => 'form-control', :placeholder => 'Cuerpo' %>
+			</div>
+			<div class="field"> 
+				<%= f.submit "Crear", :id => 'boton', :class => 'btn btn-lg btn-block' %>
+			</div>
+		<%end%>
+	</div> 
+</center>

@@ -1,5 +1,5 @@
-class RequestsController < ActionController::Base
-  layout "bootstrap"
+class RequestsController < ApplicationController
+  
   def index
     @requests = Request.all
   end
