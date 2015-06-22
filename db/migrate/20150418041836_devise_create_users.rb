@@ -37,7 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # ExtraAtributes
       t.string :name
       t.string :last_name
-      t.string :autorization_level
+      t.integer :autorization_level
       
       t.timestamps
     end

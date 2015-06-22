@@ -68,11 +68,6 @@
 								<p><%= f.label :password_confirmation, "Confirma tu contraseña" %></p>
 								<%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
 							</div>
-
-							<div class="field">
-								<p><%= f.label :category_id, "category_id" %></p>
-								<%= f.text_field :category_id, :class => 'form-control',autofocus: true  %>
-							</div>
 							<!--%= render "devise/shared/links" %-->
 						</div>
 					</div>
@@ -80,13 +75,31 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h1 class="tituloSesion"> Identificación dentro de la red </h1>
+							
 							<div class="field">
-								<p><%= f.label :category, "Tipo de usuario" %></p>
-								<% Category.all.each do |category| %>
-								<p><%= radio_button_tag "users[category_ids][]", category.id%>
-								<%= category.description %></p>
-								<% end %>  
+								<p><%= f.label :category_id, "Rol de usuario" %></p>
+								<p>
+									<%= f.select(:category_id) do %>
+										<% ([['Administrador', 1], ['Docente', 2], ['Vinculador Social', 3], ['Socio comunitario', 4]]).each do |c| -%>
+										<%= content_tag(:option, c.first, value: c.last) %>
+										<% end %>
+									<% end %>
+								</p>
 							</div>
+							<br><br><br><br><br>
+
+							<div class="field">
+								<p><%= f.label :autorization_level, "Tipo de usuario" %></p>
+								<p>
+									<%= f.select(:autorization_level) do %>
+										<% ([['Activo', 1], ['Adherente', 2]]).each do |c| -%>
+										<%= content_tag(:option, c.first, value: c.last) %>
+										<% end %>
+									<% end %>
+								</p>
+							</div>
+							<br><br><br><br><br>
+
 						
 							<div class="actions">
 								<%= f.submit "Acepto y Enviar Fomulario",:id => 'boton', :class => 'btn btn-lg '%>
