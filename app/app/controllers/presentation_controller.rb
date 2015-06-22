@@ -1,5 +1,6 @@
 class PresentationController < ApplicationController
   def index
+    @secciones = Section.all
   end
 
   def contacto

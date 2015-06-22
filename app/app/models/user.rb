@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :service_offerings
   has_and_belongs_to_many :messages
   has_many :comments
+  has_many :sections
 
 
 

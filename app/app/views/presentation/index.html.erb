@@ -1,25 +1,16 @@
 <h1>Bienvenido a Rease:</h1>
 <h2>El sitio de la Red Nacional de Aprendizaje y Servicio, Chile</h2>
-
-<div id="panelAside" class="panel panel-default">	
-	<div class="panel-heading">
-		Hola Mundo
+<% @secciones.each do |seccion| %>
+	<div id="panelAside" class="panel panel-default">
+		<div class="panel-heading">
+			<%= seccion.title %>
+		</div>
+		<div class="panel-body">
+			<p>Tipo: <%= seccion.order %></p>
+			<p><%= seccion.body %></p>
+		</div>
+		<div class="panel-footer">
+			<p>Fecha de Creacion: <%= seccion.created_at%></p> 
+		</div>
 	</div>
-	<div class="panel-body">
-		<p>NOTICIA O CONTENIDO</p>
-
-		<h2>Primer proyecto en ROR</h2>
-		<p>Find me in app/views/welcome/index.html.erb</p>
-		<% [1,2,3,4].each do |number| %>
-		<p>HOLI: <%= number *3.3 %></p>
-		<%end%>
-
-		<% variable = "Imprimiendo mensaje" %>
-		<p><%= "imprimiendo #{variable}" %></p>
-
-	</div>
-	<div class="panel-footer">
-		<p>PIES</p>
-	</div>
-</div>
-
+<%end%>

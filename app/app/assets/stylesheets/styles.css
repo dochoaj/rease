@@ -237,6 +237,16 @@ p
 	margin: 2%;
 	text-align: center;
 }
+#panelHacemos
+{
+	width: 48%;
+	min-height: 300px;
+	float: right;
+	margin: 1%;
+	text-align: center;
+	display: block;
+	background: white;
+}
 #panelImg
 {
 	width: 80%;
@@ -244,17 +254,17 @@ p
 	margin-right: 10%;
 	text-align: center;
 }
-#panelRegistro .panel-heading, #panelComentario .panel-heading, #panelAside .panel-heading, #panelImg .panel-heading
+#panelRegistro .panel-heading, #panelComentario .panel-heading, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading
 {
 	background: #30aaaa;
 	color: white;
 	font-weight: bold;
 }
-#panelRegistro .panel-footer, #panelComentario .panel-footer, #panelAside .panel-footer
+#panelRegistro .panel-footer, #panelComentario .panel-footer, #panelAside .panel-footer, #panelHacemos .panel-footer
 {
 	background: white;
 }
-#panelRegistro .panel-heading:hover, #panelComentario .panel-heading:hover, #panelAside .panel-heading:hover, #panelImg .panel-heading:hover
+#panelRegistro .panel-heading:hover, #panelComentario .panel-heading:hover, #panelAside .panel-heading:hover, #panelImg .panel-heading:hover, #panelHacemos .panel-heading:hover
 {
 	background: #30bbbb;
 }
