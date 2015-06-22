@@ -53,7 +53,7 @@ h1 /*Títulos de las páginas*/
 h2 /*Campos*/
 {
 	color: #30aaaa;
-	font-style: inherit;	
+	font-style: inherit;
 	font-weight: bold;
 	text-align: left;
 	text-decoration:none;
@@ -186,13 +186,12 @@ p
 #contadorUsuarios
 {
 	float: right !important;
-    margin-right: 10px;
-    margin-top: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
 }
 #ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
 {
 	margin-top: 10%;
-}
 }
 #estatutos > li
 {
@@ -224,12 +223,12 @@ p
 	text-decoration:none;
 	font-size: 14px;
 	margin: 2%;
-	display: block;	
+	display: block;
 }
 
 .linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover, #linkEstatuto:hover
 
-{	
+{
 	color: #30aaaa;
 	font-weight: bold;
 	text-decoration: none;
@@ -260,7 +259,7 @@ p
 	margin-top: 20px;
 	text-align: center;
 	font-weight: bold;
-	font-size: 12px;	
+	font-size: 12px;
 	color: white;
 
 }
