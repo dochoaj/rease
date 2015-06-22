@@ -39,34 +39,7 @@
 <body>
 
     <header>
-
-        <nav>
-            <ul id="BarraNavegadora" class="nav nav-tabs navbar-fixed-top">
-                <li role="presentation" class="<%= 'active' if current_page?(root_path) %>">
-                    <%= link_to "Inicio", root_path %>
-                </li>
-                <li role="presentation" class="<%= 'active' if current_page?(presentation_aprendizaje_path) %>">
-                    <%= link_to "¿Qué es A+S?", presentation_aprendizaje_path %>
-                </li>
-                <li role="presentation" class="<%= 'active' if current_page?(presentation_hacemos_path) %>">
-                    <%= link_to "¿Qué hacemos?", presentation_hacemos_path %>
-                </li>
-                <li role="presentation" class="<%= 'active' if current_page?(presentation_somos_path) %>">
-                    <%= link_to "¿Quiénes somos?", presentation_somos_path %>
-                </li>
-                <li role="presentation" class="<%= 'active' if current_page?(presentation_estatutos_path) %>">
-                    <%= link_to "Estatutos", presentation_estatutos_path %>
-                </li>
-                <li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
-                    <%= link_to "Contacto", root_path %>
-                </li>
-                <li id="contadorUsuarios">
-                    Miembros activos: <%= User.count %>
-                </li>
-
-
-            </ul>
-        </nav>
+    <%= render "parsials/navigation"%>
     </header>
 
     <section id="contenido">
@@ -76,17 +49,9 @@
     </article>
     <aside>
         <%= link_to(image_tag("LogoRease.png", id: "logo"),root_path) %>
-        <div id="panelAside" class="panel panel-default">
-            <div class="panel-heading">
-                Ingreso Intranet
-            </div>
-            <div class="panel-body">
+        
+        <%= render "parsials/intranet"%>
 
-                <% unless user_signed_in? %>
-                    <%= render "devise/sessions/inicio_sesion" %>
-                <%end%>
-            </div>
-        </div>
         <div id="panelAside" class="panel panel-default">
             <div class="panel-heading">
                 Links de interés

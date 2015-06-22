@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root :to => 'requests#index'
+      root :to => 'presentation#index'
     end
     unauthenticated :user do
       root :to => 'presentation#index', as: :unauthenticated_root

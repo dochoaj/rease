@@ -63,9 +63,15 @@
 								<%= f.password_field :password,:class => 'form-control', autocomplete: "off" %>
 							</div>
 
+
 							<div class="field">
 								<p><%= f.label :password_confirmation, "Confirma tu contraseña" %></p>
 								<%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
+							</div>
+
+							<div class="field">
+								<p><%= f.label :category_id, "category_id" %></p>
+								<%= f.text_field :category_id, :class => 'form-control',autofocus: true  %>
 							</div>
 							<!--%= render "devise/shared/links" %-->
 						</div>
@@ -78,14 +84,6 @@
 								<p><%= f.label :category, "Tipo de usuario" %></p>
 								<% Category.all.each do |category| %>
 								<p><%= radio_button_tag "users[category_ids][]", category.id%>
-								<%= category.description %></p>
-								<% end %>  
-							</div>
-
-							<div class="field">
-							<p><%= f.label :category, "Rol de usuario" %></p>
-								<% Category.all.each do |category| %>
-								<p><%= radio_button_tag category.description, category.id%>
 								<%= category.description %></p>
 								<% end %>  
 							</div>
@@ -102,6 +100,7 @@
 	</div>
 </div>
 
+<!--desactivar botones del indice, para que no aparezcan-->
 <script type="text/javascript">
 	document.getElementById('botonCerrar1').style.display='none';	
 	document.getElementById('botonCerrar2').style.display='none';	
