@@ -96,8 +96,11 @@ p
 {
 	min-width: 90%;
 }
-
-#BarraNavegadora, #boton, #boton a, #botonSomos, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
+#aceptar
+{
+	margin-top: 40px;
+}
+#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -125,7 +128,7 @@ p
 	color: white;
 	margin-bottom: 15px;
 }
-#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover
+#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover, #botonHacemos:hover
 {
 	background: #30bbbb;
 	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
@@ -136,7 +139,11 @@ p
 	background: #30bbbb;
 	font-weight: bold;
 }
-
+#botonTipoUsuario
+{
+ vertical-align: middle;
+ float: right;
+}
 #BarraNavegadora > li > a
 {
 	-webkit-box-shadow: 0px 0px 1px #666666;
@@ -156,6 +163,18 @@ p
 
 	margin-top: 2%;
 	margin-right: 4%;
+}
+#botonHacemos
+{
+	-webkit-border-radius: 6;
+	-moz-border-radius: 6;
+	border-radius: 6px;
+	-webkit-box-shadow: 3px 2px 5px #666666;
+	-moz-box-shadow: 3px 2px 5px #666666;
+	box-shadow: 3px 2px 5px #666666;
+	color: white;
+	width: 150px;
+	margin: 3%;
 }
 #botonSomos
 {
@@ -305,8 +324,4 @@ p
 #tablaSolicitud
 {
 	color: black;
-}
-#videos
-{
-	
 }
