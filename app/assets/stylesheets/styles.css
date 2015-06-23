@@ -75,6 +75,22 @@ p
 	text-align: justify;
 	margin: 2%;
 }
+.carousel
+{
+	width: 50%;
+	min-width: 200px;
+	margin-right:auto;
+	margin-left:auto;
+	background: white;
+}
+.carousel-indicators li
+{
+	background: #30aaaa;
+}
+.carousel-indicators .active
+{
+	background: black;
+}
 .inicioSesion
 {
 	padding-bottom: 20px;
@@ -100,9 +116,9 @@ p
 {
 	margin-top: 40px;
 }
-#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
+#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #botonCarousel, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
 {
-	background: #30aaaa;
+	background: #30aaaa !important;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
@@ -264,8 +280,13 @@ p
 
 #logoInstituciones
 {
-	margin: 20px;
-	width: 12%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 80px;
+	margin-top: 20px;
+	height: 115px;
+	max-width: 65%;
+	display: block;
 }
 #logout
 {
@@ -324,4 +345,12 @@ p
 #tablaSolicitud
 {
 	color: black;
+}
+#hola
+{
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	text-align: center;
+	vertical-align: bottom;
 }

@@ -137,20 +137,91 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 
 <h1>Organizaciones adheridas</h1>
 <p> Las organizaciones que actualmente están activas dentro de REASE o alguno de los miembros activos pertenecen a ellas, son: </p>
-<center>
-	<%= link_to(image_tag("instituciones/hdc.png", id: "logoInstituciones"),"http://www.hogardecristo.cl/?show_home=1") %>
-	<%= link_to(image_tag("instituciones/maristas.png", id: "logoInstituciones"),"http://www.maristas.cl/") %>
-	<%= link_to(image_tag("instituciones/PUC.gif", id: "logoInstituciones"),"http://www.uc.cl/") %>
-	<%= link_to(image_tag("instituciones/pucv.png", id: "logoInstituciones"),"http://www.ucv.cl/") %>
-	<%= link_to(image_tag("instituciones/uadolfo.png", id: "logoInstituciones"),"http://www.uai.cl/") %>
-	<%= link_to(image_tag("instituciones/uaustral.png", id: "logoInstituciones"),"https://www.uach.cl/") %>
-	<%= link_to(image_tag("instituciones/uchile.png", id: "logoInstituciones"),"http://www.uchile.cl/") %>
-	<%= link_to(image_tag("instituciones/uconce.gif", id: "logoInstituciones"),"https://www.udec.cl/") %>
-	<%= link_to(image_tag("instituciones/UFRO.gif", id: "logoInstituciones"),"http://www.ufro.cl/") %>
-	<%= link_to(image_tag("instituciones/uhurtado.png", id: "logoInstituciones"),"http://www.uahurtado.cl/") %>
-	<%= link_to(image_tag("instituciones/unab.png", id: "logoInstituciones"),"http://www.unab.cl/") %>
-	<%= link_to(image_tag("instituciones/usach.png", id: "logoInstituciones"),"http://www.usach.cl/") %>
-	<%= link_to(image_tag("instituciones/usilvahenriquez.png", id: "logoInstituciones"),"http://ww3.ucsh.cl/") %>
-	<%= link_to(image_tag("instituciones/utemuco.png", id: "logoInstituciones"),"http://www.uct.cl/") %>
-	<%= link_to(image_tag("instituciones/ucentral.png", id: "logoInstituciones"),"http://www.ucentral.cl/") %>
-</center>
+
+<li data-target="#myCarousel" data-slide-to="5"></li>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	<li data-target="#myCarousel" data-slide-to="1"></li>
+	<li data-target="#myCarousel" data-slide-to="2"></li>
+	<li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+	<li data-target="#myCarousel" data-slide-to="5"></li>
+	<li data-target="#myCarousel" data-slide-to="6"></li>
+	<li data-target="#myCarousel" data-slide-to="7"></li>
+	<li data-target="#myCarousel" data-slide-to="8"></li>
+	<li data-target="#myCarousel" data-slide-to="9"></li>
+	<li data-target="#myCarousel" data-slide-to="10"></li>
+	<li data-target="#myCarousel" data-slide-to="11"></li>
+	<li data-target="#myCarousel" data-slide-to="12"></li>
+	<li data-target="#myCarousel" data-slide-to="13"></li>
+	<li data-target="#myCarousel" data-slide-to="14"></li>
+  </ol>
+
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  	<div class="item active">
+      <%= link_to(image_tag("instituciones/hdc.png", id: "logoInstituciones"),"http://www.google.com")%>
+    </div>
+
+  	<div class="item">
+      <%=image_tag("instituciones/maristas.png", id: "logoInstituciones")%>
+    </div>
+
+    <div class="item">
+    	<%=image_tag("instituciones/PUC.gif", id: "logoInstituciones")%>
+    </div>
+
+	<div class="item">
+		<%=image_tag("instituciones/pucv.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/uadolfo.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/uhurtado.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/unab.png", id: "logoInstituciones")%>
+	</div>
+
+    <div class="item">
+		<%=image_tag("instituciones/uaustral.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/usilvahenriquez.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/utemuco.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/ucentral.jpg", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/uchile.png", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/uconce.gif", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/UFRO.gif", id: "logoInstituciones")%>
+	</div>
+
+	<div class="item">
+		<%=image_tag("instituciones/usach.png", id: "logoInstituciones")%>
+	</div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" id="botonCarousel" data-slide="prev"> << </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" id="botonCarousel" data-slide="next"> >> </a>
+</div>
