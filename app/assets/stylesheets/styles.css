@@ -96,7 +96,10 @@ p
 {
 	min-width: 90%;
 }
-
+#aceptar
+{
+	margin-top: 40px;
+}
 #BarraNavegadora, #boton, #boton a, #botonSomos, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
 {
 	background: #30aaaa;
@@ -136,7 +139,11 @@ p
 	background: #30bbbb;
 	font-weight: bold;
 }
-
+#botonTipoUsuario
+{
+ vertical-align: middle;
+ float: right;
+}
 #BarraNavegadora > li > a
 {
 	-webkit-box-shadow: 0px 0px 1px #666666;
