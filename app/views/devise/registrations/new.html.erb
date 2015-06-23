@@ -1,104 +1,107 @@
 <p><%= devise_error_messages! %></p>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12 col-md-6 col-md-offset-3">
-		<!--h1 class="text-center login-title">Ingrese sus datos para conectarse a REASE</h1-->
-				<%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: {class: 'form'}) do |f| %>
+<!--h1 class="text-center login-title">Ingrese sus datos para conectarse a REASE</h1-->
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: {class: 'form'}) do |f| %>
 
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h1 class="tituloSesion"> Consentimiento para ser evaluado </h1>
-							<div>
-								<p>Antes de registrarse es necesario que sepa los términos y condiciones que existen para pertenecer y mantenerse dentro de ésta red.
-									<a id ="linkEstatuto" data-toggle="modal" data-target = "#encuentro" >
-									 	>> Leer estatuto
-									</a>
- 								</p> 
-								<div class="modal fade" id="encuentro" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
-									<div class="modal-dialog modal-lg modal-estatuto">
-										<div class="modal-content">
-											<div class="modalbody">
-												<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">
-												&times;
-												</button>
-												<%= render "presentation/estatutos" %>
-											</div>
-										</div>
-									</div>
-								</div>
-								<p>Nuestro enfoque es el servicio, por lo que es necesario mantener un estándar dentro de la Red para que sus participantes cumplan con el objetivo. </p>
-								<p>Es por esto que se le pide a cada nuevo miembro de la red, dé su concentimiento para que pueda ser evaluado en las actividades que realice a nombre de REASE. </p>
-								<p>Además, así como se le evalúa a usted, usted deberá evaluar a otros miembros.
-								De no aprobar éste requisito, usted no podrá registarse en la Red.</p>
+	<div class="panel panel-default" id="panelAside">
+		<div class="panel-heading">Consentimiento para ser evaluado</div>
+		<div class="panel-body">
+			<div>
+				<p>Antes de registrarse es necesario que sepa los términos y condiciones que existen para pertenecer y mantenerse dentro de ésta red.
+					<a id ="linkEstatuto" data-toggle="modal" data-target = "#encuentro" >
+					 	>> Leer estatuto
+					</a>
+					</p> 
+				<div class="modal fade" id="encuentro" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-estatuto">
+						<div class="modal-content">
+							<div class="modalbody">
+								<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">
+								&times;
+								</button>
+								<%= render "presentation/estatutos" %>
 							</div>
 						</div>
 					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h1 class="tituloSesion"> Datos personales </h1>
-
-							
-
-							<div class="field">
-								<p><%= f.label :name, "Nombres" %></p>
-								<%= f.text_field :name, :class => 'form-control',autofocus: true  %>
-							</div>
-
-							<div class="field">
-								<p><%= f.label :last_name, "Apellidos" %></p>
-								<%= f.text_field :last_name, :class => 'form-control',autofocus: true  %>
-							</div>
-
-							<div class="field">
-								<p><%= f.label :email, "Correo electrónico" %></p>
-								<%= f.email_field :email, :class => 'form-control',autofocus: true  %>
-							</div>
-
-							<div class="field">
-								<p><%= f.label :password, "Crea una contraseña" %>
-								<% if @validatable %>
-								<em>(<%= @minimum_password_length %> caracteres mínimo)</em>
-								<% end %></p>
-								<%= f.password_field :password,:class => 'form-control', autocomplete: "off" %>
-							</div>
-
-
-							<div class="field">
-								<p><%= f.label :password_confirmation, "Confirma tu contraseña" %></p>
-								<%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
-							</div>
-
-							<div class="field">
-								<p><%= f.label :category_id, "category_id" %></p>
-								<%= f.text_field :category_id, :class => 'form-control',autofocus: true  %>
-							</div>
-							<!--%= render "devise/shared/links" %-->
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h1 class="tituloSesion"> Identificación dentro de la red </h1>
-							<div class="field">
-								<p><%= f.label :category, "Tipo de usuario" %></p>
-								<% Category.all.each do |category| %>
-								<p><%= radio_button_tag "users[category_ids][]", category.id%>
-								<%= category.description %></p>
-								<% end %>  
-							</div>
-						
-							<div class="actions">
-								<%= f.submit "Acepto y Enviar Fomulario",:id => 'boton', :class => 'btn btn-lg '%>
-								<%= link_to "Salir", root_path,:id => 'boton', :class => 'btn btn-lg ' %>
-							</div>
-
-						</div>
-					</div>					
-				<% end %>
+				</div>
+				<p>Nuestro enfoque es el servicio, por lo que es necesario mantener un estándar dentro de la Red para que sus participantes cumplan con el objetivo. </p>
+				<p>Es por esto que se le pide a cada nuevo miembro de la red, dé su concentimiento para que pueda ser evaluado en las actividades que realice a nombre de REASE. </p>
+				<p>Además, así como se le evalúa a usted, usted deberá evaluar a otros miembros.
+				De no aprobar éste requisito, usted no podrá registarse en la Red.</p>
+			</div>
 		</div>
 	</div>
-</div>
+
+	<div class="panel panel-default" id="panelAside">
+		<div class="panel-heading">Datos personales</div>
+		<div class="panel-body">
+		
+
+			<div class="field">
+				<p><%= f.label :name, "Nombres" %></p>
+				<%= f.text_field :name, :class => 'form-control',autofocus: true  %>
+			</div>
+
+			<div class="field">
+				<p><%= f.label :last_name, "Apellidos" %></p>
+				<%= f.text_field :last_name, :class => 'form-control',autofocus: true  %>
+			</div>
+
+			<div class="field">
+				<p><%= f.label :email, "Correo electrónico" %></p>
+				<%= f.email_field :email, :class => 'form-control',autofocus: true  %>
+			</div>
+
+			<div class="field">
+				<p><%= f.label :password, "Crea una contraseña" %>
+				<% if @validatable %>
+				<em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+				<% end %></p>
+				<%= f.password_field :password,:class => 'form-control', autocomplete: "off" %>
+			</div>
+
+
+			<div class="field">
+				<p><%= f.label :password_confirmation, "Confirma tu contraseña" %></p>
+				<%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
+			</div>
+
+
+			<!--%= render "devise/shared/links" %-->
+		</div>
+	</div>
+
+	<div class="panel panel-default" id="panelAside">
+		<div class="panel-heading">Identificación dentro de la red </div>
+		<div class="panel-body">
+
+			<div class="field">
+				<p><%= f.label :category_id, "Rol de usuario" %>
+				<button type="button" class="btn btn-default" id:"botonTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="botonRolUsuario"> ? </button></p>
+
+				<%= f.select(:category_id, [['Docente', 2],['Vinculador Social', 3],['Socio comunitario', 4]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
+			</div>
+
+
+			<div class="field">
+				<p><%= f.label :autorization_level, "Tipo de usuario"%>
+
+				<button type="button" class="btn btn-default" id:"botonTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="botonTipoUsuario"> ? </button>
+
+				</p>
+
+				<%= f.select(:autorization_level,[['Activo', 1], ['Adherente', 2]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
+
+
+			</div>
+		
+			<div class="actions" id="aceptar">
+				<%= f.submit "Acepto y Enviar Fomulario",:id => 'boton', :class => 'btn btn-lg '%>
+				<%= link_to "Salir", root_path,:id => 'boton', :class => 'btn btn-lg ' %>
+			</div>
+
+		</div>
+	</div>					
+<% end %>
 
 <!--desactivar botones del indice, para que no aparezcan-->
 <script type="text/javascript">
@@ -106,4 +109,23 @@
 	document.getElementById('botonCerrar2').style.display='none';	
 	document.getElementById('botonCerrar3').style.display='none';	
 	document.getElementById('botonCerrar4').style.display='none';	
+
+$(function () {
+  $('[data-toggle="botonTipoUsuario"]').popover(
+  {
+  	html: 'true', 
+    content: '<p><b>Activo:</b> Recibirá bimensualmente las actas de reuniones, invitaciones a todos los eventos y actividades de la Red y tendrá que participar en las reuniones de ampliadas y comisiones de trabajo de REASE.</p><p><b>Adherente:</b> Recibirá semestralmente los avances de la Red e invitaciones a eventos masivos, así como invitaciones a eventos masivos de REASE.</p>'
+  }
+  	)
+})
+$(function () {
+  $('[data-toggle="botonRolUsuario"]').popover(
+  {
+  	html: 'true', 
+    content: '<p><b>Docente:</b> Es quien imparte la asignatura y que está cargo del curso. Realiza la asignatura y sus evaluaciones correspondiente, mediante la actividad de A+S.</p><p><b>Socio comunitario:</b> Representante de la comunidad que se beneficia de esta actividad. También tiene labores en el proceso de A+S, como cumplir con los acuerdos con el docente.</p><p><b>Vinculador social: </b> Actúa como intermediario entre el docente y el socio comunitario para realizar la actividad de A+S.</p>'
+  }
+  	)
+})
+
 </script>
+
