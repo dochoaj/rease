@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622173536) do
+ActiveRecord::Schema.define(version: 20150623001055) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -135,12 +135,18 @@ ActiveRecord::Schema.define(version: 20150622173536) do
     t.string   "unconfirmed_email",      limit: 255
     t.string   "name",                   limit: 255
     t.string   "last_name",              limit: 255
-    t.string   "autorization_level",     limit: 255
+    t.integer  "autorization_level",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "videos", force: :cascade do |t|
+    t.string  "title",  limit: 255
+    t.string  "url",    limit: 255
+    t.integer "public", limit: 4
+  end
 
 end
