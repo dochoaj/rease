@@ -6162,8 +6162,7 @@ button.close {
 }
 .carousel-control {
  &.left, &.right {
- background-image: none;
- .reset-filter(); // reset IE gradient filters
+   background-image: none;
  }
 }
 
