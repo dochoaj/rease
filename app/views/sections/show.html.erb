@@ -4,7 +4,7 @@
 	</div>
 	<div class="panel-body">
 		<h2>Tipo: <%= @section.order %></h2>
-		<p>	<%= @section.body %></p>
+		<p>	<%=raw @section.body %></p>
 	</div>
 	<div class="panel-footer">
 		<p>Fecha de Creacion: <%= @section.created_at%></p>			

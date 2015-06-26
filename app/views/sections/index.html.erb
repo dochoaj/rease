@@ -1,20 +1,4 @@
-<%= link_to "Nueva seccion", new_section_path, class:"btn btn-block btn-lg",id:"boton"%>
-<% @sections.each do |seccion| %>
-	<div id="panelAside" class="panel panel-default">
-		<div class="panel-heading">
-			<%=	link_to seccion.title, seccion %> 
-			(id: <%= seccion.id%>)
-		</div>
-		<div class="panel-body">
-			<h2>Tipo: <%= seccion.order %></h2>
-			<p>	<%=seccion.body %></p>
-		</div>
-		<div class="panel-footer">
-			<p>Fecha de Creacion: <%= seccion.created_at%></p>
-
-			 <%= link_to "Eliminar",seccion, method: :delete,class:"btn",id:"boton"%>
-
-			 <%= link_to "Editar", edit_section_path(seccion),class:"btn",id:"boton"%>
-		</div>
-	</div>
-<%end%>
+<%= link_to "Editar ¿Qué es A+S?", sections_aprendizaje_path, class:"btn btn-block btn-lg",id:"boton"%>
+<%= link_to "Editar ¿Qué hacemos?", sections_hacemos_path, class:"btn btn-block btn-lg",id:"boton"%>
+<%= link_to "Editar ¿Quienes somos?", sections_somos_path, class:"btn btn-block btn-lg",id:"boton"%>
+<%= link_to "Editar Estatutos", sections_estatutos_path, class:"btn btn-block btn-lg",id:"boton"%>

@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get 'presentation/aprendizaje'
   get 'presentation/estatutos'
 
+  get 'sections/somos'
+  get 'sections/hacemos'
+  get 'sections/aprendizaje'
+  get 'sections/estatutos'
+
+
   resources :sections
  # CRUD
  # get "/articles" index
