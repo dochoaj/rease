@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623001055) do
+ActiveRecord::Schema.define(version: 20150701025410) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -39,10 +39,14 @@ ActiveRecord::Schema.define(version: 20150623001055) do
     t.integer  "user_id",     limit: 4
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
-    t.text     "adress",      limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "address",     limit: 65535
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "experiences", force: :cascade do |t|
     t.string   "tittle",              limit: 255
@@ -100,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150623001055) do
     t.string   "title",      limit: 255
     t.string   "order",      limit: 255
     t.text     "body",       limit: 65535
+    t.string   "priority",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -143,10 +148,5 @@ ActiveRecord::Schema.define(version: 20150623001055) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "videos", force: :cascade do |t|
-    t.string  "title",  limit: 255
-    t.string  "url",    limit: 255
-    t.integer "public", limit: 4
-  end
-
+  add_foreign_key "events", "users"
 end

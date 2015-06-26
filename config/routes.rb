@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'presentation/index'
   get 'presentation/contacto'
   get 'presentation/somos'
@@ -10,9 +11,10 @@ Rails.application.routes.draw do
   get 'sections/hacemos'
   get 'sections/aprendizaje'
   get 'sections/estatutos'
-
+  get 'sections/novedades'
 
   resources :sections
+  resources :events
  # CRUD
  # get "/articles" index
  # post "/articles" create

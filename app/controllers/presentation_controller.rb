@@ -1,5 +1,6 @@
 class PresentationController < ApplicationController
 	add_breadcrumb "Inicio", :root_path
+	@events = Event.all
 	def index
 		@secciones = Section.all
 	end
@@ -19,10 +20,12 @@ class PresentationController < ApplicationController
 	end
 
 	def aprendizaje
-	add_breadcrumb "¿Qué es A+S?", :presentation_aprendizaje_path
+		add_breadcrumb "¿Qué es A+S?", :presentation_aprendizaje_path
+		@secciones = Section.all
 	end
 
 	def estatutos
-	add_breadcrumb "Estatutos", :presentation_estatutos_path
+		add_breadcrumb "Estatutos", :presentation_estatutos_path
+		@secciones = Section.all
 	end
 end

@@ -4,6 +4,7 @@ class CreateSections < ActiveRecord::Migration
 			t.string :title
 			t.string :order
 			t.text :body
+			t.string :priority
 			t.timestamps
 		end
 	end

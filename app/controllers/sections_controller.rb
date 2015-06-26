@@ -6,24 +6,34 @@ class SectionsController < ApplicationController
 		@sections = Section.all
 	end
 
+	def novedades
+		add_breadcrumb "Novedades", :sections_novedades_path
+		@sections = Section.all
+		@section = Section.new
+	end
+
 	def somos
 		add_breadcrumb "¿Quienes Somos?", :sections_somos_path
 		@sections = Section.all
+		@section = Section.new
 	end
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
 		@sections = Section.all
+		@section = Section.new
 	end
 
 	def estatutos
 		add_breadcrumb "Estatutos", :sections_estatutos_path
 		@sections = Section.all
+		@section = Section.new
 	end
 
 	def aprendizaje
 		add_breadcrumb "Aprendizaje y Servicio", :sections_aprendizaje_path
 		@sections = Section.all
+		@section = Section.new
 	end
 
 	def new
@@ -67,7 +77,7 @@ class SectionsController < ApplicationController
 	private #acciones privadas del controlador
 
 	def section_params
-		params.require(:section).permit(:title,:body,:order)
+		params.require(:section).permit(:title,:body,:order,:priority)
 	end
 end
 # get "/sections" index

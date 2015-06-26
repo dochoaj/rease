@@ -1,7 +1,7 @@
-<h1>Secciones de <%= accion %></h1>
+<% orden %>
 <% eliminar %>
 <% @sections.each do |seccion| %>
-	<%if seccion.order == accion%>
+	<%if seccion.order == orden%>
 		<div id="panelAside" class="panel panel-default">
 			<div class="panel-heading">
 				<%=	link_to seccion.title, seccion %> 

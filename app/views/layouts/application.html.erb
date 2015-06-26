@@ -56,6 +56,15 @@
 
 			<%= render "partials/intranet"%>
 
+			
+			<div id="panelAside" class="panel panel-default">
+				<div class="panel-heading">
+					<%= link_to "Calendario de eventos", events_path, :id => "calendarPanelTitle"%>
+				</div>
+				<div class="panel-body" id = "calendarAside">
+				</div>
+			</div>
+
 			<div id="panelAside" class="panel panel-default">
 				<div class="panel-heading">
 					Links de interés
@@ -78,6 +87,15 @@
 			Contacto: reasechile@gmail.com
 		</div>
 	</footer>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#calendarAside').fullCalendar({
+			events: '/events.json'
+
+		})
+	});
+</script>
 
 	</body>
 </html>

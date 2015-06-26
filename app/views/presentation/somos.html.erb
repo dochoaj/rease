@@ -3,17 +3,20 @@
 La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiantes, universidades, colegios, agrupaciones civiles y en general a todas las personas y organizaciones en Chile que estén interesadas en esta metodología.
 </p>
 <center>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos1()">Comisión Ejecutiva</button> 
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos2()">Comunicaciones</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos3()">Sistematización</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos4()">Talleres</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos5()">Encuentro</button>
+	<% @secciones.each do |seccion| %>
+		<%if seccion.order == 'Somos'%>
+		<% div_id = seccion.id -%>
+		<button id="botonSomos" class = "btn btn-lg" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
+		<%end%>
+	<%end%>
 </center>
+<p>
+
 
 <% @secciones.each do |seccion| %>
 	<%if seccion.order == 'Somos'%>
-	<% div_id = seccion.title -%>
-	<div id="<%= div_id -%>" >
+	<% titulo_id = seccion.id -%>
+	<div id="titulo<%= titulo_id -%>" >
 		<div id="panelAside" class="panel panel-default">
 			<div class="panel-heading">
 				<%=	seccion.title %> 
@@ -25,6 +28,50 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 	</div>
 	<%end%>
 <%end%>
+
+<script type="text/javascript">
+<% contador = 1; %>
+	<% @secciones.each do |seccion| %>
+		<%if seccion.order == 'Somos'%>
+			<% titulo_id = seccion.id -%>
+			<% if contador==1 %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+				<% contador += 1; %>
+			<% else %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='none';
+			<%end%>
+		<%end%>
+	<%end%>
+</script>
+
+<script type="text/javascript">
+
+<% contador1 = 1; %>
+<% @secciones.each do |seccion| %>
+	<%if seccion.order == 'Somos'%>
+		<% div_id = seccion.id -%>
+		function funcion<%= div_id -%>(){
+		<% contador2 = 1; %>
+		<% @secciones.each do |seccion_in| %>
+			<%if seccion_in.order == 'Somos'%>
+				<% titulo_id = seccion_in.id -%>
+				<% if contador1==contador2 %>
+					document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+				<% else %>
+					document.getElementById('titulo<%= titulo_id -%>').style.display='none';
+				<%end%>
+				<% contador2 += 1; %>
+			<%end%>
+		<%end%>
+		<% contador1 += 1; %>
+		}			
+	<%end%>
+<%end%>
+</script>
+		
+
+
+
 
 <h1>Organizaciones adheridas</h1>
 <p> Las organizaciones que actualmente están activas dentro de REASE o alguno de los miembros activos pertenecen a ellas, son: </p>
