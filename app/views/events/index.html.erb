@@ -10,9 +10,11 @@
 	$(document).ready(function() {
 		$('#calendar').fullCalendar({
 			events: '/events.json'
-
 		})
 	});
 </script>
 
-<%= link_to 'Nuevo evento', new_event_path , :id => "boton", :class => "btn btn-lg"%>
+<% if user_signed_in? %>
+	<%= link_to 'Nuevo evento', new_event_path , :id => "boton", :class => "btn btn-lg"%>
+<% end %>
+

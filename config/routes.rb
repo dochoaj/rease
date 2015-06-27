@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :institutions
   get 'presentation/index'
   get 'presentation/contacto'
   get 'presentation/somos'

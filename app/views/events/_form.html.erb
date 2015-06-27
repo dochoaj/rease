@@ -1,3 +1,4 @@
+<%orden ||= "Crear"%>
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -14,38 +15,41 @@
 <div class="panel panel-default" id="panelAside">
     <div class="panel-heading">Datos del evento</div>
     <div class="panel-body">
-    
-	<div class="field">
-		<p><%= f.label :user_id, "id usuario" %></p>
-		<%= f.text_field :user_id, :class => 'form-control',autofocus: true %>
-	</div>
 
-	<div class="field">
-		<p><%= f.label :title, "Nombre del evento" %></p>
-		<%= f.text_field :title, :class => 'form-control',autofocus: true %>
-	</div>
+		<div class="field">
+			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true %>
+		</div>
+		<br>
+		<div class="field">
+			<%= f.text_area :description, :placeholder=> "Escribi aquí.", :id=>"eg-basic" %>
 
-	<div class="field">
-		<p><%= f.label :description, "Descripción" %></p>
-		<%= f.text_area :description, :class => 'form-control',autofocus: true   %>
-	</div>
+		</div>
+		<br>
+		<div class="field">
+			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true   %>
+		</div>
 
-	<div class="field">
-		<p><%= f.label :address, "Lugar o dirección" %></p>
-		<%= f.text_area :address, :class => 'form-control',autofocus: true   %>
-	</div>
+		<div class="field">
+			<p><%= f.label :start_time, "Fecha y hora de inicio" %></p>
+			<%= f.datetime_select :start_time %>
+		</div>
 
-	<div class="field">
-		<p><%= f.label :start_time, "Fecha y hora de inicio" %></p>
-		<%= f.datetime_select :start_time %>
+		<div class="field">
+			<p><%= f.label :end_time, "Fecha y hora de término" %></p>
+			<%= f.datetime_select :end_time %>
+		</div>
+		<br>
 	</div>
+</div>
+	<%= f.submit orden, :id => 'boton', :class => 'btn btn-lg' %>
 
-	<div class="field">
-		<p><%= f.label :end_time, "Fecha y hora de término" %></p>
-		<%= f.datetime_select :end_time %>
-	</div>
-	<br>
-	<div class="actions">
-	<%= f.submit "Crear", :id => 'boton', :class => 'btn btn-lg btn-block' %>
-	</div>
 <% end %>
+
+
+
+<script>
+	 $(function() {$('textarea#eg-basic').editable({
+      inlineMode: false,
+    })
+  });
+</script>

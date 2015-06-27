@@ -1,33 +1,33 @@
-<h1> Mostrar evento </h1>
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		<%= @event.title %>
+	</div>
+	
+	<div class="panel-body">
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+		<h1>Descripción:</h1>
+		 <p><%=raw @event.description %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @event.address %>
-</p>
+		<h1> Información </h1>
+		<p><b>Dirección: </b><%= @event.address %></p>
+		
+		<p><b>Fecha y hora de inicio: </b><%= @event.start_time.day %>/<%= @event.start_time.month %>/<%= @event.start_time.year %> <%= @event.start_time.hour%>:<%= @event.start_time.min%></p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
+		<p><b>Fecha y hora de término: </b><%= @event.end_time.day %>/<%= @event.end_time.month %>/<%= @event.end_time.year %> <%= @event.end_time.hour%>:<%= @event.end_time.min%></p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
+	</div>
+	<div class="panel-footer">
+		<p><b>Creado por:</b>
+	  	<%= @event.user.name %> <%= @event.user.last_name %></p>
+	</div>
+</div>
 
-<%= link_to 'Editar', edit_event_path(@event) %> |
-<%= link_to 'Volver', events_path %>
+<% if user_signed_in? %>
+	<% if @event.user.id == current_user.id %>
+		<%= link_to 'Editar ', edit_event_path(@event), :id => "boton", :class => "btn btn-lg" %>
+	<% end %>
+<% end %>
+	
+	<%= link_to 'Volver', events_path, :id => "boton", :class => "btn btn-lg" %>
+	<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' } %>

@@ -12,6 +12,7 @@ class PresentationController < ApplicationController
 	def somos
 		add_breadcrumb "¿Quiénes Somos?", :presentation_somos_path 
 		@secciones = Section.all
+		@instituciones = Institution.all
 	end
 
 	def hacemos

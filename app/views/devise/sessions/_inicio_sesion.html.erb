@@ -1,17 +1,14 @@
-      <div>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
-            <%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo electrónico' %>
-            <%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña'%>
-            <%= f.submit "Entrar", :id => 'boton', :class => 'btn btn-lg btn-block' %>
-            <label class="checkbox pull-left">
-              <p>
-              <%= f.check_box :remember_me %>
-               Recordarme </p>
-            </label>
-            <!-- <a href="#" class="pull-right need-help">Need help? </a> -->
-            <span class="clearfix"></span>
-             <%= render "devise/shared/links" %>
+<div>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+		
+		<%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo electrónico' %>
+		
+		<%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña'%>
+		
+		<%= f.submit "Ingresar", :id => 'boton', :class => 'btn btn-block' %>
+		
+		<p id="styleSession"> <%= f.check_box :remember_me %> Recordarme </p>
+		<%= render "devise/shared/links" %>
 
-          <% end %>
-      </div>
-      <!-- <a href="#" class="text-center new-account">Create an account </a> -->
+	<% end %>
+</div>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<% @institutions.each do |institution| %>
+  <%cuerpo = institution.id -%>
+  <div class="panel panel-default" id="panelInstitution"  data-toggle="collapse" data-target="#cuerpo<%=cuerpo%>">
+    <div class="panel-heading">
+      <%= institution.name %>      
+    </div>
+    <div class="collapse" id="cuerpo<%=cuerpo%>">
+      <div class="panel-body">
+        <h2>Página Web:</h2> <%= institution.web %>
+        <h2>Logo institucional</h2> <%= image_tag institution.logo.url(:mini) %>
+      </div>
+      <div class="panel-footer">
+          <%= link_to 'Editar', edit_institution_path(institution), :id=>"boton", :class=>"btn btn-lg btn-block" %>
+          <%= link_to 'Eliminar', institution, method: :delete, data: { confirm: '¿Seguro que desea eliminar la institución?' } , :id=>"boton", :class=>"btn btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<p><%= link_to 'Agregar institution', new_institution_path, :id=>"botonAdmin", :class=>"btn btn-lg" %></p>

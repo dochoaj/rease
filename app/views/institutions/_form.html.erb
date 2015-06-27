@@ -1,0 +1,32 @@
+<%orden ||= "crear"%>
+<%= form_for(@institution) do |f| %>
+	<% if @institution.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+			<ul>
+			<% @institution.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		<%=orden%> nueva institución
+	</div>
+	<div class="panel-body">
+		<div class="field">
+			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre' %>
+		</div>
+		<div class="field">
+			<%= f.text_field :web,  :class => 'form-control', :placeholder => 'Página web' %>
+		</div>
+		<div class="field">
+			<%= f.file_field :logo %>
+		</div>
+	</div>	
+</div>
+	<%= f.submit "Agregar", :id=>"boton", :class=>"btn btn-lg" %>
+<% end %>

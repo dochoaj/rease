@@ -1,6 +1,5 @@
 <h1>Editar Evento</h1>
 
-<%= render 'form' %>
+<%= render 'form', {orden: "Actualizar"}%>
 
-<%= link_to 'Ver evento', @event %> |
-<%= link_to 'Volver', events_path %>
+<%= link_to 'Volver', events_path, :id => "boton", :class => "btn btn-lg" %>

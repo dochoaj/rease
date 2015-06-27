@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701025410) do
+ActiveRecord::Schema.define(version: 20150701025412) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -59,7 +59,14 @@ ActiveRecord::Schema.define(version: 20150701025410) do
   end
 
   create_table "institutions", force: :cascade do |t|
-    t.text "description", limit: 65535
+    t.string   "name",              limit: 255
+    t.text     "web",               limit: 65535
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "logo_file_name",    limit: 255
+    t.string   "logo_content_type", limit: 255
+    t.integer  "logo_file_size",    limit: 4
+    t.datetime "logo_updated_at"
   end
 
   create_table "meetings", force: :cascade do |t|

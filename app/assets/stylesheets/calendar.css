@@ -1,20 +1,6 @@
-#calendar th, #calendarAside th
-{
-	background: #30aaaa;
-	color: white;
-}
 .fc-event
 {
 	background: #30bbbb;
-}
-#calendarAside .fc-event
-{
-	background: #30bbbb;
-	height: 10px;
-}
-#calendarAside .fc-event-title, #calendarAside .fc-event-time
-{
-	color:transparent;
 }
 .fc-event-title, .fc-event-time
 {
@@ -46,6 +32,31 @@
 	background-image: -ms-linear-gradient(top, #30bbbb, #30cccc);
 	background-image: -o-linear-gradient(top, #30bbbb, #30cccc);
 	background-image: linear-gradient(to bottom, #30bbbb, #30cccc);
+}
+#calendarAside .fc-button-today
+{
+
+	background: none;
+	background-image: none;
+	color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+
+#calendar th, #calendarAside th
+{
+	background: #30aaaa;
+	color: white;
+}
+#calendarAside .fc-event
+{
+	background: #30bbbb;
+	height: 10px;
+}
+#calendarAside .fc-event-title, #calendarAside .fc-event-time
+{
+	color:transparent;
 }
 #calendarPanelTitle, #calendarPanelTitle:hover, #calendarPanelTitle:visited
 {
