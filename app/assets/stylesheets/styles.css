@@ -179,14 +179,8 @@ p.navbar-text.navbar-right
 }
 
 
-#aceptar /*boton de aceptar del registro*/
-{
-	margin-top: 40px;
-}
-
-
-/*colores para los botones y barras*/
-#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #botonAdmin, #botonCarousel, #panelAside .panel-heading, #pies, #panelInstitution .panel-heading
+/*colores para barras y paneles*/
+#BarraNavegadora, #panelAside .panel-heading, #pies, #panelInstitution .panel-heading
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -203,18 +197,7 @@ p.navbar-text.navbar-right
 	border-color: #30cccc;
 }
 
-#boton, #boton a
-{
-	-webkit-border-radius: 6;
-	-moz-border-radius: 6;
-	border-radius: 6px;
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	box-shadow: 3px 2px 5px #666666;
-	color: white;
-	margin-bottom: 15px;
-}
-#boton:hover, #boton a:hover,#botonAdmin:hover , #botonSomos:hover, #pies:hover, #botonHacemos:hover, #panelAside .panel-heading:hover, #panelInstitution .panel-heading:hover
+#pies:hover, #panelAside .panel-heading:hover, #panelInstitution .panel-heading:hover
 {
 	background: #30bbbb;
 	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
@@ -226,38 +209,6 @@ p.navbar-text.navbar-right
 	font-weight: bold;
 }
 
-
-#botonTipoUsuario
-{
- vertical-align: middle;
- float: right;
-}
-
-#botonCerrar
-{
-	margin-top: 2%;
-	margin-right: 4%;
-}
-#botonHacemos, #botonSomos, #botonAdmin
-{
-	-webkit-border-radius: 6;
-	-moz-border-radius: 6;
-	border-radius: 6px;
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	box-shadow: 3px 2px 5px #666666;
-	color: white;
-	margin-left: 3%;
-	margin-right: 3%;
-	margin-top: 1%;
-	text-align: center;
-	min-width: 200px;
-}
-
-#botonAdmin
-{
-	width: 350px;
-}
 /* para el panel de dejar un comentario como no registrado
 #comentario
 {
