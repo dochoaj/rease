@@ -11,15 +11,20 @@
 			<div class="field">
 				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
 			</div>
-			<div class="field"> 
-				<%= f.text_field :order, :class => 'form-control', :placeholder => 'Orden' %>
+			<div class="field">
+				<%= f.select(:order, [['AprendizajeServicio', 'AprendizajeServicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']], {:include_blank => '— Seleccione una sección —' }, { :class => 'form-control', :required => true }) %>
 			</div>
+
 			<div class="field"> 
-				<%= f.text_area :body, :class => 'form-control', :placeholder => 'Cuerpo' %>
+				<p><%= f.text_area :body, :class => 'form-control', :placeholder => 'Cuerpo', :id=>"eg-textarea" %></p>
 			</div>
+
 			<div class="field"> 
 				<%= f.submit "Crear", :id => 'boton', :class => 'btn btn-lg btn-block' %>
 			</div>
 		<%end%>
 	</div> 
 </center>
+<script>
+	 $(function() {$('textarea#eg-textarea').editable({inlineMode: false})});
+</script>

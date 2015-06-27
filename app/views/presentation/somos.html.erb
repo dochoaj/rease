@@ -10,64 +10,21 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos5()">Encuentro</button>
 </center>
 
-<div id="comision">
-	<div class="panel panel-default" id="panelAside">
-		<div class="panel-heading">
-			Comisión Ejecutiva
-		</div>
-		<div class="panel-body">
-			<p>Esta comisión está enfocada en hacer un seguimiento al trabajo de las demás comisiones y coordinar el trabajo de ellas, para ello cada miembro de esta comisión se encuentra también trabajando en algunas de las comisiones que se describirán a continuación. Además, se encarga de proponer temas y preparar las reuniones ampliadas de la red.</p>
-		</div>
-	</div>
-</div>
-
-<div id="comunicaciones">
-	<div class="panel panel-default" id="panelAside">
-		<div class="panel-heading">
-			Secretaría de Comunicaciones
-		</div>
-		<div class="panel-body">
-			<p>Esta comisión busca difundir la labor realizada por REASE mediante diferentes mecanismos, como la elaboración de boletines o videos promocionales. El actual sitio web de la red y la presencia de la organización en las redes sociales, nace de la labor de esta comisión, como también el desarrollo de este trabajo.</p>
+<% @secciones.each do |seccion| %>
+	<%if seccion.order == 'Somos'%>
+	<% div_id = seccion.title -%>
+	<div id="<%= div_id -%>" >
+		<div id="panelAside" class="panel panel-default">
+			<div class="panel-heading">
+				<%=	seccion.title %> 
+			</div>
+			<div class="panel-body">
+				<p><%=raw seccion.body %></p>
+			</div>
 		</div>
 	</div>
-</div>
-		
-<div id="sistematizacion">
-	<div class="panel panel-default" id="panelAside">
-		<div class="panel-heading">
-			Secretaría de sistematización
-		</div>
-		<div class="panel-body">
-			<p>Esta comisión busca estandarizar las experiencias de Aprendizaje y Servicio. Su trabajo generó durante el año pasado, la elaboración de un Formulario de Sistematización, el que durante este año ha sido aplicado a las experiencias de A+S en todas las instituciones pertenecientes a la red.</p>
-
-		</div>
-	</div>
-</div>
-		
-<div id="talleres">
-	<div class="panel panel-default" id="panelAside">
-		<div class="panel-heading">
-			Secretaría de Talleres
-		</div>
-		<div class="panel-body">
-			<p>Esta comisión busca estandarizar las experiencias de Aprendizaje y Servicio. Su trabajo generó durante el año pasado, la elaboración de un Formulario de Sistematización, el que durante este año ha sido aplicado a las experiencias de A+S en todas las instituciones pertenecientes a la red.</p>
-
-		</div>
-	</div>
-</div>
-
-<div id="encuentro">
-	<div class="panel panel-default" id="panelAside">
-		<div class="panel-heading">
-			Secretaría de Encuentro
-		</div>
-		<div class="panel-body">
-			<p>Esta comisión está encargada de organizar el encuentro anual de Aprendizaje y Servicio en Chile, además de gestionar los patrocinadores para el mismo. Actualmente se encuentra gestionando el próximo encuentro que se realizará en enero del próximo año.</p>
-
-		</div>
-	</div>
-</div>
-
+	<%end%>
+<%end%>
 
 <h1>Organizaciones adheridas</h1>
 <p> Las organizaciones que actualmente están activas dentro de REASE o alguno de los miembros activos pertenecen a ellas, son: </p>
@@ -161,9 +118,9 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 </div>
 
 <script type="text/javascript">
-	document.getElementById('comision').style.display='none';
-	document.getElementById('comunicaciones').style.display='block';
-	document.getElementById('sistematizacion').style.display='none';
-	document.getElementById('talleres').style.display='none';
-	document.getElementById('encuentro').style.display='none';
+	document.getElementById('Comisión ejecutiva').style.display='block';
+	document.getElementById('Secretaría de comunicaciones').style.display='none';
+	document.getElementById('Secretaría de sistematización').style.display='none';
+	document.getElementById('Secretaría de talleres').style.display='none';
+	document.getElementById('Secretaría de encuentro').style.display='none';
 </script>

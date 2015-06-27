@@ -29,7 +29,10 @@ body
 	background: -ms-linear-gradient(-45deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
 	background: linear-gradient(135deg, #ffffff 0%,#ffffff 51%,#30aaaa 89%,#30aaaa 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#30aaaa',GradientType=1 );
-	color: white;
+	color: black;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 16px;
+
 }
 /*p Texto en párrafos
 */
@@ -57,7 +60,7 @@ h2 /*Campos*/
 	font-weight: bold;
 	text-align: left;
 	text-decoration:none;
-	font-size: 14px;
+	font-size: 18px;
 	margin: 2%;
 }
 h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
@@ -66,7 +69,7 @@ h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 	font-weight: bold;
 	font-style: inherit;
 	text-align: justify;
-	font-size: 14px;
+	font-size: 16px;
 	margin: 2%;
 }
 p
@@ -104,7 +107,6 @@ p
 	font-style: inherit;
 	text-align: center;
 	text-decoration:none;
-	font-size: 14px;
 	margin: 2%;
 	display: block;
 }
@@ -220,6 +222,7 @@ p
 	float: right !important;
 	margin-right: 10px;
 	margin-top: 10px;
+	color: white;
 }
 #ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
 {
@@ -243,7 +246,6 @@ p
 	font-style: inherit;
 	text-align: right;
 	text-decoration:none;
-	font-size: 14px;
 	display: block;
 }
 
@@ -253,7 +255,6 @@ p
 	font-style: inherit;
 	text-align: left;
 	text-decoration:none;
-	font-size: 14px;
 	margin: 2%;
 	display: block;
 }
@@ -268,9 +269,9 @@ p
 
 #logo
 {
-	margin-left: 15%;
-	margin-right: 15%;
-	width: 70%;
+	margin-left: 25%;
+	margin-right: 25%;
+	width: 50%;
 	padding: 0;
 	display: block;
 }
@@ -296,7 +297,6 @@ p
 	margin-top: 20px;
 	text-align: center;
 	font-weight: bold;
-	font-size: 12px;
 	color: white;
 
 }
@@ -328,7 +328,7 @@ p
 {
 	color: white;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 18px;
 	text-align: left;
 }
 #panelAside .panel-footer, #panelHacemos .panel-footer
@@ -339,15 +339,7 @@ p
 {
 	background: #30bbbb;
 }
-#tablaSolicitud
+*:focus
 {
-	color: black;
-}
-#hola
-{
-	margin-right: auto;
-	margin-left: auto;
-	display: block;
-	text-align: center;
-	vertical-align: bottom;
+	outline: none !important;
 }

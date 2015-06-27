@@ -38,6 +38,22 @@ class SectionsController < ApplicationController
 			render :edit
 		end
 	end
+	
+	def somos
+		@sections = Section.all
+	end
+
+	def hacemos
+		@sections = Section.all
+	end
+
+	def estatutos
+		@sections = Section.all
+	end
+
+	def aprendizaje
+		@sections = Section.all
+	end
 
 	private #acciones privadas del controlador
 

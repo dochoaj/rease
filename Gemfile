@@ -33,7 +33,8 @@ gem 'unicorn'
 gem 'mina'
 gem 'mina-unicorn', :require => false
 
-gem 'video_info'
+#gem 'video_info'
+gem 'wysiwyg-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
