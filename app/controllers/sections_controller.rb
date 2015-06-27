@@ -1,9 +1,33 @@
 class SectionsController < ApplicationController
+	add_breadcrumb "Inicio", :root_path
+	add_breadcrumb "Secciones", :sections_path
+
 	def index
 		@sections = Section.all
 	end
 
+	def somos
+		add_breadcrumb "¿Quienes Somos?", :sections_somos_path
+		@sections = Section.all
+	end
+
+	def hacemos
+		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
+		@sections = Section.all
+	end
+
+	def estatutos
+		add_breadcrumb "Estatutos", :sections_estatutos_path
+		@sections = Section.all
+	end
+
+	def aprendizaje
+		add_breadcrumb "Aprendizaje y Servicio", :sections_aprendizaje_path
+		@sections = Section.all
+	end
+
 	def new
+		add_breadcrumb "Nueva sección", :new_section_path
 		@section = Section.new
 	end
 
@@ -27,6 +51,7 @@ class SectionsController < ApplicationController
 	end
 
 	def edit
+		add_breadcrumb "Editar sección", :edit_section_path
 		@section = Section.find(params[:id])
 	end
 
@@ -38,22 +63,6 @@ class SectionsController < ApplicationController
 			render :edit
 		end
 	end
-	
-	def somos
-		@sections = Section.all
-	end
-
-	def hacemos
-		@sections = Section.all
-	end
-
-	def estatutos
-		@sections = Section.all
-	end
-
-	def aprendizaje
-		@sections = Section.all
-	end
 
 	private #acciones privadas del controlador
 
@@ -61,11 +70,11 @@ class SectionsController < ApplicationController
 		params.require(:section).permit(:title,:body,:order)
 	end
 end
-   # get "/sections" index
-   # post "/sections" create
-   # delete "/sections/:id" delete (destroy)
-   # get "/sections/:id" show
-   # get "/sections/new" new
-   # get "/sections/:id/edit" edit
-   # patch "/sections/:id" update
-   # put "/sections/:id" update
+# get "/sections" index
+# post "/sections" create
+# delete "/sections/:id" delete (destroy)
+# get "/sections/:id" show
+# get "/sections/new" new
+# get "/sections/:id/edit" edit
+# patch "/sections/:id" update
+# put "/sections/:id" update

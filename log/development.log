@@ -35351,3 +35351,1443 @@ Processing by PresentationController#index as HTML
   Rendered devise/sessions/_inicio_sesion.html.erb (3.4ms)
   Rendered partials/_intranet.html.erb (4.4ms)
 Completed 200 OK in 323ms (Views: 321.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 03:44:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PresentationController#index as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/index.html.erb within layouts/application (19.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (8.7ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (40.7ms)
+  Rendered partials/_intranet.html.erb (42.6ms)
+Completed 200 OK in 1355ms (Views: 1344.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/bootstrap.self-5f18a927ba2937894a0c1ca36007b152b6c63000a9b1853b67bf05fa32d04b8d.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/presentation.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/styles.self-e76bb7a5b217edfaeb26cb93339efc0b5d19a0cf5e48af61d4b99a7c7c07a42c.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/application.self-4dfc088480825309feb8deb575e6e377b113d5896c926ef24b3971db147caed1.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/froala_style.min.self-e0b1ad03c464c7a7d88063cdf658f53cc4aec0904e56506fcfe8e402f0ce5b73.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/froala_editor.min.self-cda17943eccadfd1752b6f2166cb70a669a960a6f4d94cf58f0e2c30466251d3.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/froala_content.min.self-7b3b6fc457560b4791ee766f31410b53aaa6ea4a1cc0ba8f18f97759209b831d.css?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/menu.self-b0c74850ab96bd30fa3989b95b33454c79e6ad5a1b803bacb5f961885e1a1891.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/presentation.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/froala_editor.min.self-8e74bf17fe320b97a1123d98d4402284a58c4ac3b65e2c614d26413034aa9ce2.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/block_styles.min.self-e782dc82579f2d6ecb92474e895f204ec0253d01cb6393493018cdee5dcfc0da.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/colors.min.self-edbfcd7a234a41e507a610511f1fbe8237a8e71374994a714ce59280ade45394.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/media_manager.min.self-8b782daa46171c121a31e9b8563f8c796906915a638fea8ada038e2caa267327.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/tables.min.self-14992735f1c65b60c2c0fcea7323a7283832144ce868b7f7e15f35235417ba24.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/video.min.self-63b7b458f2723f0d75960fb2203062034bb3904422c126fec2c88fe14ae04cf0.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/font_family.min.self-62d55e0c86ed28a31ab308721c78051dd358821503fd13b542d5753989cd2df5.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/font_size.min.self-0b43846fda283eb75856e6f9578931245b4c78b8db162a3a7df4761ba40bbc93.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/file_upload.min.self-1dfd0fc35863f6ac2c42d599a85f1c390a29b67622112a8b6d877844f79f14ff.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/lists.min.self-99eb04eac040b048801e473ab4b012d86b39095968e66733dbd8e9d816bc1af4.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/char_counter.min.self-491ef26f83869d18b5ba33fc8a21cf906f1f63b5c69a488d7330f01581b1aa49.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/fullscreen.min.self-a998a02f3b96968fe90dacd4bc42071827d1e3a1ff7ca2ad833190410bf68259.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/urls.min.self-c60f7dd07e6e17a49d1e04b3fc6c1a19660855e26764cc93156bb03bbd511e1d.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/inline_styles.min.self-22aba7368d323e82637883507957217cf6ae10116fc13c3dc6277d7d3b7c8313.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/plugins/entities.min.self-a5619e5a83b2dc9925e969ab87819a5c8f979e61797e39feb99c9fad9b078665.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/application.self-16a206e1dbb99a1ccc90e731af3d62c0bddcb88e92ecc8f27a724444255c4593.js?body=1" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-06-27 03:44:21 -0300
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 03:44:37 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (1.0ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (2.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (4.2ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (5.0ms)
+  Rendered partials/_intranet.html.erb (7.0ms)
+Completed 200 OK in 298ms (Views: 297.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 03:45:34 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (1.0ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (2.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.6ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.9ms)
+  Rendered partials/_intranet.html.erb (3.7ms)
+Completed 200 OK in 530ms (Views: 528.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.self-5f18a927ba2937894a0c1ca36007b152b6c63000a9b1853b67bf05fa32d04b8d.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/presentation.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/styles.self-faf9dae00f6ed1c2deed8817e0468fd128b5c725bab357d8ee851fa365636a38.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/application.self-4dfc088480825309feb8deb575e6e377b113d5896c926ef24b3971db147caed1.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/froala_editor.min.self-cda17943eccadfd1752b6f2166cb70a669a960a6f4d94cf58f0e2c30466251d3.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/froala_style.min.self-e0b1ad03c464c7a7d88063cdf658f53cc4aec0904e56506fcfe8e402f0ce5b73.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/froala_content.min.self-7b3b6fc457560b4791ee766f31410b53aaa6ea4a1cc0ba8f18f97759209b831d.css?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-27 03:45:34 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/menu.self-b0c74850ab96bd30fa3989b95b33454c79e6ad5a1b803bacb5f961885e1a1891.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/presentation.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/froala_editor.min.self-8e74bf17fe320b97a1123d98d4402284a58c4ac3b65e2c614d26413034aa9ce2.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/block_styles.min.self-e782dc82579f2d6ecb92474e895f204ec0253d01cb6393493018cdee5dcfc0da.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/colors.min.self-edbfcd7a234a41e507a610511f1fbe8237a8e71374994a714ce59280ade45394.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/media_manager.min.self-8b782daa46171c121a31e9b8563f8c796906915a638fea8ada038e2caa267327.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/tables.min.self-14992735f1c65b60c2c0fcea7323a7283832144ce868b7f7e15f35235417ba24.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/video.min.self-63b7b458f2723f0d75960fb2203062034bb3904422c126fec2c88fe14ae04cf0.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/font_family.min.self-62d55e0c86ed28a31ab308721c78051dd358821503fd13b542d5753989cd2df5.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/file_upload.min.self-1dfd0fc35863f6ac2c42d599a85f1c390a29b67622112a8b6d877844f79f14ff.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/lists.min.self-99eb04eac040b048801e473ab4b012d86b39095968e66733dbd8e9d816bc1af4.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/font_size.min.self-0b43846fda283eb75856e6f9578931245b4c78b8db162a3a7df4761ba40bbc93.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/char_counter.min.self-491ef26f83869d18b5ba33fc8a21cf906f1f63b5c69a488d7330f01581b1aa49.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/fullscreen.min.self-a998a02f3b96968fe90dacd4bc42071827d1e3a1ff7ca2ad833190410bf68259.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/inline_styles.min.self-22aba7368d323e82637883507957217cf6ae10116fc13c3dc6277d7d3b7c8313.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/urls.min.self-c60f7dd07e6e17a49d1e04b3fc6c1a19660855e26764cc93156bb03bbd511e1d.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/plugins/entities.min.self-a5619e5a83b2dc9925e969ab87819a5c8f979e61797e39feb99c9fad9b078665.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/application.self-16a206e1dbb99a1ccc90e731af3d62c0bddcb88e92ecc8f27a724444255c4593.js?body=1" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-06-27 03:45:35 -0300
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 03:58:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (2.1ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (15.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (14.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (1.6ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (83.9ms)
+  Rendered partials/_intranet.html.erb (86.4ms)
+Completed 200 OK in 1309ms (Views: 1290.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap.self-5f18a927ba2937894a0c1ca36007b152b6c63000a9b1853b67bf05fa32d04b8d.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/styles.self-faf9dae00f6ed1c2deed8817e0468fd128b5c725bab357d8ee851fa365636a38.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/presentation.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/application.self-4dfc088480825309feb8deb575e6e377b113d5896c926ef24b3971db147caed1.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/froala_editor.min.self-cda17943eccadfd1752b6f2166cb70a669a960a6f4d94cf58f0e2c30466251d3.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/froala_style.min.self-e0b1ad03c464c7a7d88063cdf658f53cc4aec0904e56506fcfe8e402f0ce5b73.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/froala_content.min.self-7b3b6fc457560b4791ee766f31410b53aaa6ea4a1cc0ba8f18f97759209b831d.css?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/menu.self-b0c74850ab96bd30fa3989b95b33454c79e6ad5a1b803bacb5f961885e1a1891.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/presentation.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/froala_editor.min.self-8e74bf17fe320b97a1123d98d4402284a58c4ac3b65e2c614d26413034aa9ce2.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/block_styles.min.self-e782dc82579f2d6ecb92474e895f204ec0253d01cb6393493018cdee5dcfc0da.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/colors.min.self-edbfcd7a234a41e507a610511f1fbe8237a8e71374994a714ce59280ade45394.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/tables.min.self-14992735f1c65b60c2c0fcea7323a7283832144ce868b7f7e15f35235417ba24.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/media_manager.min.self-8b782daa46171c121a31e9b8563f8c796906915a638fea8ada038e2caa267327.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/video.min.self-63b7b458f2723f0d75960fb2203062034bb3904422c126fec2c88fe14ae04cf0.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/font_family.min.self-62d55e0c86ed28a31ab308721c78051dd358821503fd13b542d5753989cd2df5.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/font_size.min.self-0b43846fda283eb75856e6f9578931245b4c78b8db162a3a7df4761ba40bbc93.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/file_upload.min.self-1dfd0fc35863f6ac2c42d599a85f1c390a29b67622112a8b6d877844f79f14ff.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/lists.min.self-99eb04eac040b048801e473ab4b012d86b39095968e66733dbd8e9d816bc1af4.js?body=1" for ::1 at 2015-06-27 03:58:40 -0300
+
+
+Started GET "/assets/plugins/char_counter.min.self-491ef26f83869d18b5ba33fc8a21cf906f1f63b5c69a488d7330f01581b1aa49.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/plugins/fullscreen.min.self-a998a02f3b96968fe90dacd4bc42071827d1e3a1ff7ca2ad833190410bf68259.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/plugins/urls.min.self-c60f7dd07e6e17a49d1e04b3fc6c1a19660855e26764cc93156bb03bbd511e1d.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/plugins/entities.min.self-a5619e5a83b2dc9925e969ab87819a5c8f979e61797e39feb99c9fad9b078665.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/plugins/inline_styles.min.self-22aba7368d323e82637883507957217cf6ae10116fc13c3dc6277d7d3b7c8313.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/application.self-16a206e1dbb99a1ccc90e731af3d62c0bddcb88e92ecc8f27a724444255c4593.js?body=1" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-06-27 03:58:41 -0300
+
+
+Started GET "/" for ::1 at 2015-06-27 03:58:44 -0300
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (10.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (4.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (1.1ms)
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (6.0ms)
+  Rendered partials/_intranet.html.erb (8.2ms)
+Completed 200 OK in 345ms (Views: 339.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/presentation/aprendizaje" for ::1 at 2015-06-27 03:58:46 -0300
+Processing by PresentationController#aprendizaje as HTML
+  Rendered presentation/aprendizaje.html.erb within layouts/application (0.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.9ms)
+  Rendered partials/_intranet.html.erb (4.0ms)
+Completed 200 OK in 335ms (Views: 333.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/presentation/hacemos" for ::1 at 2015-06-27 03:58:47 -0300
+Processing by PresentationController#hacemos as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/hacemos.html.erb within layouts/application (4.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (3.4ms)
+  Rendered partials/_intranet.html.erb (4.7ms)
+Completed 200 OK in 356ms (Views: 353.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/presentation/somos" for ::1 at 2015-06-27 03:58:48 -0300
+Processing by PresentationController#somos as HTML
+  [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/somos.html.erb within layouts/application (45.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (3.0ms)
+  Rendered partials/_intranet.html.erb (4.0ms)
+Completed 200 OK in 397ms (Views: 395.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 03:58:48 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (1.0ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (2.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (4.1ms)
+  Rendered partials/_intranet.html.erb (5.6ms)
+Completed 200 OK in 320ms (Views: 319.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 03:58:49 -0300
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (2.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (2.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (3.1ms)
+  Rendered partials/_intranet.html.erb (4.4ms)
+Completed 200 OK in 355ms (Views: 353.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 04:24:10 -0300
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (11.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (6.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (21.9ms)
+  Rendered partials/_intranet.html.erb (22.9ms)
+Completed 200 OK in 314ms (Views: 303.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/bootstrap.self-5f18a927ba2937894a0c1ca36007b152b6c63000a9b1853b67bf05fa32d04b8d.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/styles.self-faf9dae00f6ed1c2deed8817e0468fd128b5c725bab357d8ee851fa365636a38.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/presentation.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/application.self-4dfc088480825309feb8deb575e6e377b113d5896c926ef24b3971db147caed1.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/froala_style.min.self-e0b1ad03c464c7a7d88063cdf658f53cc4aec0904e56506fcfe8e402f0ce5b73.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/froala_editor.min.self-cda17943eccadfd1752b6f2166cb70a669a960a6f4d94cf58f0e2c30466251d3.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/froala_content.min.self-7b3b6fc457560b4791ee766f31410b53aaa6ea4a1cc0ba8f18f97759209b831d.css?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/menu.self-b0c74850ab96bd30fa3989b95b33454c79e6ad5a1b803bacb5f961885e1a1891.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/presentation.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/froala_editor.min.self-8e74bf17fe320b97a1123d98d4402284a58c4ac3b65e2c614d26413034aa9ce2.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/block_styles.min.self-e782dc82579f2d6ecb92474e895f204ec0253d01cb6393493018cdee5dcfc0da.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/colors.min.self-edbfcd7a234a41e507a610511f1fbe8237a8e71374994a714ce59280ade45394.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/media_manager.min.self-8b782daa46171c121a31e9b8563f8c796906915a638fea8ada038e2caa267327.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/tables.min.self-14992735f1c65b60c2c0fcea7323a7283832144ce868b7f7e15f35235417ba24.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/video.min.self-63b7b458f2723f0d75960fb2203062034bb3904422c126fec2c88fe14ae04cf0.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/font_family.min.self-62d55e0c86ed28a31ab308721c78051dd358821503fd13b542d5753989cd2df5.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/file_upload.min.self-1dfd0fc35863f6ac2c42d599a85f1c390a29b67622112a8b6d877844f79f14ff.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/font_size.min.self-0b43846fda283eb75856e6f9578931245b4c78b8db162a3a7df4761ba40bbc93.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/lists.min.self-99eb04eac040b048801e473ab4b012d86b39095968e66733dbd8e9d816bc1af4.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/char_counter.min.self-491ef26f83869d18b5ba33fc8a21cf906f1f63b5c69a488d7330f01581b1aa49.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/fullscreen.min.self-a998a02f3b96968fe90dacd4bc42071827d1e3a1ff7ca2ad833190410bf68259.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/urls.min.self-c60f7dd07e6e17a49d1e04b3fc6c1a19660855e26764cc93156bb03bbd511e1d.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/inline_styles.min.self-22aba7368d323e82637883507957217cf6ae10116fc13c3dc6277d7d3b7c8313.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/plugins/entities.min.self-a5619e5a83b2dc9925e969ab87819a5c8f979e61797e39feb99c9fad9b078665.js?body=1" for ::1 at 2015-06-27 04:24:11 -0300
+
+
+Started GET "/assets/application.self-16a206e1dbb99a1ccc90e731af3d62c0bddcb88e92ecc8f27a724444255c4593.js?body=1" for ::1 at 2015-06-27 04:24:12 -0300
+
+
+Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-06-27 04:24:12 -0300
+
+
+Started GET "/presentation/aprendizaje" for ::1 at 2015-06-27 04:24:13 -0300
+Processing by PresentationController#aprendizaje as HTML
+  Rendered presentation/aprendizaje.html.erb within layouts/application (0.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (3.0ms)
+  Rendered partials/_intranet.html.erb (4.0ms)
+Completed 200 OK in 328ms (Views: 327.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/presentation/hacemos" for ::1 at 2015-06-27 04:24:16 -0300
+Processing by PresentationController#hacemos as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/hacemos.html.erb within layouts/application (2.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.7ms)
+  Rendered partials/_intranet.html.erb (3.7ms)
+Completed 200 OK in 278ms (Views: 275.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/presentation/somos" for ::1 at 2015-06-27 04:24:18 -0300
+Processing by PresentationController#somos as HTML
+  [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/somos.html.erb within layouts/application (28.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.8ms)
+  Rendered partials/_intranet.html.erb (3.9ms)
+Completed 200 OK in 360ms (Views: 358.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 04:24:19 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (0.1ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (1.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (2.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.7ms)
+  Rendered partials/_intranet.html.erb (3.8ms)
+Completed 200 OK in 291ms (Views: 289.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 04:24:22 -0300
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (2.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (2.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.7ms)
+  Rendered partials/_intranet.html.erb (3.7ms)
+Completed 200 OK in 279ms (Views: 277.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 04:24:24 -0300
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (2.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (2.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.8ms)
+  Rendered partials/_intranet.html.erb (3.8ms)
+Completed 200 OK in 330ms (Views: 328.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-27 04:24:36 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2vck5I7VVQEpzxdl3fvoQ7e2sYsVO9XK6ddWFWas9+iUcj5O+iJovIVq5FOqKk7r61jcruiaZxNKLLmc2KCLyA==", "user"=>{"email"=>"paz.bustos.m@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'paz.bustos.m@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-06-27 06:11:35', `current_sign_in_at` = '2015-06-27 07:24:36', `sign_in_count` = 19, `updated_at` = '2015-06-27 07:24:36' WHERE `users`.`id` = 1[0m
+  [1m[35m (37.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 221ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 04:24:36 -0300
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by PresentationController#index as HTML
+  [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/index.html.erb within layouts/application (2.3ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 297ms (Views: 295.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 04:24:41 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (0.1ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 292ms (Views: 290.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/requests" for ::1 at 2015-06-27 04:24:42 -0300
+Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.3ms)[0m  SELECT `requests`.* FROM `requests`
+  Rendered requests/index.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 339ms (Views: 325.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 04:24:45 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (0.1ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 298ms (Views: 296.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:24:48 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 308ms (Views: 306.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sections/aprendizaje" for ::1 at 2015-06-27 04:24:50 -0300
+Processing by SectionsController#aprendizaje as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered sections/_muestra.html (4.3ms)
+  Rendered sections/aprendizaje.erb within layouts/application (6.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 306ms (Views: 304.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sections/1/edit" for ::1 at 2015-06-27 04:24:53 -0300
+Processing by SectionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSection Load (0.5ms)[0m  SELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1
+  Rendered sections/_form.html.erb (5.6ms)
+  Rendered sections/edit.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 309ms (Views: 303.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/fontawesome-webfont-66db52b456efe7e29cec11fa09421d03cb09e37ed1b567307ec0444fd605ce31.woff" for ::1 at 2015-06-27 04:24:53 -0300
+
+
+Started GET "/" for ::1 at 2015-06-27 04:25:01 -0300
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by PresentationController#index as HTML
+  [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/index.html.erb within layouts/application (1.9ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (2.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 321ms (Views: 320.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:25:03 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 299ms (Views: 296.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sections/aprendizaje" for ::1 at 2015-06-27 04:25:05 -0300
+Processing by SectionsController#aprendizaje as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered sections/_muestra.html (2.5ms)
+  Rendered sections/aprendizaje.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (5.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.3ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 302ms (Views: 300.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sections/1/edit" for ::1 at 2015-06-27 04:25:15 -0300
+Processing by SectionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  Rendered sections/_form.html.erb (1.6ms)
+  Rendered sections/edit.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 313ms (Views: 310.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:25:25 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 299ms (Views: 296.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sections/aprendizaje" for ::1 at 2015-06-27 04:25:26 -0300
+Processing by SectionsController#aprendizaje as HTML
+  [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered sections/_muestra.html (2.4ms)
+  Rendered sections/aprendizaje.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 294ms (Views: 292.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:25:30 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 323ms (Views: 321.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sections/estatutos" for ::1 at 2015-06-27 04:25:32 -0300
+Processing by SectionsController#estatutos as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered sections/_muestra.html (2.6ms)
+  Rendered sections/estatutos.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (4.1ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 305ms (Views: 302.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sections/new" for ::1 at 2015-06-27 04:25:34 -0300
+Processing by SectionsController#new as HTML
+  Rendered sections/_form.html.erb (1.8ms)
+  Rendered sections/new.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (4.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.6ms)
+Completed 200 OK in 314ms (Views: 311.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sections" for ::1 at 2015-06-27 04:25:48 -0300
+Processing by SectionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SXMWL1j5wetfqlOPlwA3DqR9pZh4VfHOVADBX11hfumRk6TIquQi+mEt1hCRJcRLhwm6VnKhxuBLemE3vYuf1Q==", "section"=>{"title"=>"POOIIOO", "order"=>"Estatutos", "body"=>"<p>sdfghjkl&ntilde;kjhgffghjkjhghjkjhhjkjhkjkjkjkjkjkjkj</p>"}, "commit"=>"Crear"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSection Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `sections` WHERE `sections`.`title` = BINARY 'POOIIOO' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `sections` (`title`, `body`, `order`, `created_at`, `updated_at`) VALUES ('POOIIOO', '<p>sdfghjkl&ntilde;kjhgffghjkjhghjkjhhjkjhkjkjkjkjkjkjkj</p>', 'Estatutos', '2015-06-27 07:25:48', '2015-06-27 07:25:48')
+  [1m[36m (109.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 133ms (ActiveRecord: 110.7ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 04:25:48 -0300
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.8ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (3.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (2.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 314ms (Views: 312.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/presentation/estatutos" for ::1 at 2015-06-27 04:25:54 -0300
+Processing by PresentationController#estatutos as HTML
+  Rendered presentation/_estatutos.html.erb (0.1ms)
+  Rendered presentation/estatutos.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (4.0ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 299ms (Views: 297.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:26:03 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (3.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 317ms (Views: 315.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sections/estatutos" for ::1 at 2015-06-27 04:26:05 -0300
+Processing by SectionsController#estatutos as HTML
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered sections/_muestra.html (3.0ms)
+  Rendered sections/estatutos.erb within layouts/application (4.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.7ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.3ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 303ms (Views: 300.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/sections/14" for ::1 at 2015-06-27 04:26:10 -0300
+Processing by SectionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jp6zHUOp8GeSVX8ag1/bkUA4zZnCOdHcIpxcnedIEm7+fgH6sbQTdqzS+oWFeijUY0zSV8jN5vI95vz1B6LzUg==", "id"=>"14"}
+  [1m[35mSection Load (0.8ms)[0m  SELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 14 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `sections` WHERE `sections`.`id` = 14
+  [1m[36m (46.3ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 47.5ms)
+
+ActionView::MissingTemplate (Missing template sections/destroy, application/destroy with {:locale=>[:es], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/pachi/Escritorio/rease/app/views"
+  * "/home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views"
+  * "/home/pachi/.rvm/gems/ruby-2.2.1/gems/devise-3.4.1/app/views"
+):
+  actionview (4.2.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/pachi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/pachi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/pachi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/pachi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (47.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.0ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (50.7ms)
+
+
+Started DELETE "/sections/14" for ::1 at 2015-06-27 04:26:38 -0300
+Processing by SectionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jp6zHUOp8GeSVX8ag1/bkUA4zZnCOdHcIpxcnedIEm7+fgH6sbQTdqzS+oWFeijUY0zSV8jN5vI95vz1B6LzUg==", "id"=>"14"}
+  [1m[35mSection Load (0.5ms)[0m  SELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 14 LIMIT 1
+Completed 404 Not Found in 11ms (ActiveRecord: 2.8ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=14):
+  app/controllers/sections_controller.rb:48:in `destroy'
+
+
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.7ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (50.8ms)
+
+
+Started DELETE "/sections/14" for ::1 at 2015-06-27 04:26:47 -0300
+Processing by SectionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jp6zHUOp8GeSVX8ag1/bkUA4zZnCOdHcIpxcnedIEm7+fgH6sbQTdqzS+oWFeijUY0zSV8jN5vI95vz1B6LzUg==", "id"=>"14"}
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 14 LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Section with 'id'=14):
+  app/controllers/sections_controller.rb:48:in `destroy'
+
+
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (24.4ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (49.5ms)
+
+
+Started GET "/sections/estatutos" for ::1 at 2015-06-27 04:26:58 -0300
+Processing by SectionsController#estatutos as HTML
+  [1m[35mSection Load (0.5ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered sections/_muestra.html (10.1ms)
+  Rendered sections/estatutos.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (27.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.6ms)
+Completed 200 OK in 346ms (Views: 342.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap.self-5f18a927ba2937894a0c1ca36007b152b6c63000a9b1853b67bf05fa32d04b8d.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-c1a8821f7eb1b195061d7706930814ecc6bd44db4c68f208da5fe14845fa11ea.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-77d963462a71b85aa6c39f0110994006fed4301154d937da52eb3884ff813853.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/presentation.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/styles.self-faf9dae00f6ed1c2deed8817e0468fd128b5c725bab357d8ee851fa365636a38.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/application.self-4dfc088480825309feb8deb575e6e377b113d5896c926ef24b3971db147caed1.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/froala_editor.min.self-cda17943eccadfd1752b6f2166cb70a669a960a6f4d94cf58f0e2c30466251d3.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/froala_style.min.self-e0b1ad03c464c7a7d88063cdf658f53cc4aec0904e56506fcfe8e402f0ce5b73.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/froala_content.min.self-7b3b6fc457560b4791ee766f31410b53aaa6ea4a1cc0ba8f18f97759209b831d.css?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-ebce91ec66c71bcee451ea7da9128fd1bf8faa02c6d22ea04c598423431e4c08.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-db278e3a8fa6249c16796b113ebd29e11ef4e2cd021618ed84895d524a4511e0.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-ab1767545e27c0dbd36971e656ae4927171f673e3d932cdec2cbef39e991952b.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-8bb9309b6c24a4ba6b94026a049d25b13bdc0553b6fe83255c14a715ba624cc4.js?body=1" for ::1 at 2015-06-27 04:26:58 -0300
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-bd0c6724cdc75302fe98dfeff923112b76c1673cf4a0752a7050b7feea15594c.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-7e3ee4a243bb416b5f0111a0be08f8547c5d72ba71fe4afe4a4a007f5cb4e10e.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-d7f9330825307d053f68da11bb9ddc9b070df72deef3d115f2f3d55f66b17457.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-cd672ecad3b549e1dbd89bfd044e5812d6fdade56f42d48e3acee0c3f4614526.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/button.self-ceb562de883e04359bb2c06f07bdf6ecf065cc8a5027e2e58857c5e91b0b68e3.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-a87553101c955a01e2e8c81fad69a16582ddbf58fe95d5eb335dde5567af7647.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-5d09995e01b647168888180d40e271f9a6759d68ae7ac029d7026af58813d376.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-14e04bbe71282aa039322ab93e3a3a886ddede5f59a2f365f7c861f697bbeb21.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/menu.self-b0c74850ab96bd30fa3989b95b33454c79e6ad5a1b803bacb5f961885e1a1891.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/presentation.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/froala_editor.min.self-8e74bf17fe320b97a1123d98d4402284a58c4ac3b65e2c614d26413034aa9ce2.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/block_styles.min.self-e782dc82579f2d6ecb92474e895f204ec0253d01cb6393493018cdee5dcfc0da.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/colors.min.self-edbfcd7a234a41e507a610511f1fbe8237a8e71374994a714ce59280ade45394.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/media_manager.min.self-8b782daa46171c121a31e9b8563f8c796906915a638fea8ada038e2caa267327.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/tables.min.self-14992735f1c65b60c2c0fcea7323a7283832144ce868b7f7e15f35235417ba24.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/video.min.self-63b7b458f2723f0d75960fb2203062034bb3904422c126fec2c88fe14ae04cf0.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/font_family.min.self-62d55e0c86ed28a31ab308721c78051dd358821503fd13b542d5753989cd2df5.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/font_size.min.self-0b43846fda283eb75856e6f9578931245b4c78b8db162a3a7df4761ba40bbc93.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/file_upload.min.self-1dfd0fc35863f6ac2c42d599a85f1c390a29b67622112a8b6d877844f79f14ff.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/lists.min.self-99eb04eac040b048801e473ab4b012d86b39095968e66733dbd8e9d816bc1af4.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/char_counter.min.self-491ef26f83869d18b5ba33fc8a21cf906f1f63b5c69a488d7330f01581b1aa49.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/fullscreen.min.self-a998a02f3b96968fe90dacd4bc42071827d1e3a1ff7ca2ad833190410bf68259.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/urls.min.self-c60f7dd07e6e17a49d1e04b3fc6c1a19660855e26764cc93156bb03bbd511e1d.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/inline_styles.min.self-22aba7368d323e82637883507957217cf6ae10116fc13c3dc6277d7d3b7c8313.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/plugins/entities.min.self-a5619e5a83b2dc9925e969ab87819a5c8f979e61797e39feb99c9fad9b078665.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/application.self-16a206e1dbb99a1ccc90e731af3d62c0bddcb88e92ecc8f27a724444255c4593.js?body=1" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-06-27 04:26:59 -0300
+
+
+Started DELETE "/sections/13" for ::1 at 2015-06-27 04:27:04 -0300
+Processing by SectionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IZo3NJiZRLQjEqjN2dLIyfifB2wTpIJtdAag2DRukdb5eoXTaoSnpR2VLVLf9zuM2+sYohlQtUNrfACw1IRw6g==", "id"=>"13"}
+  [1m[36mSection Load (0.8ms)[0m  [1mSELECT  `sections`.* FROM `sections` WHERE `sections`.`id` = 13 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `sections` WHERE `sections`.`id` = 13[0m
+  [1m[35m (41.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/sections
+Completed 302 Found in 47ms (ActiveRecord: 42.9ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:27:04 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (5.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.3ms)
+  Rendered partials/_intranet.html.erb (0.6ms)
+Completed 200 OK in 351ms (Views: 348.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/sections/hacemos" for ::1 at 2015-06-27 04:27:14 -0300
+Processing by SectionsController#hacemos as HTML
+  [1m[36mSection Load (0.8ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered sections/_muestra.html (4.1ms)
+  Rendered sections/hacemos.erb within layouts/application (6.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.9ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 312ms (Views: 309.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/sections/new" for ::1 at 2015-06-27 04:27:16 -0300
+Processing by SectionsController#new as HTML
+  Rendered sections/_form.html.erb (1.7ms)
+  Rendered sections/new.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.8ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 300ms (Views: 298.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sections/new" for ::1 at 2015-06-27 04:27:27 -0300
+Processing by SectionsController#new as HTML
+  Rendered sections/_form.html.erb (1.7ms)
+  Rendered sections/new.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (3.6ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered partials/_intranet.html.erb (0.5ms)
+Completed 200 OK in 329ms (Views: 327.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sections" for ::1 at 2015-06-27 04:27:31 -0300
+Processing by SectionsController#index as HTML
+  Rendered sections/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (4.0ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered partials/_intranet.html.erb (0.4ms)
+Completed 200 OK in 310ms (Views: 308.9ms | ActiveRecord: 0.4ms)

@@ -1,3 +1,14 @@
+a, a:focus, a:active, a:visited
+{
+	color: #30aaaa;	
+	text-decoration: none;
+}
+a:hover
+{
+	color: #30bbbb;
+	font-weight: bold;
+	text-decoration: none;
+}
 article
 {
 	display: block;
@@ -103,10 +114,7 @@ p
 }
 .linkInteres, .linkInteres:visited
 {
-	color: #30aaaa;
-	font-style: inherit;
 	text-align: center;
-	text-decoration:none;
 	margin: 2%;
 	display: block;
 }
@@ -235,17 +243,9 @@ p
 	margin-right: 2%;
 	margin-left: 2%;
 }
-#imgAS
-{
-	max-width: 90%;
-}
-
 #linkEstatuto
 {
-	color: #30aaaa;
-	font-style: inherit;
 	text-align: right;
-	text-decoration:none;
 	display: block;
 }
 
@@ -260,7 +260,6 @@ p
 }
 
 .linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover, #linkEstatuto:hover
-
 {
 	color: #30aaaa;
 	font-weight: bold;
