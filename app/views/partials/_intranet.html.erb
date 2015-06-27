@@ -12,6 +12,8 @@
 		<%= link_to 'Crear Solicitud de Servicio', new_request_path, class: 'btn btn-lg btn-block', id: 'boton'  %>
 
 		<%= link_to 'Desconectarse', destroy_user_session_path, :method => :delete, class: 'btn btn-lg btn-block', id: 'boton'  %>
+
+		<p>Miembros activos: <%= User.count %></p>
 		</div>
 	</div>
 <%else%>
