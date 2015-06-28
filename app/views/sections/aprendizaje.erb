@@ -1,3 +1,11 @@
-<%= link_to "Nueva seccion", new_section_path, class:"btn btn-block btn-lg",id:"boton"%>
-
-<%= render "muestra", {accion: "AprendizajeServicio", eliminar: "Si"} %>
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		Crear una nueva sección para Aprendizaje y Servicio
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Aprendizaje y Servicio" %>
+	</div>
+</div>
+<br>
+<h1>Sección A+S Anteriores: </h1>
+<%= render "muestra", {orden: "Aprendizaje y Servicio", eliminar: "Si"} %>

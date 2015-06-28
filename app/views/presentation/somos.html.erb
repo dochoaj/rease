@@ -3,17 +3,20 @@
 La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiantes, universidades, colegios, agrupaciones civiles y en general a todas las personas y organizaciones en Chile que estén interesadas en esta metodología.
 </p>
 <center>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos1()">Comisión Ejecutiva</button> 
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos2()">Comunicaciones</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos3()">Sistematización</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos4()">Talleres</button>
-	<button id="botonSomos" class = "btn btn-lg" onclick="menuSomos5()">Encuentro</button>
+	<% @sections.each do |seccion| %>
+		<%if seccion.order == 'Somos'%>
+		<% div_id = seccion.id -%>
+		<button id="botonSomos" class = "btn btn-lg" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
+		<%end%>
+	<%end%>
 </center>
+<p>
 
-<% @secciones.each do |seccion| %>
+
+<% @sections.each do |seccion| %>
 	<%if seccion.order == 'Somos'%>
-	<% div_id = seccion.title -%>
-	<div id="<%= div_id -%>" >
+	<% titulo_id = seccion.id -%>
+	<div id="titulo<%= titulo_id -%>" >
 		<div id="panelAside" class="panel panel-default">
 			<div class="panel-heading">
 				<%=	seccion.title %> 
@@ -26,101 +29,54 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 	<%end%>
 <%end%>
 
+<script type="text/javascript">
+<% contador = 1; %>
+	<% @sections.each do |seccion| %>
+		<%if seccion.order == 'Somos'%>
+			<% titulo_id = seccion.id -%>
+			<% if contador==1 %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+				<% contador += 1; %>
+			<% else %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='none';
+			<%end%>
+		<%end%>
+	<%end%>
+</script>
+
+<script type="text/javascript">
+
+<% contador1 = 1; %>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == 'Somos'%>
+		<% div_id = seccion.id -%>
+		function funcion<%= div_id -%>(){
+		<% contador2 = 1; %>
+		<% @sections.each do |seccion_in| %>
+			<%if seccion_in.order == 'Somos'%>
+				<% titulo_id = seccion_in.id -%>
+				<% if contador1==contador2 %>
+					document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+				<% else %>
+					document.getElementById('titulo<%= titulo_id -%>').style.display='none';
+				<%end%>
+				<% contador2 += 1; %>
+			<%end%>
+		<%end%>
+		<% contador1 += 1; %>
+		}			
+	<%end%>
+<%end%>
+</script>
+		
+
+
+
+
 <h1>Organizaciones adheridas</h1>
 <p> Las organizaciones que actualmente están activas dentro de REASE o alguno de los miembros activos pertenecen a ellas, son: </p>
 
-<li data-target="#myCarousel" data-slide-to="5"></li>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	<li data-target="#myCarousel" data-slide-to="1"></li>
-	<li data-target="#myCarousel" data-slide-to="2"></li>
-	<li data-target="#myCarousel" data-slide-to="3"></li>
-	<li data-target="#myCarousel" data-slide-to="4"></li>
-	<li data-target="#myCarousel" data-slide-to="5"></li>
-	<li data-target="#myCarousel" data-slide-to="6"></li>
-	<li data-target="#myCarousel" data-slide-to="7"></li>
-	<li data-target="#myCarousel" data-slide-to="8"></li>
-	<li data-target="#myCarousel" data-slide-to="9"></li>
-	<li data-target="#myCarousel" data-slide-to="10"></li>
-	<li data-target="#myCarousel" data-slide-to="11"></li>
-	<li data-target="#myCarousel" data-slide-to="12"></li>
-	<li data-target="#myCarousel" data-slide-to="13"></li>
-	<li data-target="#myCarousel" data-slide-to="14"></li>
-  </ol>
 
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-  	<div class="item active">
-      <%= link_to(image_tag("instituciones/hdc.png", id: "logoInstituciones"),"http://www.google.com")%>
-    </div>
-
-  	<div class="item">
-      <%=image_tag("instituciones/maristas.png", id: "logoInstituciones")%>
-    </div>
-
-    <div class="item">
-    	<%=image_tag("instituciones/PUC.gif", id: "logoInstituciones")%>
-    </div>
-
-	<div class="item">
-		<%=image_tag("instituciones/pucv.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/uadolfo.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/uhurtado.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/unab.png", id: "logoInstituciones")%>
-	</div>
-
-    <div class="item">
-		<%=image_tag("instituciones/uaustral.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/usilvahenriquez.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/utemuco.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/ucentral.jpg", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/uchile.png", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/uconce.gif", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/UFRO.gif", id: "logoInstituciones")%>
-	</div>
-
-	<div class="item">
-		<%=image_tag("instituciones/usach.png", id: "logoInstituciones")%>
-	</div>
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" id="botonCarousel" data-slide="prev"> << </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" id="botonCarousel" data-slide="next"> >> </a>
-</div>
-
-<script type="text/javascript">
-	document.getElementById('Comisión ejecutiva').style.display='block';
-	document.getElementById('Secretaría de comunicaciones').style.display='none';
-	document.getElementById('Secretaría de sistematización').style.display='none';
-	document.getElementById('Secretaría de talleres').style.display='none';
-	document.getElementById('Secretaría de encuentro').style.display='none';
-</script>
+<% @instituciones.each do |institution| %>
+	<%= link_to(image_tag(institution.logo.url(:mini)), institution.web, :id=>"logoInstituciones") %>
+<%end%>

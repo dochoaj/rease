@@ -1,0 +1,31 @@
+<div class="panel panel-default" id="panelAside">
+  <div class="panel-heading">
+    <%= @offering.title %>
+  </div>
+  
+  <div class="panel-body">
+
+    <h1>Descripción:</h1>
+      <p><%=raw @offering.description %></p>
+
+    <h1> Información </h1>
+      <p><b>Estado: </b><%= @offering.status %></p>
+
+      <p><b>Fecha y hora de inicio: </b><%= @offering.start_time.day %>/<%= @offering.start_time.month %>/<%= @offering.start_time.year %> <%= @offering.start_time.hour%>:<%= @offering.start_time.min%></p>
+
+      <p><b>Fecha y hora de término: </b><%= @offering.end_time.day %>/<%= @offering.end_time.month %>/<%= @offering.end_time.year %> <%= @offering.end_time.hour%>:<%= @offering.end_time.min%></p>
+  </div>
+  <div class="panel-footer">
+    <p><b>Creado por:</b>
+      <%= @offering.user.name %> <%= @offering.user.last_name %></p>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <% if @offering.user.id == current_user.id %>
+    <%= link_to 'Editar ', edit_offering_path(@offering), :id => "botonCRUD", :class => "btn btn-lg" %>
+    <%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
+  <% end %>
+<% end %>
+  
+  <%= link_to 'Volver', offerings_path, :id => "botonCRUD", :class => "btn btn-lg" %>

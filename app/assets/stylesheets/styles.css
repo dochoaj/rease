@@ -1,13 +1,13 @@
-/*
+/* 
 	styles.css
 	Estilos para la página de REASE
 	Creados por PazBustos
 */
 
 /*link básicos estilos rease*/
-a, a:focus, a:active, a:visited
+a, a:focus, a:active, a:visited 
 {
-	color: #30aaaa;
+	color: #30aaaa;	
 	text-decoration: none;
 }
 a:hover
@@ -27,7 +27,7 @@ section#principal, aside
 {
 	display: inline-block;
 	margin: 0.25 auto;
-	min-width: 700px;
+	min-width: 300px;
 	min-height: 400px;
 	padding: 0.25em;
 	vertical-align: top;
@@ -179,14 +179,8 @@ p.navbar-text.navbar-right
 }
 
 
-#aceptar /*boton de aceptar del registro*/
-{
-	margin-top: 40px;
-}
-
-
-/*colores para los botones y barras*/
-#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #botonCarousel, #panelAside .panel-heading, #pies
+/*colores para barras y paneles*/
+#BarraNavegadora, #panelAside .panel-heading, #pies, #panelInstitution .panel-heading
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -195,7 +189,7 @@ p.navbar-text.navbar-right
 	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
 }
-#BarraNavegadora
+#BarraNavegadora 
 {
 	-webkit-box-shadow: 3px 2px 5px #666666;
 	-moz-box-shadow: 3px 2px 5px #666666;
@@ -203,18 +197,7 @@ p.navbar-text.navbar-right
 	border-color: #30cccc;
 }
 
-#boton, #boton a
-{
-	-webkit-border-radius: 6;
-	-moz-border-radius: 6;
-	border-radius: 6px;
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	box-shadow: 3px 2px 5px #666666;
-	color: white;
-	margin-bottom: 15px;
-}
-#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover, #botonHacemos:hover, #panelAside .panel-heading:hover
+#pies:hover, #panelAside .panel-heading:hover, #panelInstitution .panel-heading:hover
 {
 	background: #30bbbb;
 	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
@@ -224,36 +207,6 @@ p.navbar-text.navbar-right
 	background-image: linear-gradient(to bottom, #30bbbb, #30cccc);
 	background: #30bbbb;
 	font-weight: bold;
-}
-
-
-#botonTipoUsuario
-{
- vertical-align: middle;
- float: right;
-}
-
-#botonCerrar
-{
-	margin-top: 2%;
-	margin-right: 4%;
-}
-#botonHacemos, #botonSomos
-{
-	-webkit-border-radius: 6;
-	-moz-border-radius: 6;
-	border-radius: 6px;
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	box-shadow: 3px 2px 5px #666666;
-	color: white;
-	width: 150px;
-	margin: 3%;
-}
-#botonSomos
-{
-	width: 200px;
-	margin: 3%;
 }
 
 /* para el panel de dejar un comentario como no registrado
@@ -268,13 +221,7 @@ p.navbar-text.navbar-right
 {
 	margin-top: 10%;
 }
-#estatutos > li
-{
-	color: black;
-	text-align: justify;
-	margin-right: 2%;
-	margin-left: 2%;
-}
+
 #linkEstatuto
 {
 	text-align: right;
@@ -282,7 +229,7 @@ p.navbar-text.navbar-right
 }
 
 /*estilo de los indices de lso estatutos*/
-#indiceEstatuto1, #indiceEstatuto2, #indiceEstatuto3, #indiceEstatuto4, #indiceEstatuto
+.estatutos
 {
 	color: #30aaaa;
 	font-style: inherit;
@@ -292,7 +239,7 @@ p.navbar-text.navbar-right
 	display: block;
 }
 
-.linkInteres:hover, #indiceEstatuto, #indiceEstatuto1:hover, #indiceEstatuto2:hover, #indiceEstatuto3:hover, #indiceEstatuto4:hover, #linkEstatuto:hover
+.estatutos:hover
 {
 	color: #30aaaa;
 	font-weight: bold;
@@ -310,13 +257,8 @@ p.navbar-text.navbar-right
 
 #logoInstituciones /* los logos de las intituciones tengan tamaño similar*/
 {
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 80px;
-	margin-top: 20px;
-	height: 115px;
-	max-width: 65%;
-	display: block;
+	margin-bottom: 10px;
+	margin-left: 10px;
 }
 #logoNav /*estilos para el logo de la navbar*/
 {
@@ -344,18 +286,23 @@ p.navbar-text.navbar-right
 	text-align: center;
 }
 
-#panelAside .panel-heading /*Cabecera del panel*/
+#panelAside .panel-heading, #panelInstitution .panel-heading /*Cabecera del panel*/
 {
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
 }
-#panelAside .panel-footer /*Cabecera del footer*/
+#panelAside .panel-footer, #panelInstitution .panel-footer /*Cabecera del footer*/
 {
 	background: white;
 }
 
+#panelInstitution
+{
+	width: 40%;
+	display: inline-block;
+}
 /*textos de cantidad de usuario y nombre de usuario en la barra*/
 #rightBar, #rightBar:active
 {
@@ -390,12 +337,20 @@ p.navbar-text.navbar-right
       display: block !important;
     }
 
-   .navbar-toggle {
-   	display: block !important;
-   	}
-   	.navbar-header {
-   		width: 100%;
-   		height: 60px;
+   .navbar-toggle { 
+   	display: block !important; 
+   	} 
+   	.navbar-header { 
+   		width: 100%; 
+   		height: 60px; 
    	}
 
+}
+
+#styleSession
+{
+	text-align: center;
+	padding: 0;
+	margin:0;
+	display: block;
 }

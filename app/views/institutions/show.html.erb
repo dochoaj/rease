@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		<%= @institution.name %>
+	</div>
+	<div class="panel-body">
+		<h2>Página Web:</h2>
+		<%= @institution.web %>
+		<h2>Logo institucional</h2>
+		<%= image_tag @institution.logo.url(:mini) %>
+	</div>
+</div>
+
+
+
+<%= link_to 'Editar', edit_institution_path(@institution),:id=>"boton", :class =>"btn btn-lg" %>
+<%= link_to 'Volver', institutions_path,:id=>"boton", :class =>"btn btn-lg" %>

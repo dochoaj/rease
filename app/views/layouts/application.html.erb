@@ -56,18 +56,34 @@
 
 			<%= render "partials/intranet"%>
 
+			
 			<div id="panelAside" class="panel panel-default">
 				<div class="panel-heading">
-					Links de interés
+					<%= link_to "Calendario de eventos", events_path, :id => "calendarPanelTitle"%>
 				</div>
-				<div class="panel-body">
-					<%= link_to "Facebook REASE", "https://es-es.facebook.com/reasechile", class:"linkInteres" %>
-					<%= link_to "CLAYSS", "http://www.clayss.org.ar/", class:"linkInteres" %>
-					<%= link_to "CLAYSS en youtube", "https://www.youtube.com/channel/UCfjT6MIfaghMrdw7NCDICcQ", class:"linkInteres" %>
-					<%= link_to "Creador del A+S", "http://www.cehd.umn.edu/olpd/people/faculty/Furco.asp", class:"linkInteres" %>
-					<%= link_to "El aprendizaje-servicio por Andrew Furco", "http://educacionglobalresearch.net/wp-content/uploads/03-Furco-1-Castellano.pdf", class:"linkInteres" %>
+				<div class="panel-body" id = "calendarAside">
 				</div>
 			</div>
+
+			<% if !user_signed_in? %>
+				<%if !@sections.blank? %> 
+				<div id="panelAside" class="panel panel-default" data-toggle="collapse" data-target="#cuerpoLI">
+					<div class="panel-heading">
+						Links de interés
+					</div>
+					<div class="collapse" id="cuerpoLI">
+						<div class="panel-body">
+							<% @sections.each do |seccion| %>
+								<%if seccion.order == 'Link de Interés'%>
+									<%=raw seccion.body%>
+								<%end%>
+							<%end%>
+						</div>
+					</div>
+				</div>
+				<%end%>
+			<%end%>
+
 		</aside>
 	</section>
 
@@ -78,6 +94,15 @@
 			Contacto: reasechile@gmail.com
 		</div>
 	</footer>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#calendarAside').fullCalendar({
+			events: '/events.json'
+
+		})
+	});
+</script>
 
 	</body>
 </html>

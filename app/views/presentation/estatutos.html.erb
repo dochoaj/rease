@@ -1,55 +1,50 @@
 <h1>Estatutos Red Nacional Aprendizaje Servicio, Chile</h1>
 
-
 <div id="indice">
 	<br>
 	<div id="panelAside" class="panel panel-default">	
 		<div class="panel-heading">
-			ÍNDICE DEL ESTATUTO
+			Índice del estatuto
 		</div>
 		<div class="panel-body">
 			<ul>
-				<li id="indiceEstatuto1">Título I: Del nombre y domicilio.</li>
-				<li id="indiceEstatuto2">Título II: De los fines</li>
-				<li id="indiceEstatuto3">Título  III: De los asociados</li>
-				<li id="indiceEstatuto4">Título IV: Órganos de administración y sus atribuciones</li>
+				<% @sections.each do |seccion| %>
+					<%if seccion.order == 'Estatutos'%>
+						<% div_id = seccion.id -%>					
+						<li class = "estatutos" id="funcion<%= div_id -%>"> <%= seccion.title %></li>			
+					<%end%>
+				<%end%>
 			</ul>
 		</div>
 	</div>
 </div>
 
-<%= render "estatutos"%>
-
+<% @sections.each do |seccion| %>
+	<%if seccion.order == 'Estatutos'%>
+		<% div_id = seccion.id -%>
+		<div id="titulo<%= div_id -%>" >
+			<div id="panelAside" class="panel panel-default">
+				<div class="panel-heading">
+					<%=	seccion.title %> 
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		</div>
+	<%end%>
+<%end%>
 
 <script type="text/javascript">
-	$("#indiceEstatuto1").click(function() 
-	{
-	    $('html,body').animate({
-	        scrollTop: $("#titulo1").offset().top},
-	        'slow');
-	});
-	$("#indiceEstatuto2").click(function() 
-	{
-	    $('html,body').animate({
-	        scrollTop: $("#titulo2").offset().top},
-	        'slow');
-	});
-	$("#indiceEstatuto3").click(function() 
-	{
-	    $('html,body').animate({
-	        scrollTop: $("#titulo3").offset().top},
-	        'slow');
-	});
-	$("#indiceEstatuto4").click(function() 
-	{
-	    $('html,body').animate({
-	        scrollTop: $("#titulo4").offset().top},
-	        'slow');
-	});
-	$(".btnindice1, .btnindice2, .btnindice3, .btnindice4").click(function() 
-	{
-	    $('html,body').animate({
-	        scrollTop: $("#indice").offset().top},
-	        'slow');
-	});
+	<% @sections.each do |seccion| %>
+		<%if seccion.order == 'Estatutos'%>
+			<% div_id = seccion.id -%>
+			$("#funcion<%= div_id -%>").click(function() 
+			{
+			    $('html,body').animate({
+			        scrollTop: $("#titulo<%= div_id -%>").offset().top},
+			        'slow');
+			});
+		<%end%>
+	<%end%>
 </script>

@@ -1,4 +1,19 @@
-<%= link_to "Editar ¿Qué es A+S?", sections_aprendizaje_path, class:"btn btn-block btn-lg",id:"boton"%>
-<%= link_to "Editar ¿Qué hacemos?", sections_hacemos_path, class:"btn btn-block btn-lg",id:"boton"%>
-<%= link_to "Editar ¿Quienes somos?", sections_somos_path, class:"btn btn-block btn-lg",id:"boton"%>
-<%= link_to "Editar Estatutos", sections_estatutos_path, class:"btn btn-block btn-lg",id:"boton"%>
+<%orden ||= "crear"%>
+<h1>Administración de página principal</h1>
+<p>Estimado administrador, las siguientes opciones son para poder editar la página de inicio de REASE,es decir, la que podrá ver cualquier persona que ingrese al presente sitio.</p>
+<p>Todos los campos que serán requeridos al momento de crear o editar una sección son obligatorios.</p>
+<p>Para editar una seccion haga click en alguno de los siguientes botones: </p>
+
+<%= link_to "Editar o crear Novedad", sections_novedades_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Editar o crear ¿Qué es A+S?", sections_aprendizaje_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Editar ¿Qué hacemos?", sections_hacemos_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Editar ¿Quienes somos?", sections_somos_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Editar o crear Editar Estatutos", sections_estatutos_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Editar o Agregar Institución", institutions_path, class:"btn btn-lg",id:"botonAdmin"%>
+
+<%= link_to "Modificar links de interés", sections_linkInteres_path, class:"btn btn-lg",id:"botonAdmin"%>

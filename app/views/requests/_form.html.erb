@@ -1,3 +1,4 @@
+<%accion ||= "Crear"%>
 <%= form_for @request, :html => { :class => "form-horizontal request" } do |f| %>
 
 	<% if @request.errors.any? %>
@@ -15,29 +16,35 @@
 	</div>
 	<% end %>
 
-	<div class="control-group">
-		<div class="field">
-			<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+	<div class="panel panel-default" id="panelAside">
+    	<div class="panel-heading">Datos de la solicitud</div>
+    	<div class="panel-body">
+    		
+    		<div class="control-group">
+				<div class="field">
+				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+				</div>
+				<%= error_span(@request[:title]) %>
+			</div>
+			<br>
+			<div class="control-group">
+				<div class="field">
+				<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic" %>
+				</div>
+				<%= error_span(@request[:description]) %>
+			</div>
+			<br>
 		</div>
-		<%= error_span(@request[:title]) %>
 	</div>
 
-	<div class="control-group">
-		<div class="field">
-			<%= f.text_area :description, :class => 'form-control', :placeholder => 'Descripción' %>
-		</div>
-		<%= error_span(@request[:description]) %>
-	</div>
-
-	<div class="control-group">
-		<div class="field">
-			<%= f.text_field :user_id, :class => 'form-control', :placeholder => 'ID usuario' %>
-		</div>
-		<%= error_span(@request[:user_id]) %>
-	</div>
-
-
-	<%= f.submit "Crear", :id => 'boton', :class => 'btn btn-lg btn-block' %>
-	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg btn-block', :id => 'boton' %>
+	<%= f.submit accion, :id => 'botonCRUD', :class => 'btn btn-lg' %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg', :id => 'botonCRUD' %>
 
 <% end %>
+
+<script>
+	 $(function() {$('textarea#eg-basic').editable({
+      inlineMode: false,
+    })
+  });
+</script>

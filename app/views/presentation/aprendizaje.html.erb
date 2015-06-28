@@ -1,31 +1,44 @@
 <h1>¿Qué es A+S?</h1>
-<div class="panel panel-default" id="panelAside" >
-	<div class="panel-heading">
-	Definiendo el Aprendizaje y Servicio
-	</div>
-	<div class="panel-body">
-		<p>El aprendizaje y servicio, también conocido en Chile como A+S, es una metodología de aprendizaje activo donde los estudiantes se empeñan en dar respuesta - por medio de un proyecto - a una necesidad sentida de una comunidad concreta. Su intencionalidad es doble: movilizar en la práctica conocimientos y habilidades propias del currículum y al mismo tiempo cultivar aspectos valóricos y actitudinales de los estudiantes conectados a  la responsabilidad ciudadana y el emprendimiento social.</p>
-		<p>Existen muchas fuentes de inspiración del A+S. Por ejemplo, los siguientes autores son claves: en norteamérica John Dewey, en Europa Lev Vigotsky y en Latinoamérica Paulo Freire. Todos estos autores coinciden en que el aprendizaje situado es clave para conseguir aprendizaje profundos en los estudiantes. Lo cual permite, a su vez, a los profesores conseguir evaluación auténtica de los desempeños instalados en los estudiantes. Lo cual apoya la tesis de Phillips (1991) que propone que se  retiene el:</p>
-		<ul id = "estatutos">
-			<li> 10% de lo que oyen </li>
-			<li> 15% de lo que ven </li>
-			<li> 20% de lo que ven y oyen </li>
-			<li> 80% de lo que experimentan activamente.</li>
-		</ul>
-
-		<p>Las metodologías de aprendizaje que no son activas contemplan esencialmente dos actores: el profesor y el estudiante y, en ciertos casos, ayudantes. Todos ellos confinados dentro de un espacio controlado como son las sala de clases, los laboratorios, canchas o gimnasios. En el caso, de A+S se agrega el tercer actor llamado socio comunitario. De hecho, al trabajar con un servicio con una comunidad real se espera que los aprendizaje ya no ocurran siempre en ambientes totalmente controlados. Al encontrarse los alumnos con necesidades concretas no solo está en juego el aprendizaje sino que la responsabilidad de entregar un servicio de calidad.</p>
-
-		<p>En ciertos casos aparece en A+S un cuarto actor que hemos denominado el vinculador social. Éste  actor actúa como intermediario entre el docente y el socio comunitario. Relación muchas veces necesaria por el carácter efímero que puede resultar una intervención de un periodo lectivo hecho por un curso particular en una asignatura específica. De hecho, muchas veces se requiere gestionar los vínculos con varios socios comunitarios a la vez por períodos más largos de tiempo que un semestre. Esto crea la necesidad - que no siempre es reconocida - de este vinculador. </p>
-
-		<p>A+S no es la panacea, muchas veces los límites de recursos frena su desarrollo e implementación. Por otro lado, existen temáticas disciplinares que tienen metodologías de enseñanza-aprendizaje ya probadas y que por tradición son difíciles de cambiar. Sin embargo, lo que es extremadamente sorprendente en A+S es que casi no hay límite de los tipos de cursos que se puedan presentar bajo A+S, incluso si los cursos son teóricos. En todo caso, los cursos que son naturalmente apropiados para A+S son aquellos donde la componente práctica es importante. </p>
-		<p>La clave para la conversión de asignaturas al A+S está en conectar una necesidad sentida de una comunidad con los contenidos temáticos del curso. Esto, se puede hacer en prácticamente cualquier curso a cualquier nivel de la formación de personas. Lo interesante es constatar - y la evidencia así lo demuestra - con la guía de un profesor capacitado en A+S, como un estudiante protagonista de su aprendizaje produce desempeños que son muy difíciles de lograr con las metodologías de enseñanza-aprendizaje tradicionales. </p>
-	</div>
-	<div class="panel-footer">
-		<h1>Referencias</h1>
-		<p>Phillips, G. (1991). Ideas for high impact educational techniques. In R.W. Cairn & J.C.Kielsmeier (Eds.),Growing hope: A sourcebook on integrating youth service into the school curriculum (p. 84). St. Paul, MN: National Youth Leadership Council. 
-		Recuperado de http://teqjournal.org/backvols/1996/23_4/f96_wade.pdf</p>
-		
-	</div>
-</div>
-
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje y Servicio"%>
+		<%if seccion.priority =="Alta" %>		
+			<div id="panelAside" class="panel panel-default">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje y Servicio"%>
+		<%if seccion.priority =="Media" %>		
+			<div id="panelAside" class="panel panel-default">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje y Servicio"%>
+		<%if seccion.priority =="Baja" %>		
+			<div id="panelAside" class="panel panel-default">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
 

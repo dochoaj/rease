@@ -1,2 +1,11 @@
-<%= link_to "Nueva seccion", new_section_path, class:"btn btn-block btn-lg",id:"boton"%>
-<%= render "muestra", {accion: "Estatutos", eliminar: "Si"} %>
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		Crear una nueva sección de estutos
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Estatutos" %>
+	</div>
+</div>
+<br>
+<h1>Secciones de Estatutos anteriores: </h1>
+<%= render "muestra", {orden: "Estatutos", eliminar: "Si"} %>

@@ -1,2 +1,11 @@
-<%= link_to "Nueva seccion", new_section_path, class:"btn btn-block btn-lg",id:"boton"%>
-<%= render "muestra", {accion: "Hacemos", eliminar: "No"} %>
+<div class="panel panel-default" id="panelAside">
+	<div class="panel-heading">
+		Crear una nueva sección de hacemos
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Hacemos" %>
+	</div>
+</div>
+<br>
+<h1>Seccion de Hacemos anteriores: </h1>
+<%= render "muestra", {orden: "Hacemos", eliminar: "Si"} %>
