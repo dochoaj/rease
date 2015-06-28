@@ -36,6 +36,12 @@ class SectionsController < ApplicationController
 		@section = Section.new
 	end
 
+	def linkInteres
+		add_breadcrumb "link de Interés", :sections_linkInteres_path
+		@sections = Section.all
+		@section = Section.new
+	end
+
 	def new
 		add_breadcrumb "Nueva sección", :new_section_path
 		@section = Section.new
@@ -57,6 +63,7 @@ class SectionsController < ApplicationController
 	def destroy
 		@section = Section.find(params[:id])
 		@section.destroy
+		flash[:notice] = "La sección ha sido eliminada correctamente"
 		redirect_to sections_path
 	end
 
@@ -68,8 +75,10 @@ class SectionsController < ApplicationController
 	def update
 		@section = Section.find(params[:id])
 		if @section.update(section_params)
+			flash[:notice] = "La sección ha sido actualizada correctamente"
 			redirect_to @section
 		else
+			flash[:alert] = "Ha ocurrido un error en la actualización de la sección"
 			render :edit
 		end
 	end

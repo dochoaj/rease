@@ -1,5 +1,5 @@
 <h1>¿Qué es A+S?</h1>
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == "Aprendizaje y Servicio"%>
 		<%if seccion.priority =="Alta" %>		
 			<div id="panelAside" class="panel panel-default">
@@ -13,7 +13,7 @@
 		<%end%>
 	<%end%>
 <%end%>
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == "Aprendizaje y Servicio"%>
 		<%if seccion.priority =="Media" %>		
 			<div id="panelAside" class="panel panel-default">
@@ -27,7 +27,7 @@
 		<%end%>
 	<%end%>
 <%end%>
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == "Aprendizaje y Servicio"%>
 		<%if seccion.priority =="Baja" %>		
 			<div id="panelAside" class="panel panel-default">

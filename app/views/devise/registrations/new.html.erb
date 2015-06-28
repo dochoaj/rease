@@ -7,22 +7,8 @@
 		<div class="panel-body">
 			<div>
 				<p>Antes de registrarse es necesario que sepa los términos y condiciones que existen para pertenecer y mantenerse dentro de ésta red.
-					<a id ="linkEstatuto" data-toggle="modal" data-target = "#encuentro" >
-					 	>> Leer estatuto
-					</a>
-					</p> 
-				<div class="modal fade" id="encuentro" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg modal-estatuto">
-						<div class="modal-content">
-							<div class="modalbody">
-								<button type="button" id="botonCerrar" class="close" data-dismiss="modal" aria-hidden = "true">
-								&times;
-								</button>
-								<%= render "presentation/estatutos" %>
-							</div>
-						</div>
-					</div>
-				</div>
+				<%= link_to ">> Leer estatuto", presentation_estatutos_path, :id =>"linkEstatuto" %>
+
 				<p>Nuestro enfoque es el servicio, por lo que es necesario mantener un estándar dentro de la Red para que sus participantes cumplan con el objetivo. </p>
 				<p>Es por esto que se le pide a cada nuevo miembro de la red, dé su concentimiento para que pueda ser evaluado en las actividades que realice a nombre de REASE. </p>
 				<p>Además, así como se le evalúa a usted, usted deberá evaluar a otros miembros.
@@ -37,32 +23,27 @@
 		
 
 			<div class="field">
-				<p><%= f.label :name, "Nombres" %></p>
-				<%= f.text_field :name, :class => 'form-control',autofocus: true  %>
+				<%= f.text_field :name, :placeholder => "Nombres",:class => 'form-control',autofocus: true  %>
 			</div>
 
 			<div class="field">
-				<p><%= f.label :last_name, "Apellidos" %></p>
-				<%= f.text_field :last_name, :class => 'form-control',autofocus: true  %>
+				<%= f.text_field :last_name, :placeholder => "Apellidos",:class => 'form-control',autofocus: true  %>
 			</div>
 
 			<div class="field">
-				<p><%= f.label :email, "Correo electrónico" %></p>
-				<%= f.email_field :email, :class => 'form-control',autofocus: true  %>
+				<%= f.email_field :email, :placeholder => "Correo electrónico",:class => 'form-control',autofocus: true  %>
 			</div>
 
-			<div class="field">
-				<p><%= f.label :password, "Crea una contraseña" %>
-				<% if @validatable %>
-				<em>(<%= @minimum_password_length %> caracteres mínimo)</em>
-				<% end %></p>
-				<%= f.password_field :password,:class => 'form-control', autocomplete: "off" %>
+			<div class="field"> <!--aun no sé como agregar el valor de minimo al placeholder-->
+				<% if @validatable %> 
+					<% minimo = @minimum_password_length %> 
+				<% end %>
+				<%= f.password_field :password, :placeholder => "Crear contraseña (6 caracteres como mínimo)", :class => 'form-control', autocomplete: "off" %>
 			</div>
 
 
 			<div class="field">
-				<p><%= f.label :password_confirmation, "Confirma tu contraseña" %></p>
-				<%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
+				<%= f.password_field :password_confirmation, :placeholder => "Confirme su contraseña",:class => 'form-control', autocomplete: "off" %>
 			</div>
 
 
@@ -94,9 +75,9 @@
 
 			</div>
 		
-			<div class="actions" id="botonAdmin">
-				<%= f.submit "Acepto y Enviar Fomulario",:id => 'boton', :class => 'btn btn-lg '%>
-				<%= link_to "Salir", root_path,:id => 'boton', :class => 'btn btn-lg ' %>
+			<div class="actions">
+				<%= f.submit "Aceptar y Enviar Fomulario",:id => 'botonCRUD', :class => 'btn btn-lg '%>
+				<%= link_to "Salir", root_path,:id => 'botonCRUD', :class => 'btn btn-lg ' %>
 			</div>
 
 		</div>

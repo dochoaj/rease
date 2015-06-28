@@ -1,4 +1,3 @@
-
 <div class="panel panel-default" id="panelAside">
 	<div class="panel-heading">
 		<%= @event.title %>
@@ -26,8 +25,9 @@
 <% if user_signed_in? %>
 	<% if @event.user.id == current_user.id %>
 		<%= link_to 'Editar ', edit_event_path(@event), :id => "botonCRUD", :class => "btn btn-lg" %>
+		<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
 	<% end %>
 <% end %>
 	
 	<%= link_to 'Volver', events_path, :id => "botonCRUD", :class => "btn btn-lg" %>
-	<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
+	

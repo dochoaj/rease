@@ -27,7 +27,7 @@ section#principal, aside
 {
 	display: inline-block;
 	margin: 0.25 auto;
-	min-width: 700px;
+	min-width: 300px;
 	min-height: 400px;
 	padding: 0.25em;
 	vertical-align: top;

@@ -18,6 +18,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(defined_params)
+    @request.user_id = current_user.id
     if @request.save
       redirect_to :action => 'index'
     else
@@ -26,7 +27,7 @@ class RequestsController < ApplicationController
   end
 
   def update
-    @request = request.find(params[:id])
+    @request = Request.find(params[:id])
     if @request.update_attributes(defined_params)
      redirect_to :action => 'show', :id => @request
     else

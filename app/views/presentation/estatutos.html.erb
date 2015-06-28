@@ -8,7 +8,7 @@
 		</div>
 		<div class="panel-body">
 			<ul>
-				<% @secciones.each do |seccion| %>
+				<% @sections.each do |seccion| %>
 					<%if seccion.order == 'Estatutos'%>
 						<% div_id = seccion.id -%>					
 						<li class = "estatutos" id="funcion<%= div_id -%>"> <%= seccion.title %></li>			
@@ -19,7 +19,7 @@
 	</div>
 </div>
 
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == 'Estatutos'%>
 		<% div_id = seccion.id -%>
 		<div id="titulo<%= div_id -%>" >
@@ -36,7 +36,7 @@
 <%end%>
 
 <script type="text/javascript">
-	<% @secciones.each do |seccion| %>
+	<% @sections.each do |seccion| %>
 		<%if seccion.order == 'Estatutos'%>
 			<% div_id = seccion.id -%>
 			$("#funcion<%= div_id -%>").click(function() 

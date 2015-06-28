@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :institutions
   get 'presentation/index'
   get 'presentation/contacto'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get 'sections/aprendizaje'
   get 'sections/estatutos'
   get 'sections/novedades'
+  get 'sections/linkInteres'
 
   resources :sections
   resources :events
@@ -57,6 +59,7 @@ Rails.application.routes.draw do
 
   end
 
+  resources :offerings
   resources :requests
 
   # Example resource route with options:

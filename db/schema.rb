@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701025412) do
+ActiveRecord::Schema.define(version: 20150701025413) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -96,13 +96,29 @@ ActiveRecord::Schema.define(version: 20150701025412) do
   add_index "messages_users", ["message_id"], name: "index_messages_users_on_message_id", using: :btree
   add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
 
+  create_table "offerings", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.string   "status",      limit: 255
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "offerings", ["user_id"], name: "index_offerings_on_user_id", using: :btree
+
   create_table "requests", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.text     "description",   limit: 65535
     t.integer  "user_id",       limit: 4
     t.integer  "experience_id", limit: 4
     t.integer  "community_id",  limit: 4
     t.integer  "area_id",       limit: 4
+    t.string   "title",         limit: 255
+    t.text     "description",   limit: 65535
+    t.string   "status",        limit: 255
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -156,4 +172,5 @@ ActiveRecord::Schema.define(version: 20150701025412) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "events", "users"
+  add_foreign_key "offerings", "users"
 end

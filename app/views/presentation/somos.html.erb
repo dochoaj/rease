@@ -3,7 +3,7 @@
 La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiantes, universidades, colegios, agrupaciones civiles y en general a todas las personas y organizaciones en Chile que estén interesadas en esta metodología.
 </p>
 <center>
-	<% @secciones.each do |seccion| %>
+	<% @sections.each do |seccion| %>
 		<%if seccion.order == 'Somos'%>
 		<% div_id = seccion.id -%>
 		<button id="botonSomos" class = "btn btn-lg" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
@@ -13,7 +13,7 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 <p>
 
 
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == 'Somos'%>
 	<% titulo_id = seccion.id -%>
 	<div id="titulo<%= titulo_id -%>" >
@@ -31,7 +31,7 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 
 <script type="text/javascript">
 <% contador = 1; %>
-	<% @secciones.each do |seccion| %>
+	<% @sections.each do |seccion| %>
 		<%if seccion.order == 'Somos'%>
 			<% titulo_id = seccion.id -%>
 			<% if contador==1 %>
@@ -47,12 +47,12 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 <script type="text/javascript">
 
 <% contador1 = 1; %>
-<% @secciones.each do |seccion| %>
+<% @sections.each do |seccion| %>
 	<%if seccion.order == 'Somos'%>
 		<% div_id = seccion.id -%>
 		function funcion<%= div_id -%>(){
 		<% contador2 = 1; %>
-		<% @secciones.each do |seccion_in| %>
+		<% @sections.each do |seccion_in| %>
 			<%if seccion_in.order == 'Somos'%>
 				<% titulo_id = seccion_in.id -%>
 				<% if contador1==contador2 %>

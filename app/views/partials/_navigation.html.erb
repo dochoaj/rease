@@ -51,20 +51,18 @@
 				</li>
 
 				<li role="presentation">
-					<%= link_to "Experiencias", root_path %>
-				</li>
-
-				<li role="presentation">
-					<%= link_to "Reuniones", root_path %>
+					<%= link_to "Ofertas", offerings_path %>
 				</li>
 
 				<li role="presentation">
 					<%= link_to "Eventos", events_path %>
 				</li>
+				<%if current_user.id == 1%>
+					<li role="presentation" class="<%= 'active' if current_page?(sections_path) %>">
+					 <%= link_to "Administrar", sections_path %>
+					</li>
+					<%end%>
 
-				<li role="presentation">
-					<%= link_to "Recursos", root_path %>
-				</li>
 
 			</ul>
 			<p class="navbar-text navbar-right">| Hola <%=link_to current_user.name, root_path, :id=>'rightBar'%> 

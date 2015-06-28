@@ -1,7 +1,7 @@
 <%- model_class = Request -%>
 
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Solicitudes de servicio</h1>
 </div>
 
 <table class="table table-striped" id="tablaSolicitud">
@@ -37,6 +37,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_request_path,
-            :class => 'btn btn-lg',:id => 'boton' %>
+<%= link_to "Nueva solicitud", new_request_path, :class => 'btn btn-lg',:id => 'boton' %>
