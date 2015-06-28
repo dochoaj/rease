@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701025413) do
+ActiveRecord::Schema.define(version: 20150701025414) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -40,13 +40,11 @@ ActiveRecord::Schema.define(version: 20150701025413) do
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
     t.text     "address",     limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
   end
-
-  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "experiences", force: :cascade do |t|
     t.string   "tittle",              limit: 255
@@ -59,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150701025413) do
   end
 
   create_table "institutions", force: :cascade do |t|
+    t.text     "description",       limit: 65535
     t.string   "name",              limit: 255
     t.text     "web",               limit: 65535
     t.datetime "created_at",                      null: false
@@ -67,15 +66,6 @@ ActiveRecord::Schema.define(version: 20150701025413) do
     t.string   "logo_content_type", limit: 255
     t.integer  "logo_file_size",    limit: 4
     t.datetime "logo_updated_at"
-  end
-
-  create_table "meetings", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.text     "adress",      limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id",     limit: 4
   end
 
   create_table "messages", force: :cascade do |t|
@@ -132,18 +122,6 @@ ActiveRecord::Schema.define(version: 20150701025413) do
     t.datetime "updated_at"
   end
 
-  create_table "service_offerings", force: :cascade do |t|
-    t.string   "titlle",        limit: 255
-    t.text     "description",   limit: 65535
-    t.date     "date"
-    t.integer  "user_id",       limit: 4
-    t.integer  "experience_id", limit: 4
-    t.integer  "area_id",       limit: 4
-    t.integer  "community_id",  limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -171,6 +149,5 @@ ActiveRecord::Schema.define(version: 20150701025413) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "events", "users"
   add_foreign_key "offerings", "users"
 end
