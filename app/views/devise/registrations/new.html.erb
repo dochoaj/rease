@@ -2,7 +2,7 @@
 <!--h1 class="text-center login-title">Ingrese sus datos para conectarse a REASE</h1-->
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: {class: 'form'}) do |f| %>
 
-	<div class="panel panel-default" id="panelAside">
+	<div class="panel panel-default" id="panelRease">
 		<div class="panel-heading">Consentimiento para ser evaluado</div>
 		<div class="panel-body">
 			<div>
@@ -17,7 +17,7 @@
 		</div>
 	</div>
 
-	<div class="panel panel-default" id="panelAside">
+	<div class="panel panel-default" id="panelRease">
 		<div class="panel-heading">Datos personales</div>
 		<div class="panel-body">
 		
@@ -51,15 +51,15 @@
 		</div>
 	</div>
 
-	<div class="panel panel-default" id="panelAside">
+	<div class="panel panel-default" id="panelRease">
 		<div class="panel-heading">Identificación dentro de la red </div>
 		<div class="panel-body">
 
 			<div class="field">
-				<p><%= f.label :category_id, "Rol de usuario" %>
+				<p><%= f.label :category, "Rol de usuario" %>
 				<button type="button" class="btn btn-default" id:"botonTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="botonRolUsuario"> ? </button></p>
 
-				<%= f.select(:category_id, [['Docente', 2],['Vinculador Social', 3],['Socio comunitario', 4]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
+				<%= f.select(:category, [['Docente', 2],['Vinculador Social', 3],['Socio comunitario', 4]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
 			</div>
 
 
