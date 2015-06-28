@@ -37567,3 +37567,77 @@ Processing by PresentationController#estatutos as HTML
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
   Rendered partials/_intranet.html.erb (1.4ms)
 Completed 200 OK in 294ms (Views: 292.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 19:17:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by PresentationController#index as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/index.html.erb within layouts/application (7.1ms)
+  Rendered partials/_navigation.html.erb (6.5ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (1.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_intranet.html.erb (3.6ms)
+Completed 200 OK in 1086ms (Views: 1078.1ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-27 19:18:00 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CsaMlssIL2AAQwlF3oxywWdk2rHTraJ2xeC5OjnSvRK6I4h1qxwn7Plvme8VtamHWrPDtZia/8T5XBgQ3osamg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-06-27 19:18:00 -0300
+Processing by PresentationController#index as HTML
+  [1m[35mSection Load (0.3ms)[0m  SELECT `sections`.* FROM `sections`
+  Rendered presentation/index.html.erb within layouts/application (0.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered partials/_navigation.html.erb (4.1ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (21.3ms)
+  Rendered partials/_intranet.html.erb (22.2ms)
+Completed 200 OK in 317ms (Views: 315.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/presentation/aprendizaje" for ::1 at 2015-06-27 19:18:08 -0300
+Processing by PresentationController#aprendizaje as HTML
+  Rendered presentation/aprendizaje.html.erb within layouts/application (0.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (6.2ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (1.1ms)
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (5.3ms)
+  Rendered partials/_intranet.html.erb (7.4ms)
+Completed 200 OK in 303ms (Views: 301.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/presentation/hacemos" for ::1 at 2015-06-27 19:18:10 -0300
+Processing by PresentationController#hacemos as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/hacemos.html.erb within layouts/application (2.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (4.3ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.2ms)
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.9ms)
+  Rendered partials/_intranet.html.erb (3.9ms)
+Completed 200 OK in 316ms (Views: 314.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/presentation/somos" for ::1 at 2015-06-27 19:18:11 -0300
+Processing by PresentationController#somos as HTML
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+  Rendered presentation/somos.html.erb within layouts/application (43.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered partials/_navigation.html.erb (4.0ms)
+  Rendered /home/pachi/.rvm/gems/ruby-2.2.1/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/_inicio_sesion.html.erb (2.8ms)
+  Rendered partials/_intranet.html.erb (3.7ms)
+Completed 200 OK in 380ms (Views: 378.1ms | ActiveRecord: 0.6ms)

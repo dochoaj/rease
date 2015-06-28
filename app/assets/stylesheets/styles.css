@@ -1,4 +1,11 @@
-a, a:focus, a:active, a:visited
+/* 
+	styles.css
+	Estilos para la página de REASE
+	Creados por PazBustos
+*/
+
+/*link básicos estilos rease*/
+a, a:focus, a:active, a:visited 
 {
 	color: #30aaaa;	
 	text-decoration: none;
@@ -9,6 +16,7 @@ a:hover
 	font-weight: bold;
 	text-decoration: none;
 }
+/*Estilos para diseño responsive*/
 section#contenedor
 {
 	margin: 0.25em auto;
@@ -19,11 +27,11 @@ section#principal, aside
 {
 	display: inline-block;
 	margin: 0.25 auto;
-	min-width: 800px;
+	min-width: 700px;
 	min-height: 400px;
 	padding: 0.25em;
 	vertical-align: top;
-	width: 70%%;
+	width: 65%%;
 }
 article
 {
@@ -35,9 +43,9 @@ aside
 	width: 25%;
 	min-width: 300px;
 }
+/*Gradiente de color al cuerpo y font y tamaño letra*/
 body
 {
-	/*Gradiente de Color*/
 	background: #ffffff;
 	background: -moz-linear-gradient(-45deg, #ffffff 0%, #ffffff 51%, #30aaaa 89%, #30aaaa 100%);
 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffffff), color-stop(51%,#ffffff), color-stop(89%,#30aaaa), color-stop(100%,#30aaaa));
@@ -52,6 +60,7 @@ body
 
 }
 
+/*pies de la página para contacto*/
 footer
 {
 	clear:both;
@@ -87,6 +96,7 @@ h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 	font-size: 16px;
 	margin: 2%;
 }
+
 p
 {
 	color: black;
@@ -113,6 +123,8 @@ p
 {
 	background: black;
 }
+
+
 .inicioSesion
 {
 	padding-bottom: 20px;
@@ -121,16 +133,22 @@ p
     margin-right: auto;
 }
 
+/*links de interes centrados y con margen*/
 .linkInteres, .linkInteres:visited
 {
 	text-align: center;
 	margin: 2%;
 	display: block;
 }
+
+
 .modal-estatuto
 {
 	min-width: 90%;
 }
+
+
+/*sombras y efectos de la barra navegadora*/
 .navbar-default .navbar-nav>li>a
 {
 	-webkit-box-shadow: 0px 0px 1px #666666;
@@ -159,11 +177,16 @@ p.navbar-text.navbar-right
 	margin: 0;
 	line-height: 50px;
 }
-#aceptar
+
+
+#aceptar /*boton de aceptar del registro*/
 {
 	margin-top: 40px;
 }
-#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #botonCarousel, #panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading, #pies
+
+
+/*colores para los botones y barras*/
+#BarraNavegadora, #boton, #boton a, #botonSomos, #botonHacemos, #botonCarousel, #panelAside .panel-heading, #pies
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -191,7 +214,7 @@ p.navbar-text.navbar-right
 	color: white;
 	margin-bottom: 15px;
 }
-#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover, #botonHacemos:hover
+#boton:hover, #boton a:hover, #botonSomos:hover, #botonSomos:hover, #pies:hover, #botonHacemos:hover, #panelAside .panel-heading:hover
 {
 	background: #30bbbb;
 	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
@@ -202,18 +225,20 @@ p.navbar-text.navbar-right
 	background: #30bbbb;
 	font-weight: bold;
 }
+
+
 #botonTipoUsuario
 {
  vertical-align: middle;
  float: right;
 }
+
 #botonCerrar
 {
-
 	margin-top: 2%;
 	margin-right: 4%;
 }
-#botonHacemos
+#botonHacemos, #botonSomos
 {
 	-webkit-border-radius: 6;
 	-moz-border-radius: 6;
@@ -227,34 +252,18 @@ p.navbar-text.navbar-right
 }
 #botonSomos
 {
-	-webkit-border-radius: 6;
-	-moz-border-radius: 6;
-	border-radius: 6px;
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	box-shadow: 3px 2px 5px #666666;
-	color: white;
 	width: 200px;
 	margin: 3%;
 }
 
+/* para el panel de dejar un comentario como no registrado
 #comentario
 {
 	width: 40%;
 	min-width: 400px;
 	padding-left: 5%;
-}
-#contenido
-{
-	margin-top: 4%;
-}
-#contadorUsuarios
-{
-	float: right !important;
-	margin-right: 10px;
-	margin-top: 10px;
-	color: white;
-}
+}*/
+
 #ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
 {
 	margin-top: 10%;
@@ -272,6 +281,7 @@ p.navbar-text.navbar-right
 	display: block;
 }
 
+/*estilo de los indices de lso estatutos*/
 #indiceEstatuto1, #indiceEstatuto2, #indiceEstatuto3, #indiceEstatuto4, #indiceEstatuto
 {
 	color: #30aaaa;
@@ -289,7 +299,7 @@ p.navbar-text.navbar-right
 	text-decoration: none;
 }
 
-#logo
+#logo /*Estilo del logotipo de REASE*/
 {
 	margin-left: 25%;
 	margin-right: 25%;
@@ -298,7 +308,7 @@ p.navbar-text.navbar-right
 	display: block;
 }
 
-#logoInstituciones
+#logoInstituciones /* los logos de las intituciones tengan tamaño similar*/
 {
 	margin-left: auto;
 	margin-right: auto;
@@ -308,20 +318,15 @@ p.navbar-text.navbar-right
 	max-width: 65%;
 	display: block;
 }
-#logoNav
+#logoNav /*estilos para el logo de la navbar*/
 {
 	margin-top:8px;
 	margin-right: 10px;
 	margin-right: 5px;
 	max-height: 40px;
 }
-#logout
-{
 
-	color: red;
-	float: right !important;
-}
-#pies
+#pies /*estilo a la barra del footer*/
 {
 	-webkit-box-shadow: -3px -2px 5px #666666;
 	-moz-box-shadow: -3px -2px 5px #666666;
@@ -329,47 +334,29 @@ p.navbar-text.navbar-right
 	text-align: center;
 	font-weight: bold;
 	color: white;
-
 }
 
+
+/*Todos los estilos de los paneles que se muestran en toda la página*/
 #panelAside
 {
-	width: 96%;
 	margin: 2%;
 	text-align: center;
 }
-#panelHacemos
-{
-	width: 48%;
-	min-height: 300px;
-	float: right;
-	margin: 1%;
-	text-align: center;
-	display: block;
-	background: white;
-}
-#panelImg
-{
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: center;
-}
-#panelAside .panel-heading, #panelImg .panel-heading, #panelHacemos .panel-heading
+
+#panelAside .panel-heading /*Cabecera del panel*/
 {
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
 }
-#panelAside .panel-footer, #panelHacemos .panel-footer
+#panelAside .panel-footer /*Cabecera del footer*/
 {
 	background: white;
 }
-#panelAside .panel-heading:hover, #panelImg .panel-heading:hover, #panelHacemos .panel-heading:hover
-{
-	background: #30bbbb;
-}
+
+/*textos de cantidad de usuario y nombre de usuario en la barra*/
 #rightBar, #rightBar:active
 {
 	color: white;
@@ -377,13 +364,14 @@ p.navbar-text.navbar-right
 #rightBar:hover
 {
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 }
 *:focus
 {
 	outline: none !important;
 }
 
+/*tamaño de la navbar al disminuir el tamaño de la pantalla*/
 @media(max-width:1200px)  {
 
     .navbar-collapse.collapse {
