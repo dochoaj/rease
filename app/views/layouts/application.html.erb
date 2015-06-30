@@ -57,7 +57,7 @@
 			<%= render "partials/intranet"%>
 
 			
-			<div id="panelRease" class="panel panel-default">
+			<div  class="panel panel-default panelRease">
 				<div class="panel-heading">
 					<%= link_to "Calendario de eventos", events_path, :id => "calendarPanelTitle"%>
 				</div>
@@ -67,7 +67,7 @@
 
 			<% if !user_signed_in? %>
 				<%if !@sections.blank? %> 
-				<div id="panelRease" class="panel panel-default" >
+				<div  class="panel panel-default panelRease" >
 					<div class="panel-heading" data-toggle="collapse" data-target="#cuerpoLI">
 						Links de interés
 					</div>

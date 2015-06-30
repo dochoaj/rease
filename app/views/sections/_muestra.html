@@ -2,7 +2,7 @@
 <% eliminar %>
 <% @sections.each do |seccion| %>
 	<%if seccion.order == orden%>
-		<div id="panelRease" class="panel panel-default">
+		<div  class="panel panel-default panelRease">
 			<div class="panel-heading">
 				<%=	link_to seccion.title, seccion %> 
 				(id: <%= seccion.id%>)

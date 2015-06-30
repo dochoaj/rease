@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-administrador  = User.create([{email: 'administrador@gmail.com',password: 'admini123',name: 'Administrador',last_name: 'Inicial',category: 1, autorization_level: 1}])
+User.create([{email: 'administrador@gmail.com',password: 'admini123',name: 'Administrador',last_name: 'Inicial',category: 1, autorization_level: 1}])
 
-linkInteres = Section.create([{title:'Link de interés básicos', order:'Link de Interés', body: '<p style="text-align: center;"><a href="https://es-es.facebook.com/reasechile">Facebook REASE</a></p>
+Section.create([{title:'Link de interés básicos', order:'Link de Interés', body: '<p style="text-align: center;"><a href="https://es-es.facebook.com/reasechile">Facebook REASE</a></p>
 
 <p style="text-align: center;"><a href="http://www.clayss.org.ar/">CLAYSS</a></p>
 
