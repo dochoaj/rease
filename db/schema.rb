@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701025414) do
+ActiveRecord::Schema.define(version: 20150701025416) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -134,7 +134,6 @@ ActiveRecord::Schema.define(version: 20150701025414) do
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
     t.integer  "institution_id",         limit: 4
-    t.integer  "category_id",            limit: 4
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -144,6 +143,7 @@ ActiveRecord::Schema.define(version: 20150701025414) do
     t.integer  "autorization_level",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category",               limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

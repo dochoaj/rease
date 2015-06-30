@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
 	add_breadcrumb "Inicio", :root_path
-	add_breadcrumb "Secciones", :sections_path
+	add_breadcrumb "Administración", :sections_path
 
 	def index
 		@sections = Section.all

@@ -57,11 +57,11 @@
 				<li role="presentation">
 					<%= link_to "Eventos", events_path %>
 				</li>
-				<%if current_user.id == 1%>
+				<%if current_user.category == 1%>
 					<li role="presentation" class="<%= 'active' if current_page?(sections_path) %>">
 					 <%= link_to "Administrar", sections_path %>
 					</li>
-					<%end%>
+				<%end%>
 
 
 			</ul>

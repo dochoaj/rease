@@ -45,8 +45,8 @@
 }
 #botonCRUD
 {
-	margin-left: 3%;
-	margin-right: 3%;
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-top: 1%;
 	text-align: center;
 	min-width: 120px;
@@ -63,15 +63,15 @@
 	margin-top: 2%;
 	margin-right: 4%;
 }
-#botonHacemos, #botonSomos, #botonAdmin, 
+#botonHacemos, #botonSomos, #botonAdmin
 {
-	margin-left: 3%;
-	margin-right: 3%;
+	margin-left: 4%;
+	margin-right: 4%;
 	margin-top: 1%;
 	text-align: center;
 	min-width: 200px;
 }
 #botonAdmin
 {
-	width: 350px;
+	width: 300px;
 }

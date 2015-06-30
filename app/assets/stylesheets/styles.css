@@ -57,7 +57,6 @@ body
 	color: black;
 	font-family: 'Segoe UI', sans-serif;
 	font-size: 15px;
-
 }
 
 /*pies de la página para contacto*/
@@ -180,7 +179,7 @@ p.navbar-text.navbar-right
 
 
 /*colores para barras y paneles*/
-#BarraNavegadora, #panelAside .panel-heading, #pies, #panelInstitution .panel-heading
+#BarraNavegadora, .panelRease .panel-heading, #pies, #panelInstitution .panel-heading
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -197,7 +196,7 @@ p.navbar-text.navbar-right
 	border-color: #30cccc;
 }
 
-#pies:hover, #panelAside .panel-heading:hover, #panelInstitution .panel-heading:hover
+#pies:hover, .panelRease .panel-heading:hover, #panelInstitution .panel-heading:hover
 {
 	background: #30bbbb;
 	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
@@ -280,20 +279,20 @@ p.navbar-text.navbar-right
 
 
 /*Todos los estilos de los paneles que se muestran en toda la página*/
-#panelAside
+.panelRease
 {
 	margin: 2%;
 	text-align: center;
 }
 
-#panelAside .panel-heading, #panelInstitution .panel-heading /*Cabecera del panel*/
+.panelRease .panel-heading, #panelInstitution .panel-heading /*Cabecera del panel*/
 {
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
 }
-#panelAside .panel-footer, #panelInstitution .panel-footer /*Cabecera del footer*/
+.panelRease .panel-footer, #panelInstitution .panel-footer /*Cabecera del footer*/
 {
 	background: white;
 }

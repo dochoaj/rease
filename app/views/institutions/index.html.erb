@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% @institutions.each do |institution| %>
   <%cuerpo = institution.id -%>
-  <div class="panel panel-default" id="panelInstitution"  data-toggle="collapse" data-target="#cuerpo<%=cuerpo%>">
+  <div class="panel panel-default panelRease" id="panelInstitution"  data-toggle="collapse" data-target="#cuerpo<%=cuerpo%>">
     <div class="panel-heading">
       <%= institution.name %>      
     </div>
