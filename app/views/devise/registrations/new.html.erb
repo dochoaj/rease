@@ -57,7 +57,7 @@
 
 			<div class="field">
 				<p><%= f.label :category, "Rol de usuario" %>
-				<button type="button" class="btn btn-default" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnRolUsuario"> ? </button></p>
+				<button type="button" class="btn btn-default btnWhite" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnRolUsuario"> ? </button></p>
 
 				<%= f.select(:category, [['Docente', 2],['Vinculador Social', 3],['Socio comunitario', 4]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
 			</div>
@@ -66,7 +66,7 @@
 			<div class="field">
 				<p><%= f.label :autorization_level, "Tipo de usuario"%>
 
-				<button type="button" class="btn btn-default" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnTipoUsuario"> ? </button>
+				<button type="button" class="btn btn-default btnWhite" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnTipoUsuario"> ? </button>
 
 				</p>
 

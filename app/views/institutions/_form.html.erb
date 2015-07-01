@@ -1,4 +1,4 @@
-<%orden ||= "crear"%>
+<%orden ||= "Crear"%>
 <%= form_for(@institution) do |f| %>
 	<% if @institution.errors.any? %>
 		<div id="error_explanation">
@@ -14,7 +14,7 @@
 
 <div class="panel panel-default panelRease" >
 	<div class="panel-heading">
-		<%=orden%> nueva institución
+		Datos de la institución
 	</div>
 	<div class="panel-body">
 		<div class="field">
@@ -28,5 +28,6 @@
 		</div>
 	</div>	
 </div>
-	<%= f.submit "Agregar", :class=>"btn btn-lg" %>
+	<%= f.submit orden, :class=>"btn btn-lg btnCRUD" %>
+	<%= link_to 'Volver', institutions_path, :class =>"btn btn-lg btnCRUD" %>
 <% end %>

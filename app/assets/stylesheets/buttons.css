@@ -49,12 +49,6 @@
 	min-width: 130px;
 }
 
-.btnTipoUsuario
-{
- vertical-align: middle;
- float: right;
-}
-
 .btnCerrar, 
 {
 	margin-top: 2%;
@@ -75,6 +69,17 @@
 .btnHeading, .btnHeading:hover, .btnHeading:visited
 {
 	color: white;
+}
+.btnWhite, .btnWhite:visited
+{
+	color: black;
+	background-image: none;
+	background: white;
+}
+.btnWhite:hover
+{
+	color: black;
+	background: #ddd;
 }
 .form-control
 {

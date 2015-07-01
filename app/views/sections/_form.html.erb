@@ -1,4 +1,5 @@
-<%orden ||= "crear"%>
+<%orden ||= "Opcion"%>
+<%accion ||= "Crear" %>
 <center>
 	<div style="width: 90%">
 		<%= form_for(@section) do |f| %>
@@ -25,7 +26,7 @@
 			
 
 			<div class="field"> 
-				<%= f.submit "Crear", :class => 'btn btn-lg btnCRUD' %>
+				<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
 			</div>
 		<%end%>
 	</div> 
