@@ -5,7 +5,7 @@
 		
 		<%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña'%>
 		
-		<%= f.submit "Ingresar", :id => 'boton', :class => 'btn btn-block' %>
+		<%= f.submit "Ingresar", :class => 'btn btn-block' %>
 		
 		<p id="styleSession"> <%= f.check_box :remember_me %> Recordarme </p>
 		<%= render "devise/shared/links" %>

@@ -6,7 +6,7 @@ La Red Nacional de Aprendizaje y Servicio Chile a definido su rol a desempeñar 
 	<% @sections.each do |seccion| %>
 		<%if seccion.order == 'Hacemos'%>
 		<% div_id = seccion.id -%>
-		<button id="botonHacemos" class = "btn btn-lg" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
+		<button class = "btn btn-lg btnHacemos" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
 		<%end%>
 	<%end%>
 </center>

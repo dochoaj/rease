@@ -37,8 +37,8 @@
 		</div>
 	</div>
 
-	<%= f.submit accion, :id => 'botonCRUD', :class => 'btn btn-lg' %>
-	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg', :id => 'botonCRUD' %>
+	<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg btnCRUD' %>
 
 <% end %>
 

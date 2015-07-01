@@ -23,9 +23,9 @@
 
 <% if user_signed_in? %>
   <% if @offering.user.id == current_user.id %>
-    <%= link_to 'Editar ', edit_offering_path(@offering), :id => "botonCRUD", :class => "btn btn-lg" %>
-    <%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
+    <%= link_to 'Editar ', edit_offering_path(@offering), :class => "btn btn-lg btnCRUD" %>
+    <%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :class => "btn btn-lg btnCRUD" %>
   <% end %>
 <% end %>
   
-  <%= link_to 'Volver', offerings_path, :id => "botonCRUD", :class => "btn btn-lg" %>
+  <%= link_to 'Volver', offerings_path, :class => "btn btn-lg btnCRUD" %>

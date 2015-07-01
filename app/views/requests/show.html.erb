@@ -20,14 +20,14 @@
 
 <% if user_signed_in? %>
   <% if @request.user.id == current_user.id %>
-    <%= link_to 'Editar ', edit_request_path(@request), :id => "botonCRUD", :class => "btn btn-lg" %>
+    <%= link_to 'Editar ', edit_request_path(@request), :id => "btnCRUD", :class => "btn btn-lg" %>
   <%= link_to t('Eliminar'),
               request_path(@request),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Está seguro de eliminar la solicitud?')) },
-              :id => "botonCRUD", :class => "btn btn-lg"%>
+              :id => "btnCRUD", :class => "btn btn-lg"%>
   <% end %>
 <% end %>
   
-  <%= link_to 'Volver', requests_path, :id => "botonCRUD", :class => "btn btn-lg" %>
+  <%= link_to 'Volver', requests_path, :id => "btnCRUD", :class => "btn btn-lg" %>
   
