@@ -1,29 +1,24 @@
 <h1>Ofertas de servicio</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+<% if current_user.category != 4 %>
+  <%= link_to "Nueva oferta de servicio", new_offering_path, :class => 'btn btn-lg' %>
+<%end%>
 
-  <tbody>
-    <% @offerings.each do |offering| %>
-      <tr>
-        <td><%= offering.title %></td>
-        <td><%=raw offering.description %></td>
-        <td><%= offering.status %></td>
-        <td><%= link_to 'Mostrar ', offering %></td>
-        <td><%= link_to ' Editar', edit_offering_path(offering) %></td>
-        <td><%= link_to ' Eliminar', offering, method: :delete, data: { confirm: '¿Seguro de querer eliminar?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @offerings.each do |offering| %>
+  <div class="panel panel-default panelRease">
+    <div class="panel-heading">
+      <%= offering.title %>
+    </div>
+    <div class="panel-body">
+      <%=raw offering.description %>
+      <p><b>Estado: </b><%=offering.status %></p>
+    </div>
 
-<br>
-
-<%= link_to 'Nueva oferta', new_offering_path, :class => "btn btn-lg btnCRUD" %>
+    <div class="panel-footer">
+      <p><b>Creador:</b> <%= offering.user.name %> <%= offering.user.last_name %><p>
+      <p><b>Fecha y hora de inicio: </b><%=l offering.start_time %></p>
+      <p><b>Fecha y hora de término: </b><%=l offering.end_time %></p>
+      <%= link_to "Ver oferta", offering %>
+    </div>
+  </div>
+<%end%>

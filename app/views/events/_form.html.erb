@@ -19,11 +19,11 @@
 		<div class="field">
 			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true %>
 		</div>
-		<br>
+		
 		<div class="field">
 			<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic" %>
 		</div>
-		<br>
+		
 		<div class="field">
 			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true   %>
 		</div>
@@ -37,7 +37,7 @@
 			<p><%= f.label :end_time, "Fecha y hora de término" %></p>
 			<%= f.datetime_select :end_time %>
 		</div>
-		<br>
+		
 	</div>
 </div>
 	<%= f.submit orden, :class => 'btn btn-lg btnCRUD' %>

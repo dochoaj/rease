@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'sections/novedades'
   get 'sections/linkInteres'
 
+  get 'events/listado'
+
   resources :sections
   resources :events
  # CRUD

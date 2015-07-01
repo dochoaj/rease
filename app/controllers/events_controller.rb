@@ -1,25 +1,33 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Eventos", :events_path
+
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
   end
 
+  def listado
+    @events = Event.all
+  end
   # GET /events/1
   # GET /events/1.json
   def show
-  
+    add_breadcrumb "Mostrar"
   end
 
   # GET /events/new
   def new
+    add_breadcrumb "Nuevo evento"
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    add_breadcrumb "Editar"
   end
 
   # POST /events

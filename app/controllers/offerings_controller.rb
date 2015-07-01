@@ -1,5 +1,8 @@
 class OfferingsController < ApplicationController
   before_action :set_offering, only: [:show, :edit, :update, :destroy]
+ 
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Ofertas", :offerings_path
 
   # GET /offerings
   # GET /offerings.json
@@ -10,15 +13,18 @@ class OfferingsController < ApplicationController
   # GET /offerings/1
   # GET /offerings/1.json
   def show
+    add_breadcrumb "Mostrar"
   end
 
   # GET /offerings/new
   def new
+    add_breadcrumb "Nueva oferta"
     @offering = Offering.new
   end
 
   # GET /offerings/1/edit
   def edit
+    add_breadcrumb "Editar"
   end
 
   # POST /offerings
@@ -26,7 +32,7 @@ class OfferingsController < ApplicationController
   def create
     @offering = Offering.new(offering_params)
     @offering.user_id = current_user.id
-
+    @offering.status = "Disponible"
     respond_to do |format|
       if @offering.save
         format.html { redirect_to @offering, notice: 'Offering was successfully created.' }

@@ -11,9 +11,9 @@
 		<h1> Información </h1>
 		<p><b>Dirección: </b><%= @event.address %></p>
 		
-		<p><b>Fecha y hora de inicio: </b><%= @event.start_time.day %>/<%= @event.start_time.month %>/<%= @event.start_time.year %> <%= @event.start_time.hour%>:<%= @event.start_time.min%></p>
+		<p><b>Fecha y hora de inicio: </b><%=l @event.start_time %></p>
 
-		<p><b>Fecha y hora de término: </b><%= @event.end_time.day %>/<%= @event.end_time.month %>/<%= @event.end_time.year %> <%= @event.end_time.hour%>:<%= @event.end_time.min%></p>
+		<p><b>Fecha y hora de término: </b><%=l @event.end_time %></p>
 
 	</div>
 	<div class="panel-footer">
