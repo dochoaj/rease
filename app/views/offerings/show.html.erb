@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.category != 4 %>
   <% if @offering.user.id == current_user.id %>
     <%= link_to 'Editar ', edit_offering_path(@offering), :class => "btn btn-lg btnCRUD" %>
     <%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :class => "btn btn-lg btnCRUD" %>

@@ -1,6 +1,7 @@
-<% if user_signed_in? %>
-	<%= link_to 'Nuevo evento', new_event_path, :class => "btn btn-lg btnCRUD"%>
+<% if user_signed_in? && current_user.category == 1  %>
+	<%= link_to 'Nuevo evento', new_event_path, :class => "btn btn-lg btnCRUD" %>
 <% end %>
+
 <div  class="panel panel-default panelRease">
 	<div class="panel-heading">
 		Calendario de eventos
