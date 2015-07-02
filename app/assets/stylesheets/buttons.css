@@ -35,9 +35,9 @@
 	color: white;
 	font-weight: bold;
 }
-.btn:visited, .btn a:visited
+.btn:visited, .btn a:visited, .btn:focus, .btn a:focus
 {
-	color: white;
+ color: white;
 }
 /*COMPORTAMIENTO*/
 .btnCRUD
