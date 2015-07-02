@@ -21,16 +21,17 @@
 		</div>
 		
 		<div class="field">
-			<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic" %>
-		</div>
-		
-		<div class="field">
 			<% if accion == "Actualizar" %>
 				<%= f.select(:status, [['Disponible', 'Disponible'],['En proceso', 'En proceso'],['Realizado','Realizado'], ['Cancelado','Cancelado'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 			<% else %>
 				<p><b>Estado: </b> Disponible </p>
 			<% end %>
 		</div>
+
+		<div class="field">
+			<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic" %>
+		</div>
+		
 		<div class="field">
 			<p><%= f.label :start_time, "Fecha de inicio" %>
 			<%= f.datetime_select :start_time %></p>

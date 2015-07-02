@@ -8,7 +8,11 @@
 		<p><%=raw @request.description %></p>
 
 		<h2> Información </h2>
-		<p><b>Estado: </b> 
+			<p><b>Estado: </b><%= @request.status %></p>
+
+			<p><b>Fecha y hora de inicio: </b><%=l @request.start_time %></p>
+
+			<p><b>Fecha y hora de término: </b><%=l @request.end_time %></p>
 	</div>
 	
 	<div class="panel-footer">

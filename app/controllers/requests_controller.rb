@@ -49,7 +49,7 @@ class RequestsController < ApplicationController
 private
 
   def defined_params
-    params.require(:request).permit(:id, :title, :description, :user_id)
+    params.require(:request).permit(:id, :title, :description, :user_id, :status, :start_time, :end_time)
   end
 
 end
