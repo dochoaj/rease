@@ -1,18 +1,23 @@
 class RequestsController < ApplicationController
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Solicitudes", :requests_path
   
   def index
     @requests = Request.all
   end
 
   def show
+    add_breadcrumb "Mostrar"
     @request = Request.find(params[:id])
   end
 
   def edit
+    add_breadcrumb "Editar"
     @request = Request.find(params[:id])
   end
 
   def new
+    add_breadcrumb "Nueva solicitud"
     @request = Request.new
   end
 
@@ -44,7 +49,7 @@ class RequestsController < ApplicationController
 private
 
   def defined_params
-    params.require(:request).permit(:id, :title, :description, :user_id)
+    params.require(:request).permit(:id, :title, :description, :user_id, :status, :start_time, :end_time)
   end
 
 end

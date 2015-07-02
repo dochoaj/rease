@@ -1,25 +1,33 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Eventos", :events_path
+
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
   end
 
+  def listado
+    @events = Event.all
+  end
   # GET /events/1
   # GET /events/1.json
   def show
-  
+    add_breadcrumb "Mostrar"
   end
 
   # GET /events/new
   def new
+    add_breadcrumb "Nuevo evento"
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    add_breadcrumb "Editar"
   end
 
   # POST /events
@@ -27,6 +35,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.status = "Vigente"
 
     respond_to do |format|
       if @event.save
@@ -71,6 +80,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:user_id, :title, :description, :address, :start_time, :end_time)
+      params.require(:event).permit(:user_id, :title, :description, :address, :start_time, :end_time, :status)
     end
 end

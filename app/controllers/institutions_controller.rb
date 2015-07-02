@@ -1,9 +1,12 @@
 class InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Administración", :sections_path
 
   # GET /institutions
   # GET /institutions.json
   def index
+    add_breadcrumb "Instituciones", institutions_path 
     @institutions = Institution.all
   end
 
@@ -14,11 +17,13 @@ class InstitutionsController < ApplicationController
 
   # GET /institutions/new
   def new
+    add_breadcrumb "Nueva institucion", institutions_path
     @institution = Institution.new
   end
 
   # GET /institutions/1/edit
   def edit
+    add_breadcrumb "Editar", institutions_path
   end
 
   # POST /institutions

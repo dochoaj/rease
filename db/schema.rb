@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701025416) do
+ActiveRecord::Schema.define(version: 20150701234029) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150701025416) do
     t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.string   "status",      limit: 255
   end
 
   create_table "experiences", force: :cascade do |t|

@@ -6,7 +6,7 @@ La Red Nacional de Aprendizaje y Servicio Chile reúne  a profesores, estudiante
 	<% @sections.each do |seccion| %>
 		<%if seccion.order == 'Somos'%>
 		<% div_id = seccion.id -%>
-		<button id="botonSomos" class = "btn btn-lg" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
+		<button class = "btn btn-lg btnSomos" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
 		<%end%>
 	<%end%>
 </center>

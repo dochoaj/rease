@@ -1,14 +1,11 @@
 <h1>Links de Interés: </h1>
 <%= render "muestra", {orden: "Link de Interés", eliminar: "Si"} %>
 
-<%if @sections.blank?%>
-	<div class="panel panel-default panelRease" >
-		<div class="panel-heading">
-			Crear nuevos links de interés
-		</div>
-		<div class="panel-body">
-			<%= render "form",orden: "Link de Interés" %>
-		</div>
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		Crear nuevos links de interés
 	</div>
-	<br>
-<%end%>
+	<div class="panel-body">
+		<%= render "form",orden: "Link de Interés" %>
+	</div>
+</div>

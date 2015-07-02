@@ -4,7 +4,7 @@
 	<%if seccion.order == orden%>
 		<div  class="panel panel-default panelRease">
 			<div class="panel-heading">
-				<%=	link_to seccion.title, seccion %> 
+				<%=	link_to seccion.title, seccion, :class => "btnHeading" %> 
 				(id: <%= seccion.id%>)
 			</div>
 			<div class="panel-body">
@@ -14,9 +14,9 @@
 			<div class="panel-footer">
 				<p>Fecha de Creacion: <%= seccion.created_at%></p>
 				<% if eliminar == "Si" %>
-					<%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
+					<%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' }, :class => "btn btn-lg btnCRUD" %>
 				<% end %>
-				<%= link_to "Editar", edit_section_path(seccion),class:"btn",id:"botonCRUD", :class => "btn btn-lg"%>
+				<%= link_to "Editar", edit_section_path(seccion), :class => "btn btn-lg btnCRUD"%>
 			</div>
 		</div>
 	<%end%>

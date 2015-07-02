@@ -10,10 +10,11 @@
 
 		<h1> Información </h1>
 		<p><b>Dirección: </b><%= @event.address %></p>
+		<p><b>Estado: </b><%= @event.status %></p>
 		
-		<p><b>Fecha y hora de inicio: </b><%= @event.start_time.day %>/<%= @event.start_time.month %>/<%= @event.start_time.year %> <%= @event.start_time.hour%>:<%= @event.start_time.min%></p>
+		<p><b>Fecha y hora de inicio: </b><%=l @event.start_time %></p>
 
-		<p><b>Fecha y hora de término: </b><%= @event.end_time.day %>/<%= @event.end_time.month %>/<%= @event.end_time.year %> <%= @event.end_time.hour%>:<%= @event.end_time.min%></p>
+		<p><b>Fecha y hora de término: </b><%=l @event.end_time %></p>
 
 	</div>
 	<div class="panel-footer">
@@ -22,12 +23,12 @@
 	</div>
 </div>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.category == 1  %>
 	<% if @event.user.id == current_user.id %>
-		<%= link_to 'Editar ', edit_event_path(@event), :id => "botonCRUD", :class => "btn btn-lg" %>
-		<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' }, :id => "botonCRUD", :class => "btn btn-lg" %>
+		<%= link_to 'Editar ', edit_event_path(@event), :class => "btn btn-lg btnCRUD" %>
+		<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' }, :class => "btn btn-lg btnCRUD" %>
 	<% end %>
 <% end %>
 	
-	<%= link_to 'Volver', events_path, :id => "botonCRUD", :class => "btn btn-lg" %>
+	<%= link_to 'Volver', events_path, :class => "btn btn-lg btnCRUD" %>
 	
