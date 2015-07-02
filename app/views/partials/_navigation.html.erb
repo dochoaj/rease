@@ -36,7 +36,7 @@
 				</li>
 
 				<li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
-					<%= link_to "Contacto", root_path %>
+					<%= link_to "Contacto", presentation_contacto_path %>
 				</li>
 			</ul>
 			<p class="navbar-text navbar-right">Miembros activos: <%= User.count %> </p>
