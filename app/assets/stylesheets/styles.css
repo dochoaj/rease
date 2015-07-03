@@ -22,16 +22,18 @@ section#contenedor
 	margin: 0.25em auto;
 	padding: 0;
 	text-align: center;
+
 }
 section#principal, aside
 {
 	display: inline-block;
 	margin: 0.25 auto;
 	min-width: 300px;
-	min-height: 400px;
 	padding: 0.25em;
 	vertical-align: top;
 	width: 65%;
+    min-height: 100%;
+    margin-bottom: 50px;
 }
 article
 {
@@ -57,6 +59,8 @@ body
 	color: black;
 	font-family: 'Segoe UI', sans-serif;
 	font-size: 15px;
+	padding-top: 60px;
+	height: 100%;
 }
 
 /*pies de la página para contacto*/
@@ -64,6 +68,7 @@ footer
 {
 	clear:both;
 	padding-top: 15px;
+	bottom: 0;
 }
 h1 /*Títulos de las páginas*/
 {
@@ -104,129 +109,13 @@ p
 	line-height: 1.7em;
 
 }
+
+
+
+/*CLASES*/
 .breadcrumb
 {
 	text-align: left;
-}
-.carousel
-{
-	width: 50%;
-	min-width: 200px;
-	margin-right:auto;
-	margin-left:auto;
-	background: white;
-}
-.carousel-indicators li
-{
-	background: #30aaaa;
-}
-.carousel-indicators .active
-{
-	background: black;
-}
-
-
-.inicioSesion
-{
-	padding-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/*links de interes centrados y con margen*/
-.linkInteres, .linkInteres:visited
-{
-	text-align: center;
-	margin: 2%;
-	display: block;
-}
-
-
-.modal-estatuto
-{
-	min-width: 90%;
-}
-
-
-/*sombras y efectos de la barra navegadora*/
-.navbar-default .navbar-nav>li>a
-{
-	-webkit-box-shadow: 0px 0px 1px #666666;
-	color: white;
-}
-
-.navbar-default .navbar-nav>li>a:hover
-{
-	background: #ffffff;
-	background-image: -webkit-linear-gradient(top, #ffffff, #30bbbb);
-	background-image: -moz-linear-gradient(top, #ffffff, #30bbbb);
-	background-image: -ms-linear-gradient(top, #ffffff, #30bbbb);
-	background-image: -o-linear-gradient(top, #ffffff, #30bbbb);
-	background-image: linear-gradient(to bottom, #ffffff, #30bbbb);
-	color: #999;
-}
-.navbar-default .navbar-nav>.active>a
-{
-	background: white;
-	color: #999;
-}
-p.navbar-text.navbar-right
-{
-	color:white;
-	padding: 0;
-	margin: 0;
-	line-height: 50px;
-}
-
-
-/*colores para barras y paneles*/
-#BarraNavegadora, .panelRease .panel-heading, #pies, #panelInstitution .panel-heading
-{
-	background: #30aaaa;
-	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
-}
-#BarraNavegadora 
-{
-	-webkit-box-shadow: 3px 2px 5px #666666;
-	-moz-box-shadow: 3px 2px 5px #666666;
-	font-weight: bold;
-	border-color: #30cccc;
-}
-
-#pies:hover, .panelRease .panel-heading:hover, #panelInstitution .panel-heading:hover
-{
-	background: #30bbbb;
-	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
-	background-image: -moz-linear-gradient(top, #30bbbb, #30cccc);
-	background-image: -ms-linear-gradient(top, #30bbbb, #30cccc);
-	background-image: -o-linear-gradient(top, #30bbbb, #30cccc);
-	background-image: linear-gradient(to bottom, #30bbbb, #30cccc);
-	background: #30bbbb;
-	font-weight: bold;
-}
-
-/* para el panel de dejar un comentario como no registrado
-#comentario
-{
-	width: 40%;
-	min-width: 400px;
-	padding-left: 5%;
-}*/
-
-#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
-{
-	margin-top: 10%;
-}
-
-#linkEstatuto
-{
-	text-align: right;
-	display: block;
 }
 
 /*estilo de los indices de lso estatutos*/
@@ -247,10 +136,47 @@ p.navbar-text.navbar-right
 	text-decoration: none;
 }
 
+.inicioSesion
+{
+	padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*colores para barras y paneles*/
+.panelRease .panel-heading, #pies, #panelInstitution .panel-heading
+{
+	background: #30aaaa;
+	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+
+.sesion .btn-block
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 18px;
+}
+
+
+#linkEstatuto
+{
+	text-align: right;
+	display: block;
+}
+
+
+
 #logo /*Estilo del logotipo de REASE*/
 {
 	margin-left: 25%;
 	margin-right: 25%;
+	margin-bottom: 19px;
 	width: 50%;
 	padding: 0;
 	display: block;
@@ -258,8 +184,8 @@ p.navbar-text.navbar-right
 
 #logoInstituciones /* los logos de las intituciones tengan tamaño similar*/
 {
-	margin-bottom: 10px;
-	margin-left: 10px;
+	margin-bottom: 20px;
+	margin-left: 20px;
 }
 #logoNav /*estilos para el logo de la navbar*/
 {
@@ -281,20 +207,20 @@ p.navbar-text.navbar-right
 
 
 /*Todos los estilos de los paneles que se muestran en toda la página*/
-.panelRease
+.panelRease, .panelClick
 {
 	margin: 2%;
 	text-align: center;
 }
 
-.panelRease .panel-heading, #panelInstitution .panel-heading /*Cabecera del panel*/
+.panelRease .panel-heading, #panelInstitution .panel-heading, .panelClick .panel-heading /*Cabecera del panel*/
 {
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
 }
-.panelRease .panel-footer, #panelInstitution .panel-footer /*Cabecera del footer*/
+.panelRease .panel-footer, #panelInstitution .panel-footer, .panelClick .panel-footer /*Cabecera del footer*/
 {
 	background: white;
 }
@@ -308,11 +234,20 @@ p.navbar-text.navbar-right
 #rightBar, #rightBar:active
 {
 	color: white;
+	margin-left: 10px;
 }
 #rightBar:hover
 {
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 17px;
+}
+
+#styleSession
+{
+	text-align: center;
+	padding: 0;
+	margin:0;
+	display: block;
 }
 *:focus
 {
@@ -348,10 +283,4 @@ p.navbar-text.navbar-right
 
 }
 
-#styleSession
-{
-	text-align: center;
-	padding: 0;
-	margin:0;
-	display: block;
-}
+

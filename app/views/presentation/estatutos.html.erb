@@ -1,7 +1,6 @@
 <h1>Estatutos Red Nacional Aprendizaje Servicio, Chile</h1>
 
 <div id="indice">
-	
 	<div  class="panel panel-default panelRease">	
 		<div class="panel-heading">
 			Índice del estatuto
@@ -23,9 +22,10 @@
 	<%if seccion.order == 'Estatutos'%>
 		<% div_id = seccion.id -%>
 		<div id="titulo<%= div_id -%>" >
-			<div  class="panel panel-default panelRease">
+		<br><br>
+			<div  class="panel panel-default panelClick">
 				<div class="panel-heading">
-					<%=	seccion.title %> 
+					<i class="glyphicon glyphicon-circle-arrow-up" id="volver<%= div_id -%>"></i> <%=	seccion.title %> 
 				</div>
 				<div class="panel-body">
 					<p><%=raw seccion.body %></p>
@@ -45,6 +45,13 @@
 			        scrollTop: $("#titulo<%= div_id -%>").offset().top},
 			        'slow');
 			});
+			$("#volver<%= div_id -%>").click(function() 
+				{
+				$('html,body').animate({
+				scrollTop: $("#indice").offset().top},
+				'slow');
+			});
 		<%end%>
 	<%end%>
+
 </script>
