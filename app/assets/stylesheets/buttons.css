@@ -40,6 +40,11 @@
  color: white;
 }
 /*COMPORTAMIENTO*/
+.btn
+{
+	margin-left: 4%;
+	margin-right: 4%;
+}
 .btnCRUD
 {
 	margin-left: 4%;
@@ -84,4 +89,70 @@
 .form-control
 {
 	margin-bottom: 20px;
+}
+
+/*****BARRA NAVEGADORA ***/
+/*sombras y efectos de la barra navegadora*/
+.navbar-default .navbar-nav>li>a
+{
+	-webkit-box-shadow: 0px 0px 1px #666666;
+	color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover
+{
+	background: #ffffff;
+	background-image: -webkit-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -moz-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -ms-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: -o-linear-gradient(top, #ffffff, #30bbbb);
+	background-image: linear-gradient(to bottom, #ffffff, #30bbbb);
+	color: #999;
+}
+.navbar-default .navbar-nav>.active>a
+{
+	background: white;
+	color: #999;
+}
+p.navbar-text.navbar-right
+{
+	color:white;
+	padding: 0;
+	margin: 0;
+	line-height: 50px;
+}
+
+
+/*colores para barras y paneles*/
+.BarraNavegadora, .panelClick .panel-heading
+{
+	background: #30bbbb;
+	background-image: -webkit-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -moz-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -ms-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: -o-linear-gradient(top, #30bbbb, #30cccc);
+	background-image: linear-gradient(to bottom, #30bbbb, #30cccc);
+}
+.BarraNavegadora 
+{
+	-webkit-box-shadow: 3px 2px 5px #666666;
+	-moz-box-shadow: 3px 2px 5px #666666;
+	font-weight: bold;
+	border-color: #30cccc;
+}
+
+.panelClick .panel-heading:hover
+{
+	background: #30cccc;
+	background-image: -webkit-linear-gradient(top, #30cccc, #30dddd);
+	background-image: -moz-linear-gradient(top, #30cccc, #30dddd);
+	background-image: -ms-linear-gradient(top, #30cccc, #30dddd);
+	background-image: -o-linear-gradient(top, #30cccc, #30dddd);
+	background-image: linear-gradient(to bottom, #30cccc, #30dddd);
+	font-weight: bold;
+}
+
+.be-white
+{
+	background: white;
 }
