@@ -20,19 +20,20 @@ a:hover
 section#contenedor
 {
 	margin: 0.25em auto;
-	margin-top: 60px;
 	padding: 0;
 	text-align: center;
+
 }
 section#principal, aside
 {
 	display: inline-block;
 	margin: 0.25 auto;
 	min-width: 300px;
-	min-height: 400px;
 	padding: 0.25em;
 	vertical-align: top;
 	width: 65%;
+    min-height: 100%;
+    margin-bottom: 50px;
 }
 article
 {
@@ -58,6 +59,8 @@ body
 	color: black;
 	font-family: 'Segoe UI', sans-serif;
 	font-size: 15px;
+	padding-top: 60px;
+	height: 100%;
 }
 
 /*pies de la página para contacto*/
@@ -65,6 +68,7 @@ footer
 {
 	clear:both;
 	padding-top: 15px;
+	bottom: 0;
 }
 h1 /*Títulos de las páginas*/
 {
@@ -105,70 +109,13 @@ p
 	line-height: 1.7em;
 
 }
+
+
+
+/*CLASES*/
 .breadcrumb
 {
 	text-align: left;
-}
-.carousel
-{
-	width: 50%;
-	min-width: 200px;
-	margin-right:auto;
-	margin-left:auto;
-	background: white;
-}
-.carousel-indicators li
-{
-	background: #30aaaa;
-}
-.carousel-indicators .active
-{
-	background: black;
-}
-
-
-.inicioSesion
-{
-	padding-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/*links de interes centrados y con margen*/
-.linkInteres, .linkInteres:visited
-{
-	text-align: center;
-	margin: 2%;
-	display: block;
-}
-
-
-.modal-estatuto
-{
-	min-width: 90%;
-}
-
-/*colores para barras y paneles*/
-.panelRease .panel-heading, #pies, #panelInstitution .panel-heading
-{
-	background: #30aaaa;
-	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
-	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
-}
-
-#ejecutiva, #comunicaciones, #sistematizacion, #talleres, #encuentro
-{
-	margin-top: 10%;
-}
-
-#linkEstatuto
-{
-	text-align: right;
-	display: block;
 }
 
 /*estilo de los indices de lso estatutos*/
@@ -189,6 +136,42 @@ p
 	text-decoration: none;
 }
 
+.inicioSesion
+{
+	padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*colores para barras y paneles*/
+.panelRease .panel-heading, #pies, #panelInstitution .panel-heading
+{
+	background: #30aaaa;
+	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -moz-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
+	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+
+.sesion .btn-block
+{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 18px;
+}
+
+
+#linkEstatuto
+{
+	text-align: right;
+	display: block;
+}
+
+
+
 #logo /*Estilo del logotipo de REASE*/
 {
 	margin-left: 25%;
@@ -201,8 +184,8 @@ p
 
 #logoInstituciones /* los logos de las intituciones tengan tamaño similar*/
 {
-	margin-bottom: 10px;
-	margin-left: 10px;
+	margin-bottom: 20px;
+	margin-left: 20px;
 }
 #logoNav /*estilos para el logo de la navbar*/
 {
@@ -258,6 +241,14 @@ p
 	font-weight: bold;
 	font-size: 17px;
 }
+
+#styleSession
+{
+	text-align: center;
+	padding: 0;
+	margin:0;
+	display: block;
+}
 *:focus
 {
 	outline: none !important;
@@ -292,10 +283,4 @@ p
 
 }
 
-#styleSession
-{
-	text-align: center;
-	padding: 0;
-	margin:0;
-	display: block;
-}
+

@@ -1,6 +1,6 @@
 
 /*FONDO*/
-.btn, .btn a, .btnSomos, .btnHacemos, .btnAdmin, .btnCRUD
+.btn, .btn a, .btnSomos, .btnHacemos, .btnAdmin, .btnCRUD, .btn-nav
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -11,7 +11,7 @@
 	color: white;
 }
 /*SOMBRA*/
-.btn, .btn a, .btnHacemos, .btnSomos, .btnAdmin, .btnCRUD
+.btn, .btn a, .btnHacemos, .btnSomos, .btnAdmin, .btnCRUD, .btn-nav
 {
 	-webkit-border-radius: 6;
 	-moz-border-radius: 6;
@@ -141,7 +141,7 @@ p.navbar-text.navbar-right
 	border-color: #30cccc;
 }
 
-.panelClick .panel-heading:hover
+.panelClick .panel-heading:hover, .btn-nav:hover
 {
 	background: #30cccc;
 	background-image: -webkit-linear-gradient(top, #30cccc, #30dddd);
@@ -155,4 +155,11 @@ p.navbar-text.navbar-right
 .be-white
 {
 	background: white;
+}
+
+.btn-nav
+{
+	font-size: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
