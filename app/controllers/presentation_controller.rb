@@ -9,7 +9,6 @@ class PresentationController < ApplicationController
 
 	def contacto
 		add_breadcrumb "Contacto", :presentation_contacto_path
-		@sections = Section.all
 	end
 
 	def somos
