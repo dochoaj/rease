@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
-
+  before_action :estatutos
+  
   ###PREGUNTAR QUÉ HICIMOS ACÁ
   before_filter :configure_permitted_parameters
 
@@ -10,6 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name, :category, :autorization_level)
   end
 
+  private
+
+  def estatutos
+    @sections = Section.all
+  end
   # GET /resource/sign_up
   # def new
   #   super

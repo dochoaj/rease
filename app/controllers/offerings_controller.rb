@@ -1,4 +1,6 @@
 class OfferingsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :validate_category, except: [:index, :show]
   before_action :set_offering, only: [:show, :edit, :update, :destroy]
  
   add_breadcrumb "Inicio", :root_path
@@ -25,6 +27,9 @@ class OfferingsController < ApplicationController
   # GET /offerings/1/edit
   def edit
     add_breadcrumb "Editar"
+    if @offering.user_id != current_user.id &&  current_user.category != 1
+      redirect_to root_path, alert: "Usted no es el creador de la oferta, por lo que no puede modificarla. Contáctese con su administrador."
+    end
   end
 
   # POST /offerings
@@ -35,7 +40,7 @@ class OfferingsController < ApplicationController
     @offering.status = "Disponible"
     respond_to do |format|
       if @offering.save
-        format.html { redirect_to @offering, notice: 'Offering was successfully created.' }
+        format.html { redirect_to @offering, notice: 'La oferta ha sido creada exitosamente.' }
         format.json { render :show, status: :created, location: @offering }
       else
         format.html { render :new }
@@ -49,7 +54,7 @@ class OfferingsController < ApplicationController
   def update
     respond_to do |format|
       if @offering.update(offering_params)
-        format.html { redirect_to @offering, notice: 'Offering was successfully updated.' }
+        format.html { redirect_to @offering, notice: 'La oferta ha sido actualizada.' }
         format.json { render :show, status: :ok, location: @offering }
       else
         format.html { render :edit }
@@ -63,12 +68,18 @@ class OfferingsController < ApplicationController
   def destroy
     @offering.destroy
     respond_to do |format|
-      format.html { redirect_to offerings_url, notice: 'Offering was successfully destroyed.' }
+      format.html { redirect_to offerings_url, notice: 'La oferta ha sido eliminada.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def validate_category
+      if current_user.category == 4
+          redirect_to root_path, alert: "Su categoría de socio comunitario no permite ésta acción."
+      end 
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_offering
       @offering = Offering.find(params[:id])
