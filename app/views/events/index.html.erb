@@ -1,0 +1,23 @@
+<h1>Eventos </h1>
+<% if user_signed_in? && current_user.category == 1  %>
+	<%= link_to 'Nuevo evento', new_event_path, :class => "btn btn-lg " %>
+<% end %>
+	<%= link_to 'Mostrar eventos', events_listado_path ,:class => "btn btn-lg " %>
+<div  class="panel panel-default panelRease">
+	<div class="panel-heading">
+		Calendario de eventos
+
+	</div>
+	<div class="panel-body" id = "calendar">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#calendar').fullCalendar({
+			events: '/events.json'
+		})
+	});
+</script>
+
+

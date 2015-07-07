@@ -1,0 +1,11 @@
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		Crear una nueva novedad
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Novedad" %>
+	</div>
+</div>
+
+<h1>Novedades anteriores: </h1>
+<%= render "muestra", {orden: "Novedad", eliminar: "Si"} %>

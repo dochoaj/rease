@@ -1,0 +1,11 @@
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		Crear una nueva sección de estutos
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Estatutos" %>
+	</div>
+</div>
+
+<h1>Secciones de Estatutos anteriores: </h1>
+<%= render "muestra", {orden: "Estatutos", eliminar: "Si"} %>

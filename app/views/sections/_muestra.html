@@ -1,0 +1,25 @@
+<% orden %>
+<% eliminar %>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == orden%>
+		<div  class="panel panel-default panelRease">
+			<div class="panel-heading">
+				<%=	link_to seccion.title, seccion, :class => "btnHeading" %> 
+				(id: <%= seccion.id%>)
+			</div>
+			<div class="panel-body">
+				<h2>Tipo: <%= seccion.order %></h2>
+				<p><%=raw seccion.body %></p>
+			</div>
+			<div class="panel-footer">
+				<p>Fecha de Creacion: <%= seccion.created_at%></p>
+				<%= link_to "Editar", edit_section_path(seccion), :class => "btn btn-lg btnCRUD"%>
+				
+				<% if eliminar == "Si" %>
+					<%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' }, :class => "btn btn-lg btnCRUD" %>
+				<% end %>
+				
+			</div>
+		</div>
+	<%end%>
+<%end%>

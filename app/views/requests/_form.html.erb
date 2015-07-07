@@ -1,0 +1,65 @@
+<%accion ||= "Crear"%>
+<%= form_for @request, :html => { :class => "form-horizontal request" } do |f| %>
+
+	<% if @request.errors.any? %>
+	<div id="error_expl" class="panel panel-danger">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h3>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<% @request.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<% end %>
+
+	<div class="panel panel-default panelRease" >
+    	<div class="panel-heading">Datos de la solicitud</div>
+    	<div class="panel-body">
+    		
+    		<div class="control-group">
+				<div class="field">
+				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+				</div>
+				<%= error_span(@request[:title]) %>
+			</div>
+
+			<% if accion == "Actualizar" %>
+				<%= f.select(:status, [['Disponible', 'Disponible'],['En proceso', 'En proceso'],['Realizado','Realizado'], ['Cancelado','Cancelado'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+			<% else %>
+				<p><b>Estado: </b> Disponible </p>
+			<% end %>
+
+			<div class="control-group">
+				<div class="field">
+				<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic", :class => 'form-control' %>
+				</div>
+				<%= error_span(@request[:description]) %>
+			</div>
+
+			<div class="field">
+				<p><%= f.label :start_time, "Fecha de inicio" %>
+				<%= f.datetime_select :start_time %></p>
+			</div>
+			<div class="field">
+				<p><%= f.label :end_time, "Fecha de término" %>
+				<%= f.datetime_select :end_time %></p>
+			</div>
+			
+		</div>
+	</div>
+
+	<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg btnCRUD' %>
+
+<% end %>
+
+<script>
+	 $(function() {$('textarea#eg-basic').editable({
+      inlineMode: false,
+    })
+  });
+</script>

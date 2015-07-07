@@ -1,0 +1,11 @@
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		Crear una nueva sección de hacemos
+	</div>
+	<div class="panel-body">
+		<%= render "form",orden: "Hacemos" %>
+	</div>
+</div>
+
+<h1>Seccion de Hacemos anteriores: </h1>
+<%= render "muestra", {orden: "Hacemos", eliminar: "Si"} %>

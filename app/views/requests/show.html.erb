@@ -1,0 +1,32 @@
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		<%= @request.title %>
+	</div>
+
+	<div class="panel-body">
+		<h2>Descripción:</h2>
+		<p><%=raw @request.description %></p>
+
+		<h2> Información </h2>
+			<p><b>Estado: </b><%= @request.status %></p>
+
+			<p><b>Fecha y hora de inicio: </b><%=l @request.start_time %></p>
+
+			<p><b>Fecha y hora de término: </b><%=l @request.end_time %></p>
+	</div>
+	
+	<div class="panel-footer">
+		<p><b>Creado por:</b>
+		<%= @request.user.name %> <%= @request.user.last_name %></p>
+	</div>
+</div>
+
+<% if user_signed_in? && current_user.category != 2 %>
+	<% if @request.user.id == current_user.id || current_user.category == 1 %>
+		<%= link_to 'Editar ', edit_request_path(@request), :class => "btn btn-lg btnCRUD" %>
+		<%= link_to t('Eliminar'), request_path(@request),:method => 'delete',
+		:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Está seguro de eliminar la solicitud?')) }, :class => "btn btn-lg btnCRUD"%>
+	<% end %>
+<% end %>
+	
+	<%= link_to 'Volver', requests_path, :class => "btn btn-lg btnCRUD" %>

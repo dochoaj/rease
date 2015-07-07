@@ -1,0 +1,62 @@
+<%orden ||= "Crear"%>
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="panel panel-default panelRease" >
+    <div class="panel-heading">Datos del evento</div>
+    <div class="panel-body">
+
+		<div class="field">
+			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true %>
+		</div>
+		
+		<div class="field">
+			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true   %>
+		</div>
+
+		<div class="field">
+			<% if orden == "Actualizar" %>
+				<%= f.select(:status, [['Vigente', 'Vigente'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+			<% else %>
+				<p><b>Estado: </b> Vigente </p>
+			<% end %>
+		</div>
+
+		<div class="field">
+			<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic" %>
+		</div>
+
+		<div class="field">
+			<p><%= f.label :start_time, "Fecha y hora de inicio" %></p>
+			<%= f.datetime_select :start_time %>
+		</div>
+
+		<div class="field">
+			<p><%= f.label :end_time, "Fecha y hora de término" %></p>
+			<%= f.datetime_select :end_time %>
+		</div>
+		
+	</div>
+</div>
+	<%= f.submit orden, :class => 'btn btn-lg btnCRUD' %>
+	<%= link_to 'Volver', events_path, :class => "btn btn-lg btnCRUD"%>
+<% end %>
+
+
+
+<script>
+	 $(function() {$('textarea#eg-basic').editable({
+      inlineMode: false,
+    })
+  });
+</script>

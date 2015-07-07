@@ -1,0 +1,34 @@
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		<%= @event.title %>
+	</div>
+	
+	<div class="panel-body">
+
+		<h1>Descripción:</h1>
+		 <p><%=raw @event.description %></p>
+
+		<h1> Información </h1>
+		<p><b>Dirección: </b><%= @event.address %></p>
+		<p><b>Estado: </b><%= @event.status %></p>
+		
+		<p><b>Fecha y hora de inicio: </b><%=l @event.start_time %></p>
+
+		<p><b>Fecha y hora de término: </b><%=l @event.end_time %></p>
+
+	</div>
+	<div class="panel-footer">
+		<p><b>Creado por:</b>
+	  	<%= @event.user.name %> <%= @event.user.last_name %></p>
+	</div>
+</div>
+
+<% if user_signed_in? && current_user.category == 1  %>
+	<% if @event.user.id == current_user.id %>
+		<%= link_to 'Editar ', edit_event_path(@event), :class => "btn btn-lg btnCRUD" %>
+		<%= link_to 'Eliminar', @event, method: :delete, data: { confirm: '¿Está seguro de eliminar el evento?' }, :class => "btn btn-lg btnCRUD" %>
+	<% end %>
+<% end %>
+	
+	<%= link_to 'Volver', events_path, :class => "btn btn-lg btnCRUD" %>
+	
