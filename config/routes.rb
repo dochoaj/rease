@@ -9,16 +9,18 @@ Rails.application.routes.draw do
 
 	get 'events/listado'
 	
-	# CRUD
-	# get "/articles" index
-	# post "/articles" create
-	# delete "/articles" detele
-	# get "/articles/:id" show
-	# get "/articles/new" new
-	# get "/articles/:id/edit" edit
-	# patch "/articles/:id" update
-	# put "/articles/:id" update
+	get 'sections/somos'
+	get 'sections/hacemos'
+	get 'sections/aprendizaje'
+	get 'sections/estatutos'
+	get 'sections/novedades'
+	get 'sections/linkInteres'
 
+	resources :sections
+	resources :events
+	resources :institutions
+	resources :offerings
+	resources :requests
 
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.
@@ -42,24 +44,10 @@ Rails.application.routes.draw do
 	devise_scope :user do
 	authenticated :user do
 		root :to => 'presentation#index'
-
-		get 'sections/somos'
-		get 'sections/hacemos'
-		get 'sections/aprendizaje'
-		get 'sections/estatutos'
-		get 'sections/novedades'
-		get 'sections/linkInteres'
-
-		resources :sections
-		resources :events
-		resources :institutions
-		resources :offerings
-		resources :requests
 	end
 
 	unauthenticated :user do
 		root :to => 'presentation#index', as: :unauthenticated_root
-		resources :events, only: [:index,:show]
 	  #'devise/sessions#new'
 	end
 

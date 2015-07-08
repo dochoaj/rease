@@ -1,5 +1,8 @@
 class InstitutionsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :validate_category
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
+
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Administración", :sections_path
 
@@ -67,6 +70,13 @@ class InstitutionsController < ApplicationController
   end
 
   private
+
+    def validate_category
+      if current_user.category != 1
+      redirect_to root_path, alert: "Sólo un administrador puede trabajar la página de inicio."
+      end   
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_institution
       @institution = Institution.find(params[:id])
