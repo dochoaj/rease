@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :contacts
 	get 'presentation/index'
 	get 'presentation/contacto'
 	get 'presentation/somos'
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-
 	get 'events/listado'
+	resources :contacts
 	
 	# CRUD
 	# get "/articles" index

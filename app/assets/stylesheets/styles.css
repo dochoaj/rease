@@ -143,6 +143,14 @@ p
     margin-left: auto;
     margin-right: auto;
 }
+.note
+{
+	text-align: right;
+	color: #30aaaa;
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+}
 
 /*colores para barras y paneles*/
 .panelRease .panel-heading, #pies, #panelInstitution .panel-heading

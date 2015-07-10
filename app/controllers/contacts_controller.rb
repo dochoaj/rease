@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
-    add_breadcrumb "Nuevo contacto", :contacts_path
+    add_breadcrumb "Nuevo comentario", :contacts_path
   end
 
   # GET /contacts/new

@@ -1,5 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
-layout "bootstrap"
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Ingreso intranet"
+  
 # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

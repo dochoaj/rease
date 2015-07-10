@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create([{email: 'administrador@gmail.com',password: 'admini123',name: 'Administrador',last_name: 'Inicial',category: 1, autorization_level: 1}])
+User.create([{email: 'coordinacion.rease@gmail.com',password: 'rease2015',name: 'Coordinación',last_name: 'REASE',category: 1, autorization_level: 1}])
 
 Section.create([{title:'Link de interés básicos', order:'Link de Interés', body: '<p style="text-align: center;"><a href="https://es-es.facebook.com/reasechile">Facebook REASE</a></p>
 
