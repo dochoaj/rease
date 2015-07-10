@@ -1,4 +1,8 @@
 class SectionsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :validate_category
+	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje]
+
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Administración", :sections_path
 
@@ -8,38 +12,26 @@ class SectionsController < ApplicationController
 
 	def novedades
 		add_breadcrumb "Novedades", :sections_novedades_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def somos
 		add_breadcrumb "¿Quienes Somos?", :sections_somos_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def estatutos
 		add_breadcrumb "Estatutos", :sections_estatutos_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def aprendizaje
 		add_breadcrumb "Aprendizaje y Servicio", :sections_aprendizaje_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def linkInteres
 		add_breadcrumb "link de Interés", :sections_linkInteres_path
-		@sections = Section.all
-		@section = Section.new
 	end
 
 	def new
@@ -54,7 +46,8 @@ class SectionsController < ApplicationController
 	def create
 		@section = Section.new(section_params)
 		if @section.save
-			redirect_to root_path
+			redirect_to sections_path
+			flash[:notice] = "La sección ha sido creada correctamente"
 		else
 			render :new #en caso de que no guarde redirecciona a la misma pagina
 		end
@@ -86,8 +79,22 @@ class SectionsController < ApplicationController
 
 	private #acciones privadas del controlador
 
+	def validate_category
+		if current_user.category != 1
+		redirect_to root_path, alert: "Sólo un administrador puede trabajar la página de inicio."
+		end   
+	end
+
+	def administration
+		@sections = Section.all
+		@section = Section.new		
+	end
+
 	def section_params
 		params.require(:section).permit(:title,:body,:order,:priority)
 	end
 end
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop

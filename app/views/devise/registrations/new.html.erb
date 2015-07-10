@@ -8,7 +8,20 @@
 		<div class="panel-body">
 			<div>
 				<p>Antes de registrarse es necesario que sepa los términos y condiciones que existen para pertenecer y mantenerse dentro de ésta red.
-				<%= link_to ">> Leer estatuto", presentation_estatutos_path, :id =>"linkEstatuto" %>
+				<a id ="linkEstatuto" data-toggle="modal" data-target = "#encuentro" >
+				>> Leer estatuto</a></p> 
+				<div class="modal fade" id="encuentro" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg modal-estatuto">
+						<div class="modal-content">
+							<div class="modalbody">
+								<button type="button" class="close btnClose" data-dismiss="modal" aria-hidden = "true">
+								&times;
+								</button>
+								<%= render "partials/estatutos" %>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<p>Nuestro enfoque es el servicio, por lo que es necesario mantener un estándar dentro de la Red para que sus participantes cumplan con el objetivo. </p>
 				<p>Es por esto que se le pide a cada nuevo miembro de la red, dé su concentimiento para que pueda ser evaluado en las actividades que realice a nombre de REASE. </p>
@@ -101,10 +114,15 @@ $(function () {
   $('[data-toggle="btnRolUsuario"]').popover(
   {
   	html: 'true', 
+<<<<<<< HEAD
     content: '<p><b>Profesor:</b> Es quien imparte la asignatura y que está cargo del curso. Realiza la asignatura y sus evaluaciones correspondiente, mediante la actividad de A+S.</p><p><b>Socio comunitario:</b> Representante de la comunidad que se beneficia de esta actividad. También tiene labores en el proceso de A+S, como cumplir con los acuerdos con el docente.</p><p><b>Vinculador social: </b> Actúa como intermediario entre el docente y el socio comunitario para realizar la actividad de A+S.</p>'
+=======
+    content: '<p><b>Profesor:</b> Es quien imparte la asignatura y que está cargo del curso. Realiza la asignatura y sus evaluaciones correspondiente, mediante la actividad de A+S.</p><p><b>Socio comunitario:</b> Representante de la comunidad que se beneficia de esta actividad. También tiene labores en el proceso de A+S, como cumplir con los acuerdos con el profesor.</p><p><b>Vinculador social: </b> Actúa como intermediario entre el profesor y el socio comunitario para realizar la actividad de A+S.</p>'
+>>>>>>> develop
   }
   	)
 })
 
 </script>
+
 
