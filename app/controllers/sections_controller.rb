@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :validate_category
-	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje]
+	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje, :linkInteres]
 
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Administración", :sections_path
@@ -94,7 +94,3 @@ class SectionsController < ApplicationController
 		params.require(:section).permit(:title,:body,:order,:priority)
 	end
 end
-<<<<<<< HEAD
-
-=======
->>>>>>> develop

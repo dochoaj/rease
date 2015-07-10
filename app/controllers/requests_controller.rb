@@ -50,7 +50,6 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    puts "asd"
     Request.find(params[:id]).destroy
     flash[:notice] = "La solicitud de servicio se ha eliminado"
     redirect_to :action => 'index'
