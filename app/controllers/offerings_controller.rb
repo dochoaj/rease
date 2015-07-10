@@ -35,7 +35,7 @@ class OfferingsController < ApplicationController
     @offering.status = "Disponible"
     respond_to do |format|
       if @offering.save
-        format.html { redirect_to @offering, notice: 'Offering was successfully created.' }
+        format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido creada correctamente.' }
         format.json { render :show, status: :created, location: @offering }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class OfferingsController < ApplicationController
   def update
     respond_to do |format|
       if @offering.update(offering_params)
-        format.html { redirect_to @offering, notice: 'Offering was successfully updated.' }
+        format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido actualizada correctamente.' }
         format.json { render :show, status: :ok, location: @offering }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class OfferingsController < ApplicationController
   def destroy
     @offering.destroy
     respond_to do |format|
-      format.html { redirect_to offerings_url, notice: 'Offering was successfully destroyed.' }
+      format.html { redirect_to offerings_url, notice: 'Se ha eliminado la oferta de servicio.' }
       format.json { head :no_content }
     end
   end

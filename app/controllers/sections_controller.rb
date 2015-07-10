@@ -69,6 +69,7 @@ class SectionsController < ApplicationController
 
 	def edit
 		add_breadcrumb "Editar sección", :edit_section_path
+		flash[:notice] = "La sección ha sido actualizada correctamente"
 		@section = Section.find(params[:id])
 	end
 
@@ -89,11 +90,4 @@ class SectionsController < ApplicationController
 		params.require(:section).permit(:title,:body,:order,:priority)
 	end
 end
-# get "/sections" index
-# post "/sections" create
-# delete "/sections/:id" delete (destroy)
-# get "/sections/:id" show
-# get "/sections/new" new
-# get "/sections/:id/edit" edit
-# patch "/sections/:id" update
-# put "/sections/:id" update
+
