@@ -1,6 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Nuevo miembro"
 
   ###PREGUNTAR QUÉ HICIMOS ACÁ
   before_filter :configure_permitted_parameters

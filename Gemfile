@@ -37,6 +37,7 @@ gem 'wysiwyg-rails'
 gem "breadcrumbs_on_rails"
 gem 'fullcalendar-rails', '~> 2.0.2.0'
 gem 'paperclip'
+gem 'mailgun_rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

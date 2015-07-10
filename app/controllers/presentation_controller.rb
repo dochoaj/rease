@@ -1,14 +1,10 @@
 class PresentationController < ApplicationController
 	
 	add_breadcrumb "Inicio", :root_path
+	
 	@events = Event.all
 	
 	def index
-		@sections = Section.all
-	end
-
-	def contacto
-		add_breadcrumb "Contacto", :presentation_contacto_path
 		@sections = Section.all
 	end
 
