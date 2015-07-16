@@ -10,6 +10,7 @@ class OfferingsController < ApplicationController
   # GET /offerings.json
   def index
     @offerings = Offering.all
+    @user = User.all
   end
 
   # GET /offerings/1

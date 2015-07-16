@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710031201) do
+ActiveRecord::Schema.define(version: 20150716062351) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 20150710031201) do
     t.integer  "service_offering_id", limit: 4
   end
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
   create_table "institutions", force: :cascade do |t|
     t.text     "description",       limit: 65535
     t.string   "name",              limit: 255
@@ -100,8 +110,8 @@ ActiveRecord::Schema.define(version: 20150710031201) do
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
     t.string   "status",      limit: 255
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.date     "start_time"
+    t.date     "end_time"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -116,8 +126,8 @@ ActiveRecord::Schema.define(version: 20150710031201) do
     t.string   "title",         limit: 255
     t.text     "description",   limit: 65535
     t.string   "status",        limit: 255
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.date     "start_time"
+    t.date     "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -158,5 +168,6 @@ ActiveRecord::Schema.define(version: 20150710031201) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "identities", "users"
   add_foreign_key "offerings", "users"
 end

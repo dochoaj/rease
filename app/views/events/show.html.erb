@@ -9,17 +9,17 @@
 		 <p><%=raw @event.description %></p>
 
 		<h1> Información </h1>
-		<p><b>Dirección: </b><%= @event.address %></p>
-		<p><b>Estado: </b><%= @event.status %></p>
+		<p><strong>Dirección: </strong><%= @event.address %></p>
+		<p><strong>Estado: </strong><%= @event.status %></p>
 		
-		<p><b>Fecha y hora de inicio: </b><%=l @event.start_time %></p>
+		<p><strong>Fecha y hora de inicio: </strong><%=l @event.start_time %></p>
 
-		<p><b>Fecha y hora de término: </b><%=l @event.end_time %></p>
+		<p><strong>Fecha y hora de término: </strong><%=l @event.end_time %></p>
 
 	</div>
 	<div class="panel-footer">
-		<p><b>Creado por:</b>
-	  	<%= link_to @offering.user.name+' '+@offering.user.last_name, user_path(@offering.user.id)  %></p>
+		<p><strong>Creado por:</strong>
+	  	<%= link_to @event.user.name+' '+@event.user.last_name, user_path(@event.user.id)  %></p>
 	</div>
 </div>
 

@@ -14,8 +14,7 @@
 			<%=raw request.description %>
 		</div>
 		<div class="panel-footer">
-			<p><b>Creador:</b> <%= request.user.name %> <%= request.user.last_name %><p>
-			<%= link_to "Ver solicitud", request %>
+			<p><strong>Creador: </strong> <%= link_to request.user.name+' '+request.user.last_name, user_path(request.user.id)  %></p>
 		</div>
 	</div>
 <%end%>
