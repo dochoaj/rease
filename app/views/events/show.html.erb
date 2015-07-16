@@ -19,7 +19,7 @@
 	</div>
 	<div class="panel-footer">
 		<p><b>Creado por:</b>
-	  	<%= @event.user.name %> <%= @event.user.last_name %></p>
+	  	<%= link_to @offering.user.name+' '+@offering.user.last_name, user_path(@offering.user.id)  %></p>
 	</div>
 </div>
 

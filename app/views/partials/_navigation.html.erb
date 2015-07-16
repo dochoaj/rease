@@ -62,7 +62,7 @@
 
 
 			</ul>
-			<p class="navbar-text navbar-right"> Hola <%=current_user.name%> <%=link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe, root_path, :id=>'rightBar'%> 
+			<p class="navbar-text navbar-right"> Hola <%=current_user.name%> <%=link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe, users_path, :id=>'rightBar'%> 
 	
 			<%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete, :id=>'rightBar'%></p>
 			<%end%>

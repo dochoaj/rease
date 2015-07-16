@@ -16,6 +16,7 @@ class OfferingsController < ApplicationController
   # GET /offerings/1.json
   def show
     add_breadcrumb "Mostrar"
+    @user = User.all
   end
 
   # GET /offerings/new
