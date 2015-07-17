@@ -13,7 +13,16 @@
     </div>
 
     <div class="panel-footer">
-      <p><strong>Creador:</strong><%= link_to event.user.name+' '+event.user.last_name, user_path(event.user.id)  %></p>
+      <p><strong>Creado por:</strong>
+      <%if event.user.nickname.blank?%>
+        <%= link_to event.user.name+' '+event.user.last_name, user_path(event.user.id)  %>
+      <%else%>
+        <%= link_to event.user.nickname, user_path(event.user.id) %>
+      <%end%>
+      <%if !event.user.photo.blank?%>
+        <%= image_tag event.user.photo.url(:mini), :class =>"RoundPicture" %>
+      <%end %>
+      <p>
       <p><strong>Fecha y hora de inicio: </strong><%=l event.start_time %></p>
       <p><strong>Fecha y hora de término: </strong><%=l event.end_time %></p>
       <%= link_to "Ver evento", event %>

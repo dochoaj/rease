@@ -19,7 +19,15 @@
 	</div>
 	<div class="panel-footer">
 		<p><strong>Creado por:</strong>
-	  	<%= link_to @event.user.name+' '+@event.user.last_name, user_path(@event.user.id)  %></p>
+		<%if @event.user.nickname.blank?%>
+	  		<%= link_to @event.user.name+' '+@event.user.last_name, user_path(@event.user.id)  %>
+	  	<%else%>
+	  		<%= link_to @event.user.nickname, user_path(@event.user.id) %>
+	  	<%end%>
+	  	<%if !@event.user.photo.blank?%>
+	  		<%= image_tag @event.user.photo.url(:mini), :class =>"RoundPicture" %>
+	  	<%end %>
+	  	<p>
 	</div>
 </div>
 

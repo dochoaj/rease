@@ -5,6 +5,11 @@
 */
 
 /*link básicos estilos rease*/
+.RoundPicture
+{
+	border-radius: 50%;
+}
+
 a, a:focus, a:active, a:visited 
 {
 	color: #30aaaa;	

@@ -15,7 +15,15 @@
     </div>
 
     <div class="panel-footer">
-      <p><strong>Creador: </strong><%= link_to offering.user.name+' '+offering.user.last_name, user_path(offering.user.id)  %></p>
+      <p><strong>Creador: </strong>
+      <%if offering.user.nickname.blank?%>
+        <%= link_to offering.user.name+' '+offering.user.last_name, user_path(offering.user.id)  %>
+      <%else%>
+        <%= link_to offering.user.nickname, user_path(offering.user.id) %>
+      <%end%>
+      <%if !offering.user.photo.blank?%>
+        <%= image_tag offering.user.photo.url(:mini), :class =>"RoundPicture" %>
+      <%end %>
       <p><strong>Fecha y hora de inicio: </strong><%=l offering.start_time %></p>
       <p><strong>Fecha y hora de término: </strong><%=l offering.end_time %></p>
       <%= link_to "Ver oferta", offering %>
