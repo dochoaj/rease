@@ -5,11 +5,6 @@
 */
 
 /*link básicos estilos rease*/
-.RoundPicture
-{
-	border-radius: 50%;
-}
-
 a, a:focus, a:active, a:visited 
 {
 	color: #30aaaa;	
@@ -166,6 +161,11 @@ p
 	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+
+.RoundPicture
+{
+	border-radius: 50%;
 }
 
 .sesion .btn-block

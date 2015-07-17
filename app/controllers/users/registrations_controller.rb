@@ -11,14 +11,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name, :category, :autorization_level)
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:nickname, :name, :last_name, :description,:photo, :email, :password, :password_confirmation, :current_password) }
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name, :nickname, :category, :autorization_level)
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:institution_id,:nickname, :name, :last_name, :description,:photo, :email, :password, :password_confirmation, :current_password) }
   end
 
   private
 
   def estatutos
     @sections = Section.all
+    @institutions = Institution.all
   end
   # GET /resource/sign_up
   # def new

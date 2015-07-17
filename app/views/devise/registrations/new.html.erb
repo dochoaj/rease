@@ -36,7 +36,9 @@
 		<div class="panel-heading">Datos personales</div>
 		<div class="panel-body">
 
-		
+			<div class="field">
+				<%= f.text_field :nickname, :placeholder => "Apodo o nick",:class => 'form-control'  %>
+			</div>		
 
 			<div class="field">
 				<%= f.text_field :name, :placeholder => "Nombres",:class => 'form-control'  %>

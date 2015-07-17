@@ -39,7 +39,9 @@
       <div class="field">
         <%= f.text_area :description, :class => 'form-control', :placeholder => 'Anote aquí algo sobre usted' %>
       </div>
-
+      <div class="field">
+        <%= f.select :institution_id, Institution.all.collect {|ins| [ins.name, ins.id]},{:include_blank => "Institución a la que pertenece (Opcional)"},{ :class => 'form-control'} %>
+      </div>
       <hr>
       <h2>Foto de perfil</h2>
       <div class="field">

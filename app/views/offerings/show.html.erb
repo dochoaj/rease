@@ -17,11 +17,7 @@
   </div>
   <div class="panel-footer">
     <p><strong>Creado por:</strong>
-      <%if @offering.user.nickname.blank?%>
-        <%= link_to @offering.user.name+' '+@offering.user.last_name, user_path(@offering.user.id)  %>
-      <%else%>
-        <%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
-      <%end%>
+      <%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
       <%if !@offering.user.photo.blank?%>
         <%= image_tag @offering.user.photo.url(:mini), :class =>"RoundPicture" %>
       <%end %>

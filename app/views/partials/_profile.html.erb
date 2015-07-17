@@ -1,22 +1,14 @@
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
 		<%if @user==current_user%>
-			<%if !@user.nickname.blank?%>
-				¡Hola <%= @user.nickname %>!
-			<%else%>
-				¡Hola <%= @user.name %> <%= @user.last_name %>!
-			<%end%>
+			¡Hola <%= @user.nickname %>!
 		<%else%>
-			<%if !@user.nickname.blank?%>
-				¡Perfil de <%= @user.nickname %>!
-			<%else%>
-				¡Perfil de <%= @user.name %> <%= @user.last_name %>!
-			<%end%>
+			¡Perfil de <%= @user.nickname %>!
 		<%end%>
 	</div>
 	<div class="panel-body">
 		<%if !@user.photo.blank?%>
-			<%= image_tag @user.photo.url(:thumb) %>
+			<%= image_tag @user.photo.url(:thumb),:class=>'RoundPicture' %>
 		<%end%>
 		<h2>Datos de usuario:</h2>
 		<p><strong>Nombre completo: </strong> <%= @user.name %> <%= @user.last_name %></p>
@@ -31,7 +23,11 @@
 		<%if @user.autorization_level == 2%> Adherente <%end%>
 		</p>
 		<p><strong>Correo: </strong> <%= @user.email%></p>
-		<p><strong>Institución: </strong> <%= @user.email%></p>
-		<p><strong>Sobre mí:</strong> <%= @user.description%></p>
+		<%if !@user.institution_id.blank?%>
+			<p><strong>Institución: </strong> <%=link_to @user.institution.name, @user.institution.web%></p>
+		<%end%>
+		<%if !@user.description.blank? %>
+			<p><strong>Sobre mí:</strong> <%= @user.description%></p>
+		<%end%>
 	</div>
 </div>
