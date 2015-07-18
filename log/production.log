@@ -3528,3 +3528,148 @@ I, [2015-07-17T19:13:59.685035 #4262]  INFO -- :   Parameters: {"start"=>"2015-0
 D, [2015-07-17T19:13:59.686538 #4262] DEBUG -- :   [1m[35mEvent Load (0.1ms)[0m  SELECT `events`.* FROM `events`
 I, [2015-07-17T19:13:59.686740 #4262]  INFO -- :   Rendered events/index.json.jbuilder (0.6ms)
 I, [2015-07-17T19:13:59.686958 #4262]  INFO -- : Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+I, [2015-07-18T02:06:43.988467 #4658]  INFO -- : Started GET "/" for ::1 at 2015-07-18 02:06:43 -0300
+I, [2015-07-18T02:06:44.094705 #4658]  INFO -- : Processing by PresentationController#index as HTML
+D, [2015-07-18T02:06:44.163443 #4658] DEBUG -- :   [1m[36mSection Load (0.3ms)[0m  [1mSELECT `sections`.* FROM `sections`[0m
+I, [2015-07-18T02:06:44.172576 #4658]  INFO -- :   Rendered presentation/index.html.erb within layouts/application (11.0ms)
+D, [2015-07-18T02:06:44.489581 #4658] DEBUG -- :   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `users`
+I, [2015-07-18T02:06:44.489881 #4658]  INFO -- :   Rendered partials/_navigation.html.erb (6.7ms)
+I, [2015-07-18T02:06:44.506749 #4658]  INFO -- :   Rendered /home/paxoth/.rvm/gems/ruby-2.2.2/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.9ms)
+I, [2015-07-18T02:06:44.564716 #4658]  INFO -- :   Rendered devise/shared/_links.html.erb (2.2ms)
+I, [2015-07-18T02:06:44.565134 #4658]  INFO -- :   Rendered devise/sessions/_inicio_sesion.html.erb (29.9ms)
+I, [2015-07-18T02:06:44.565217 #4658]  INFO -- :   Rendered partials/_intranet.html.erb (57.2ms)
+I, [2015-07-18T02:06:44.565848 #4658]  INFO -- : Completed 200 OK in 471ms (Views: 467.4ms | ActiveRecord: 2.6ms)
+I, [2015-07-18T02:06:44.989373 #4658]  INFO -- : Started GET "/assets/application-bc9d9dbad7db1575dbbd99bee08a34c84be829f3491d255111103da1d7b98de4.css" for ::1 at 2015-07-18 02:06:44 -0300
+I, [2015-07-18T02:06:45.247774 #4658]  INFO -- : Started GET "/assets/application-bf9fd04ff962ae8afe2bfacfae31b7682d7a03b32854004ff6e8854e8826632e.js" for ::1 at 2015-07-18 02:06:45 -0300
+I, [2015-07-18T02:06:45.467572 #4658]  INFO -- : Started GET "/assets/logoblanco-67b66d0b8a5b0e4a120111f84016d95937824b8abe4ece3dfe57d0f6b2e73db9.png" for ::1 at 2015-07-18 02:06:45 -0300
+I, [2015-07-18T02:06:45.524552 #4658]  INFO -- : Started GET "/assets/LogoRease-1daffec253099e9f6a626482e16a86e97d1328aacf1924a3cdad2e433ddd0a69.png" for ::1 at 2015-07-18 02:06:45 -0300
+I, [2015-07-18T02:06:45.681129 #4658]  INFO -- : Started GET "/assets/twitter/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-07-18 02:06:45 -0300
+F, [2015-07-18T02:06:45.683743 #4658] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/twitter/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-07-18T02:06:45.976445 #4658]  INFO -- : Started GET "/events.json?start=2015-06-28&end=2015-08-09&_=1437196005554" for ::1 at 2015-07-18 02:06:45 -0300
+I, [2015-07-18T02:06:45.982850 #4658]  INFO -- : Processing by EventsController#index as JSON
+I, [2015-07-18T02:06:45.982985 #4658]  INFO -- :   Parameters: {"start"=>"2015-06-28", "end"=>"2015-08-09", "_"=>"1437196005554"}
+D, [2015-07-18T02:06:46.044484 #4658] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT `events`.* FROM `events`[0m
+I, [2015-07-18T02:06:46.096335 #4658]  INFO -- :   Rendered events/index.json.jbuilder (52.9ms)
+I, [2015-07-18T02:06:46.096683 #4658]  INFO -- : Completed 200 OK in 114ms (Views: 110.5ms | ActiveRecord: 0.9ms)
+I, [2015-07-18T02:06:46.098351 #4658]  INFO -- : Started GET "/assets/twitter/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-07-18 02:06:46 -0300
+F, [2015-07-18T02:06:46.110421 #4658] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/twitter/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-07-18T02:06:46.165853 #4658]  INFO -- : Started GET "/assets/glyphicons-halflings-regular.woff" for ::1 at 2015-07-18 02:06:46 -0300
+I, [2015-07-18T02:06:46.192123 #4658]  INFO -- : Started GET "/assets/favicon-ce5627efc72aed78c2710d77c9a33e6ef53986acb368d00ebc5c4f6ceb1bf097.ico" for ::1 at 2015-07-18 02:06:46 -0300
+I, [2015-07-18T03:10:20.840980 #4658]  INFO -- : Started GET "/" for ::1 at 2015-07-18 03:10:20 -0300
+I, [2015-07-18T03:10:20.843511 #4658]  INFO -- : Processing by PresentationController#index as HTML
+D, [2015-07-18T03:10:20.845832 #4658] DEBUG -- :   [1m[35mSection Load (0.2ms)[0m  SELECT `sections`.* FROM `sections`
+I, [2015-07-18T03:10:20.846308 #4658]  INFO -- :   Rendered presentation/index.html.erb within layouts/application (1.0ms)
+D, [2015-07-18T03:10:20.865647 #4658] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+I, [2015-07-18T03:10:20.865861 #4658]  INFO -- :   Rendered partials/_navigation.html.erb (2.0ms)
+I, [2015-07-18T03:10:20.866447 #4658]  INFO -- :   Rendered /home/paxoth/.rvm/gems/ruby-2.2.2/gems/twitter-bootstrap-rails-3.2.0/app/views/twitter-bootstrap/_breadcrumbs.html.erb (0.1ms)
+I, [2015-07-18T03:10:20.869194 #4658]  INFO -- :   Rendered devise/shared/_links.html.erb (0.8ms)
+I, [2015-07-18T03:10:20.869912 #4658]  INFO -- :   Rendered devise/sessions/_inicio_sesion.html.erb (2.9ms)
+I, [2015-07-18T03:10:20.870004 #4658]  INFO -- :   Rendered partials/_intranet.html.erb (3.1ms)
+I, [2015-07-18T03:10:20.870491 #4658]  INFO -- : Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+I, [2015-07-18T03:10:21.226509 #4658]  INFO -- : Started GET "/assets/twitter/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-07-18 03:10:21 -0300
+F, [2015-07-18T03:10:21.230502 #4658] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/twitter/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-07-18T03:10:21.417764 #4658]  INFO -- : Started GET "/events.json?start=2015-06-28&end=2015-08-09&_=1437199821090" for ::1 at 2015-07-18 03:10:21 -0300
+I, [2015-07-18T03:10:21.418896 #4658]  INFO -- : Processing by EventsController#index as JSON
+I, [2015-07-18T03:10:21.423278 #4658]  INFO -- :   Parameters: {"start"=>"2015-06-28", "end"=>"2015-08-09", "_"=>"1437199821090"}
+D, [2015-07-18T03:10:21.426197 #4658] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT `events`.* FROM `events`
+I, [2015-07-18T03:10:21.426497 #4658]  INFO -- :   Rendered events/index.json.jbuilder (0.9ms)
+I, [2015-07-18T03:10:21.427781 #4658]  INFO -- : Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+I, [2015-07-18T03:10:21.429516 #4658]  INFO -- : Started GET "/assets/twitter/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-07-18 03:10:21 -0300
+F, [2015-07-18T03:10:21.434771 #4658] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/assets/twitter/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/paxoth/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+I, [2015-07-18T03:10:21.471292 #4658]  INFO -- : Started GET "/assets/glyphicons-halflings-regular.woff" for ::1 at 2015-07-18 03:10:21 -0300
