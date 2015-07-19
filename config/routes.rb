@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+	get 'files/upload_files'
+	post 'files/upload_files'
+	get 'files/list_files'
+	post 'files/delete_files'
+
 	get 'users/listarUsuarios'
 	
 	get 'presentation/index'
