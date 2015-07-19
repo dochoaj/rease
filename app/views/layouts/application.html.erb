@@ -97,13 +97,20 @@
 	</footer>
 
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#calendarAside').fullCalendar({
-			events: '/events.json'
-
-		})
-	});
-</script>
+		$(document).ready(function() {
+			$('#calendarAside').fullCalendar({
+				buttonText: {
+					today: '',
+					day: 'Día',
+					week:'Semana',
+					month:'Mes'
+				},
+				events: '/events.json',
+				monthNames: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+				dayNamesShort: ['Lun','Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']
+			})
+		});
+	</script>
 
 	</body>
 </html>

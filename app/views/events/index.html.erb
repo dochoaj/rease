@@ -15,7 +15,16 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#calendar').fullCalendar({
-			events: '/events.json'
+			buttonText: {
+				today: 'Fecha actual',
+				day: 'Día',
+				week:'Semana',
+				month:'Mes'
+			},
+			events: '/events.json',
+			monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+			dayNamesShort: ['Lunes','Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+
 		})
 	});
 </script>
