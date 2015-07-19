@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-	get 'minutes/upload_minutes'
-	post 'minutes/upload_minutes'
-	get 'minutes/list_minutes'
-	post 'minutes/delete_minutes'
-
 	get 'users/listarUsuarios'
 	
 	get 'presentation/index'
@@ -29,6 +24,7 @@ Rails.application.routes.draw do
 	resources :offerings
 	resources :requests
 	resources :contacts
+	resources :minutes
 	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.

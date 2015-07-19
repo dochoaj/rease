@@ -17,6 +17,7 @@ class PresentationController < ApplicationController
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :presentation_hacemos_path
 		@sections = Section.all
+		@minutes = Minute.all
 	end
 
 	def aprendizaje

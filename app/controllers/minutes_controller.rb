@@ -1,95 +1,90 @@
 class MinutesController < ApplicationController
-	before_action :authenticate_user!, except: [:listar_archivos]
- 	before_action :validate_category, except: [:listar_archivos]
+  before_action :authenticate_user!
+  before_action :validate_category
+  before_action :set_minute, only: [:show, :edit, :update, :destroy]
 
-	Ruta_directorio_archivos = "public/archivos/";
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Administrar", :sections_path
+  add_breadcrumb "Actas de reunión", :minutes_path 
 
+  # GET /minutes
+  # GET /minutes.json
+  def index
+    @minutes = Minute.all
+  end
 
-	def upload_minutes
-		@formato_erroneo = false;
-		if request.post?
-			#Archivo subido por el usuario.
-			archivo = params[:archivo];
-			#Nombre original del archivo.
-			nombre = archivo.original_filename;
-			#Directorio donde se va a guardar.
-			directorio = Ruta_directorio_archivos;
-			#Extensión del archivo.
-			extension = nombre.slice(nombre.rindex("."), nombre.length).downcase;
-			#Verifica que el archivo tenga una extensión correcta.
-			if extension == ".pdf" or extension == ".doc" or extension == ".docx"
-				#Ruta del archivo.
-				path = File.join(directorio, nombre);
-				#Crear en el archivo en el directorio. Guardamos el resultado en una variable, será true si el archivo se ha guardado correctamente.
-				resultado = File.open(path, "wb") { |f| f.write(archivo.read) };
-				#Verifica si el archivo se subió correctamente.
-				if resultado
-					subir_archivo = "ok";
-				else
-					subir_archivo = "error";
-				end
-			#Redirige al controlador "archivos", a la acción "lista_archivos" y con la variable de tipo GET "subir_archivos" con el valor "ok" si se subió el archivo y "error" si no se pudo.
-				redirect_to :controller => "minutes", :action => "list_minutes", :subir_archivo => subir_archivo;
-			else
-				@formato_erroneo = true;
-				redirect_to minutes_list_minutes_path, alert: "El formato ingresado es incorrecto. Usted sólo puede subir archivos .pdf, .doc y .docx"
-			end
-		end
-	end
+  # GET /minutes/1
+  # GET /minutes/1.json
+  def show
+    add_breadcrumb "Detalle" 
+  end
 
-	def list_minutes
-		#Guardamos la lista de archivos de la carpeta "archivos".
-		@archivos = Dir.entries(Ruta_directorio_archivos);
-		#Mensaje que mostrará si la página viene desde otra acción.
-		@mensaje = "";
-		#Verificamos si existe la variable subir_archivo por GET.
-		if params[:subir_archivo].present?
-			if params[:subir_archivo] == "ok";
-				@mensaje = "El archivo ha sido subido exitosamente.";
-			else
-				@mensaje = "El archivo no ha podido ser subido.";
-			end
-		end
-		#Verificamos si existe la variable eliminar_archivo por GET.
-		if params[:eliminar_archivo].present?
-			if params[:eliminar_archivo] == "ok";
-				@mensaje = "El archivo ha sido eliminado exitosamente";
-			else
-				@mensaje = "El archivo no ha podido ser eliminado.";
-			end
-		end		
+  # GET /minutes/new
+  def new
+    add_breadcrumb "Nueva acta"
+    @minute = Minute.new
+  end
 
-	end
+  # GET /minutes/1/edit
+  def edit
+    add_breadcrumb "Editar acta"
+  end
 
-	def delete_minutes
-		#Recuperamos el nombre del archivo.
-		archivo_a_borrar = params[:archivo_a_borrar];
-		#Guardamos la ruta del archivo a eliminar.
-		ruta_al_archivo = Ruta_directorio_archivos + archivo_a_borrar;
-		#Verificamos que el archivo exista para eliminarlo.
-		if File.exist?(ruta_al_archivo)
-			#Si el archivo existe se intentará eliminarlo. Dentro de la variable resultado se guardará true si se pudo eliminar y false si no.
-			resultado = File.delete(ruta_al_archivo);
-		else
-			#El archivo no existe así que no se pudo eliminar nada.
-			resultado = false;
-		end
-		#Verifica si el archivo se eliminó correctamente.
-		if resultado
-			eliminar_archivo = "ok";
-		else
-			eliminar_archivo = "error";
-		end
-		redirect_to :controller => "minutes", :action => "list_minutes", :eliminar_archivo => eliminar_archivo;
+  # POST /minutes
+  # POST /minutes.json
+  def create
+    @minute = Minute.new(minute_params)
 
-	end
+    respond_to do |format|
+      if @minute.save
+        format.html { redirect_to @minute, notice: 'El acta se ha creado exitosamente.' }
+        format.json { render :show, status: :created, location: @minute }
+      else
+        format.html { render :new }
+        format.json { render json: @minute.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
+  # PATCH/PUT /minutes/1
+  # PATCH/PUT /minutes/1.json
+  def update
+    respond_to do |format|
+      if @minute.update(minute_params)
+        format.html { redirect_to @minute, notice: 'El acta se ha modificado exitosamente' }
+        format.json { render :show, status: :ok, location: @minute }
+      else
+        format.html { render :edit }
+        format.json { render json: @minute.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-	private
+  # DELETE /minutes/1
+  # DELETE /minutes/1.json
+  def destroy
+    @minute.destroy
+    respond_to do |format|
+      format.html { redirect_to minutes_url, notice: 'El acta se ha eliminado.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
 
     def validate_category
       if current_user.category != 1
-      redirect_to root_path, alert: "Sólo un administrador puede agregar un archivo."
+      redirect_to root_path, alert: "Sólo un administrador puede trabajar las actas."
       end   
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_minute
+      @minute = Minute.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def minute_params
+      params.require(:minute).permit(:name, :date, :archive)
     end
 end
