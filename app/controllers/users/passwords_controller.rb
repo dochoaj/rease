@@ -1,4 +1,6 @@
 class Users::PasswordsController < Devise::PasswordsController
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Contraseña"
   # GET /resource/password/new
   # def new
   #   super

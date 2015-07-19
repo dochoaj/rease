@@ -15,7 +15,7 @@
 <div class="panel panel-default panelRease" >
     <div class="panel-heading">Datos de la oferta</div>
     <div class="panel-body">
-
+	<p class="note">*Todos los campos son obligatorios.</p>
 		<div class="field">
 			<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo'%>
 		</div>
@@ -24,7 +24,7 @@
 			<% if accion == "Actualizar" %>
 				<%= f.select(:status, [['Disponible', 'Disponible'],['En proceso', 'En proceso'],['Realizado','Realizado'], ['Cancelado','Cancelado'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 			<% else %>
-				<p><b>Estado: </b> Disponible </p>
+				<p><strong>Estado: </strong> Disponible </p>
 			<% end %>
 		</div>
 
@@ -34,11 +34,11 @@
 		
 		<div class="field">
 			<p><%= f.label :start_time, "Fecha de inicio" %>
-			<%= f.datetime_select :start_time %></p>
+			<%= f.date_select :start_time %></p>
 		</div>
 		<div class="field">
 			<p><%= f.label :end_time, "Fecha de término" %>
-			<%= f.datetime_select :end_time %></p>
+			<%= f.date_select :end_time %></p>
 		</div>
 		
 	</div>

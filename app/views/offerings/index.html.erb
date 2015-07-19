@@ -11,13 +11,17 @@
     </div>
     <div class="panel-body">
       <%=raw offering.description %>
-      <p><b>Estado: </b><%=offering.status %></p>
+      <p><strong>Estado: </strong><%=offering.status %></p>
     </div>
 
     <div class="panel-footer">
-      <p><b>Creador:</b> <%= offering.user.name %> <%= offering.user.last_name %><p>
-      <p><b>Fecha y hora de inicio: </b><%=l offering.start_time %></p>
-      <p><b>Fecha y hora de término: </b><%=l offering.end_time %></p>
+      <p><strong>Creador: </strong>
+      <%= link_to offering.user.nickname, user_path(offering.user.id) %>
+      <%if !offering.user.photo.blank?%>
+        <%= image_tag offering.user.photo.url(:mini), :class =>"RoundPicture" %>
+      <%end %>
+      <p><strong>Fecha y hora de inicio: </strong><%=l offering.start_time %></p>
+      <p><strong>Fecha y hora de término: </strong><%=l offering.end_time %></p>
       <%= link_to "Ver oferta", offering %>
     </div>
   </div>

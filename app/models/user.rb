@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   belongs_to :institution
 
@@ -14,5 +14,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :sections
 
+  has_attached_file :photo, styles: {mini:"30x30", thumb:"700x300"}
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+  validates :nickname, uniqueness: true, format: { without: /\s/ }, length: {minimum: 3, maximum: 16} #no se pueden repertir los nick
 
 end

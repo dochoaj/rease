@@ -14,8 +14,12 @@
 			<%=raw request.description %>
 		</div>
 		<div class="panel-footer">
-			<p><b>Creador:</b> <%= request.user.name %> <%= request.user.last_name %><p>
-			<%= link_to "Ver solicitud", request %>
+			<p><strong>Creador: </strong>
+			<%= link_to request.user.nickname, user_path(request.user.id) %>
+			<%if !request.user.photo.blank?%>
+			<%= image_tag request.user.photo.url(:mini), :class =>"RoundPicture" %>
+			<%end %></p>
+			<%= link_to "Ver solicitud", request%>
 		</div>
 	</div>
 <%end%>

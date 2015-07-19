@@ -32,14 +32,17 @@ class RequestsController < ApplicationController
     @request.user_id = current_user.id
     @request.status = "Disponible"
     if @request.save
+      flash[:notice] = "La solicitud de servicio ha sido creada correctamente"
       redirect_to :action => 'index'
     else
+      flash[:alert] = "Ha ocurrido un error en la creación de la solicitud"
       render :action => 'new'
     end
   end
 
   def update
     if @request.update_attributes(defined_params)
+    flash[:notice] = "La solicitud de servicio ha sido actualizada correctamente"
      redirect_to :action => 'show', :id => @request
     else
      render :action => 'edit'
@@ -47,8 +50,8 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    puts "asd"
     Request.find(params[:id]).destroy
+    flash[:notice] = "La solicitud de servicio se ha eliminado"
     redirect_to :action => 'index'
   end
 

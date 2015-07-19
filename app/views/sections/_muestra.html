@@ -14,11 +14,9 @@
 			<div class="panel-footer">
 				<p>Fecha de Creacion: <%= seccion.created_at%></p>
 				<%= link_to "Editar", edit_section_path(seccion), :class => "btn btn-lg btnCRUD"%>
-				
 				<% if eliminar == "Si" %>
 					<%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' }, :class => "btn btn-lg btnCRUD" %>
 				<% end %>
-				
 			</div>
 		</div>
 	<%end%>

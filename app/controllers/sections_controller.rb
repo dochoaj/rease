@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :validate_category
-	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje]
+	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje, :linkInteres]
 
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Administración", :sections_path
@@ -62,6 +62,7 @@ class SectionsController < ApplicationController
 
 	def edit
 		add_breadcrumb "Editar sección", :edit_section_path
+		flash[:notice] = "La sección ha sido actualizada correctamente"
 		@section = Section.find(params[:id])
 	end
 

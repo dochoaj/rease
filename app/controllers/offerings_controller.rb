@@ -10,12 +10,14 @@ class OfferingsController < ApplicationController
   # GET /offerings.json
   def index
     @offerings = Offering.all
+    @user = User.all
   end
 
   # GET /offerings/1
   # GET /offerings/1.json
   def show
     add_breadcrumb "Mostrar"
+    @user = User.all
   end
 
   # GET /offerings/new
@@ -40,7 +42,7 @@ class OfferingsController < ApplicationController
     @offering.status = "Disponible"
     respond_to do |format|
       if @offering.save
-        format.html { redirect_to @offering, notice: 'La oferta ha sido creada exitosamente.' }
+        format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido creada correctamente.' }
         format.json { render :show, status: :created, location: @offering }
       else
         format.html { render :new }
@@ -54,7 +56,7 @@ class OfferingsController < ApplicationController
   def update
     respond_to do |format|
       if @offering.update(offering_params)
-        format.html { redirect_to @offering, notice: 'La oferta ha sido actualizada.' }
+        format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido actualizada correctamente.' }
         format.json { render :show, status: :ok, location: @offering }
       else
         format.html { render :edit }
@@ -68,7 +70,7 @@ class OfferingsController < ApplicationController
   def destroy
     @offering.destroy
     respond_to do |format|
-      format.html { redirect_to offerings_url, notice: 'La oferta ha sido eliminada.' }
+      format.html { redirect_to offerings_url, notice: 'Se ha eliminado la oferta de servicio.' }
       format.json { head :no_content }
     end
   end

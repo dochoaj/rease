@@ -8,16 +8,19 @@
 		<p><%=raw @request.description %></p>
 
 		<h2> Información </h2>
-			<p><b>Estado: </b><%= @request.status %></p>
+			<p><strong>Estado: </strong><%= @request.status %></p>
 
-			<p><b>Fecha y hora de inicio: </b><%=l @request.start_time %></p>
+			<p><strong>Fecha de inicio: </strong><%=l @request.start_time %></p>
 
-			<p><b>Fecha y hora de término: </b><%=l @request.end_time %></p>
+			<p><strong>Fecha de término: </strong><%=l @request.end_time %></p>
 	</div>
 	
 	<div class="panel-footer">
-		<p><b>Creado por:</b>
-		<%= @request.user.name %> <%= @request.user.last_name %></p>
+		<p><strong>Creado por:</strong>
+		<%= link_to @request.user.nickname, user_path(@request.user.id) %>
+		<%if !@request.user.photo.blank?%>
+			<%= image_tag @request.user.photo.url(:mini), :class =>"RoundPicture" %>
+		<%end %>
 	</div>
 </div>
 

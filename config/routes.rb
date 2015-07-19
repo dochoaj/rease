@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
+	get 'users/listarUsuarios'
+	
 	get 'presentation/index'
 	get 'presentation/contacto'
 	get 'presentation/somos'
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-
 	get 'events/listado'
+
 	
 	get 'sections/somos'
 	get 'sections/hacemos'
@@ -21,11 +23,14 @@ Rails.application.routes.draw do
 	resources :institutions
 	resources :offerings
 	resources :requests
-
+	resources :contacts
+	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.
 
 	devise_for :users, :controllers => { :registrations => "users/registrations" }
+	resources :users, only: [:index, :show, :edit, :update]
+
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
 

@@ -5,6 +5,7 @@
 */
 
 /*link básicos estilos rease*/
+
 a, a:focus, a:active, a:visited 
 {
 	color: #30aaaa;	
@@ -143,6 +144,14 @@ p
     margin-left: auto;
     margin-right: auto;
 }
+.note
+{
+	text-align: right;
+	color: #30aaaa;
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+}
 
 /*colores para barras y paneles*/
 .panelRease .panel-heading, #pies, #panelInstitution .panel-heading
@@ -153,6 +162,11 @@ p
 	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+
+.RoundPicture
+{
+	border-radius: 50%;
 }
 
 .sesion .btn-block
