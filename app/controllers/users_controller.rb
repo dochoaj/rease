@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 	before_action :validate_category, only: [:edit,:update]
 	before_action :set_user, only: [:show, :edit, :update]
 	add_breadcrumb "Inicio", :root_path
-  	add_breadcrumb "Perfil", :users_path
 
 	def index
+		add_breadcrumb "Perfil", :users_path
 		@user = current_user
 	end
 
@@ -15,11 +15,13 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		add_breadcrumb "Perfil de "+@user.name
+		add_breadcrumb "Perfil", :users_path
+		add_breadcrumb "Perfil de "+@user.nickname
 	end
 
 	def edit
-		add_breadcrumb "Editar perfil de "+@user.name
+		add_breadcrumb "Perfil", :users_path
+		add_breadcrumb "Editar perfil de "+@user.nickname
 	end
 
 	def update
