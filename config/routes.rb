@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+	get 'users/listarUsuarios'
+	
 	get 'presentation/index'
 	get 'presentation/contacto'
 	get 'presentation/somos'

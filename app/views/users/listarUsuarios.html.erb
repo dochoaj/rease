@@ -1,0 +1,22 @@
+<h1> Todos los usuarios registrados </h1>
+
+ <div class="panel panel-default panelRease">
+    <div class="panel-heading">
+      Usuarios registrados
+    </div>
+    <div class="panel-body">
+		<% @user.each do |user| %>
+			<%if user.nickname.blank?%>
+				<%= link_to user.name, user_path(user.id) %>
+			<% else %>
+				<%= link_to user.nickname, user_path(user.id) %>
+			<% end %>
+
+			<%if !user.photo.blank?%>
+			<%= image_tag user.photo.url(:mini), :class =>"RoundPicture" %>
+			<%end %>
+			<br>
+	
+		<%end%>
+	</div>
+</div>

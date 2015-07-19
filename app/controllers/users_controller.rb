@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 		@user = current_user
 	end
 
+	def listarUsuarios
+		add_breadcrumb "Usuarios registrados"
+		@user = User.all
+	end
+	
 	def show
 		add_breadcrumb "Perfil de "+@user.name
 	end

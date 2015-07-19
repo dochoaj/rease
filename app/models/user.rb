@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :sections
 
-  has_attached_file :photo, styles: {mini:"30x30", thumb:"800x600"}
+  has_attached_file :photo, styles: {mini:"30x30", thumb:"700x300"}
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates :nickname, uniqueness: true, format: { without: /\s/ }, length: {minimum: 3, maximum: 16} #no se pueden repertir los nick
 
