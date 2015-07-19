@@ -1,0 +1,12 @@
+<h1>Subir actas de reuniones</h1>
+
+<p> Para subir un acta de reuniones, debe tener en cuenta que el archivo debe ser formato PDF, DOC ó DOCX </p>
+
+<%= form_tag({:controller => "minutes", :action => "upload_minutes"}, :method => "post", :multipart => true) do %>
+
+   <%= file_field_tag "archivo", :required => "required" %>
+   <%= submit_tag "Subir archivo" , :class => "btn btn-lg btnCRUD"%>
+
+<% end %>
+
+<%= link_to "Volver a la lista de archivos", {:controller => "minutes", :action => "list_minutes"}, :class => "btn btn-lg btnCRUD" %>

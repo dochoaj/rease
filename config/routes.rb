@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-	get 'files/upload_files'
-	post 'files/upload_files'
-	get 'files/list_files'
-	post 'files/delete_files'
+	get 'minutes/upload_minutes'
+	post 'minutes/upload_minutes'
+	get 'minutes/list_minutes'
+	post 'minutes/delete_minutes'
 
 	get 'users/listarUsuarios'
 	
