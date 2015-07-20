@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :interest_links
 	get 'users/listarUsuarios'
 	
 	get 'presentation/index'

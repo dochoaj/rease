@@ -65,23 +65,19 @@
 				</div>
 			</div>
 
-			<% if !user_signed_in? %>
-				<%if !@sections.blank? %> 
+			<% if !user_signed_in? %> 
 				<div  class="panel panel-default panelClick" >
 					<div class="panel-heading" data-toggle="collapse" data-target="#cuerpoLI">
 						Links de interés <i class="glyphicon glyphicon-circle-arrow-down"></i>
 					</div>
 					<div class="collapse" id="cuerpoLI">
 						<div class="panel-body">
-							<% @sections.each do |seccion| %>
-								<%if seccion.order == 'Link de Interés'%>
-									<%=raw seccion.body%>
-								<%end%>
+							<% @interest_links.each do |interest_link| %>
+								<p><%=link_to interest_link.name, interest_link.url%></p>
 							<%end%>
 						</div>
 					</div>
 				</div>
-				<%end%>
 			<%end%>
 
 		</aside>

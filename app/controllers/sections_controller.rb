@@ -30,10 +30,6 @@ class SectionsController < ApplicationController
 		add_breadcrumb "Aprendizaje y Servicio", :sections_aprendizaje_path
 	end
 
-	def linkInteres
-		add_breadcrumb "link de Interés", :sections_linkInteres_path
-	end
-
 	def new
 		add_breadcrumb "Nueva sección", :new_section_path
 		@section = Section.new
