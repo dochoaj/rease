@@ -9,11 +9,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.order("created_at DESC").all
+    @events = Event.order("end_time DESC").all
   end
 
   def listado
-    @events = Event.order("created_at DESC").all
+    @events = Event.order("end_time DESC").all
   end
   # GET /events/1
   # GET /events/1.json

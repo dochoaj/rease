@@ -11,3 +11,7 @@
 	</div>
 </div>
 
+<%= link_to "Editar", edit_section_path( @section), :class => "btn btn-lg btnCRUD"%>
+<%= link_to 'Eliminar',  @section, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' }, :class => "btn btn-lg btnCRUD" %>
+<%= link_to "Volver", sections_estatutos_path, :class => "btn btn-lg btnCRUD"%>
+

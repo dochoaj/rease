@@ -198,8 +198,8 @@ p
 
 #logoInstituciones /* los logos de las intituciones tengan tamaño similar*/
 {
-	margin-bottom: 20px;
-	margin-left: 20px;
+	margin: 20px;
+	display: inline-block;
 }
 #logoNav /*estilos para el logo de la navbar*/
 {

@@ -8,4 +8,20 @@
 </div>
 
 <h1>Secciones de Estatutos anteriores: </h1>
-<%= render "muestra", {orden: "Estatutos", eliminar: "Si"} %>
+
+<div class="panel">
+	<div class="panel-heading">
+		
+	</div>
+	<div class="panel-body">
+		<% @sections.each do |seccion| %>
+			<%if seccion.order == "Estatutos"%>
+				<p>
+				<%=	link_to seccion.title, seccion %>  - 
+				<%= link_to "Editar", edit_section_path(seccion)%> - 
+				<%= link_to 'Eliminar', seccion, method: :delete, data: { confirm: '¿Está seguro de eliminar esta sección?' } %>
+				</p>
+			<%end%>
+		<%end%>
+	</div>
+</div>

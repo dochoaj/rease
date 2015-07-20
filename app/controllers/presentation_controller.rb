@@ -1,5 +1,5 @@
 class PresentationController < ApplicationController
-	before_action :set_presentation
+	before_action :set_presentation, except: [:estatutos]
 	add_breadcrumb "Inicio", :root_path
 	
 	def index
@@ -7,7 +7,7 @@ class PresentationController < ApplicationController
 
 	def somos
 		add_breadcrumb "¿Quiénes Somos?", :presentation_somos_path 
-		@instituciones = Institution.all
+		@instituciones = Institution.order("name ASC").all
 	end
 
 	def hacemos
@@ -21,7 +21,9 @@ class PresentationController < ApplicationController
 
 	def estatutos
 		add_breadcrumb "Estatutos", :presentation_estatutos_path
-		
+		@events = Event.all
+    	@interest_links = InterestLink.order("name ASC").all
+    	@sections = Section.all
 	end
 
 	private
