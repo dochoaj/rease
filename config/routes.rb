@@ -2,23 +2,24 @@ Rails.application.routes.draw do
 
   
 	get 'users/listarUsuarios'
-	
 	get 'presentation/index'
 	get 'presentation/contacto'
 	get 'presentation/somos'
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-	
 	get 'events/listado'
-
-	
 	get 'sections/somos'
 	get 'sections/hacemos'
 	get 'sections/aprendizaje'
 	get 'sections/estatutos'
 	get 'sections/novedades'
 	get 'sections/linkInteres'
+	get 'sections/newHacemos'
+	get 'sections/newSomos'
+	get 'sections/newEstatutos'
+	get 'sections/newAprendizaje'
+	get 'sections/newNovedades'
 
 	resources :sections
 	resources :events

@@ -1,12 +1,6 @@
 <h1>Administrar ¿Qué hacemos? </h1>
-<div class="panel panel-default panelRease" >
-	<div class="panel-heading">
-		Crear una nueva sección de hacemos
-	</div>
-	<div class="panel-body">
-		<%= render "form",orden: "Hacemos" %>
-	</div>
-</div>
+<%= link_to "Nueva seccion de ¿Qué hacemos?", sections_newHacemos_path, :class=>"btn btn-lg btnCRUD"%>
 
-<h1>Seccion de Hacemos anteriores: </h1>
+<h1>Secciones de ¿Qué hacemos? anteriores: </h1>
 <%= render "muestra", {orden: "Hacemos", eliminar: "Si"} %>
+

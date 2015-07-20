@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :validate_category
-	before_action :administration, only: [:novedades, :somos, :hacemos, :estatutos, :aprendizaje, :linkInteres]
+	before_action :administration
 
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Administración", :sections_path
@@ -9,26 +9,38 @@ class SectionsController < ApplicationController
 	def index
 		@sections = Section.all
 	end
-
 	def novedades
 		add_breadcrumb "Novedades", :sections_novedades_path
 	end
-
 	def somos
 		add_breadcrumb "¿Quienes Somos?", :sections_somos_path
 	end
-
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
 	end
-
 	def estatutos
 		add_breadcrumb "Estatutos", :sections_estatutos_path
 	end
-
 	def aprendizaje
-		add_breadcrumb "Aprendizaje y Servicio", :sections_aprendizaje_path
+		add_breadcrumb "Aprendizaje Servicio", :sections_aprendizaje_path
 	end
+
+	def newNovedades
+		add_breadcrumb "Nuevo"
+	end
+	def newSomos
+		add_breadcrumb "Nuevo"
+	end
+	def newHacemos
+		add_breadcrumb "Nuevo"
+	end
+	def newEstatutos
+		add_breadcrumb "Nuevo"
+	end
+	def newAprendizaje
+		add_breadcrumb "Nuevo"
+	end
+
 
 	def new
 		add_breadcrumb "Nueva sección", :new_section_path
