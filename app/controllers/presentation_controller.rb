@@ -12,7 +12,7 @@ class PresentationController < ApplicationController
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :presentation_hacemos_path
-		@minutes = Minute.all
+		@minutes = Minute.order("created_at DESC").all
 	end
 
 	def aprendizaje
@@ -27,9 +27,8 @@ class PresentationController < ApplicationController
 	private
 
 	def set_presentation
-
 		@events = Event.all
-    	@interest_links = InterestLink.all
-    	@sections = Section.all
+    	@interest_links = InterestLink.order("name ASC").all
+    	@sections = Section.order("created_at DESC").all
 	end
 end

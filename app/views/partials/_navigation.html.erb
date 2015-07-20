@@ -63,11 +63,8 @@
 
 			</ul>
 			<p class="navbar-text navbar-right">
-			<%if !current_user.nickname.blank?%>
 				¡Hola <%= current_user.nickname %>!
-			<%else%>
-				¡Hola <%= current_user.name %>!
-			<%end%>
+
 			<%=link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe, users_path, :id=>'rightBar'%> 
 	
 			<%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete, :id=>'rightBar'%></p>

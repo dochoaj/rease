@@ -10,7 +10,7 @@ class InterestLinksController < ApplicationController
   # GET /interest_links
   # GET /interest_links.json
   def index
-    @interest_links = InterestLink.all
+    @interest_links = InterestLink.order("created_at DESC").all
   end
 
   # GET /interest_links/1

@@ -1,26 +1,28 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
+  before_filter :configure_permitted_parameters
+  before_action :estatutos
+
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Datos de usuario"
-
-  before_action :estatutos
   
   ###PREGUNTAR QUÉ HICIMOS ACÁ
-  before_filter :configure_permitted_parameters
+
 
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up).push(:name, :last_name, :nickname, :category, :autorization_level)
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:institution_id,:nickname, :name, :last_name, :description,:photo, :email, :password, :password_confirmation, :current_password) }
   end
-
+  
   private
-
+  
   def estatutos
     @sections = Section.all
     @institutions = Institution.all
   end
+
   # GET /resource/sign_up
   # def new
   #   super

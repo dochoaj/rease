@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+
+  
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Ingreso intranet"
   
@@ -24,5 +26,5 @@ class Users::SessionsController < Devise::SessionsController
   # You can put the params you want to permit in the empty array.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
-  # end
+  #end
 end

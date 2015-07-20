@@ -10,7 +10,7 @@ class MinutesController < ApplicationController
   # GET /minutes
   # GET /minutes.json
   def index
-    @minutes = Minute.all
+    @minutes = Minute.order("created_at DESC").all
   end
 
   # GET /minutes/1

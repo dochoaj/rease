@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def listarUsuarios
 		add_breadcrumb "Usuarios registrados"
-		@user = User.all
+		@user = User.order("nickname ASC").all
 	end
 	
 	def show

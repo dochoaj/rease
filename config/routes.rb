@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :interest_links
+  
 	get 'users/listarUsuarios'
 	
 	get 'presentation/index'
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
+	
 	get 'events/listado'
 
 	
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
 	resources :requests
 	resources :contacts
 	resources :minutes
+	resources :interest_links
 	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.

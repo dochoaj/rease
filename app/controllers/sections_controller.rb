@@ -82,7 +82,7 @@ class SectionsController < ApplicationController
 	end
 
 	def administration
-		@sections = Section.all
+		@sections = Section.order("id DESC").all
 		@section = Section.new		
 	end
 

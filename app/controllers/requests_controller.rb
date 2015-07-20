@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
   add_breadcrumb "Solicitudes", :requests_path
   
   def index
-    @requests = Request.all
+    @requests = Request.order("created_at DESC").all
   end
 
   def show

@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Contacto", :contacts_path
 
@@ -77,4 +78,5 @@ class ContactsController < ApplicationController
     def contact_params
       params.require(:contact).permit(:name, :email, :body)
     end
+
 end
