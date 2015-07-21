@@ -38,7 +38,7 @@
 				<li role="presentation" class="navCenter">
 					<%= form_tag(presentation_searchPage_path, :method => "get",:class=>"form-inline") do %>
 					<div class="input-group">
-						<%= text_field_tag :search, params[:search], placeholder: "Buscar...",:class => 'form-control' %>
+						<%= text_field_tag :search, params[:search], placeholder: "Buscar en la página",:class => 'form-control' %>
 						<span class="input-group-btn">
 							<%= submit_tag "Ir", :class => 'btn btn-default' %>
 						</span>
@@ -74,7 +74,7 @@
 				<li role="presentation" class="navCenter">
 					<%= form_tag(presentation_searchPage_path, :method => "get",:class=>"form-inline") do %>
 					<div class="input-group">
-						<%= text_field_tag :search, params[:search], placeholder: "Buscar...",:class => 'form-control' %>
+						<%= text_field_tag :search, params[:search], placeholder: "Buscar en la red",:class => 'form-control' %>
 						<span class="input-group-btn">
 							<%= submit_tag "Ir", :class => 'btn btn-default' %>
 						</span>

@@ -3,25 +3,46 @@
 <% if current_user.category != 2 %>
 	<%= link_to "Nueva solicitud de servicio", new_request_path, :class => 'btn btn-lg' %>
 <%end%>
-
-<% @requests.each do |request| %>
+<div class="buscador">
+	<%= form_tag(requests_path, :method => "get",:class=>"form-inline") do %>
+	<div class="input-group">
+		<%= text_field_tag :search, params[:search], placeholder: "Buscar solicitudes",:class => 'form-control' %>
+		<span class="input-group-btn">
+			<%= submit_tag "Ir", :class => 'btn btn-default' %>
+		</span>
+	</div>
+	<%end%>
+</div>
+<%if @requests.present?%>
+	<% @requests.each do |request| %>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				<%= request.title %>
+			</div>
+			<div class="panel-body">
+				<%=raw request.description %>
+				<p><strong>Estado: </strong><%=request.status %></p>
+			</div>
+			<div class="panel-footer">
+				<p><strong>Creador: </strong>
+				<%= link_to request.user.nickname, user_path(request.user.id) %>
+				<%if !request.user.photo.blank?%>
+				<%= image_tag request.user.photo.url(:mini), :class =>"RoundPicture" %>
+				<%end %></p>
+				<p><strong>Fecha de inicio: </strong><%=l request.start_time %></p>
+	      		<p><strong>Fecha de término: </strong><%=l request.end_time %></p>
+				<%= link_to "Ver solicitud", request%>
+			</div>
+		</div>
+	<%end%>
+<%else%>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
-			<%= request.title %>
+			Búsqueda de <%= params[:search] %>
 		</div>
 		<div class="panel-body">
-			<%=raw request.description %>
-			<p><strong>Estado: </strong><%=request.status %></p>
-		</div>
-		<div class="panel-footer">
-			<p><strong>Creador: </strong>
-			<%= link_to request.user.nickname, user_path(request.user.id) %>
-			<%if !request.user.photo.blank?%>
-			<%= image_tag request.user.photo.url(:mini), :class =>"RoundPicture" %>
-			<%end %></p>
-			<p><strong>Fecha de inicio: </strong><%=l request.start_time %></p>
-      		<p><strong>Fecha de término: </strong><%=l request.end_time %></p>
-			<%= link_to "Ver solicitud", request%>
+			<p>No hay resultados en la búsqueda de <strong><%= params[:search] %></strong></p>
 		</div>
 	</div>
+	<%= link_to "Volver", requests_path, :class => 'btn btn-lg btnCRUD'%>
 <%end%>

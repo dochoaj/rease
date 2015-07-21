@@ -14,6 +14,11 @@ class EventsController < ApplicationController
 
   def listado
     @events = Event.order("end_time DESC").all
+    if params[:search]
+      @events = Event.search(params[:search]).order("end_time DESC")
+    else
+      @events = Event.order("end_time DESC").all
+    end
   end
   # GET /events/1
   # GET /events/1.json
