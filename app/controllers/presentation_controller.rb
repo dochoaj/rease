@@ -13,12 +13,18 @@ class PresentationController < ApplicationController
 			@events = Event.search(params[:search]).order("created_at DESC")
 			@minutes = Minute.search(params[:search]).order("created_at DESC")
 			@institutions = Institution.search(params[:search]).order("created_at DESC")
+			@requests = Request.search(params[:search]).order("created_at DESC")
+			@offerings = Offering.search(params[:search]).order("created_at DESC")
+			@users = User.search(params[:search]).order("created_at DESC")
 		else
 			@sections = Section.all.order('created_at DESC')
-			@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
-			@events = Event.search(params[:search]).order("created_at DESC")
-			@minutes = Minute.search(params[:search]).order("created_at DESC")
-			@institutions = Institution.search(params[:search]).order("created_at DESC")
+			@interest_links = InterestLink.all.order('created_at DESC')
+			@events = Event.all.order('created_at DESC')
+			@minutes = Minute.all.order('created_at DESC')
+			@institutions = Institution.all.order('created_at DESC')
+			@requests = Request.all.order('created_at DESC')
+			@offerings = Offering.all.order('created_at DESC')
+			@users = User.all.order('created_at DESC')
 			
 		end
 	end

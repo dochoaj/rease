@@ -14,5 +14,7 @@ class Request < ActiveRecord::Base
 	validates :description, presence: true, length: {minimum: 20, maximum: 10000} #validar maximos y minimos de caracteres
 	validates :status, presence: true
 	
-
+  def self.search(search)
+    where("title LIKE ? or description LIKE ?", "%#{search}%","%#{search}%") 
+  end
 end
