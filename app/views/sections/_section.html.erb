@@ -1,7 +1,1 @@
-<% if !user_signed_in?%>
 <p><strong><%=section.order%>:</strong>  <%=section.title%> - <%= link_to "Ver", section %> </p>
-<%else%>
-	<%if section.order == "Estatutos"%>
-	<p><strong><%=section.order%>:</strong>  <%=section.title%> - <%= link_to "Ver", section %> </p>
-	<%end%>
-<%end%>
