@@ -1,0 +1,35 @@
+<div class="panel panel-default panelRease" >
+  <div class="panel-heading">
+    <%= @offering.title %>
+  </div>
+  
+  <div class="panel-body">
+
+    <h1>Descripción:</h1>
+      <p><%=raw @offering.description %></p>
+
+    <h1> Información </h1>
+      <p><strong>Estado: </strong><%= @offering.status %></p>
+
+      <p><strong>Fecha de inicio: </strong><%=l @offering.start_time %></p>
+
+      <p><strong>Fecha de término: </strong><%=l @offering.end_time %></p>
+  </div>
+  <div class="panel-footer">
+    <p><strong>Creado por:</strong>
+      <%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
+      <%if !@offering.user.photo.blank?%>
+        <%= image_tag @offering.user.photo.url(:mini), :class =>"RoundPicture" %>
+      <%end %>
+      <p>
+  </div>
+</div>
+
+<% if user_signed_in? && current_user.category != 4 %>
+  <% if @offering.user.id == current_user.id %>
+    <%= link_to 'Editar ', edit_offering_path(@offering), :class => "btn btn-lg btnCRUD" %>
+    <%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :class => "btn btn-lg btnCRUD" %>
+  <% end %>
+<% end %>
+  
+  <%= link_to 'Volver', offerings_path, :class => "btn btn-lg btnCRUD" %>

@@ -1,0 +1,44 @@
+<h1>¿Qué es A+S?</h1>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje Servicio"%>
+		<%if seccion.priority =="Alta" %>		
+			<div  class="panel panel-default panelRease">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje Servicio"%>
+		<%if seccion.priority =="Media" %>		
+			<div  class="panel panel-default panelRease">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
+<% @sections.each do |seccion| %>
+	<%if seccion.order == "Aprendizaje Servicio"%>
+		<%if seccion.priority =="Baja" %>		
+			<div  class="panel panel-default panelRease">
+				<div class="panel-heading">
+					<%= seccion.title %>
+				</div>
+				<div class="panel-body">
+					<p><%=raw seccion.body %></p>
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+<%end%>
+
