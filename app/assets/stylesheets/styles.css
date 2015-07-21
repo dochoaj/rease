@@ -119,6 +119,10 @@ p
 	text-align: left;
 }
 
+.buscador
+{
+	display: inline-block;
+}
 /*estilo de los indices de lso estatutos*/
 .estatutos
 {

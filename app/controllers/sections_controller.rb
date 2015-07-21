@@ -69,7 +69,6 @@ class SectionsController < ApplicationController
 
 	def edit
 		add_breadcrumb "Editar sección", :edit_section_path
-		flash[:notice] = "La sección ha sido actualizada correctamente"
 		@section = Section.find(params[:id])
 	end
 

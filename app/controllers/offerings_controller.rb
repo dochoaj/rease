@@ -10,14 +10,17 @@ class OfferingsController < ApplicationController
   # GET /offerings.json
   def index
     @offerings = Offering.order("created_at DESC").all
-    @user = User.all
+    if params[:search]
+      @offerings = Offering.search(params[:search]).order("created_at DESC")
+    else
+      @offerings = Offering.order("created_at DESC").all
+    end
   end
 
   # GET /offerings/1
   # GET /offerings/1.json
   def show
     add_breadcrumb "Mostrar"
-    @user = User.all
   end
 
   # GET /offerings/new

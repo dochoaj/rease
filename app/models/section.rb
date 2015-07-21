@@ -8,6 +8,6 @@ class Section < ActiveRecord::Base
 	validates :priority, presence: true #no puede haber carácteres en blanco
 
 	def self.search(search)
-		where("title LIKE ? or body LIKE ?", "%#{search}%","%#{search}%") 
+		where("title LIKE ? or body LIKE ?", "%#{search}%", "%#{search}%") 
 	end
 end

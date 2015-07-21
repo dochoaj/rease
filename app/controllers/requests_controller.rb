@@ -8,6 +8,11 @@ class RequestsController < ApplicationController
   
   def index
     @requests = Request.order("created_at DESC").all
+    if params[:search]
+      @requests = Request.search(params[:search]).order("created_at DESC")
+    else
+      @requests = Request.order("created_at DESC").all
+    end
   end
 
   def show

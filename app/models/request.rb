@@ -15,6 +15,6 @@ class Request < ActiveRecord::Base
 	validates :status, presence: true
 	
   def self.search(search)
-    where("title LIKE ? or description LIKE ?", "%#{search}%","%#{search}%") 
+    where("title LIKE ? or description LIKE ? or status LIKE ?", "%#{search}%", "%#{search}%","%#{search}%") 
   end
 end
