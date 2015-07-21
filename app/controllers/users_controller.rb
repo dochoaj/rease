@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def listarUsuarios
 		add_breadcrumb "Usuarios registrados"
-		@user = User.all
+		@user = User.order("nickname ASC").all
 	end
 	
 	def show
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		if @user.update(section_params)
+		if @user.update(user_params)
 			flash[:notice] = "El usuario ha sido actualizado correctamente"
 			redirect_to @user
 		else
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 	
-	def section_params
+	def user_params
 		params.require(:user).permit(:category,:autorization_level)
 	end
 end

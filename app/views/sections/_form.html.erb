@@ -1,37 +1,47 @@
 <%orden ||= "Opcion"%>
 <%accion ||= "Crear" %>
-<center>
-	<div style="width: 90%">
-		<%= form_for(@section) do |f| %>
-				<% @section.errors.full_messages.each do |mensaje|%>
-				<div>
-					<p><%= mensaje%></p>
-				</div>
-			<%end%>
-			<p class="note">*Todos los campos son obligatorios.</p>
-			<div class="field">
-				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
-			</div>
-			
-			<div class="field">
-				<%= f.select(:order, [['Novedad','Novedad'],['Aprendizaje y Servicio', 'Aprendizaje y Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos'],['Link de Interés', 'Link de Interés']],  {:selected=> orden,:include_blank => '— Seleccione una sección —' }, { :class => 'form-control', :required => true }) %>
-			</div>
-			
-			<div class="field">
-				<%= f.select(:priority, [['Alta', 'Alta'],['Media', 'Media'],['Baja', 'Baja']], {:include_blank => '— Prioridad —' }, { :class => 'form-control', :required => true }) %>
-			</div>
-			
-			<div class="field"> 
-				<%= f.text_area :body, :placeholder=> "Escriba acá.", :id=>"eg-basic" %>
-			</div>
-			
 
-			<div class="field"> 
-				<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
-			</div>
-		<%end%>
-	</div> 
-</center>
+<div class="panel panel-default panelRease">
+	<div class="panel-heading">
+		<%=accion%> <%=orden%>
+	</div>
+	<div class="panel-body">
+		<center>
+			<div style="width: 90%">
+				<%= form_for(@section) do |f| %>
+						<% @section.errors.full_messages.each do |mensaje|%>
+						<div>
+							<p><%= mensaje%></p>
+						</div>
+					<%end%>
+					<p class="note">*Todos los campos son obligatorios.</p>
+					<div class="field">
+						<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+					</div>
+					
+					<div class="field">
+						<%= f.select(:order, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']],  {:selected=> orden,:include_blank => '— Seleccione una sección —' }, { :class => 'form-control', :required => true }) %>
+					</div>
+					
+					<div class="field">
+						<%= f.select(:priority, [['Alta', 'Alta'],['Media', 'Media'],['Baja', 'Baja']], {:include_blank => '— Prioridad —' }, { :class => 'form-control', :required => true }) %>
+					</div>
+					
+					<div class="field"> 
+						<%= f.text_area :body, :placeholder=> "Escriba acá.", :id=>"eg-basic" %>
+					</div>
+					
+
+					<div class="field"> 
+						<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
+						<%= link_to "Cancelar", sections_path, :class => 'btn btn-lg btnCRUD' %>
+					</div>
+				<%end%>
+			</div> 
+		</center>
+	</div>
+</div>
+
 <script>
 	 $(function() {$('textarea#eg-basic').editable({
       inlineMode: false,

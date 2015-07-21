@@ -11,21 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717041057) do
+ActiveRecord::Schema.define(version: 20150720050009) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
-  end
-
-  create_table "authentications", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.string   "provider",   limit: 255
-    t.string   "uid",        limit: 255
-    t.string   "index",      limit: 255
-    t.string   "create",     limit: 255
-    t.string   "destroy",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -98,6 +87,14 @@ ActiveRecord::Schema.define(version: 20150717041057) do
     t.datetime "logo_updated_at"
   end
 
+  create_table "interest_links", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string   "matters",    limit: 255
     t.text     "text",       limit: 65535
@@ -115,6 +112,17 @@ ActiveRecord::Schema.define(version: 20150717041057) do
 
   add_index "messages_users", ["message_id"], name: "index_messages_users_on_message_id", using: :btree
   add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
+
+  create_table "minutes", force: :cascade do |t|
+    t.string   "name",                 limit: 255
+    t.date     "date"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "archive_file_name",    limit: 255
+    t.string   "archive_content_type", limit: 255
+    t.integer  "archive_file_size",    limit: 4
+    t.datetime "archive_updated_at"
+  end
 
   create_table "offerings", force: :cascade do |t|
     t.integer  "user_id",     limit: 4

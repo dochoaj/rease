@@ -1,6 +1,6 @@
 class InstitutionsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :validate_category
+  before_action :authenticate_user!, except: [:show]
+  before_action :validate_category, except: [:show]
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
 
   add_breadcrumb "Inicio", :root_path
@@ -10,7 +10,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions.json
   def index
     add_breadcrumb "Instituciones", institutions_path 
-    @institutions = Institution.all
+    @institutions = Institution.order("name ASC").all
   end
 
   # GET /institutions/1

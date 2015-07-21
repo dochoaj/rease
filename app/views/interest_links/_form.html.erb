@@ -1,0 +1,33 @@
+<%orden ||= "Crear"%>
+<%= form_for(@interest_link) do |f| %>
+  <% if @interest_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interest_link.errors.count, "error") %> prohibited this interest_link from being saved:</h2>
+
+      <ul>
+      <% @interest_link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="panel panel-default panelRease" >
+  <div class="panel-heading">
+    Datos del Link de Interés
+  </div>
+  <div class="panel-body">
+    <div class="field">
+      <%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :url,  :class => 'form-control', :placeholder => 'Página web. Ejemplo: http://www.ejemplo.com' %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description,  :class => 'form-control', :placeholder => 'Breve descripción' %>
+    </div>
+  </div>  
+</div>
+  <%= f.submit orden, :class=>"btn btn-lg btnCRUD" %>
+  <%= link_to 'Volver', interest_links_path, :class =>"btn btn-lg btnCRUD" %>
+<% end %>

@@ -1,11 +1,6 @@
-<div class="panel panel-default panelRease" >
-	<div class="panel-heading">
-		Crear una nueva seccion de Somos
-	</div>
-	<div class="panel-body">
-		<%= render "form",orden: "Somos" %>
-	</div>
-</div>
+<h1>Administrar ¿Quiénes Somos? </h1>
+<%= link_to "Nueva seccion de ¿Quiénes Somos?", sections_newSomos_path, :class=>"btn btn-lg btnCRUD"%>
 
-<h1>Secciones de Somos anteriores: </h1>
+<h1>Secciones de ¿Qué hacemos? anteriores: </h1>
 <%= render "muestra", {orden: "Somos", eliminar: "Si"} %>
+

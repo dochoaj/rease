@@ -20,8 +20,8 @@
       <%if !offering.user.photo.blank?%>
         <%= image_tag offering.user.photo.url(:mini), :class =>"RoundPicture" %>
       <%end %>
-      <p><strong>Fecha y hora de inicio: </strong><%=l offering.start_time %></p>
-      <p><strong>Fecha y hora de término: </strong><%=l offering.end_time %></p>
+      <p><strong>Fecha de inicio: </strong><%=l offering.start_time %></p>
+      <p><strong>Fecha de término: </strong><%=l offering.end_time %></p>
       <%= link_to "Ver oferta", offering %>
     </div>
   </div>

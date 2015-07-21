@@ -11,5 +11,7 @@ class Offering < ActiveRecord::Base
 	validates :status, presence: true
 	validates :start_time, presence: true
 	validates :end_time, presence: true
-
+	def self.search(search)
+		where("title LIKE ? or description LIKE ?", "%#{search}%","%#{search}%") 
+	end
 end

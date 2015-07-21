@@ -9,11 +9,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.order("end_time DESC").all
   end
 
   def listado
-    @events = Event.all
+    @events = Event.order("end_time DESC").all
   end
   # GET /events/1
   # GET /events/1.json
@@ -91,4 +91,5 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:user_id, :title, :description, :address, :start_time, :end_time, :status)
     end
+    
 end

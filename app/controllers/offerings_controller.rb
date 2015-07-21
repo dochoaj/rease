@@ -9,7 +9,7 @@ class OfferingsController < ApplicationController
   # GET /offerings
   # GET /offerings.json
   def index
-    @offerings = Offering.all
+    @offerings = Offering.order("created_at DESC").all
     @user = User.all
   end
 
