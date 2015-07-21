@@ -1,13 +1,12 @@
 class SectionsController < ApplicationController
-	before_action :authenticate_user!
-	before_action :validate_category
+	before_action :authenticate_user!, except: [:show]
+	before_action :validate_category, except: [:show]
 	before_action :administration
 
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Administración", :sections_path
 
 	def index
-		@sections = Section.all
 	end
 	def novedades
 		add_breadcrumb "Novedades", :sections_novedades_path

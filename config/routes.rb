@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
+	get 'presentation/searchPage'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'

@@ -5,6 +5,23 @@ class PresentationController < ApplicationController
 	def index
 	end
 
+	def searchPage
+		add_breadcrumb "Búsqueda"
+		if params[:search]
+			@sections = Section.search(params[:search]).order("created_at DESC")
+			@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
+			@events = Event.search(params[:search]).order("created_at DESC")
+			@minutes = Minute.search(params[:search]).order("created_at DESC")
+			@institutions = Institution.search(params[:search]).order("created_at DESC")
+		else
+			@sections = Section.all.order('created_at DESC')
+			@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
+			@events = Event.search(params[:search]).order("created_at DESC")
+			@minutes = Minute.search(params[:search]).order("created_at DESC")
+			@institutions = Institution.search(params[:search]).order("created_at DESC")
+			
+		end
+	end
 	def somos
 		add_breadcrumb "¿Quiénes Somos?", :presentation_somos_path 
 		@instituciones = Institution.order("name ASC").all

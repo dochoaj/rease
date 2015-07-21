@@ -17,6 +17,7 @@
 		</p>	
 	</div>
 </div>
-
+<%if user_signed_in? %>
 <%= link_to 'Editar', edit_interest_link_path(@interest_link), :class => 'btn btn-lg btnCRUD' %> 
 <%= link_to 'Volver', interest_links_path , :class => 'btn btn-lg btnCRUD' %>
+<%end%>

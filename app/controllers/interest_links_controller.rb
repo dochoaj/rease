@@ -1,6 +1,6 @@
 class InterestLinksController < ApplicationController
-  before_action :authenticate_user!
-  before_action :validate_category
+  before_action :authenticate_user!, except: [:show]
+  before_action :validate_category, except: [:show]
   before_action :set_interest_link, only: [:show, :edit, :update, :destroy]
 
   add_breadcrumb "Inicio", :root_path

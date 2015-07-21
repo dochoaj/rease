@@ -35,7 +35,18 @@
 				<li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
 					<%= link_to 'Contacto <i class="glyphicon glyphicon-envelope"></i>'.html_safe, contacts_path %>
 				</li>
+				<li role="presentation" class="navCenter">
+					<%= form_tag(presentation_searchPage_path, :method => "get",:class=>"form-inline") do %>
+					<div class="input-group">
+						<%= text_field_tag :search, params[:search], placeholder: "Buscar...",:class => 'form-control' %>
+						<span class="input-group-btn">
+							<%= submit_tag "Ir", :class => 'btn btn-default' %>
+						</span>
+					</div>
+					<%end%>
+				</li>
 			</ul>
+
 			<p class="navbar-text navbar-right">Miembros activos: <%= User.count %> </p>
 				<%else%>
 
