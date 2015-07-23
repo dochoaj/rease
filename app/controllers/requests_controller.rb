@@ -33,8 +33,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new(defined_params)
-    @request.user_id = current_user.id
+    @request = current_user.requests.new(defined_params)
     @request.status = "Disponible"
     if @request.save
       flash[:notice] = "La solicitud de servicio ha sido creada correctamente"

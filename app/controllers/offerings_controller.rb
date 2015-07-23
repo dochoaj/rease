@@ -40,8 +40,7 @@ class OfferingsController < ApplicationController
   # POST /offerings
   # POST /offerings.json
   def create
-    @offering = Offering.new(offering_params)
-    @offering.user_id = current_user.id
+    @offering = current_user.offerings.new(offering_params)
     @offering.status = "Disponible"
     respond_to do |format|
       if @offering.save

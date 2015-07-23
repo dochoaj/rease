@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
   
+  resources :comments
 	get 'users/listarUsuarios'
 	get 'presentation/index'
 	get 'presentation/contacto'
