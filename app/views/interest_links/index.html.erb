@@ -8,7 +8,7 @@
   <div class="panel-body">
     <% @interest_links.each do |interest_link| %>
       <p><%=interest_link.name%> - 
-      <%= link_to 'ir', interest_link.url %> -
+      <%= link_to 'Ir', interest_link.url %> -
       <%= link_to 'Detalle', interest_link %> -
       <%= link_to 'Eliminar link', interest_link, method: :delete, data: { confirm: '¿Seguro que desea eliminar este link?' } %>
       </p>
