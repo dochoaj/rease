@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   
   
-  resources :comments
+  
 	get 'users/listarUsuarios'
 	get 'presentation/index'
 	get 'presentation/contacto'
@@ -25,7 +25,9 @@ Rails.application.routes.draw do
 	get 'sections/newNovedades'
 
 	resources :sections
-	resources :events
+	resources :events do
+		resources :comments
+	end
 	resources :institutions
 	resources :offerings
 	resources :requests
@@ -33,6 +35,7 @@ Rails.application.routes.draw do
 	resources :minutes
 	resources :interest_links
 	resources :bulletins, except: [:edit]
+	
 	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.

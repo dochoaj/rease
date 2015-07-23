@@ -24,6 +24,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     add_breadcrumb "Mostrar"
+    @comment = Comment.new
   end
 
   # GET /events/new

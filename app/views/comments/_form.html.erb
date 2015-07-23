@@ -1,4 +1,4 @@
-<%= form_for(@comment) do |f| %>
+<%= form_for([@event,@comment]) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -12,26 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :event_id %><br>
-    <%= f.text_field :event_id %>
-  </div>
-  <div class="field">
-    <%= f.label :offering_id %><br>
-    <%= f.text_field :offering_id %>
-  </div>
-  <div class="field">
-    <%= f.label :request_id %><br>
-    <%= f.text_field :request_id %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => 'form-control',:placeholder=>'Escriba acá su comentario respecto a este evento...',:required=>true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Enviar comentario", :class => 'btn btn-default' %>
   </div>
 <% end %>

@@ -14,14 +14,16 @@
       <p><strong>Fecha de inicio: </strong><%=l @offering.start_time %></p>
 
       <p><strong>Fecha de término: </strong><%=l @offering.end_time %></p>
+      <p><strong>Creado por:</strong>
+        <%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
+        <%if !@offering.user.photo.blank?%>
+          <%= image_tag @offering.user.photo.url(:mini), :class =>"RoundPicture" %>
+        <%end %>
+        <p>
   </div>
   <div class="panel-footer">
-    <p><strong>Creado por:</strong>
-      <%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
-      <%if !@offering.user.photo.blank?%>
-        <%= image_tag @offering.user.photo.url(:mini), :class =>"RoundPicture" %>
-      <%end %>
-      <p>
+    <h2>Comentarios</h2>
+    </div>
   </div>
 </div>
 

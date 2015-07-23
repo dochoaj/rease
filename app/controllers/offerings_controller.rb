@@ -21,6 +21,7 @@ class OfferingsController < ApplicationController
   # GET /offerings/1.json
   def show
     add_breadcrumb "Mostrar"
+    @comment = Comment.new
   end
 
   # GET /offerings/new
