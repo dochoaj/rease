@@ -6,7 +6,7 @@
 <div class="buscador">
   <%= form_tag(offerings_path, :method => "get",:class=>"form-inline") do %>
   <div class="input-group">
-    <%= text_field_tag :search, params[:search], placeholder: "Buscar ofertas",:class => 'form-control' %>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar ofertas",:class => 'form-control',:required=>true %>
     <span class="input-group-btn">
       <%= submit_tag "Ir", :class => 'btn btn-default' %>
     </span>

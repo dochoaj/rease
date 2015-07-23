@@ -1,19 +1,10 @@
 <%accion ||= "Crear"%>
-<%= form_for @request, :html => { :class => "form-horizontal request" } do |f| %>
 
+<%= form_for @request, :html => { :class => "form-horizontal request" } do |f| %>
 	<% if @request.errors.any? %>
-	<div id="error_expl" class="panel panel-danger">
-		<div class="panel-heading">
-			<h3 class="panel-title"><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h3>
-		</div>
-		<div class="panel-body">
-			<ul>
-				<% @request.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	</div>
+		<% @request.errors.full_messages.each do |msg| %>
+			<%flash[:alert] = msg %>
+		<% end %>
 	<% end %>
 
 	<div class="panel panel-default panelRease" >
@@ -22,7 +13,7 @@
     		<p class="note">*Todos los campos son obligatorios.</p>
     		<div class="control-group">
 				<div class="field">
-				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' ,:required=>true%>
 				</div>
 				<%= error_span(@request[:title]) %>
 			</div>
@@ -35,7 +26,7 @@
 
 			<div class="control-group">
 				<div class="field">
-				<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic", :class => 'form-control' %>
+				<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic", :class => 'form-control',:required=>true %>
 				</div>
 				<%= error_span(@request[:description]) %>
 			</div>

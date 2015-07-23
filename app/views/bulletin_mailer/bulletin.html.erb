@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+
+	<body>
+		<%=raw @bulletin.description%>
+		<br>
+		<p>Estas son las últimas actualizaciones de la red, desde <%=l @bulletin.start_date%></p>
+		<% @sections.each do |section| %>
+			<%if section.order="Novedad"%>
+				<p><strong>Novedades: </strong><%=section.title%> - <%= link_to "Ver", section %> </p>
+			<%end%>
+		<%end%>		
+		<% @events.each do |event| %>
+			<p><strong>Evento: </strong><%=event.title%> - <%= link_to "Ver", event %></p>
+		<%end%>
+		<% @offerings.each do |offering| %>
+			<p><strong>Ofertas de Servicio: </strong><%=offering.title%> - <%= link_to "Ver", offering %></p>
+		<%end%>
+		<% @requests.each do |request| %>
+			<p><strong>Solicitudes de Servicio: </strong><%=request.title%> - <%= link_to "Ver", request %></p>
+		<%end%>
+
+		<br><br>
+		<p><strong>Red Nacional de aprendizaje servicio.</strong></p>
+		<p>coordinacion.rease@gmail.com</p>
+	</body>
+</html>

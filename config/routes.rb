@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  
 	get 'users/listarUsuarios'
 	get 'presentation/index'
 	get 'presentation/contacto'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
 	resources :contacts
 	resources :minutes
 	resources :interest_links
+	resources :bulletins, except: [:edit]
 	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.
