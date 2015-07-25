@@ -1,15 +1,9 @@
 <%orden ||= "Crear"%>
 <%= form_for(@institution) do |f| %>
 	<% if @institution.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
-
-			<ul>
-			<% @institution.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-			<% end %>
-			</ul>
-		</div>
+		<% @institution.errors.full_messages.each do |message| %>
+			<%flash[:alert] = message %>
+		<% end %>
 	<% end %>
 
 <div class="panel panel-default panelRease" >
@@ -18,10 +12,10 @@
 	</div>
 	<div class="panel-body">
 		<div class="field">
-			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre' %>
+			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre',:required=>true %>
 		</div>
 		<div class="field">
-			<%= f.text_field :web,  :class => 'form-control', :placeholder => 'Página web. Ejemplo: http://www.ejemplo.com' %>
+			<%= f.text_field :web,  :class => 'form-control', :placeholder => 'Página web. Ejemplo: http://www.ejemplo.com',:required=>true %>
 		</div>
 		<div class="field">
 			<%= f.file_field :logo %>

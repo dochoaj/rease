@@ -1,15 +1,9 @@
 <%orden ||= "Crear"%>
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
       <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%flash[:alert] = message %>
       <% end %>
-      </ul>
-    </div>
   <% end %>
 
 <div class="panel panel-default panelRease" >
@@ -18,16 +12,15 @@
     <p class="note">*Todos los campos son obligatorios.</p>
 
 		<div class="field">
-			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true %>
-		</div>
-		
+			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true, :required => true %>
+		</div>	
 		<div class="field">
-			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true   %>
+			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true, :required => true  %>
 		</div>
 
 		<div class="field">
 			<% if orden == "Actualizar" %>
-				<%= f.select(:status, [['Vigente', 'Vigente'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+				<%= f.select(:status, [['Disponible', 1],['En proceso', 2],['Realizado',3], ['Cancelado',4], ['Caducado', 5]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 			<% else %>
 				<p><strong>Estado: </strong> Vigente </p>
 			<% end %>

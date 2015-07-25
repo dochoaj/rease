@@ -4,17 +4,15 @@ La Red Nacional de Aprendizaje Servicio Chile reúne  a profesores, estudiantes,
 </p>
 <center>
 	<% @sections.each do |seccion| %>
-		<%if seccion.order == 'Somos'%>
 		<% div_id = seccion.id -%>
 		<button class = "btn btn-lg btnSomos" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
-		<%end%>
 	<%end%>
 </center>
 <p>
 
 
 <% @sections.each do |seccion| %>
-	<%if seccion.order == 'Somos'%>
+
 	<% titulo_id = seccion.id -%>
 	<div id="titulo<%= titulo_id -%>" >
 		<div  class="panel panel-default panelRease">
@@ -26,20 +24,18 @@ La Red Nacional de Aprendizaje Servicio Chile reúne  a profesores, estudiantes,
 			</div>
 		</div>
 	</div>
-	<%end%>
+
 <%end%>
 
 <script type="text/javascript">
 <% contador = 1; %>
 	<% @sections.each do |seccion| %>
-		<%if seccion.order == 'Somos'%>
-			<% titulo_id = seccion.id -%>
-			<% if contador==1 %>
-				document.getElementById('titulo<%= titulo_id -%>').style.display='block';
-				<% contador += 1; %>
-			<% else %>
-				document.getElementById('titulo<%= titulo_id -%>').style.display='none';
-			<%end%>
+		<% titulo_id = seccion.id -%>
+		<% if contador==1 %>
+			document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+			<% contador += 1; %>
+		<% else %>
+			document.getElementById('titulo<%= titulo_id -%>').style.display='none';
 		<%end%>
 	<%end%>
 </script>
@@ -48,29 +44,23 @@ La Red Nacional de Aprendizaje Servicio Chile reúne  a profesores, estudiantes,
 
 <% contador1 = 1; %>
 <% @sections.each do |seccion| %>
-	<%if seccion.order == 'Somos'%>
-		<% div_id = seccion.id -%>
-		function funcion<%= div_id -%>(){
-		<% contador2 = 1; %>
-		<% @sections.each do |seccion_in| %>
-			<%if seccion_in.order == 'Somos'%>
-				<% titulo_id = seccion_in.id -%>
-				<% if contador1==contador2 %>
-					document.getElementById('titulo<%= titulo_id -%>').style.display='block';
-				<% else %>
-					document.getElementById('titulo<%= titulo_id -%>').style.display='none';
-				<%end%>
-				<% contador2 += 1; %>
+	<% div_id = seccion.id -%>
+	function funcion<%= div_id -%>(){
+	<% contador2 = 1; %>
+	<% @sections.each do |seccion_in| %>
+			<% titulo_id = seccion_in.id -%>
+			<% if contador1==contador2 %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='block';
+			<% else %>
+				document.getElementById('titulo<%= titulo_id -%>').style.display='none';
 			<%end%>
-		<%end%>
-		<% contador1 += 1; %>
-		}			
+			<% contador2 += 1; %>
 	<%end%>
+	<% contador1 += 1; %>
+	}			
 <%end%>
 </script>
 		
-
-
 
 
 <h1>Organizaciones adheridas</h1>

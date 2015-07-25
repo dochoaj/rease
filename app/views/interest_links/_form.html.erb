@@ -1,15 +1,9 @@
 <%orden ||= "Crear"%>
 <%= form_for(@interest_link) do |f| %>
   <% if @interest_link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@interest_link.errors.count, "error") %> prohibited this interest_link from being saved:</h2>
-
-      <ul>
       <% @interest_link.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%flash[:alert] = message %>
       <% end %>
-      </ul>
-    </div>
   <% end %>
 
 <div class="panel panel-default panelRease" >
@@ -18,13 +12,13 @@
   </div>
   <div class="panel-body">
     <div class="field">
-      <%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre' %>
+      <%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre',:required=>true %>
     </div>
     <div class="field">
-      <%= f.text_field :url,  :class => 'form-control', :placeholder => 'Página web. Ejemplo: http://www.ejemplo.com' %>
+      <%= f.text_field :url,  :class => 'form-control', :placeholder => 'Página web. Ejemplo: http://www.ejemplo.com',:required=>true %>
     </div>
     <div class="field">
-      <%= f.text_area :description,  :class => 'form-control', :placeholder => 'Breve descripción' %>
+      <%= f.text_area :description,  :class => 'form-control', :placeholder => 'Breve descripción',:required=>true %>
     </div>
   </div>  
 </div>

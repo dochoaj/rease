@@ -1,15 +1,9 @@
 <%orden ||= "Crear"%>
 <%= form_for(@minute) do |f| %>
 	<% if @minute.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@minute.errors.count, "error") %> prohibited this minute from being saved:</h2>
-
-			<ul>
 			<% @minute.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
+				<%flash[:alert] = message %>
 			<% end %>
-			</ul>
-		</div>
 	<% end %>
 
 <div class="panel panel-default panelRease" >
@@ -18,7 +12,7 @@
 	</div>
 	<div class="panel-body">
 		<div class="field">
-			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Título de la reunión' %>
+			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Título de la reunión',:required=>true %>
 		</div>
 		<div class="field">
 			<p><%= f.label :date, "Fecha de la reunión: " %>

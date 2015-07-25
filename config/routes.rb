@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  
 	get 'users/listarUsuarios'
 	get 'presentation/index'
 	get 'presentation/contacto'
@@ -8,7 +6,7 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-	get 'presentation/searchPage'
+	post 'presentation/searchPage'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'
@@ -21,15 +19,28 @@ Rails.application.routes.draw do
 	get 'sections/newEstatutos'
 	get 'sections/newAprendizaje'
 	get 'sections/newNovedades'
+	post 'requests/searchRequest'
+	post 'offerings/searchOffering'
+	post 'experiences/searchExperience'
+	resources :experiences, only:[:index]
 
 	resources :sections
-	resources :events
+	resources :events do
+		resources :comments
+	end
+	resources :offerings do
+		resources :comment_offerings
+	end
+	resources :requests do
+		resources :comment_requests
+	end
 	resources :institutions
-	resources :offerings
-	resources :requests
 	resources :contacts
 	resources :minutes
 	resources :interest_links
+	resources :bulletins, except: [:edit]
+	resources :areas
+	
 	
 	###:controllers => { :registrations => "users/registrations" }
 	### preguntar qué realmente significa esto.

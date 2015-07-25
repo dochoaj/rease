@@ -1,44 +1,14 @@
 <h1>Bienvenido al sitio de la Red Nacional de Aprendizaje Servicio:</h1>
-<% @sections.each do |seccion| %>
-	<%if seccion.order == "Novedad"%>
-		<%if seccion.priority =="Alta" %>		
-			<div  class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%= seccion.title %>
-				</div>
-				<div class="panel-body">
-					<p><%=raw seccion.body %></p>
-				</div>
+<% @sections.each do |seccion| %>	
+	<div  class="panel panel-default panelClick">
+		<div class="panel-heading" data-toggle="collapse" data-target="#Novedad">
+			<i class="glyphicon glyphicon-circle-arrow-down"></i> <%= seccion.title %> 
+		</div>
+		<div class="collapsing" id="Novedad">
+			<div class="panel-body">
+				<p><%=raw seccion.body %></p>
+				<p class="note">Publicado el <%=l seccion.created_at%></p>
 			</div>
-		<%end%>
-	<%end%>
+		</div>
+	</div>
 <%end%>
-<% @sections.each do |seccion| %>
-	<%if seccion.order == "Novedad"%>
-		<%if seccion.priority =="Media" %>		
-			<div  class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%= seccion.title %>
-				</div>
-				<div class="panel-body">
-					<p><%=raw seccion.body %></p>
-				</div>
-			</div>
-		<%end%>
-	<%end%>
-<%end%>
-<% @sections.each do |seccion| %>
-	<%if seccion.order == "Novedad"%>
-		<%if seccion.priority =="Baja" %>		
-			<div  class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%= seccion.title %>
-				</div>
-				<div class="panel-body">
-					<p><%=raw seccion.body %></p>
-				</div>
-			</div>
-		<%end%>
-	<%end%>
-<%end%>
-

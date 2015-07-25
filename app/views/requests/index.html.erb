@@ -4,45 +4,174 @@
 	<%= link_to "Nueva solicitud de servicio", new_request_path, :class => 'btn btn-lg' %>
 <%end%>
 <div class="buscador">
-	<%= form_tag(requests_path, :method => "get",:class=>"form-inline") do %>
+	<%= form_tag(requests_searchRequest_path, :method => "post",:class=>"form-inline") do %>
 	<div class="input-group">
-		<%= text_field_tag :search, params[:search], placeholder: "Buscar solicitudes",:class => 'form-control' %>
+		<%= text_field_tag :search, params[:search], placeholder: "Buscar solicitudes",:class => 'form-control',:required=>true %>
 		<span class="input-group-btn">
 			<%= submit_tag "Ir", :class => 'btn btn-default' %>
 		</span>
 	</div>
 	<%end%>
 </div>
-<%if @requests.present?%>
-	<% @requests.each do |request| %>
+</div>
+	<ul class="nav nav-tabs tabRease nav-justified">
+	<li id="req1" onclick="req1()"><a>Disponibles</a></li>
+	<li id="req2" onclick="req2()"><a>En proceso</a></li>
+	<li id="req3" onclick="req3()"><a>Canceladas</a></li>
+	<li id="req4" onclick="req4()"><a>Caducadas</a></li>
+</ul>
+
+<div id="Disponible">
+	<%if @disponible.present?%>
+	<% @disponible.each do |request| %>
 		<div class="panel panel-default panelRease">
 			<div class="panel-heading">
 				<%= request.title %>
 			</div>
 			<div class="panel-body">
-				<%=raw request.description %>
-				<p><strong>Estado: </strong><%=request.status %></p>
-			</div>
-			<div class="panel-footer">
-				<p><strong>Creador: </strong>
-				<%= link_to request.user.nickname, user_path(request.user.id) %>
-				<%if !request.user.photo.blank?%>
-				<%= image_tag request.user.photo.url(:mini), :class =>"RoundPicture" %>
-				<%end %></p>
-				<p><strong>Fecha de inicio: </strong><%=l request.start_time %></p>
-	      		<p><strong>Fecha de término: </strong><%=l request.end_time %></p>
-				<%= link_to "Ver solicitud", request%>
+				<h2>Resumen: </h2>
+				<p><%=raw request.resume %></p>
+				<%= link_to "Ver solicitud", request %>
 			</div>
 		</div>
 	<%end%>
-<%else%>
-	<div class="panel panel-default panelRease">
-		<div class="panel-heading">
-			Búsqueda de <%= params[:search] %>
+	<%else%>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				Ofertas de servicios disponibles
+			</div>
+			<div class="panel-body">
+				<p>No hay solicitudes de servicio disponibles
+			</div>
 		</div>
-		<div class="panel-body">
-			<p>No hay resultados en la búsqueda de <strong><%= params[:search] %></strong></p>
+	<%end%>
+
+</div>
+<div id="En Proceso">
+	<%if @proceso.present?%>
+	<% @proceso.each do |request| %>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				<%= request.title %>
+			</div>
+			<div class="panel-body">
+				<h2>Resumen: </h2>
+				<p><%=raw request.resume %></p>
+				<%= link_to "Ver solicitud", request %>
+			</div>
 		</div>
-	</div>
-	<%= link_to "Volver", requests_path, :class => 'btn btn-lg btnCRUD'%>
-<%end%>
+	<%end%>
+	<%else%>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				Ofertas de servicios en proceso
+			</div>
+			<div class="panel-body">
+				<p>No hay solicitudes de servicio en proceso
+			</div>
+		</div>
+	<%end%>
+
+</div>
+<div id="Cancelada">
+	<%if @cancelada.present?%>
+	<% @cancelada.each do |request| %>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				<%= request.title %>
+			</div>
+			<div class="panel-body">
+				<h2>Resumen: </h2>
+				<p><%=raw request.resume %></p>
+				<%= link_to "Ver solicitud", request %>
+			</div>
+		</div>
+	<%end%>
+	<%else%>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				Ofertas de servicios canceladas
+			</div>
+			<div class="panel-body">
+				<p>No hay solicitudes de servicio canceladas
+			</div>
+		</div>
+	<%end%>
+
+</div>
+<div id="Caducada">
+	<%if @caducada.present?%>
+	<% @caducada.each do |request| %>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				<%= request.title %>
+			</div>
+			<div class="panel-body">
+				<h2>Resumen: </h2>
+				<p><%=raw request.resume %></p>
+				<%= link_to "Ver solicitud", request %>
+			</div>
+		</div>
+	<%end%>
+	<%else%>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				Ofertas de servicios caducadas
+			</div>
+			<div class="panel-body">
+				<p>No hay solicitudes de servicio caducadas
+			</div>
+		</div>
+	<%end%>
+
+
+</div>
+
+<script type="text/javascript">
+	document.getElementById('Disponible').style.display='block';	
+	document.getElementById("req1").className = "active";	
+	document.getElementById('En Proceso').style.display='none';
+	document.getElementById('Cancelada').style.display='none';
+	document.getElementById('Caducada').style.display='none';
+	function req1(){
+		document.getElementById('Disponible').style.display='block';	
+		document.getElementById('En Proceso').style.display='none';
+		document.getElementById('Cancelada').style.display='none';
+		document.getElementById('Caducada').style.display='none';
+		document.getElementById("req1").className = "active";
+		document.getElementById("req2").className = "";
+		document.getElementById("req3").className = "";
+		document.getElementById("req4").className = "";
+	}
+	function req2(){
+		document.getElementById('Disponible').style.display='none';	
+		document.getElementById('En Proceso').style.display='block';
+		document.getElementById('Cancelada').style.display='none';
+		document.getElementById('Caducada').style.display='none';
+		document.getElementById("req1").className = "";
+		document.getElementById("req2").className = "active";
+		document.getElementById("req3").className = "";
+		document.getElementById("req4").className = "";
+	}
+	function req3(){
+		document.getElementById('Disponible').style.display='none';	
+		document.getElementById('En Proceso').style.display='none';
+		document.getElementById('Cancelada').style.display='block';
+		document.getElementById('Caducada').style.display='none';
+		document.getElementById("req1").className = "";
+		document.getElementById("req2").className = "";
+		document.getElementById("req3").className = "active";
+		document.getElementById("req4").className = "";
+		
+	}
+	function req4(){
+		document.getElementById('Disponible').style.display='none';		
+		document.getElementById('En Proceso').style.display='none';
+		document.getElementById('Cancelada').style.display='none';
+		document.getElementById('Caducada').style.display='block';
+		document.getElementById("req1").className = "";
+		document.getElementById("req2").className = "";
+		document.getElementById("req3").className = "";
+		document.getElementById("req4").className = "active";
+	}
+</script>
