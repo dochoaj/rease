@@ -14,4 +14,5 @@ User.create([{
 	nickname: 'Usuario1', 
 	category: 1, 
 	autorization_level: 1, 
-	confirmed_at: Time.now}])
+	confirmed_at: Time.now
+}])
