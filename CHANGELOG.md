@@ -1,6 +1,6 @@
 # Changelog
 ## [Hotfix 15.0.1](https://github.com/dochoaj/rease/pull/21)
-Saturdat 2015, July 25th.
+Saturday 2015, July 25th.
 * **Fix:** [User seed ya no necesita verificar su correo para poder iniciar sesión]
 ## [Release 15.0.0](https://github.com/dochoaj/rease/pull/18)
 Tuesday 2015, July 21th.
