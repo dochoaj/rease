@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20150725210261) do
     t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.text     "resume",      limit: 65535
     t.integer  "status",      limit: 4,     default: 1
   end
 

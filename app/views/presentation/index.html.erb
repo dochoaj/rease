@@ -1,10 +1,11 @@
 <h1>Bienvenido al sitio de la Red Nacional de Aprendizaje Servicio:</h1>
-<% @sections.each do |seccion| %>	
+<% @sections.each do |seccion| %>
+	<% div_id = seccion.id -%>
 	<div  class="panel panel-default panelClick">
-		<div class="panel-heading" data-toggle="collapse" data-target="#Novedad">
+		<div class="panel-heading" data-toggle="collapse" data-target="#Novedad<%= div_id -%>">
 			<i class="glyphicon glyphicon-circle-arrow-down"></i> <%= seccion.title %> 
 		</div>
-		<div class="collapsing" id="Novedad">
+		<div class="collapsing" id="Novedad<%= div_id -%>">
 			<div class="panel-body">
 				<p><%=raw seccion.body %></p>
 				<p class="note">Publicado el <%=l seccion.created_at%></p>

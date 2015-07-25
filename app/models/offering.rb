@@ -12,6 +12,6 @@ class Offering < ActiveRecord::Base
 	validates :resume, presence: true, length:{minimum:10, maximum:300}
 
 	def self.search(search)
-		where("title LIKE ? or description LIKE ? or status LIKE ?", "%#{search}%", "%#{search}%","%#{search}%") 
+		where("title LIKE ? or description LIKE ? or resume LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
 	end
 end

@@ -17,7 +17,7 @@
 					</div>
 					
 					<div class="field">
-						<%= f.select(:module, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']],  {:include_blank => '— Seleccione una sección —' }, { :class => 'form-control', :required => true }) %>
+						<%= f.select(:module, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']],  {:include_blank => '— Seleccione una sección —',:selected => orden }, { :class => 'form-control', :required => true }) %>
 					</div>
 					
 					<div class="field">

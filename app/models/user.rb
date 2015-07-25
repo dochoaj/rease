@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
 	has_attached_file :photo, styles: {mini:"30x30", thumb:"700x300"}
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
-	validates :nickname, uniqueness: true, format: { without: /\s/ }, length: {minimum: 3, maximum: 16} #no se pueden repertir los nick
+	validates :nickname, uniqueness: true, format: { without: /\s/ }, length: {minimum: 3, maximum: 14} #no se pueden repertir los nick
 
 	def self.search(search)
 		where("nickname LIKE ? or name LIKE ? or last_name LIKE ? or email LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
