@@ -27,8 +27,10 @@
 		</p>
 
 		<p><strong>Fecha de inicio: </strong><%=l @request.start_time %></p>
-
 		<p><strong>Fecha de término: </strong><%=l @request.end_time %></p>
+		<%if @request.area_id.present?%>
+			<p><strong>Área de trabajo: </strong> <%= @request.area.name%></p>
+		<%end%>
 		<p><strong>Creado por:</strong>
 		<%= link_to @request.user.nickname, user_path(@request.user.id) %>
 		<%if !@request.user.photo.blank?%>

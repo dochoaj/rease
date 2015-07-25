@@ -30,6 +30,10 @@
 		<p><strong>Fecha de inicio: </strong><%=l @offering.start_time %></p>
 
 		<p><strong>Fecha de término: </strong><%=l @offering.end_time %></p>
+		<%if @offering.area_id.present?%>
+			<p><strong>Área de trabajo: </strong> <%= @offering.area.name%></p>
+		<%end%>
+
 		<p><strong>Creado por:</strong>
 		<%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
 		<%if !@offering.user.photo.blank?%>

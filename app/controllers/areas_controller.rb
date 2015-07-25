@@ -36,7 +36,7 @@ class AreasController < ApplicationController
 
     respond_to do |format|
       if @area.save
-        format.html { redirect_to @area, notice: 'La institución se ha creado exitosamente.' }
+        format.html { redirect_to @area, notice: 'El área de trabajo se ha creado exitosamente.' }
         format.json { render :show, status: :created, location: @area }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class AreasController < ApplicationController
   def update
     respond_to do |format|
       if @area.update(area_params)
-        format.html { redirect_to @area, notice: 'La institución se ha modificado exitosamente' }
+        format.html { redirect_to @area, notice: 'El área de trabajo se ha modificado exitosamente' }
         format.json { render :show, status: :ok, location: @area }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class AreasController < ApplicationController
   def destroy
     @area.destroy
     respond_to do |format|
-      format.html { redirect_to areas_url, notice: 'La institución se ha eliminado.' }
+      format.html { redirect_to areas_url, notice: 'El área de trabajo se ha eliminado.' }
       format.json { head :no_content }
     end
   end

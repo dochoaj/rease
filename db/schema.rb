@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725210259) do
+ActiveRecord::Schema.define(version: 20150725210261) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
+    t.string "name",        limit: 255
   end
 
   create_table "bulletins", force: :cascade do |t|
@@ -151,6 +152,7 @@ ActiveRecord::Schema.define(version: 20150725210259) do
     t.datetime "updated_at",                            null: false
     t.text     "resume",      limit: 65535
     t.integer  "status",      limit: 4,     default: 1
+    t.integer  "area_id",     limit: 4
   end
 
   add_index "offerings", ["user_id"], name: "index_offerings_on_user_id", using: :btree

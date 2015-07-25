@@ -2,6 +2,7 @@ class OfferingsController < ApplicationController
   before_action :authenticate_user!
   before_action :validate_category, except: [:index, :show]
   before_action :set_offering, only: [:show, :edit, :update, :destroy]
+  before_action :set_area, only: [:edit, :update]
  
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Ofertas", :offerings_path
@@ -102,8 +103,11 @@ class OfferingsController < ApplicationController
       @offering = Offering.find(params[:id])
     end
 
+    def set_area
+      @areas = Area.all      
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def offering_params
-      params.require(:offering).permit(:user_id, :experience_id, :community_id, :area_id, :title, :description, :status, :start_time, :end_time, :resume)
+      params.require(:offering).permit(:user_id, :area_id, :title, :description, :status, :start_time, :end_time, :resume)
     end
 end

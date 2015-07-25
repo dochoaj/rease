@@ -81,7 +81,7 @@ private
   end
 
   def defined_params
-    params.require(:request).permit(:id, :title, :description, :user_id, :status, :start_time, :end_time,:resume)
+    params.require(:request).permit(:id, :title, :description, :user_id, :area_id, :status, :start_time, :end_time,:resume)
   end
 
 end

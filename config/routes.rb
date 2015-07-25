@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 	resources :minutes
 	resources :interest_links
 	resources :bulletins, except: [:edit]
+	resources :areas
 	
 	
 	###:controllers => { :registrations => "users/registrations" }
