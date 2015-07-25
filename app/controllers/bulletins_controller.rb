@@ -16,7 +16,7 @@ class BulletinsController < ApplicationController
   # GET /bulletins/1.json
   def show
       add_breadcrumb "Boletin "+@bulletin.title, :root_path
-      @sections = Section.where(['created_at >= ?',@bulletin.start_date])
+      @sections = Section.where(['created_at >= ? AND module = ?',@bulletin.start_date, "Novedad"])
       @events = Event.where(['created_at >= ?',@bulletin.start_date])
       @offerings = Offering.where(['created_at >= ?',@bulletin.start_date])
       @requests = Request.where(['created_at >= ?',@bulletin.start_date])

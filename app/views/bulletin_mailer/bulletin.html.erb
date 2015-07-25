@@ -8,10 +8,8 @@
 		<%=raw @bulletin.description%>
 		<br>
 		<p>Estas son las últimas actualizaciones de la red, desde <%=l @bulletin.start_date%></p>
-		<% @sections.each do |section| %>
-			<%if section.order="Novedad"%>
-				<p><strong>Novedades: </strong><%=section.title%> - <%= link_to "Ver", section %> </p>
-			<%end%>
+		<% @sections.each do |section| %>>
+			<p><strong>Novedades: </strong><%=section.title%> - <%= link_to "Ver", section %> </p>
 		<%end%>		
 		<% @events.each do |event| %>
 			<p><strong>Evento: </strong><%=event.title%> - <%= link_to "Ver", event %></p>

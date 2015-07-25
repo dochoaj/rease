@@ -7,7 +7,7 @@
 	</div>
 	<div class="panel-body">
 		<% @sections.each do |seccion| %>
-			<%if seccion.order == orden%>
+			<%if seccion.module == orden%>
 				<p>
 				<%=	seccion.title %>  - 
 				<%=	link_to "Ver", seccion %>  -				
