@@ -1,7 +1,8 @@
 # Changelog
-
-## [Release 15.0.1](https://github.com/LemontechSA/ttb/pull/18)
-Saturday 2015, July 25th.
+## [Hotfix 15.0.1]
+* **Fix:** [User seed ya no necesita verificar su correo para poder iniciar sesión)
+## [Release 15.0.0](https://github.com/dochoaj/rease/pull/18)
+Tuesday 2015, July 21th.
 * **Feature:** [Details](https://github.com/dochoaj/rease/pull/17)
 * **Feature:** [Mailer](https://github.com/dochoaj/rease/pull/16)
 * **Feature:** [Primer entregable](https://github.com/dochoaj/rease/pull/15)
