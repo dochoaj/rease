@@ -13,15 +13,14 @@
 
 		<div class="field">
 			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true, :required => true %>
-		</div>
-		
+		</div>	
 		<div class="field">
 			<%= f.text_area :address, :placeholder => "Lugar y/o dirección", :class => 'form-control',autofocus: true, :required => true  %>
 		</div>
 
 		<div class="field">
 			<% if orden == "Actualizar" %>
-				<%= f.select(:status, [['Vigente', 'Vigente'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+				<%= f.select(:status, [['Disponible', 1],['En proceso', 2],['Realizado',3], ['Cancelado',4], ['Caducado', 5]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 			<% else %>
 				<p><strong>Estado: </strong> Vigente </p>
 			<% end %>

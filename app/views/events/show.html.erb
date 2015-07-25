@@ -11,7 +11,23 @@
 
 		<h2> Información </h2>
 		<p><strong>Dirección: </strong><%= @event.address %></p>
-		<p><strong>Estado: </strong><%= @event.status %></p>
+		<p><strong>Estado: </strong>
+		<% if @event.status == 1%>
+			Disponible
+		<%end%>
+		<% if @event.status == 2%>
+			En proceso
+		<%end%>
+		<% if @event.status == 3%>
+			Realizado
+		<%end%>
+		<% if @event.status == 4%>
+			Cancelado
+		<%end%>
+		<% if @event.status == 5%>
+			Caducado
+		<%end%>
+		</p>
 		
 		<p><strong>Fecha y hora de inicio: </strong><%=l @event.start_time %></p>
 

@@ -8,7 +8,7 @@ class BulletinMailer < ApplicationMailer
 		@events = events
 		@offerings = offerings
 		@requests = requests
-		mail(to: @user.email, subject: 'Boletín REASE: '+@bulletin.title)
+		mail(to: @user.email, subject: 'REASE: '+@bulletin.title)
 	end
 end
 

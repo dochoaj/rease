@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:update, :destroy]
   before_action :authenticate_user!
   before_action :set_event
-  # GET /comments
-  # GET /comments.json
   
   # GET /comments/1/edit
   def edit

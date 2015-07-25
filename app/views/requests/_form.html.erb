@@ -15,11 +15,14 @@
 				<div class="field">
 				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' ,:required=>true%>
 				</div>
+				<div class="field">
+				<%= f.text_area :resume, :class => 'form-control', :placeholder => 'Resumen de la solicitud' ,:required=>true%>
+				</div>
 				<%= error_span(@request[:title]) %>
 			</div>
 
 			<% if accion == "Actualizar" %>
-				<%= f.select(:status, [['Disponible', 'Disponible'],['En proceso', 'En proceso'],['Realizado','Realizado'], ['Cancelado','Cancelado'], ['Caducado', 'Caducado']], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+				<%= f.select(:status, [['Disponible', 1],['En proceso', 2],['Realizado',3], ['Cancelado',4], ['Caducado', 5]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 			<% else %>
 				<p><strong>Estado: </strong> Disponible </p>
 			<% end %>

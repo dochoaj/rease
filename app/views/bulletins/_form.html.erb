@@ -6,7 +6,7 @@
 	<% end %>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
-			Boletin
+			Correo a todos los usuarios
 		</div>
 		<div class="panel-body">
 			<div class="field">
@@ -15,17 +15,10 @@
 			<div class="field">
 				<%= f.text_area :description, :placeholder=> "Escribir aquí.", :id=>"eg-basic",:required=>true %>
 			</div>
-			<div class="field">
-				<p class='note'>*La fecha indica desde cuándo se enviarán los contenidos pertenecientes al boletín.</p>
-				<p>
-					<%= f.label :start_date, "Seleccione la fecha: "  %>
-					<%= f.date_select :start_date %>
-				</p>
-			</div>
 		</div>
 	</div>
 	<div class="actions">
-		<%= f.submit "Enviar boletín",:class=>'btn btn-lg btnCRUD' %>
+		<%= f.submit "Enviar Correo",:class=>'btn btn-lg btnCRUD' %>
 		<%= link_to 'Volver', bulletins_path,:class=>'btn btn-lg btnCRUD' %>
 
 	</div>	

@@ -7,16 +7,15 @@ class RequestsController < ApplicationController
   add_breadcrumb "Solicitudes", :requests_path
   
   def index
-    @requests = Request.order("created_at DESC").all
-    if params[:search]
-      @requests = Request.search(params[:search]).order("created_at DESC")
-    else
-      @requests = Request.order("created_at DESC").all
-    end
+    @disponible = Request.where(status: 1).order("created_at DESC")
+    @proceso = Request.where(status: 2).order("created_at DESC")
+    @cancelada = Request.where(status: 4).order("created_at DESC")
+    @caducada = Request.where(status: 5).order("created_at DESC")
   end
 
   def show
     add_breadcrumb "Mostrar"
+    @comment_request = CommentRequest.new
   end
 
   def edit
@@ -34,7 +33,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = current_user.requests.new(defined_params)
-    @request.status = "Disponible"
+    @request.status = 1
     if @request.save
       flash[:notice] = "La solicitud de servicio ha sido creada correctamente"
       redirect_to :action => 'index'
@@ -59,6 +58,15 @@ class RequestsController < ApplicationController
     redirect_to :action => 'index'
   end
 
+  def searchRequest
+    add_breadcrumb "Búsqueda"
+    @requests = Request.order("created_at DESC").all
+    if params[:search]
+      @requests = Request.search(params[:search]).order("created_at DESC")
+    else
+      @requests = Request.order("created_at DESC").all
+    end
+  end
 private
   
   def validate_category
@@ -73,7 +81,7 @@ private
   end
 
   def defined_params
-    params.require(:request).permit(:id, :title, :description, :user_id, :status, :start_time, :end_time)
+    params.require(:request).permit(:id, :title, :description, :user_id, :status, :start_time, :end_time,:resume)
   end
 
 end

@@ -164,29 +164,25 @@ p.navbar-text.navbar-right
 	padding-bottom: 5px;
 }
 
-#test {
-    position: relative;
+.tabRease
+{
+	margin-right: 2%;
+	margin-left: 2%;
+	max-width: 96%;
 }
-
-#test .wrapper {
-    opacity: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    z-index: 2;
+.tabRease>li>a:hover
+{
+	font-weight: bold;
+	background: #30cccc;
+	color: white;
 }
-
-#test .wrapper:hover {
-    opacity: 0.5;
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+{
+	color: white;
+	background: #30bbbb;
+	font-weight: bold;
 }
-
-#test #user_photo {
-    background-color: #ccc;
-    border: none;
-    color: #666;
-    padding: 3px 5px;
-    border-radius: 5px;
-    position: relative;
-    top: 0;
-    z-index: 1;
+.tabRease>li>a
+{
+	color: #30aaaa;
 }

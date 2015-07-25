@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725210254) do
+ActiveRecord::Schema.define(version: 20150725210259) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -29,14 +29,31 @@ ActiveRecord::Schema.define(version: 20150725210254) do
     t.text "description", limit: 65535
   end
 
+  create_table "comment_offerings", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "offering_id", limit: 4
+    t.text     "body",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "comment_requests", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "request_id", limit: 4
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "comment_requests", ["request_id"], name: "index_comment_requests_on_request_id", using: :btree
+  add_index "comment_requests", ["user_id"], name: "index_comment_requests_on_user_id", using: :btree
+
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",     limit: 4
-    t.integer  "request_id",  limit: 4
-    t.integer  "offering_id", limit: 4
-    t.integer  "event_id",    limit: 4
-    t.text     "body",        limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "event_id",   limit: 4
+    t.text     "body",       limit: 65535
   end
 
   create_table "communities", force: :cascade do |t|
@@ -61,7 +78,8 @@ ActiveRecord::Schema.define(version: 20150725210254) do
     t.datetime "updated_at"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string   "status",      limit: 255
+    t.text     "resume",      limit: 65535
+    t.integer  "status",      limit: 4,     default: 1
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -127,11 +145,12 @@ ActiveRecord::Schema.define(version: 20150725210254) do
     t.integer  "user_id",     limit: 4
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
-    t.string   "status",      limit: 255
     t.date     "start_time"
     t.date     "end_time"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.text     "resume",      limit: 65535
+    t.integer  "status",      limit: 4,     default: 1
   end
 
   add_index "offerings", ["user_id"], name: "index_offerings_on_user_id", using: :btree
@@ -143,11 +162,12 @@ ActiveRecord::Schema.define(version: 20150725210254) do
     t.integer  "area_id",       limit: 4
     t.string   "title",         limit: 255
     t.text     "description",   limit: 65535
-    t.string   "status",        limit: 255
     t.date     "start_time"
     t.date     "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "resume",        limit: 65535
+    t.integer  "status",        limit: 4,     default: 1
   end
 
   create_table "sections", force: :cascade do |t|
@@ -192,5 +212,7 @@ ActiveRecord::Schema.define(version: 20150725210254) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comment_requests", "requests"
+  add_foreign_key "comment_requests", "users"
   add_foreign_key "offerings", "users"
 end
