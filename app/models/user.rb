@@ -17,7 +17,9 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :messages
 
-	has_attached_file :photo, styles: {mini:"30x30", thumb:"700x300"}
+	has_attached_file :photo, 
+			:styles => {mini:"30x30", medium:"700x300", thumb:"800x600"},
+			:default_url => "/images/:style/missingPhoto.png"
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 	validates :nickname, uniqueness: true, format: { without: /\s/ }, length: {minimum: 3, maximum: 14} #no se pueden repertir los nick
 
