@@ -4,6 +4,10 @@ class PresentationController < ApplicationController
 	
 	def index
 		@sections = Section.order("priority ASC").where("module = ?","Novedad")
+		if user_signed_in?
+			@users = User.where("created_at >= ?", 2.week.ago.utc)
+			@minute = Minute.last
+		end
 	end
 
 	def searchPage

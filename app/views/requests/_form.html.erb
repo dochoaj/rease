@@ -16,7 +16,7 @@
 				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' ,:required=>true%>
 				</div>
 				<div class="field">
-				<%= f.text_area :resume, :class => 'form-control', :placeholder => 'Resumen de la solicitud' ,:required=>true%>
+				<%= f.text_area :resume, :class => 'form-control', :placeholder => 'Resumen de la solicitud (10 carácteres mínimo)' ,:required=>true%>
 				</div>
 				<%= error_span(@request[:title]) %>
 			</div>

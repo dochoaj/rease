@@ -25,7 +25,7 @@ test:
 
 production:
   <<: *default
-  database: rease_production
+  database: rease_staging
   pool: 5
   username: root
-  password: 123qwe123qwe
+  password: kvhipj23
