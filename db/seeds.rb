@@ -10,8 +10,7 @@ User.create([{
 	email: 'coordinacion.rease@gmail.com',
 	password: 'rease2015',
 	name: 'Coordinación',
-	last_name: 'REASE',
-	nickname: 'Usuario1', 
+	nickname: 'Admin', 
 	category: 1, 
 	autorization_level: 1, 
 	confirmed_at: Time.now

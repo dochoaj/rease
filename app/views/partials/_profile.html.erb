@@ -11,7 +11,7 @@
 			<%= image_tag @user.photo.url(:medium),:class=>'RoundPicture' %>
 		<%end%>
 		<h2>Datos de usuario:</h2>
-		<p><strong>Nombre completo: </strong> <%= @user.name %> <%= @user.last_name %></p>
+		<p><strong>Nombre completo: </strong> <%= @user.name %> </p>
 		<p><strong>Categoría:</strong> 
 		<%if @user.category == 1%> Administrador <%end%>
 		<%if @user.category == 2%> Profesor <%end%>
