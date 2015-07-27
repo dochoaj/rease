@@ -17,9 +17,13 @@
 <%- if devise_mapping.omniauthable? %>
 	<%- resource_class.omniauth_providers.each do |provider| %>
 		<%if provider.to_s.titleize == "Facebook"  %>
-			<%= link_to image_tag("facebook.png", :class =>"omniauthLogo"), omniauth_authorize_path(resource_name, provider),:id=>"styleSession" %>
-		<%else%>
+			<%= link_to image_tag("Omniauth/facebook.png", :class =>"omniauthLogo"), omniauth_authorize_path(resource_name, provider) %>
+		<%else %>
+			<%if provider.to_s.titleize == "Twitter"  %>
+				<%= link_to image_tag("Omniauth/Twitter.png", :class =>"omniauthLogo"), omniauth_authorize_path(resource_name, provider) %>
+			<%else%>
 			<%= link_to "Conectarse con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),:id=>"styleSession" %>
+			<%end%>
 		<%end%>
 	<% end -%>
 <% end -%>

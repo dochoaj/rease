@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
 	has_and_belongs_to_many :messages
 
-	has_attached_file :photo, styles: {mini:"30x30", thumb:"700x300"}
+	has_attached_file :photo, styles: {mini:"30x30", medium: "500x200", thumb:"700x300"}
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 	
 

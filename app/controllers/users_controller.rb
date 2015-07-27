@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
 	# GET/PATCH /users/:id/finish_signup
 	def finish_signup
+		@sections = Section.all
 		# authorize! :update, @user 
 		if request.patch? && params[:user] #&& params[:user][:email]
 			if @user.update(user_params)
