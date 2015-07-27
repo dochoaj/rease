@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
 	before_action :validate_category, only: [:edit,:update]
 	before_action :set_user, only: [:show, :edit, :update, :finish_signup]
-	before_action :finish_signup
 	add_breadcrumb "Inicio", :root_path
 
 	def index
@@ -41,16 +40,18 @@ class UsersController < ApplicationController
 
 	# GET/PATCH /users/:id/finish_signup
 	def finish_signup
+		# authorize! :update, @user 
 		if request.patch? && params[:user] #&& params[:user][:email]
-			if current_user.update(user_params)
-				current_user.skip_reconfirmation!
-				sign_in(current_user, :bypass => true)
-				redirect_to current_user, notice: 'El perfil ha sido a registrado, confirme su cuenta en su correo electŕonico'
+			if @user.update(user_params)
+				# @user.skip_reconfirmation!
+				sign_in(@user, :bypass => true)
+				redirect_to users_path, notice: 'El perfil ha sido a registrado, confirme su cuenta en su correo electŕonico'
 			else
 				@show_errors = true
 			end
 		end
 	end
+
 	
 	private
 
@@ -66,7 +67,7 @@ class UsersController < ApplicationController
 	end
 	
 	def user_params
-		accessible = [ :name, :email,:category,:autorization_level,:nickname, :password,:password_confirmation ] # extend with your own params
+		accessible = [ :name, :email,:category,:autorization_level,:nickname ] # extend with your own params
      	accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
       	params.require(:user).permit(accessible)
 	end

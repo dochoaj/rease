@@ -14,6 +14,18 @@
 				<p class="note">Confirma tu cuenta en tu correo electrónico.</p>
 				<%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control', placeholder: 'Correo electrónico' %>				
 			</div>
+			<p class="note">*La contraseña será utilizada para poder editar tu perfil a futuro</p>
+			<div class="field"> <!--aun no sé como agregar el valor de minimo al placeholder-->
+				<% if @validatable %> 
+					<% minimo = @minimum_password_length %> 
+				<% end %>
+				<%= f.password_field :password, :placeholder => "Crear contraseña (6 caracteres como mínimo)", :class => 'form-control', autocomplete: "off" %>
+			</div>
+
+
+			<div class="field">
+				<%= f.password_field :password_confirmation, :placeholder => "Confirme su contraseña",:class => 'form-control', autocomplete: "off" %>
+			</div>
 			<div class="field">
 				<%= f.text_field :nickname, :autofocus => true, :value => '', class: 'form-control', placeholder: 'Apodo o nickname' %>
 			</div>
@@ -31,9 +43,6 @@
 
 				<%= f.select(:autorization_level,[['Activo', 1], ['Adherente', 2]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
 			</div>
-			
-
-
 		</div>
 	</div>
 
