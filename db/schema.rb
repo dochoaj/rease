@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725210261) do
+ActiveRecord::Schema.define(version: 20150727013857) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -91,6 +91,16 @@ ActiveRecord::Schema.define(version: 20150725210261) do
     t.integer  "request_id",          limit: 4
     t.integer  "service_offering_id", limit: 4
   end
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "institutions", force: :cascade do |t|
     t.text     "description",       limit: 65535
@@ -197,7 +207,6 @@ ActiveRecord::Schema.define(version: 20150725210261) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
     t.string   "name",                   limit: 255
-    t.string   "last_name",              limit: 255
     t.integer  "autorization_level",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -215,5 +224,6 @@ ActiveRecord::Schema.define(version: 20150725210261) do
 
   add_foreign_key "comment_requests", "requests"
   add_foreign_key "comment_requests", "users"
+  add_foreign_key "identities", "users"
   add_foreign_key "offerings", "users"
 end
