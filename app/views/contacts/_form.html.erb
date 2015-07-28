@@ -1,3 +1,4 @@
+
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
 		Información de contacto
@@ -17,15 +18,14 @@
 			</ul>
 			</div>
 			<% end %>
-
 			<div class="field">
-			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre' %>
+			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre', :required => true %>
 			</div>
 			<div class="field">
-			<%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo Electrónico' %>
+			<%= f.email_field :email, :class => 'form-control', :placeholder => 'Correo Electrónico', :required => true %>
 			</div>
 			<div class="field">
-			<%= f.text_area :body, :class => 'form-control', :placeholder => 'Escriba acá su comentario...' %>
+			<%= f.text_area :body, :class => 'form-control', :placeholder => 'Escriba acá su comentario...', :required => true %>
 			</div>
 			<div class="actions">
 			<%= f.submit "Enviar Comentario", :class => "btn btn-lg btnCRUD" %>

@@ -8,10 +8,8 @@
 		<div class="panel-body">
 			<ul>
 				<% @sections.each do |seccion| %>
-					<%if seccion.order == 'Estatutos'%>
-						<% div_id = seccion.id -%>					
-						<li class = "estatutos" id="funcion<%= div_id -%>"> <%= seccion.title %></li>			
-					<%end%>
+					<% div_id = seccion.id -%>					
+					<li class = "estatutos" id="funcion<%= div_id -%>"> <%= seccion.title %></li>			
 				<%end%>
 			</ul>
 		</div>
@@ -19,39 +17,34 @@
 </div>
 
 <% @sections.each do |seccion| %>
-	<%if seccion.order == 'Estatutos'%>
-		<% div_id = seccion.id -%>
-		<div id="titulo<%= div_id -%>" >
-		<br><br>
-			<div  class="panel panel-default panelClick">
-				<div class="panel-heading">
-					<i class="glyphicon glyphicon-circle-arrow-up" id="volver<%= div_id -%>"></i> <%=	seccion.title %> 
-				</div>
-				<div class="panel-body">
-					<p><%=raw seccion.body %></p>
-				</div>
+	<% div_id = seccion.id -%>
+	<div id="titulo<%= div_id -%>" >
+	<br><br>
+		<div  class="panel panel-default panelClick">
+			<div class="panel-heading">
+				<i class="glyphicon glyphicon-circle-arrow-up" id="volver<%= div_id -%>"></i> <%=	seccion.title %> 
+			</div>
+			<div class="panel-body">
+				<p><%=raw seccion.body %></p>
 			</div>
 		</div>
-	<%end%>
+	</div>
 <%end%>
 
 <script type="text/javascript">
 	<% @sections.each do |seccion| %>
-		<%if seccion.order == 'Estatutos'%>
-			<% div_id = seccion.id -%>
-			$("#funcion<%= div_id -%>").click(function() 
+		<% div_id = seccion.id -%>
+		$("#funcion<%= div_id -%>").click(function() 
+		{
+		    $('html,body').animate({
+		        scrollTop: $("#titulo<%= div_id -%>").offset().top},
+		        'slow');
+		});
+		$("#volver<%= div_id -%>").click(function() 
 			{
-			    $('html,body').animate({
-			        scrollTop: $("#titulo<%= div_id -%>").offset().top},
-			        'slow');
-			});
-			$("#volver<%= div_id -%>").click(function() 
-				{
-				$('html,body').animate({
-				scrollTop: $("#indice").offset().top},
-				'slow');
-			});
-		<%end%>
+			$('html,body').animate({
+			scrollTop: $("#indice").offset().top},
+			'slow');
+		});
 	<%end%>
-
 </script>

@@ -1,6 +1,8 @@
-<%orden ||= "Opcion"%>
+<%orden ||= "sección"%>
 <%accion ||= "Crear" %>
-
+<% @section.errors.full_messages.each do |mensaje|%>
+		<%flash[:alert] = mensaje %>
+<%end%>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
 		<%=accion%> <%=orden%>
@@ -9,26 +11,21 @@
 		<center>
 			<div style="width: 90%">
 				<%= form_for(@section) do |f| %>
-						<% @section.errors.full_messages.each do |mensaje|%>
-						<div>
-							<p><%= mensaje%></p>
-						</div>
-					<%end%>
 					<p class="note">*Todos los campos son obligatorios.</p>
 					<div class="field">
-						<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' %>
+						<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo',:required=>true %>
 					</div>
 					
 					<div class="field">
-						<%= f.select(:order, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']],  {:selected=> orden,:include_blank => '— Seleccione una sección —' }, { :class => 'form-control', :required => true }) %>
+						<%= f.select(:module, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatutos', 'Estatutos']],  {:include_blank => '— Seleccione una sección —',:selected => orden }, { :class => 'form-control', :required => true }) %>
 					</div>
 					
 					<div class="field">
-						<%= f.select(:priority, [['Alta', 'Alta'],['Media', 'Media'],['Baja', 'Baja']], {:include_blank => '— Prioridad —' }, { :class => 'form-control', :required => true }) %>
+						<%= f.select(:priority, [['Alta', 1],['Media', 2],['Baja', 3]], {:include_blank => '— Prioridad —' }, { :class => 'form-control', :required => true }) %>
 					</div>
 					
 					<div class="field"> 
-						<%= f.text_area :body, :placeholder=> "Escriba acá.", :id=>"eg-basic" %>
+						<%= f.text_area :body, :placeholder=> "Escriba acá.", :id=>"eg-basic",:required=>true %>
 					</div>
 					
 

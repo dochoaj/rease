@@ -1,5 +1,11 @@
 # Changelog
 
+## [Release 15.1.0](https://github.com/dochoaj/rease/pull/23)
+Sunday 2015, July 26th
+* **Feature:** [form validation](https://github.com/dochoaj/rease/pull/22)
+* **Feature:** [Usuario adminisstrador confirmado automaticamente](https://github.com/dochoaj/rease/pull/21)
+* **Feature:** [bulletin](https://github.com/dochoaj/rease/pull/19)
+
 ## [Hotfix 15.0.1](https://github.com/dochoaj/rease/pull/21)
 Saturday 2015, July 25th.
 * **Fix:** [User seed ya no necesita verificar su correo para poder iniciar sesión]

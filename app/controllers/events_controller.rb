@@ -14,11 +14,17 @@ class EventsController < ApplicationController
 
   def listado
     @events = Event.order("end_time DESC").all
+    if params[:search]
+      @events = Event.search(params[:search]).order("end_time DESC")
+    else
+      @events = Event.order("end_time DESC").all
+    end
   end
   # GET /events/1
   # GET /events/1.json
   def show
     add_breadcrumb "Mostrar"
+    @comment = Comment.new
   end
 
   # GET /events/new
@@ -36,8 +42,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
-    @event.user_id = current_user.id
+    @event = current_user.events.new(event_params)
     @event.status = "Vigente"
 
     respond_to do |format|

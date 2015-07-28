@@ -1,20 +1,17 @@
 class Request < ActiveRecord::Base
-  
-  belongs_to :user
-  belongs_to :experience
-  belongs_to :community
-  belongs_to :area
+	belongs_to :user
+	belongs_to :community
+	belongs_to :area
 
-  has_one :experience
+	has_many :comment_requests
 
-  has_many :comments
-
-#validaciones
+	#validaciones
 	validates :title, presence: true, uniqueness: true #no pueden haber dos titulos iguales
 	validates :description, presence: true, length: {minimum: 20, maximum: 10000} #validar maximos y minimos de caracteres
 	validates :status, presence: true
-	
-  def self.search(search)
-    where("title LIKE ? or description LIKE ?", "%#{search}%","%#{search}%") 
-  end
+	validates :resume, presence: true, length:{minimum:10, maximum:300}
+
+	def self.search(search)
+		where("title LIKE ? or description LIKE ? or resume LIKE ?", "%#{search}%","%#{search}%", "%#{search}%") 
+	end
 end

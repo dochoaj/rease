@@ -4,7 +4,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 </p>
 <center>
 	<% @sections.each do |seccion| %>
-		<%if seccion.order == 'Hacemos'%>
+		<%if seccion.module == 'Hacemos'%>
 		<% div_id = seccion.id -%>
 		<button class = "btn btn-lg btnHacemos" onclick="funcion<%= div_id -%>()"><%= seccion.title%></button> 
 		<%end%>
@@ -14,7 +14,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 
 
 <% @sections.each do |seccion| %>
-	<%if seccion.order == 'Hacemos'%>
+	<%if seccion.module == 'Hacemos'%>
 	<% titulo_id = seccion.id -%>
 	<div id="titulo<%= titulo_id -%>" >
 		<div  class="panel panel-default panelRease">
@@ -47,7 +47,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 <script type="text/javascript">
 <% contador = 1; %>
 	<% @sections.each do |seccion| %>
-		<%if seccion.order == 'Hacemos'%>
+		<%if seccion.module == 'Hacemos'%>
 			<% titulo_id = seccion.id -%>
 			<% if contador==1 %>
 				document.getElementById('titulo<%= titulo_id -%>').style.display='block';
@@ -63,12 +63,12 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 
 <% contador1 = 1; %>
 <% @sections.each do |seccion| %>
-	<%if seccion.order == 'Hacemos'%>
+	<%if seccion.module == 'Hacemos'%>
 		<% div_id = seccion.id -%>
 		function funcion<%= div_id -%>(){
 		<% contador2 = 1; %>
 		<% @sections.each do |seccion_in| %>
-			<%if seccion_in.order == 'Hacemos'%>
+			<%if seccion_in.module == 'Hacemos'%>
 				<% titulo_id = seccion_in.id -%>
 				<% if contador1==contador2 %>
 					document.getElementById('titulo<%= titulo_id -%>').style.display='block';

@@ -119,6 +119,10 @@ p
 	text-align: left;
 }
 
+.buscador
+{
+	display: inline-block;
+}
 /*estilo de los indices de lso estatutos*/
 .estatutos
 {
@@ -151,7 +155,7 @@ p
 	margin-left: 8px;
 	padding: 0;
 	margin-bottom: -8px;
-	max-width: 200px;
+	max-width: 180px;
 }
 
 .note
@@ -164,7 +168,7 @@ p
 }
 
 /*colores para barras y paneles*/
-.panelRease .panel-heading, #pies, #panelInstitution .panel-heading
+.panelRease .panel-heading, #pies, #panelInstitution .panel-heading, .panel-half .panel-heading
 {
 	background: #30aaaa;
 	background-image: -webkit-linear-gradient(top, #30aaaa, #30bbbb);
@@ -172,6 +176,34 @@ p
 	background-image: -ms-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: -o-linear-gradient(top, #30aaaa, #30bbbb);
 	background-image: linear-gradient(to bottom, #30aaaa, #30bbbb);
+}
+
+.panel-half
+{	
+	margin-right: 2%;
+	margin-left: 2%;
+	width: 45%;
+	display: inline-block;
+
+}
+
+/*Todos los estilos de los paneles que se muestran en toda la página*/
+.panelRease, .panelClick
+{
+	margin: 2%;
+	text-align: center;
+}
+
+.panelRease .panel-heading, #panelInstitution .panel-heading, .panelClick .panel-heading, .panel-half .panel-heading /*Cabecera del panel*/
+{
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+}
+.panelRease .panel-footer, #panelInstitution .panel-footer, .panelClick .panel-footer /*Cabecera del footer*/
+{
+	background: white;
 }
 
 .RoundPicture
@@ -229,31 +261,6 @@ p
 	color: white;
 }
 
-
-/*Todos los estilos de los paneles que se muestran en toda la página*/
-.panelRease, .panelClick
-{
-	margin: 2%;
-	text-align: center;
-}
-
-.panelRease .panel-heading, #panelInstitution .panel-heading, .panelClick .panel-heading /*Cabecera del panel*/
-{
-	color: white;
-	font-weight: bold;
-	font-size: 18px;
-	text-align: left;
-}
-.panelRease .panel-footer, #panelInstitution .panel-footer, .panelClick .panel-footer /*Cabecera del footer*/
-{
-	background: white;
-}
-
-#panelInstitution
-{
-	width: 40%;
-	display: inline-block;
-}
 /*textos de cantidad de usuario y nombre de usuario en la barra*/
 #rightBar, #rightBar:active
 {

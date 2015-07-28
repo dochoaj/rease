@@ -8,7 +8,7 @@
 	</div>
 	<div class="panel-body">
 		<%if !@user.photo.blank?%>
-			<%= image_tag @user.photo.url(:thumb),:class=>'RoundPicture' %>
+			<%= image_tag @user.photo.url(:medium),:class=>'RoundPicture' %>
 		<%end%>
 		<h2>Datos de usuario:</h2>
 		<p><strong>Nombre completo: </strong> <%= @user.name %> <%= @user.last_name %></p>
