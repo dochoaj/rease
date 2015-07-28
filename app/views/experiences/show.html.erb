@@ -1,0 +1,72 @@
+
+<div class="panel panel-default panelRease">
+	<div class="panel-heading">
+		Formato sistematización actividades Aprendizaje Servicio
+	</div>
+	<div class="panel-body">
+		<div>
+			<h3><strong>Folio N°:</strong><%=@experience.folio%>    </h3>
+			<h3><strong>Fecha </strong><%=l @experience.created_at%></h3>
+		</div>
+
+		<h2>I. Antecedentes generales</h2>
+		<div  class="experiencia">
+			<p><strong>Universidad: </strong><%=@experience.institution_id%></p>
+			<p><strong>Facultad: </strong><%=@experience.faculty%></p>
+			<p><strong>Departamento: </strong><%=@experience.department%></p>
+			<p><strong>Nombre de Asignatura/curso: </strong><%=@experience.course_name%></p>
+			<p><strong>Tipo de Asignatura/curso: </strong> 
+				<% if @experience.course_type == "Otros" %>
+					<%= @experience.course_type_other %>
+				<%else%>
+					<%= @experience.course_type %>
+				<%end%>
+			</p>
+			<p><strong>Periodo: </strong> <%=@experience.period%></p>
+			<p><strong>Nombre profesor responsable: </strong> <%=@experience.professor_name%></p>
+			<p><strong>Correo del profesor: </strong><%=@experience.professor_email%></p>
+			<p><strong>Número del profesor: </strong><%=@experience.professor_phone%></p>
+			<p><strong>Grado académico del profesor: </strong>
+				<%if @experience.professor_degree == 1%> Licenciado <%end%>
+				<%if @experience.professor_degree == 2%> Magister <%end%>
+				<%if @experience.professor_degree == 3%> Doctorado <%end%>
+			</p>
+		</div>
+
+		<h2>II. Antecedentes de la actividad de Aprendizaje Servicio </h2>
+		<div class="experiencia">
+			<p><strong>Objetivos de aprendizaje y/o Competencias asociadas</strong></p>
+				<p><%=@experience.learning_objectives%></p><br>
+
+			<p><strong>Objetivo de servicio: </strong></p>
+				<p><%=@experience.service_objectives%></p><br>
+
+			<p><strong>Descripción del Proyecto de A+S: </strong></p>
+				<p><%=@experience.description%></p><br>
+
+			<p><strong>La presente experiencia: </strong>
+				<%if @experience.institutional_support == 1%> 
+					Cuenta con respaldo institucional.
+				<%end%>
+				<%if @experience.institutional_support == 2%> 
+					Corresponde a una iniciativa individual del profesor.
+				<%end%>
+			</p>
+
+			<p><strong>¿Con qué frecuencia se realiza? </strong><%=@experience.frequency%></p>
+			<p><strong>Horas cronológicas semanales: </strong><%=@experience.weekly_hours%></p>
+			<p><strong>Número estudiantes participantes: </strong><%=@experience.participants%></p>
+			<p><strong>Nivel de la carrera de los Estudiantes: </strong><%=@experience.students_level%></p>
+			<p><strong>Nombre del socio comunitario: </strong><%=@experience.community_partner%></p>
+			<p><strong>Tipo de organización comunitaria: </strong><%=@experience.organization_type%></p>
+			<p><strong>Número de beneficiados directos con toda la actividad o proyecto: </strong><%=@experience.benefit%></p>
+
+			<p><strong>Resultados de aprendizaje: </strong></p>
+				<p><%=@experience.results%></p><br>
+			<p><strong>Herramientas de medición (cuali y/o cuantitativas) utilizadas y documentos que respalden el proyecto: </strong></p>
+				<p><%=@experience.tools%></p>
+			<p><strong>Instancias de reflexión: </strong></p>
+				<p><%=@experience.reflection_moments%></p>
+		</div>
+	</div>
+</div>

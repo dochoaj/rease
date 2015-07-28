@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 	has_many :requests
 	has_many :comment_requests
 	has_many :meetings
+	has_many :experiences
 
 	has_and_belongs_to_many :messages
 

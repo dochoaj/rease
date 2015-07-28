@@ -1,0 +1,80 @@
+<%accion ||= "Crear"%>
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+      <% @experience.errors.full_messages.each do |message| %>
+        <%flash[:alert] = message %>
+      <% end %>
+  <% end %>
+<div class="panel panel-default panelRease" >
+    <div class="panel-heading">Experiencia</div>
+    <div class="panel-body">
+
+		<%= f.number_field :folio, :class => 'form-control', :placeholder => 'Número de folio', :step => 1%>
+		
+		<%if @offering.present? and @request.present?%>
+		<p class="note">Por favor, solamente seleccione una oferta o una solicitud</p>
+		<%end%>
+		<%if @offering.present?%>
+			<%= f.select :offering_id, @offering.collect {|off| [off.title, off.id]},{:include_blank => "Oferta de servicio relacionada"},{ :class => 'form-control'} %>
+		<%end%>
+		<%if @request.present?%>
+		<%= f.select :request_id, @request.collect {|req| [req.title, req.id]},{:include_blank => "Solicitud de servicio relacionada"},{ :class => 'form-control'} %>
+		<%end%>
+
+
+	</div>
+</div>
+
+<div class="panel panel-default panelRease" >
+    <div class="panel-heading">I. Antecedentes generales</div>
+    <div class="panel-body">
+     	<%= f.select :institution_id, @institutions.collect {|ins| [ins.name, ins.id]},{:include_blank => "Universidad"},{ :class => 'form-control'} %>
+
+    	<%= f.text_field :faculty, :class => 'form-control', :placeholder => 'Facultad '%>	
+    	
+    	<%= f.text_field :department, :class => 'form-control', :placeholder => 'Departamento/Carrera'%>	
+
+    	<%= f.text_field :course_name, :class => 'form-control', :placeholder => 'Nombre asignatura/curso'%>
+
+		<%= f.select(:course_type, [['Obligatorio', 'Obligatorio'],['Optativo', 'Optativo'],['Electivo','Electivo'], ['Otro','Otro']], {:include_blank => '-- Seleccione tipo de curso --' }, { :class => 'form-control', :required => true, :id => "tipoCurso" }) %>
+		<p class="note">Especifique en caso de haber seleccionado Otro</p>
+		<%= f.text_field :course_type_other ,:class => 'form-control', :placeholder => "Especificacion" %>
+
+
+		<%= f.select(:period, [['I semestre', 'I semestre'],['II semestre', 'II semestre'],['Anual','Anual']], {:include_blank => '-- Periodo del curso --' }, { :class => 'form-control', :required => true }) %>
+
+		<%= f.text_field :professor_name, :class => 'form-control', :placeholder => 'Nombre profesor responsable '%>	
+		<%= f.email_field :professor_email, :class => 'form-control', :placeholder => 'Correo electrónico profesor responsable '%>	
+		<%= f.text_field :professor_phone, :class => 'form-control', :placeholder => 'Telefono profesor responsable '%>	
+		<%= f.select(:professor_degree, [['Licenciado', 1],['Magister', 2],['Doctorado',3]], {:include_blank => '-- Grado académico del profesor responsable --' }, { :class => 'form-control', :required => true }) %>
+
+	</div>
+</div>
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">II. Antecedentes de la actividad de Aprendizaje Servicio </div>
+	<div class="panel-body">
+		<%= f.text_area :learning_objectives, :class => 'form-control', :placeholder => 'Objetivos de aprendizaje y/o Competencias asociadas'%>
+		<%= f.text_area :service_objectives, :class => 'form-control', :placeholder => 'Objetivos de servicio'%>
+		<%= f.text_area :description, :class => 'form-control', :placeholder => 'Descripción del Proyecto de A+S (máximo 100 palabras dando énfasis a actividades desarrolladas) '%>
+		<%= f.select(:institutional_support, [['Cuenta con respaldo institucional', 1],['Corresponde a una iniciativa individual del profesor', 2]],{:include_blank => '-- Respaldo institucional (Seleccione una opción) --' } ,{ :class => 'form-control', :required => true }) %>
+		<%= f.number_field :frequency, :class => 'form-control', :placeholder => '¿Con que frecuencia se realiza?'%>
+		<%= f.number_field :weekly_hours, :class => 'form-control', :placeholder => 'Horas cronológicas semanales'%>
+		<%= f.number_field :participants, :class => 'form-control', :placeholder => 'Número estudiantes participantes'%>
+		<%= f.text_field :students_level, :class => 'form-control', :placeholder => 'Nivel de la carrera de los Estudiantes'%>
+		<%= f.text_field :community_partner, :class => 'form-control', :placeholder => 'Nombre del socio comunitario'%>
+		<%= f.text_field :organization_type, :class => 'form-control', :placeholder => 'Tipo de organización comunitaria'%>		
+		<%= f.number_field :benefit, :class => 'form-control', :placeholder => 'Número de beneficiados directos con toda la actividad o proyecto'%>
+		<%= f.text_area :results, :class => 'form-control', :placeholder => 'Resultados de aprendizaje'%>
+		<%= f.text_area :tools, :class => 'form-control', :placeholder => 'Nombre herramientas de medición (cuali y/o cuantitativas) utilizadas y documentos que respalden el proyecto '%>
+		<%= f.text_area :reflection_moments, :class => 'form-control', :placeholder => 'Mencione las instancias de reflexión'%>
+
+	</div>
+</div>
+
+
+    <%= f.submit "Guardar Experiencia", :class => 'btn btn-lg btnCRUD' %>
+    <%= link_to 'Volver', experiences_path, :class => "btn btn-lg btnCRUD"%>
+
+<% end %>
+
+

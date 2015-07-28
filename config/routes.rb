@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 	post 'requests/searchRequest'
 	post 'offerings/searchOffering'
 	post 'experiences/searchExperience'
-	resources :experiences, only:[:index]
+	resources :experiences
 
 	resources :sections
 	resources :events do
