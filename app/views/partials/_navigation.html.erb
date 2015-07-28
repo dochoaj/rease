@@ -32,7 +32,7 @@
 					<%= link_to 'Estatuto <i class="glyphicon glyphicon-book"></i>'.html_safe, presentation_estatutos_path %>
 				</li>
 
-				<li role="presentation" class="<%= 'active' if current_page?(presentation_contacto_path) %>">
+				<li role="presentation" class="<%= 'active' if current_page?(contacts_path) %>">
 					<%= link_to 'Contacto <i class="glyphicon glyphicon-envelope"></i>'.html_safe, contacts_path %>
 				</li>
 				<li role="presentation" class="navCenter">
@@ -58,15 +58,15 @@
 					<%= link_to 'Solicitudes <i class="glyphicon glyphicon-log-in"></i>'.html_safe, requests_path %>
 				</li>
 
-				<li role="presentation">
+				<li role="presentation" class="<%= 'active' if current_page?(offerings_path) %>">
 					<%= link_to 'Ofertas <i class="glyphicon glyphicon-log-out"></i>'.html_safe, offerings_path %>
 				</li>
 
-				<li role="presentation">
+				<li role="presentation" class="<%= 'active' if current_page?(experiences_path) %>">
 					<%= link_to 'Experiencias <i class="glyphicon glyphicon-education"></i>'.html_safe, experiences_path %>
 				</li>
 
-				<li role="presentation">
+				<li role="presentation" class="<%= 'active' if current_page?(events_path) %>">
 					<%= link_to 'Eventos <i class="glyphicon glyphicon-calendar"></i>'.html_safe, events_path %>
 				</li>
 				<%if current_user.category == 1%>
