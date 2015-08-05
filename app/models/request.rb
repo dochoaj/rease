@@ -5,6 +5,8 @@ class Request < ActiveRecord::Base
 
 	has_many :comment_requests
 
+	has_one :experience
+
 	#validaciones
 	validates :title, presence: true, uniqueness: true #no pueden haber dos titulos iguales
 	validates :description, presence: true, length: {minimum: 20, maximum: 10000} #validar maximos y minimos de caracteres

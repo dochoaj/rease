@@ -37,27 +37,27 @@
 		<div class="panel-body">
 
 			<div class="field">
-				<%= f.text_field :nickname, :placeholder => "Apodo o nick",:class => 'form-control'  %>
+				<%= f.text_field :nickname, :placeholder => "Apodo o nick",:class => 'form-control', :required => true  %>
 			</div>		
 
 			<div class="field">
-				<%= f.text_field :name, :placeholder => "Nombres",:class => 'form-control'  %>
+				<%= f.text_field :name, :placeholder => "Nombres",:class => 'form-control', :required => true  %>
 			</div>
 
 			<div class="field">
-				<%= f.email_field :email, :placeholder => "Correo electrónico",:class => 'form-control' %>
+				<%= f.email_field :email, :placeholder => "Correo electrónico",:class => 'form-control', :required => true %>
 			</div>
 
 			<div class="field"> <!--aun no sé como agregar el valor de minimo al placeholder-->
 				<% if @validatable %> 
 					<% minimo = @minimum_password_length %> 
 				<% end %>
-				<%= f.password_field :password, :placeholder => "Crear contraseña (6 caracteres como mínimo)", :class => 'form-control', autocomplete: "off" %>
+				<%= f.password_field :password, :placeholder => "Crear contraseña (6 caracteres como mínimo)", :class => 'form-control', autocomplete: "off", :required => true %>
 			</div>
 
 
 			<div class="field">
-				<%= f.password_field :password_confirmation, :placeholder => "Confirme su contraseña",:class => 'form-control', autocomplete: "off" %>
+				<%= f.password_field :password_confirmation, :placeholder => "Confirme su contraseña",:class => 'form-control', autocomplete: "off", :required => true %>
 			</div>
 
 

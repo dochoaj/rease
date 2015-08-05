@@ -9,10 +9,12 @@
 				<p><% @users.each  do |user|%>
 					<%if user.photo.present?%>
 						<%=link_to image_tag(user.photo.url(:mini),:class=>'RoundPicture'),user%>
+					<%else%>
+						<%=link_to image_tag("favicon.ico",:class=>'RoundPicture'),user%>
 					<%end%>
 				<%end%></p>
 			<%else%>
-				<%if User.last.photo.present?%>
+				<%if User.last.photo.present? %>
 					<%=link_to image_tag(User.last.photo.url(:mini),:class=>'RoundPicture'),User.last%>
 				<%else%>
 					<p>Las últimas semanas no se han registrado usuarios</p>
