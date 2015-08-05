@@ -2,7 +2,8 @@ class ExperiencesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_realizado
 	before_action :set_experience, only: [:show, :edit, :update, :destroy]
-	before_action :set_institutions
+	before_action :set_institutionsAndAreas
+	before_action :validate_category, except: [:show]
 
 
 	add_breadcrumb "Inicio", :root_path
@@ -30,9 +31,11 @@ class ExperiencesController < ApplicationController
 	# POST /experiences.json
 	def create
 	@experience = current_user.experiences.new(experience_params)
+	@experience.professor_name = current_user.name
+	@experience.professor_email = current_user.email
 		respond_to do |format|
 			if @experience.save
-				format.html { redirect_to @experience, notice: 'El experienceo se ha creado exitosamente.' }
+				format.html { redirect_to @experience, notice: 'La experiencia se ha creado exitosamente.' }
 				format.json { render :show, status: :created, location: @experience }
 			else
 				format.html { render :new }
@@ -46,7 +49,7 @@ class ExperiencesController < ApplicationController
 	def update
 		respond_to do |format|
 			if @experience.update(experience_params)
-				format.html { redirect_to @experience, notice: 'El experienceo se ha modificado exitosamente.' }
+				format.html { redirect_to @experience, notice: 'La experiencia se ha modificado exitosamente.' }
 				format.json { render :show, status: :ok, location: @experience }
 			else
 				format.html { render :edit }
@@ -60,7 +63,7 @@ class ExperiencesController < ApplicationController
 	def destroy
 		@experience.destroy
 		respond_to do |format|
-			format.html { redirect_to experiences_url, notice: 'El experienceo se ha eliminado.' }
+			format.html { redirect_to experiences_url, notice: 'La experiencia se ha eliminado.' }
 			format.json { head :no_content }
 		end
 	end
@@ -77,6 +80,12 @@ class ExperiencesController < ApplicationController
 	end
 	
 	private
+	def validate_category
+		if current_user.category != 2 && current_user.category != 1
+			redirect_to root_path, alert: "Sólo un profesor puede trabajar las experiencias."
+		end   
+	end
+
 	def set_realizado
 		@offerings = Offering.where("status = ?", 3)
 		@requests = Request.where("status = ?", 3)
@@ -85,8 +94,9 @@ class ExperiencesController < ApplicationController
 		@experience = Experience.find(params[:id])
     end
 
-    def set_institutions
-    	@institutions = Institution.all    	
+    def set_institutionsAndAreas
+    	@institutions = Institution.all
+    	@areas = Area.all 	
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params

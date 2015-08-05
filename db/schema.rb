@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728012621) do
+ActiveRecord::Schema.define(version: 20150805034026) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20150728012621) do
     t.text     "results",               limit: 65535
     t.text     "tools",                 limit: 65535
     t.text     "reflection_moments",    limit: 65535
+    t.integer  "area_id",               limit: 4
   end
 
   create_table "identities", force: :cascade do |t|

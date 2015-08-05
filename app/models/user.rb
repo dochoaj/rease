@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
 
 	has_attached_file :photo, styles: {mini:"30x30", medium: "500x200", thumb:"700x300"}
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+
+	validates :name, presence: true, length:{maximum:50}
+	validates :nickname, presence: true, length:{maximum:14}
 	
 
 	def self.search(search)
