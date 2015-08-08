@@ -13,10 +13,32 @@
 	<%end%>
 </div>
 <ul class="nav nav-tabs tabRease nav-justified">
-<li id="exp3" onclick="exp3()"><a>Experiencias</a></li>
-<li id="exp1" onclick="exp1()"><a>Solicitudes realizadas</a></li>
-<li id="exp2" onclick="exp2()"><a>Ofertas realizadas</a></li>
+<li id="exp1" onclick="exp1()"><a>Servicios Activos</a></li>
+<li id="exp2" onclick="exp2()"><a>Experienciass</a></li>
 </ul>
+<div id="FServicios">
+	<%if @services.present?%>
+		<% @services.order('created_at DESC').each do |service| %>
+			<div class="panel panel-default panelRease">
+				<div class="panel-heading">
+					SERVICIO
+				</div>
+				<div class="panel-body">
+					DESCRIPCION
+				</div>
+			</div>
+		<%end%>
+	<%else%>
+			<div class="panel panel-default panelRease">
+				<div class="panel-heading">
+					Servicios Activos
+				</div>
+				<div class="panel-body">
+					<p>No hay servicios activo disponibles</p>
+				</div>
+			</div>
+	<%end%>      
+</div>
 
 <div id="FExperiences">
 	<%if @experiences.present?%>
@@ -49,84 +71,22 @@
 	<%end%>      
 </div>
 
-<div id="FRequest">
-	<%if @requests.present?%>
-		<% @requests.order('created_at DESC').each do |request| %>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%= request.title %>
-				</div>
-				<div class="panel-body">
-					<h2>Resumen:</h2>
-					<p><%=request.resume%></p>
-					<%= link_to "Ver solicitud", request%>
-				</div>
-			</div>
-		<%end%>
-	<%else%>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					Solicitudes de servicio realizadas
-				</div>
-				<div class="panel-body">
-					<p>No hay zolicitudes de servicio realizadas disponibles</p>
-				</div>
-			</div>
-	<%end%>      
-</div>
-<div id="FOfferings">
-	<%if @offerings.present?%>
-		<% @offerings.order('created_at DESC').each do |offering| %>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%= offering.title %>
-				</div>
-				<div class="panel-body">
-					<h2>Resumen:</h2>
-					<p><%=offering.resume%></p>
-					<%= link_to "Ver Oferta", offering%>
-				</div>
-			</div>
-		<%end%>
-	<%else%>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					Ofertas de servicio realizadas
-				</div>
-				<div class="panel-body">
-					<p>No hay Ofertas de servicio realizadas disponibles</p>
-				</div>
-			</div>
-	<%end%>
-</div>
-
 <script type="text/javascript">
-	document.getElementById('FExperiences').style.display='block';	
-	document.getElementById('FRequest').style.display='none';	
-	document.getElementById("exp3").className = "active";	
-	document.getElementById('FOfferings').style.display='none';
+	document.getElementById('FServicios').style.display='block';	
+	document.getElementById('FExperiences').style.display='none';	
+	document.getElementById("exp1").className = "active";	
+
 	function exp1(){
-		document.getElementById('FExperiences').style.display='none';
-		document.getElementById('FRequest').style.display='block';
-		document.getElementById('FOfferings').style.display='none';
-		document.getElementById("exp1").className = "active";
+		document.getElementById('FServicios').style.display='block';	
+		document.getElementById('FExperiences').style.display='none';	
+		document.getElementById("exp1").className = "active";	
 		document.getElementById("exp2").className = "";
-		document.getElementById("exp3").className = "";
 	}
 	function exp2(){
-		document.getElementById('FExperiences').style.display='none';
-		document.getElementById('FRequest').style.display='none';
-		document.getElementById('FOfferings').style.display='block';
+		document.getElementById('FServicios').style.display='none';	
+		document.getElementById('FExperiences').style.display='block';		
 		document.getElementById("exp1").className = "";
 		document.getElementById("exp2").className = "active";
-		document.getElementById("exp3").className = "";
 	}
-	function exp3(){
-		document.getElementById('FExperiences').style.display='block';
-		document.getElementById('FRequest').style.display='none';
-		document.getElementById('FOfferings').style.display='none';
-		document.getElementById("exp1").className = "";
-		document.getElementById("exp2").className = "";
-		document.getElementById("exp3").className = "active";
-	}
+
 </script>

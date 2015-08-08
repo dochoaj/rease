@@ -70,9 +70,12 @@ class RequestsController < ApplicationController
 private
   
   def validate_category
-      if current_user.category == 2
+      if current_user.category == 2 
           redirect_to root_path, alert: "Su categoría de profesor no permite ésta acción."
-      end   
+      end  
+      if current_user.category == 1
+        redirect_to root_path, alert: "El administrador no puede crear solicitudes de servicio"
+      end
   end
 
   # Use callbacks to share common setup or constraints between actions.

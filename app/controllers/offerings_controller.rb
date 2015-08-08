@@ -96,6 +96,9 @@ class OfferingsController < ApplicationController
       if current_user.category == 4
           redirect_to root_path, alert: "Su categoría de socio comunitario no permite ésta acción."
       end 
+      if current_user.category == 1
+        redirect_to root_path, alert: "El administrador no puede crear ofertas de servicio"
+      end
     end
 
     # Use callbacks to share common setup or constraints between actions.
