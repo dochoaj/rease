@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805034026) do
+ActiveRecord::Schema.define(version: 20150812224735) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -53,9 +53,12 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
-    t.integer  "event_id",   limit: 4
     t.text     "body",       limit: 65535
+    t.integer  "post_id",    limit: 4
+    t.string   "post_type",  limit: 255
   end
+
+  add_index "comments", ["post_type", "post_id"], name: "index_comments_on_post_type_and_post_id", using: :btree
 
   create_table "communities", force: :cascade do |t|
     t.integer "request_id",           limit: 4

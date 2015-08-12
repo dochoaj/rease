@@ -43,19 +43,24 @@
 	</div>
 	<div class="panel-footer">
 		<h2>Comentarios</h2>
-		<%=render 'comment_offerings/form'%>
-
-		<% @offering.comment_offerings.order('created_at DESC').each do |comment|%>
-		<p>	
-			<%if !@offering.user.photo.blank?%>
-				<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
-			<%end %>
-			<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%> - <%=l comment.created_at%>
-			<%if current_user == comment.user or current_user.category == 1 %> - 
-					<%= link_to 'Eliminar', offering_comment_offering_path(@offering,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+		<div class="comment">
+			<%if user_signed_in? %>
+				<%=render 'comments/formOffering'%>
 			<%end%>
-		</p>
-		<%end%>
+			<% @offering.comments.order('created_at DESC').each do |comment|%>
+			<p>	
+				<%if !@offering.user.photo.blank?%>
+					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
+				<%end %>
+				<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>
+				<%if user_signed_in? %>
+					<%if current_user == comment.user or current_user.category == 1 %> - 
+						<%= link_to 'Eliminar', offering_comment_path(@offering,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+					<%end%>
+				<%end%>
+			</p>
+			<%end%>
+		</div>
 	</div>
 </div>
 

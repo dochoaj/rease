@@ -29,10 +29,10 @@ Rails.application.routes.draw do
 		resources :comments
 	end
 	resources :offerings do
-		resources :comment_offerings
+		resources :comments
 	end
 	resources :requests do
-		resources :comment_requests
+		resources :comments
 	end
 	resources :institutions
 	resources :contacts

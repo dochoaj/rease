@@ -3,7 +3,7 @@ class Request < ActiveRecord::Base
 	belongs_to :community
 	belongs_to :area
 
-	has_many :comment_requests
+	has_many :comments, as: :post
 
 	has_one :experience
 

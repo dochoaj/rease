@@ -42,7 +42,7 @@
 		<h2>Comentarios</h2>
 		<div class="comment">
 			<%if user_signed_in? %>
-				<%=render 'comments/form'%>
+				<%=render 'comments/formEvent'%>
 			<%end%>
 			<% @event.comments.order('created_at DESC').each do |comment|%>
 			<p>	

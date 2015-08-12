@@ -2,9 +2,9 @@ class Offering < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :community
 	belongs_to :area
-
-	has_many :comment_offerings
-
+	
+	has_many :comments, as: :post
+	
 	has_one :experience
 	
 	#validaciones

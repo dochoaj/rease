@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
 	validates :name, presence: true, length:{maximum:50}
-	validates :nickname, presence: true, length:{maximum:14}
+	validates :nickname, length:{maximum:14}
 	
 
 	def self.search(search)

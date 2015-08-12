@@ -38,17 +38,18 @@
 		<%end %>
 	</div>
 	<div class="panel-footer">
-		<h2>Comentarios</h2>
-		<%=render 'comment_requests/form'%>
+		<%if user_signed_in? %>
+			<%=render 'comments/formRequest'%>
+		<%end%>
+		<% @request.comments.order('created_at DESC').each do |comment|%>
 
-		<% @request.comment_requests.order('created_at DESC').each do |comment|%>
 		<p>	
 			<%if !@request.user.photo.blank?%>
 				<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
 			<%end %>
 			<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>
 			<%if current_user == comment.user or current_user.category == 1 %> - 
-					<%= link_to 'Eliminar', request_comment_request_path(@request,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+					<%= link_to 'Eliminar', request_comment_path(@request,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
 			<%end%>
 		</p>
 		<%end%>

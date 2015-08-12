@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
 
   def show
     add_breadcrumb "Mostrar"
-    @comment_request = CommentRequest.new
+    @comment = Comment.new
   end
 
   def edit
