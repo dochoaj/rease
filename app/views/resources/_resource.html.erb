@@ -1,10 +1,10 @@
 <p><strong>
 <% if resource.category == 1%>
-	Acta
+	Acta:
 <% elsif resource.category == 2%>
-	Contrato
+	Contrato:
 <% elsif resource.category == 3%>
-	Formulario
+	Formulario:
 <%else%>
-	Recurso
-<%end%>: </strong> <%=resource.name%> - <%=	link_to "Ver", resource.archive.url %> </p>
+	Recurso:
+<%end%> </strong> <%=resource.name%> - <%=	link_to "Ver", resource.archive.url %> </p>

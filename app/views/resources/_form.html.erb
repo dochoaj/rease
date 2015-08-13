@@ -16,9 +16,15 @@
 			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Título de la reunión',:required=>true %>
 		</div>
 		<div class="field">
+			<%= f.text_area :description, :class => 'form-control', :placeholder => 'Breve descripción',:required=>true %>
+		</div>
+		<%= f.select(:category, [['Acta', 1],['Contrato', 2],['Formulario',3], ['Otro',4]], {:include_blank => '-- Seleccione el tipo de recurso --' }, { :class => 'form-control', :required => true }) %>
+
+		<div class="field">
 			<p><%= f.label :date, "Fecha de la reunión: " %>
 			<%= f.date_select :date %></p>
 		</div>
+		<p class="note">Extensiones permitidas: .jpg .gif  .pdf  .doc .xls .ppt .txt </p>
 		<div class="field">
 			<%= f.file_field :archive %>
 		</div>
