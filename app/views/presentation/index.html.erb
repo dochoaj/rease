@@ -28,8 +28,8 @@
 			Última acta de REASE
 		</div>
 		<div class="panel-body">
-			<%if @minute.present?%>
-				<p><%=l @minute.date%>: <%= @minute.name%> - <%=	link_to "Ver", @minute.archive.url %> </p>
+			<%if @resource.present?%>
+				<p><%=l @resource.date%>: <%= @resource.name%> - <%=	link_to "Ver", @resource.archive.url %> </p>
 			<%else%>
 				<p>No hay actas disponibles</p>
 			<%end%>			

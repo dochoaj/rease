@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-	post 'presentation/searchPage'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'
@@ -19,9 +18,12 @@ Rails.application.routes.draw do
 	get 'sections/newEstatutos'
 	get 'sections/newAprendizaje'
 	get 'sections/newNovedades'
+	get 'resources/muestra'
+	post 'presentation/searchPage'
 	post 'requests/searchRequest'
 	post 'offerings/searchOffering'
 	post 'experiences/searchExperience'
+	post 'resources/searchResource'
 	resources :experiences
 
 	resources :sections
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
 	end
 	resources :institutions
 	resources :contacts
-	resources :minutes
+	resources :resources
 	resources :interest_links
 	resources :bulletins, except: [:edit]
 	resources :areas

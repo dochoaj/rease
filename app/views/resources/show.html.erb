@@ -1,0 +1,16 @@
+<h1>Detalles del acta <%=@resource.name%></h1>
+
+<div class="panel panel-default panelRease" >
+	<div class="panel-heading">
+		Acta: <%= @resource.name %>
+	</div>
+	<div class="panel-body">
+		<p> <strong>Fecha de la reunión:</strong> <%=l @resource.date%></p>		
+	</div>
+</div>
+
+<%if user_signed_in? %>
+<%= link_to 'Ver Acta', @resource.archive.url, :class =>"btn btn-lg btnCRUD" %>
+<%= link_to 'Editar', edit_resource_path(@resource), :class =>"btn btn-lg btnCRUD" %>
+<%= link_to 'Volver', resources_path, :class =>"btn btn-lg btnCRUD" %>
+<%end%>

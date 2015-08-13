@@ -6,7 +6,7 @@ class PresentationController < ApplicationController
 		@sections = Section.order("priority ASC").where("module = ?","Novedad")
 		if user_signed_in?
 			@users = User.where("created_at >= ?", 2.week.ago.utc)
-			@minute = Minute.last
+			@resource = Resource.last
 		end
 	end
 
@@ -23,7 +23,7 @@ class PresentationController < ApplicationController
 			end
 			@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
 			@events = Event.search(params[:search]).order("created_at DESC")
-			@minutes = Minute.search(params[:search]).order("created_at DESC")
+			@resources = Resource.search(params[:search]).order("created_at DESC")
 			@institutions = Institution.search(params[:search]).order("created_at DESC")
 		else
 			@interest_links = InterestLink.all.order('name ASC')
@@ -39,7 +39,7 @@ class PresentationController < ApplicationController
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :presentation_hacemos_path
-		@minutes = Minute.order("created_at DESC").all
+		@resources = Resource.order("created_at DESC").all
 		@sections = Section.order("priority ASC").where("module = ?","Hacemos")
 
 	end

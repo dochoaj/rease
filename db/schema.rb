@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812224735) do
+ActiveRecord::Schema.define(version: 20150813201318) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -169,17 +169,6 @@ ActiveRecord::Schema.define(version: 20150812224735) do
   add_index "messages_users", ["message_id"], name: "index_messages_users_on_message_id", using: :btree
   add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
 
-  create_table "minutes", force: :cascade do |t|
-    t.string   "name",                 limit: 255
-    t.date     "date"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.string   "archive_file_name",    limit: 255
-    t.string   "archive_content_type", limit: 255
-    t.integer  "archive_file_size",    limit: 4
-    t.datetime "archive_updated_at"
-  end
-
   create_table "offerings", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
     t.string   "title",       limit: 255
@@ -208,6 +197,19 @@ ActiveRecord::Schema.define(version: 20150812224735) do
     t.datetime "updated_at"
     t.text     "resume",        limit: 65535
     t.integer  "status",        limit: 4,     default: 1
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "name",                 limit: 255
+    t.date     "date"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "archive_file_name",    limit: 255
+    t.string   "archive_content_type", limit: 255
+    t.integer  "archive_file_size",    limit: 4
+    t.datetime "archive_updated_at"
+    t.integer  "category",             limit: 4,     default: 1
+    t.text     "description",          limit: 65535
   end
 
   create_table "sections", force: :cascade do |t|

@@ -53,9 +53,11 @@
 		</section>
 		<aside>
 			<%= link_to(image_tag("LogoRease.png", id: "logo"),root_path) %>
-
-			<%= render "partials/intranet"%>
-
+			<% if !user_signed_in? %>
+				<%= render "partials/intranet"%>
+			<%else%>
+				<%= render "partials/resources"%>
+			<%end%>
 			
 			<div  class="panel panel-default panelClick">
 				<div class="panel-heading">

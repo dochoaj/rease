@@ -219,7 +219,11 @@ p
 {
 	border-radius: 50%;
 }
-
+.recursos
+{
+	width: 95%;
+	text-align: left;
+}
 .sesion .btn-block
 {
 	margin-left: auto;

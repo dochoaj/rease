@@ -1,6 +1,6 @@
 <h1>Búsqueda: </h1>
 <%if !user_signed_in? %>	
-	<% if @sections.present? || @interest_links.present? || @events.present? || @minutes.present? || @institutions.present?%>
+	<% if @sections.present? || @interest_links.present? || @events.present? || @resources.present? || @institutions.present?%>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
 			Resultados de la búsqueda: <%= params[:search] %>
@@ -9,7 +9,7 @@
 			<%= render @sections %>
 			<%= render @interest_links %>
 			<%= render @events %>
-			<%= render @minutes %>
+			<%= render @resources %>
 			<%= render @institutions %>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 	</div>
 	<% end %>
 <%else%>
-	<% if @sections.present?  || @events.present? || @minutes.present? || @institutions.present? || @requests.present? || @offerings.present? || @users.present? %>
+	<% if @sections.present?  || @events.present? || @resources.present? || @institutions.present? || @requests.present? || @offerings.present? || @users.present? %>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
 			Resultados de la búsqueda: <%= params[:search] %>
@@ -35,7 +35,7 @@
 			<%= render @offerings %>
 			<%= render @events %>
 			<%= render @sections %>
-			<%= render @minutes %>
+			<%= render @resources %>
 			<%= render @institutions %>
 		</div>
 	</div>
