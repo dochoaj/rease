@@ -16,10 +16,11 @@
 			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre recurso',:required=>true %>
 		</div>
 		<div class="field">
-			<%= f.text_area :description, :class => 'form-control', :placeholder => 'Breve descripción',:required=>true %>
+			<%= f.text_area :description, :placeholder=> "Breve descripción.", :id=>"eg-basic" %>
 		</div>
-		<%= f.select(:category, [['Acta', 1],['Contrato', 2],['Formulario',3], ['Otro',4]], {:include_blank => '-- Seleccione el tipo de recurso --' }, { :class => 'form-control', :required => true }) %>
-
+		<div class="field"><br>
+		<%= f.select(:category, [['Acta de reunión', 1],['Plantilla de recursos', 2],['Formación AS',3], ['Enlaces útiles',4], ['Otros',5]], {:include_blank => '-- Seleccione el tipo de recurso --' }, { :class => 'form-control', :required => true }) %>
+		</div>
 		<div class="field">
 			<p><%= f.label :date, "Fecha: " %>
 			<%= f.date_select :date %></p>
@@ -30,6 +31,13 @@
 		</div>
 	</div>	
 </div>
-	<%= f.submit "Subir archivo", :class=>"btn btn-lg btnCRUD" %>
+	<%= f.submit orden+" recurso", :class=>"btn btn-lg btnCRUD" %>
 	<%= link_to 'Volver', resources_path, :class =>"btn btn-lg btnCRUD" %>
 <% end %>
+
+<script>
+	 $(function() {$('textarea#eg-basic').editable({
+      inlineMode: false,
+    })
+  });
+</script>

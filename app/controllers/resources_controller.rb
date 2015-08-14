@@ -13,23 +13,29 @@ class ResourcesController < ApplicationController
   end
 
   def muestra
-      add_breadcrumb "Recursos", :resources_muestra_path 
+      add_breadcrumb "Recursos", :resources_muestra_path
+      @interest_links = InterestLink.order("created_at DESC").all
   end
 
   # GET /resources/1
   # GET /resources/1.json
   def show
+    add_breadcrumb "Recursos", :resources_muestra_path 
     add_breadcrumb "Detalle" 
   end
 
   # GET /resources/new
   def new
+    add_breadcrumb "Administrar", :sections_path
+    add_breadcrumb "Recursos", :resources_path 
     add_breadcrumb "Nuevo recurso"
     @resource = Resource.new
   end
 
   # GET /resources/1/edit
   def edit
+    add_breadcrumb "Administrar", :sections_path
+    add_breadcrumb "Recursos", :resources_path 
     add_breadcrumb "Editar recurso"
   end
 
@@ -99,9 +105,10 @@ class ResourcesController < ApplicationController
 
     def set_categorizated
       @actas = Resource.where(category: 1)
-      @contratos = Resource.where(category: 2)
-      @formularios = Resource.where(category: 3)
-      @otros = Resource.where(category: 4)
+      @plantillas = Resource.where(category: 2)
+      @formacion = Resource.where(category: 3)
+      @enlaces = Resource.where(category: 4)
+      @otros = Resource.where(category: 5)
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
