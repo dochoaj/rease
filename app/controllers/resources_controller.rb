@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :validate_category, except: [:show,:muestra,:searchResource]
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
+  before_action :set_categorizated, only: [:index, :muestra]
 
   add_breadcrumb "Inicio", :root_path
   # GET /resources
@@ -9,15 +10,10 @@ class ResourcesController < ApplicationController
   def index
     add_breadcrumb "Administrar", :sections_path
     add_breadcrumb "Recursos", :resources_path 
-    @resources = Resource.order("created_at DESC").all
   end
 
   def muestra
       add_breadcrumb "Recursos", :resources_muestra_path 
-      @actas = Resource.where(category: 1)
-      @contratos = Resource.where(category: 2)
-      @formularios = Resource.where(category: 3)
-      @otros = Resource.where(category: 4)
   end
 
   # GET /resources/1
@@ -101,6 +97,12 @@ class ResourcesController < ApplicationController
       @resource = Resource.find(params[:id])
     end
 
+    def set_categorizated
+      @actas = Resource.where(category: 1)
+      @contratos = Resource.where(category: 2)
+      @formularios = Resource.where(category: 3)
+      @otros = Resource.where(category: 4)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
       params.require(:resource).permit(:name, :date, :archive,:description, :category)

@@ -5,7 +5,7 @@
 	<div class="collapsing" id="cuerpoRecursos">
 		<div class="panel-body" id="styleSession" >
 			<% Resource.order("created_at ASC").last(4).each do |resource| %>
-				<p><%=l resource.date%>:  <%= resource.name%> - <%= link_to 'ver', resource.archive.url%></p>
+				<p><%=l resource.date%>:  <%= truncate(resource.name, length: 25)%> - <%= link_to 'ver', resource.archive.url%></p>
 			<%end%>
 	    	<p style="text-align: center;"><%= link_to "Ver todos", resources_muestra_path%>
 		</div>	

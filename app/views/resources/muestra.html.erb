@@ -1,5 +1,7 @@
 <h1>Recursos</h1>
-
+<%if current_user.category == 1%>
+	<%= link_to 'Agregar nuevo recurso', new_resource_path, :class=>"btn btn-lg btnAdmin" %>
+<%end%>
 <div class="buscador">
 	<%= form_tag(resources_searchResource_path, :method => "post",:class=>"form-inline") do %>
 	<div class="input-group">
@@ -35,9 +37,10 @@
 					</tr>
 					<% @actas.each do |resource| %>
 					<tr>
-						<td><%= resource.name%></td>
+
+						<td><%=link_to truncate(resource.name, length: 25), resource%></td>
 						<td><%=l resource.date%></td>
-						<td><%= resource.description%></td>
+						<td><%= truncate(resource.description, length: 60)%></td>
 						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
 					</tr>
 					<%end%>
@@ -65,9 +68,9 @@
 					</tr>
 					<% @contratos.each do |resource| %>
 					<tr>
-						<td><%= resource.name%></td>
+						<td><%=link_to truncate(resource.name, length: 25), resource%></td>
 						<td><%=l resource.date%></td>
-						<td><%= resource.description%></td>
+						<td><%= truncate(resource.description, length: 60)%></td>
 						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
 					</tr>
 					<%end%>
@@ -95,9 +98,9 @@
 					</tr>
 					<% @formularios.each do |resource| %>
 					<tr>
-						<td><%= resource.name%></td>
+						<td><%=link_to truncate(resource.name, length: 25), resource%></td>
 						<td><%=l resource.date%></td>
-						<td><%= resource.description%></td>
+						<td><%= truncate(resource.description, length: 60)%></td>
 						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
 					</tr>
 					<%end%>
@@ -125,9 +128,9 @@
 					</tr>
 					<% @otros.each do |resource| %>
 					<tr>
-						<td><%= resource.name%></td>
+						<td><%=link_to truncate(resource.name, length: 25), resource%></td>
 						<td><%=l resource.date%></td>
-						<td><%= resource.description%></td>
+						<td><%= truncate(resource.description, length: 60)%></td>
 						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
 					</tr>
 					<%end%>
