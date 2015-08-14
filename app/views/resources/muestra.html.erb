@@ -55,8 +55,23 @@
 		</div>
 		<div class="panel-body">
 			<%if @contratos.present?%>
-				<% @contratos.each do |resource| %>
-				<%end%>
+				<table class="recursos">
+					<tr>
+						<th><strong>Nombre</strong></th>
+						<th><strong>Fecha</strong></th>
+						<th><strong>Descripción</strong></th>
+						<th><strong>Ver</strong></th>
+
+					</tr>
+					<% @contratos.each do |resource| %>
+					<tr>
+						<td><%= resource.name%></td>
+						<td><%=l resource.date%></td>
+						<td><%= resource.description%></td>
+						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
+					</tr>
+					<%end%>
+				</table>
 			<%else%>
 				No hay contratos disponibles
 			<%end%>
@@ -70,8 +85,23 @@
 		</div>
 		<div class="panel-body">
 			<%if @formularios.present?%>
-				<% @formularios.each do |resource| %>
-				<%end%>
+				<table class="recursos">
+					<tr>
+						<th><strong>Nombre</strong></th>
+						<th><strong>Fecha</strong></th>
+						<th><strong>Descripción</strong></th>
+						<th><strong>Ver</strong></th>
+
+					</tr>
+					<% @formularios.each do |resource| %>
+					<tr>
+						<td><%= resource.name%></td>
+						<td><%=l resource.date%></td>
+						<td><%= resource.description%></td>
+						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
+					</tr>
+					<%end%>
+				</table>
 			<%else%>
 				No hay formularios disponibles
 			<%end%>
@@ -85,8 +115,23 @@
 		</div>
 		<div class="panel-body">
 			<%if @otros.present?%>
-				<% @otros.each do |resource| %>
-				<%end%>
+				<table class="recursos">
+					<tr>
+						<th><strong>Nombre</strong></th>
+						<th><strong>Fecha</strong></th>
+						<th><strong>Descripción</strong></th>
+						<th><strong>Ver</strong></th>
+
+					</tr>
+					<% @otros.each do |resource| %>
+					<tr>
+						<td><%= resource.name%></td>
+						<td><%=l resource.date%></td>
+						<td><%= resource.description%></td>
+						<td><%= link_to '<i class="glyphicon glyphicon-circle-arrow-down"></i>'.html_safe, resource.archive.url%></td>
+					</tr>
+					<%end%>
+				</table>
 			<%else%>
 				No hay otros recursos disponibles
 			<%end%>

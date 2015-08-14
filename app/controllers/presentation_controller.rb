@@ -6,7 +6,7 @@ class PresentationController < ApplicationController
 		@sections = Section.order("priority ASC").where("module = ?","Novedad")
 		if user_signed_in?
 			@users = User.where("created_at >= ?", 2.week.ago.utc)
-			@resource = Resource.last
+			@acta = Resource.where(category: 1).last
 		end
 	end
 
