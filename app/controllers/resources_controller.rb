@@ -28,13 +28,13 @@ class ResourcesController < ApplicationController
 
   # GET /resources/new
   def new
-    add_breadcrumb "Nueva acta"
+    add_breadcrumb "Nuevo recurso"
     @resource = Resource.new
   end
 
   # GET /resources/1/edit
   def edit
-    add_breadcrumb "Editar acta"
+    add_breadcrumb "Editar recurso"
   end
 
   # POST /resources
@@ -44,7 +44,7 @@ class ResourcesController < ApplicationController
 
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to @resource, notice: 'El acta se ha creado exitosamente.' }
+        format.html { redirect_to @resource, notice: 'El recurso se ha creado exitosamente.' }
         format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class ResourcesController < ApplicationController
   def update
     respond_to do |format|
       if @resource.update(resource_params)
-        format.html { redirect_to @resource, notice: 'El acta se ha modificado exitosamente' }
+        format.html { redirect_to @resource, notice: 'El recurso se ha modificado exitosamente' }
         format.json { render :show, status: :ok, location: @resource }
       else
         format.html { render :edit }
@@ -72,7 +72,7 @@ class ResourcesController < ApplicationController
   def destroy
     @resource.destroy
     respond_to do |format|
-      format.html { redirect_to resources_url, notice: 'El acta se ha eliminado.' }
+      format.html { redirect_to resources_url, notice: 'El recurso se ha eliminado.' }
       format.json { head :no_content }
     end
   end

@@ -8,12 +8,12 @@
 
 <div class="panel panel-default panelRease" >
 	<div class="panel-heading">
-		Datos del Acta
+		Datos del recurso
 	</div>
 	<div class="panel-body">
 		<p class="note">*Todos los campos obligatorios</p>
 		<div class="field">
-			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Título de la reunión',:required=>true %>
+			<%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre recurso',:required=>true %>
 		</div>
 		<div class="field">
 			<%= f.text_area :description, :class => 'form-control', :placeholder => 'Breve descripción',:required=>true %>
@@ -21,7 +21,7 @@
 		<%= f.select(:category, [['Acta', 1],['Contrato', 2],['Formulario',3], ['Otro',4]], {:include_blank => '-- Seleccione el tipo de recurso --' }, { :class => 'form-control', :required => true }) %>
 
 		<div class="field">
-			<p><%= f.label :date, "Fecha de la reunión: " %>
+			<p><%= f.label :date, "Fecha: " %>
 			<%= f.date_select :date %></p>
 		</div>
 		<p class="note">Extensiones permitidas: .jpg .gif  .pdf  .doc .xls .ppt .txt </p>
@@ -30,6 +30,6 @@
 		</div>
 	</div>	
 </div>
-	<%= f.submit "Subir acta", :class=>"btn btn-lg btnCRUD" %>
+	<%= f.submit "Subir archivo", :class=>"btn btn-lg btnCRUD" %>
 	<%= link_to 'Volver', resources_path, :class =>"btn btn-lg btnCRUD" %>
 <% end %>

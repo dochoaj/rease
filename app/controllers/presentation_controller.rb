@@ -39,7 +39,7 @@ class PresentationController < ApplicationController
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :presentation_hacemos_path
-		@resources = Resource.order("created_at DESC").all
+		@resources = Resource.where(category: 1).order("created_at DESC")
 		@sections = Section.order("priority ASC").where("module = ?","Hacemos")
 
 	end
