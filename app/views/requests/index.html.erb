@@ -1,6 +1,6 @@
 <h1>Solicitudes de servicio</h1>
 
-<% if current_user.category != 2 %>
+<% if current_user.category == 4 %>
 	<%= link_to "Nueva solicitud de servicio", new_request_path, :class => 'btn btn-lg' %>
 <%end%>
 <div class="buscador">

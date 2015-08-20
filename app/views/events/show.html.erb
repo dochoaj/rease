@@ -46,7 +46,7 @@
 			<%end%>
 			<% @event.comments.order('created_at DESC').each do |comment|%>
 			<p>	
-				<%if !@event.user.photo.blank?%>
+				<%if !comment.user.photo.blank?%>
 					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
 				<%end %>
 				<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>

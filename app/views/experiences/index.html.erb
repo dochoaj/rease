@@ -1,7 +1,4 @@
 <h1>Experiencias</h1>
-
-<%= link_to 'Crear experiencia', new_experience_path, :class => "btn btn-lg " %>
-
 <div class="buscador">
 	<%= form_tag(experiences_searchExperience_path, :method => "post",:class=>"form-inline") do %>
 	<div class="input-group">
@@ -17,14 +14,16 @@
 <li id="exp2" onclick="exp2()"><a>Experiencias</a></li>
 </ul>
 <div id="FServicios">
-	<%if @services.present?%>
-		<% @services.order('created_at DESC').each do |service| %>
+	<%if @activos.present?%>
+		<% @activos.each do |activo| %>
 			<div class="panel panel-default panelRease">
 				<div class="panel-heading">
-					SERVICIO
+					<%=activo.title%>
 				</div>
 				<div class="panel-body">
-					DESCRIPCION
+					<h2>Resumen:</h2>
+					<p><%=activo.resume%></p>
+					<%= link_to "Ver servicio",activo, :class =>'btn btnCRUD'%>
 				</div>
 			</div>
 		<%end%>
@@ -45,17 +44,13 @@
 		<% @experiences.order('created_at DESC').each do |experience| %>
 			<div class="panel panel-default panelRease">
 				<div class="panel-heading">
-					Folio N° <%= experience.folio %>
+					Folio N° <%= experience.id %>
 				</div>
 				<div class="panel-body">
-					<h2>Descripción:</h2>
-					<p><%=experience.description%></p>
-					<%= link_to "Ver experiencia", experience%>
-					<%if experience.request_id.present?%>
-						- <%= link_to "Ver solicitud asociada", experience.request%>
-					<%else%>
-						- <%= link_to "Ver oferta asociada", experience.offering%>
-					<%end%>
+					<h2>Objetivos de servicio:</h2>
+					<p><%=experience.service_objectives%></p>
+					<%= link_to "Ver experiencia", experience, :class =>'btn btnCRUD'%>
+					<%= link_to "Ver servicio relacionado", experience.service, :class => 'btn btnCRUD'%>
 				</div>
 			</div>
 		<%end%>

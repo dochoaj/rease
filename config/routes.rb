@@ -24,18 +24,26 @@ Rails.application.routes.draw do
 	post 'offerings/searchOffering'
 	post 'experiences/searchExperience'
 	post 'resources/searchResource'
-	resources :experiences
 
+	
 	resources :sections
 	resources :events do
 		resources :comments
 	end
 	resources :offerings do
 		resources :comments
+		resources :services
 	end
 	resources :requests do
 		resources :comments
+		resources :services 
 	end
+	resources :services, only: [:index,:show]
+	resources :services do
+		resources :experiences
+		resources :comments
+	end
+	resources :experiences
 	resources :institutions
 	resources :contacts
 	resources :resources

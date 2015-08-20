@@ -1,5 +1,8 @@
 class Institution < ActiveRecord::Base
 	has_many :users
+	has_many :offerings
+	has_many :requests
+	has_many :services
 	has_many :experiences
 
 	has_attached_file :logo, styles: {mini:"200x100"}

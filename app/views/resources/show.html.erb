@@ -14,7 +14,7 @@
 		<%end%> </strong>  <%= @resource.name %>
 	</div>
 	<div class="panel-body">
-		<p> <strong>Descripción:</strong> <%= @resource.description%></p>	
+		<p> <strong>Descripción:</strong> <%=raw @resource.description%></p>	
 		<p> <strong>Fecha de emision:</strong> <%=l @resource.date%></p>	
 		<p> <strong>Fecha de subida:</strong> <%=l @resource.created_at%></p>		
 	</div>

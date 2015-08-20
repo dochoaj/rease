@@ -30,18 +30,23 @@ class SectionsController < ApplicationController
 	end
 
 	def newNovedades
+		add_breadcrumb "Novedades", :sections_novedades_path
 		add_breadcrumb "Nuevo"
 	end
 	def newSomos
+		add_breadcrumb "¿Quienes Somos?", :sections_somos_path
 		add_breadcrumb "Nuevo"
 	end
 	def newHacemos
+		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
 		add_breadcrumb "Nuevo"
 	end
 	def newEstatutos
+		add_breadcrumb "Estatutos", :sections_estatutos_path
 		add_breadcrumb "Nuevo"
 	end
 	def newAprendizaje
+		add_breadcrumb "Aprendizaje Servicio", :sections_aprendizaje_path
 		add_breadcrumb "Nuevo"
 	end
 

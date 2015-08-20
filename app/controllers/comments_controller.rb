@@ -58,9 +58,12 @@ class CommentsController < ApplicationController
 			elsif params[:request_id]
 				id = params[:request_id]
 				Request.find(params[:request_id])			
-			else
+			elsif params[:offering_id]
 				id = params[:offering_id]
 				Offering.find(params[:offering_id])
+			else
+				id = params[:service_id]
+				Service.find(params[:service_id])
 			end
 		end 
 
@@ -69,8 +72,10 @@ class CommentsController < ApplicationController
 				event_path(post)
 			elsif Request === post
 				request_path(post)			
-			else
+			elsif Offering === post
 				offering_path(post)
+			else
+				service_path(post)
 			end
 		end
 

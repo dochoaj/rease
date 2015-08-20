@@ -1,0 +1,117 @@
+<%if @service.status!=2 and @service.status!= 4%>
+	<h1><%= @service.title%></h1>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Solicitud de <%= @service.creator.nickname%>
+		</div>
+		<div class="panel-body">
+			<p>El usuario <%= link_to @service.creator.nickname, @service.creator%> ha solicitado participar en el servicio de la 
+			<% if @service.publication_type=="service.publication"%>
+				oferta
+			<%else%>
+				solicitud
+			<%end%> dejando el siguiente mensaje:</p>
+			<p><strong><b>"<%= @service.message%>"</b></strong></p>
+
+			<p><strong>Estado: </strong>
+			<%if @service.status == 1%>
+				Pendiende
+			<%elsif @service.status == 3%>
+				Rechazado
+			<%end%>
+			</p>
+			<!--Aquí todavía @service.creator no está asignado como @publication.user -->
+			<%if @service.creator!=current_user and @service.publication.user == current_user%>
+				<%if @aceptados.blank?%>
+					<p class="note">IMPORTANTE: Recuerde que solo se puede aceptar una de las peticiones.</p>
+					<%if @service.publication_type == "Offering"%>
+						<%= link_to "Aceptar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+					<%else%>
+						<%=form_for([@service.publication, @service],:html => { :style => 'display: inline;' }) do |t| %>
+							<%= t.hidden_field :status, :value=>2%>
+							<%= t.hidden_field :acceptor_id, :value => current_user.id%>
+						<%= t.submit "Aceptar",:class=>'btn btn-lg btnCRUD'%>
+					<% end %>
+
+					<%end%>
+				<%end%>
+				<%if @service.status == 1%>
+					<%=form_for([@service.publication, @service],:html => { :style => 'display: inline;' }) do |t| %>
+						<%= t.hidden_field :status, :value=>3%>
+						<%= t.submit "Rechazar",:class=>'btn btn-lg btnCRUD'%>
+					<% end %>
+				<% end %>
+			<%end%>
+		</div>
+	</div>
+	<%=link_to "Volver", @service.publication, :class => 'btn btn-lg btnCRUD'%>
+<%else%>
+	<h1>Servicio activo</h1>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			<%= @service.title%>			
+		</div>
+		<div class="panel-body">
+
+			<%if @service.publication_type=="Offering"%>
+				<p><strong>Profesor responsable: </strong> <%= link_to @service.acceptor.nickname, @service.acceptor%></p>
+				<p><strong>Socio comunitario: </strong> <%= link_to @service.creator.nickname, @service.creator%></p>
+			<%else%>
+				<p><strong>Profesor responsable: </strong> <%= link_to @service.creator.nickname, @service.creator%></p>
+				<p><strong>Socio comunitario: </strong>  <%= link_to @service.acceptor.nickname, @service.acceptor%></p>
+			<%end%>
+
+
+			<%if @service.area_id.present?%>
+				<p><strong>Área de trabajo: </strong> <%= @service.area.discipline%>: <%= @service.area.name%> </p>
+			<%end%>
+			<%if @service.institution.present?%>
+				<p><strong>Institución: </strong> <%= @service.institution.name%> </p>
+			<%end%>
+
+			<%if @service.status == 4%>
+				<p><strong>Estado: </strong> Experiencia </p>
+			<%end%>
+			<h2>Descripción</h2>
+			<p><%=raw @service.publication.description %></p>
+			<p><strong>Objetivos: </strong><%= @service.objectives%></p>
+			<h2> Información </h2>
+			<p><strong>Fecha de inicio: </strong><%=l @service.publication.start_time %></p>
+
+			<p><strong>Fecha de término: </strong><%=l @service.publication.end_time %></p>
+		</div>
+		<div class="panel-footer">
+			<h2>Comentarios</h2>
+			<div class="comment">
+				<%if user_signed_in? %>
+					<%=render 'comments/formService'%>
+				<%end%>
+				<% @service.comments.order('created_at DESC').each do |comment|%>
+				<p>	
+					<%if !comment.user.photo.blank?%>
+						<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
+					<%end %>
+					<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>
+					<%if user_signed_in? %>
+						<%if current_user == comment.user or current_user.category == 1 %> - 
+							<%= link_to 'Eliminar', service_comment_path(@service,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+						<%end%>
+					<%end%>
+				</p>
+				<%end%>
+			</div>
+		</div>
+	</div>
+	<%if @experience.blank? %>
+		<%if @service.publication_type == "Offering"%>
+			<% if current_user == @service.acceptor%>
+				<%=link_to "Generar Experiencia", new_service_experience_path(@service), :class => 'btn btn-lg btnCRUD'%>
+			<% end %>
+		<%else%>
+			<% if current_user == @service.creator%>
+				<%=link_to "Generar Experiencia", new_service_experience_path(@service), :class => 'btn btn-lg btnCRUD'%>
+			<% end %>
+		<%end%>
+	<%end%>
+	<%=link_to "Volver", experiences_path, :class => 'btn btn-lg btnCRUD'%>
+<%end%>

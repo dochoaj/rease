@@ -1,3 +1,16 @@
+<h1>Administrar tipo de usuario de <%=@user.nickname%></h1>
+<%if @user.category == 1%>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			¡USUARIO ADMINISTRADOR!
+		</div>
+		<div class="panel-body">
+			<p>No se puede cambiar el tipo ni rol de usuario de los administradores</p>
+	<%= link_to "Volver", sections_path, :class=>'btn btn-lg btnCRUD' %>
+		</div>
+	</div>
+
+<%else%>
 <%= form_for @user do |f| %>
 
 	<div class="panel panel-default panelRease" >
@@ -26,6 +39,7 @@
 	<%= f.submit "Aceptar Cambios", :class => 'btn btn-lg btnCRUD', data: { confirm: '¿Está seguro que desea realizar estos cambios? Estos cambios afectarán directamente en los niveles de autorización del usuario.' } %>
 	<%= link_to 'Cancelar cambios', @user, :class =>"btn btn-lg btnCRUD" %>
 
+<% end %>
 <% end %>
 
 <script type="text/javascript">
