@@ -25,12 +25,12 @@
 				<%if @aceptados.blank?%>
 					<p class="note">IMPORTANTE: Recuerde que solo se puede aceptar una de las peticiones.</p>
 					<%if @service.publication_type == "Offering"%>
-						<%= link_to "Aceptar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+						<%= link_to "Aceptar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD',data: { confirm: '¿Está seguro de aceptar esta petición? Recuerde que solo podrá aceptar una.' }%>
 					<%else%>
 						<%=form_for([@service.publication, @service],:html => { :style => 'display: inline;' }) do |t| %>
 							<%= t.hidden_field :status, :value=>2%>
 							<%= t.hidden_field :acceptor_id, :value => current_user.id%>
-						<%= t.submit "Aceptar",:class=>'btn btn-lg btnCRUD'%>
+						<%= t.submit "Aceptar",:class=>'btn btn-lg btnCRUD',data: { confirm: '¿Está seguro de aceptar esta petición? Recuerde que solo podrá aceptar una.' }%>
 					<% end %>
 
 					<%end%>
@@ -113,5 +113,12 @@
 			<% end %>
 		<%end%>
 	<%end%>
+
+	<%if @service.publication_type == "Offering"%>
+		<%= link_to "Editar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+	<%else%>
+		<%= link_to "Editar", edit_request_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+	<% end %>
+
 	<%=link_to "Volver", experiences_path, :class => 'btn btn-lg btnCRUD'%>
 <%end%>

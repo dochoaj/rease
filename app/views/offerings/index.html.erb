@@ -1,4 +1,5 @@
-<h1>Ofertas de servicio</h1>
+<h1>Ofertas de servicio <button type="button" class="btn btn-default btnWhite" id:"btnOferta" data-trigger="focus" data-container="body" data-toggle="btnOferta"> ? </button></h1>
+
 <% if current_user.category == 2 %>
 	<%= link_to "Nueva oferta de servicio", new_offering_path, :class => 'btn btn-lg' %>
 <%end%>
@@ -7,7 +8,9 @@
 	<div class="input-group">
 		<%= text_field_tag :search, params[:search], placeholder: "Buscar ofertas",:class => 'form-control',:required=>true %>
 		<span class="input-group-btn">
-			<%= submit_tag "Ir", :class => 'btn btn-default' %>
+			<%= button_tag(type: "submit", class: "btn btn-default ") do %>
+				<i class="glyphicon glyphicon-search"></i>
+			<% end %>
 		</span>
 	</div>
 	<%end%>
@@ -128,4 +131,12 @@
 		document.getElementById("off2").className = "";
 		document.getElementById("off3").className = "active";
 	}
+	$(function () {
+		$('[data-toggle="btnOferta"]').popover(
+			{
+				html: 'true', 
+				content: '<p>Una <strong>oferta de servicio</strong> es el proceso previo para concretar una actividad AS, esta es publicada por un profesor y pretenden encontrar un socio comunitario con quien realizar dicha actividad.</p>'
+			}
+		)
+	})
 </script>

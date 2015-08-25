@@ -1,4 +1,4 @@
-<h1>Detalles de <%= @event.title %></h1>	
+<h1>Detalles del evento
 <div class="panel panel-default panelRease" >
 	<div class="panel-heading">
 		<%= @event.title %>
@@ -16,15 +16,12 @@
 			Disponible
 		<%end%>
 		<% if @event.status == 2%>
-			En proceso
-		<%end%>
-		<% if @event.status == 3%>
 			Realizado
 		<%end%>
-		<% if @event.status == 4%>
+		<% if @event.status == 3%>
 			Cancelado
 		<%end%>
-		<% if @event.status == 5%>
+		<% if @event.status == 4%>
 			Caducado
 		<%end%>
 		</p>

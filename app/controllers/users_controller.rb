@@ -38,6 +38,13 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			redirect_to users_listarUsuarios_path, notice: "El usuario ha sido eliminado"
+		end
+	end
+
 	# GET/PATCH /users/:id/finish_signup
 	def finish_signup
 		@sections = Section.all

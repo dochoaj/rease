@@ -2,7 +2,7 @@
 <%= link_to 'Agregar nuevo recurso', new_resource_path, :class=>"btn btn-lg btnAdmin" %><br>
 
 <ul class="nav nav-tabs tabRease nav-justified">
-	<li id="res1" onclick="res1()"><a>Actas de reuniones</a></li>
+	<li id="res1" onclick="res1()"><a>Actas reuniones</a></li>
 	<li id="res2" onclick="res2()"><a>Plantillas</a></li>
 	<li id="res3" onclick="res3()"><a>Formación AS</a></li>
 	<li id="res4" onclick="res4()"><a>Enlaces útiles</a></li>
@@ -17,13 +17,13 @@
 			<%if @actas.present?%>
 				<% @actas.each do |resource| %>
 					<p>	<%=resource.name%>: <%=l resource.date%> - 
-					<%= link_to 'Ver recurso', resource.archive.url %> -
+					<%= link_to 'Ver recurso', resource.archive.url, :target => "_blank" %> -
 					<%= link_to 'Detalle', resource %> -
 					<%= link_to 'eliminar recurso', resource, method: :delete, data: { confirm: '¿Seguro que desea eliminar esta acta?' } %>
 					</p>
 				<%end%>
 			<%else%>
-				No hay actas de reuniones disponibles
+				<p>No hay actas de reuniones disponibles</p>
 			<%end%>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 			<%if @plantillas.present?%>
 				<% @plantillas.each do |resource| %>
 					<p>	<%=resource.name%>: <%=l resource.date%> - 
-					<%= link_to 'Ver recurso', resource.archive.url %> -
+					<%= link_to 'Ver recurso', resource.archive.url,:target => "_blank" %> -
 					<%= link_to 'Detalle', resource %> -
 					<%= link_to 'eliminar recurso', resource, method: :delete, data: { confirm: '¿Seguro que desea eliminar esta acta?' } %>
 					</p>
@@ -57,7 +57,7 @@
 			<%if @formacion.present?%>
 				<% @formacion.each do |resource| %>
 					<p>	<%=resource.name%>: <%=l resource.date%> - 
-					<%= link_to 'Ver recurso', resource.archive.url %> -
+					<%= link_to 'Ver recurso', resource.archive.url,:target => "_blank" %> -
 					<%= link_to 'Detalle', resource %> -
 					<%= link_to 'eliminar recurso', resource, method: :delete, data: { confirm: '¿Seguro que desea eliminar esta acta?' } %>
 					</p>
@@ -77,7 +77,7 @@
 			<%if @enlaces.present?%>
 				<% @enlaces.each do |resource| %>
 					<p>	<%=resource.name%>: <%=l resource.date%> - 
-					<%= link_to 'Ver recurso', resource.archive.url %> -
+					<%= link_to 'Ver recurso', resource.archive.url,:target => "_blank" %> -
 					<%= link_to 'Detalle', resource %> -
 					<%= link_to 'eliminar recurso', resource, method: :delete, data: { confirm: '¿Seguro que desea eliminar esta acta?' } %>
 					</p>
@@ -97,7 +97,7 @@
 			<%if @otros.present?%>
 				<% @otros.each do |resource| %>
 					<p>	<%=resource.name%>: <%=l resource.date%> - 
-					<%= link_to 'Ver recurso', resource.archive.url %> -
+					<%= link_to 'Ver recurso', resource.archive.url,:target => "_blank" %> -
 					<%= link_to 'Detalle', resource %> -
 					<%= link_to 'eliminar recurso', resource, method: :delete, data: { confirm: '¿Seguro que desea eliminar esta acta?' } %>
 					</p>

@@ -45,7 +45,7 @@ class PresentationController < ApplicationController
 	end
 
 	def aprendizaje
-		add_breadcrumb "¿Qué es A+S?", :presentation_aprendizaje_path
+		add_breadcrumb "¿Qué es AS?", :presentation_aprendizaje_path
 		@sections = Section.order("priority ASC").where("module = ?","Aprendizaje Servicio")
 	end
 

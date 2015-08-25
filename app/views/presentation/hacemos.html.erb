@@ -39,7 +39,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 		<%if @resources.present?%>
 			<% @resources.each do |resource| %>
 				<p><%=resource.name%>: <%=resource.date%> - 
-				<%= link_to 'Ver acta', resource.archive.url %> 
+				<%= link_to 'Ver acta', resource.archive.url, :target => "_blank" %> 
 				</p>
 			<%end%>
 		<%else%>

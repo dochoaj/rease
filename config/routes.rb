@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 	post 'offerings/searchOffering'
 	post 'experiences/searchExperience'
 	post 'resources/searchResource'
+	post 'events/searchEvent'
 
 	
 	resources :sections
@@ -54,7 +55,7 @@ Rails.application.routes.draw do
 
 	devise_for :users, :controllers => { :registrations => "users/registrations", :omniauth_callbacks => 'users/omniauth_callbacks'}
 	match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-	resources :users, only: [:index, :show, :edit, :update]
+	resources :users
 
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".

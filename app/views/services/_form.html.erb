@@ -16,40 +16,46 @@
 			<%if accion == "Aceptar" || accion == "Editar" %>
 				<%= f.hidden_field :status, :value=>2%>
 
-				<div class="field">
-				<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' ,:required=>true%>
-				</div>
+				<div class="field"><p>
+					<%= f.label :title, "Título: "%>
+					<%= f.text_field :title, :class => 'form-control', :placeholder => 'Titulo' ,:required=>true%>
+				</p></div>
 
-				<div class="field">
-				<%= f.text_area :resume, :class => 'form-control', :placeholder => 'Resumen de la servicio' ,:required=>true%>
-				</div>
+				<div class="field"><p>
+					<%= f.label :resume, "Resumen: "%>
+					<%= f.text_area :resume, :class => 'form-control', :placeholder => 'Resumen de la servicio' ,:required=>true%>
+				</p></div>
 
-				<div class="field">
-				<%= f.select(:institution_id, Institution.order("name ASC").all.collect {|inst| [inst.name, inst.id]},{:include_blank => " -- Institución asociada -- "},{ :class => 'form-control',:required=>true}) -%>
-				</div>
+				<div class="field"><p>
+					<%= f.label :institution_id, "Institución adherida: "%>		
+					<%= f.select(:institution_id, Institution.order("name ASC").all.collect {|inst| [inst.name, inst.id]},{:include_blank => " -- Institución asociada -- ", :selected => @publication.institution_id },{ :class => 'form-control',:required=>true}) -%>
+				</p></div>
 
 				<p class="note">Sí no se encuentra su área de trabajo comuníquese con un administrador</p>
-				<div class="field">
-				<%= f.select(:area_id, Area.order("discipline ASC").order("name ASC").all.collect {|area| [area.discipline+": "+area.name, area.id]},{:include_blank => " -- Área de trabajo -- "},{ :class => 'form-control',:required=>true}) -%>
+				<div class="field"><p>
+					<%= f.label :area_id, "Área de trabajo: "%>	
+					<%= f.select(:area_id, Area.order("discipline ASC").order("name ASC").all.collect {|area| [area.discipline+": "+area.name, area.id]},{:include_blank => " -- Área de trabajo -- "},{ :class => 'form-control',:required=>true}) -%>
+				</p></div>
+
+				<div class="field"><p>
+					<%= f.label :description, "Descripción: "%>	
+					<%= f.text_area :description, :placeholder=> "Descripción del servicio", :id=>"eg-basic",:required=>true %>
 				</div>
 
-				<div class="field">
-				<%= f.text_area :description, :placeholder=> "Descripción", :id=>"eg-basic",:required=>true %>
-				</div>
-
-				<div class="field"> <br>
-				<%= f.text_area :objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>
-				</div>
+				<div class="field"><p>
+					<%= f.label :objectives, "Objetivos: "%>	
+					<%= f.text_area :objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>
+				</p></div>
 
 				<div class="field">
-				<p><%= f.label :start_time, "Fecha de inicio" %>
-				<%= f.date_select :start_time %></p>
-				</div>
+					<p><%= f.label :start_time, "Fecha de inicio" %>
+					<%= f.date_select :start_time %></p>
+				</p></div>
 
 				<div class="field">
-				<p><%= f.label :end_time, "Fecha de término" %>
-				<%= f.date_select :end_time %></p>
-				</div>
+					<p><%= f.label :end_time, "Fecha de término" %>
+					<%= f.date_select :end_time %></p>
+				</p></div>
 				
 				<% if @service.acceptor.blank? %>
 					<%= f.hidden_field :acceptor_id, :value => current_user.id%>
@@ -57,9 +63,10 @@
 				
 
 			<%elsif accion == "Solicitar"%>
-				<div class="field">
+				<div class="field"><p>
+					<%= f.label :message, "Mensaje: "%>	
 					<%= f.text_field :message, :class => 'form-control', :placeholder => 'Deje algún mensaje', required: true%>
-				</div>
+				</p></div>
 			<%end%>
 			<div class="actions">
 				<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>

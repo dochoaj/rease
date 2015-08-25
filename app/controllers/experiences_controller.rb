@@ -86,13 +86,14 @@ class ExperiencesController < ApplicationController
 
 	def searchExperience
 		add_breadcrumb "Búsqueda"
-	    if params[:search]
-	      @offerings = Offering.where("status = ?", 3).search(params[:search])
-	      @requests = Request.where("status = ?", 3).search(params[:search])
-	    else
-			@offerings = Offering.where("status = ?", 3)
-			@requests = Request.where("status = ?", 3)
-	    end
+		@experiences = Experience.order("created_at DESC").all
+		if params[:search]
+			@experiences = Experience.search(params[:search]).order("created_at DESC")
+			@services = Service.where(status: 2).search(params[:search]).order("updated_at DESC")
+		else
+			@experiences = Experience.order("created_at DESC").all
+			@service = Service.where(status: 2).order("created DESC")
+		end
 	end
 	
 	private
