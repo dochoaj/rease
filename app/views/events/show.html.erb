@@ -1,4 +1,4 @@
-<h1>Detalles de <%= @event.title %></h1>	
+<h1>Detalles del evento</h1>
 <div class="panel panel-default panelRease" >
 	<div class="panel-heading">
 		<%= @event.title %>
@@ -16,15 +16,12 @@
 			Disponible
 		<%end%>
 		<% if @event.status == 2%>
-			En proceso
-		<%end%>
-		<% if @event.status == 3%>
 			Realizado
 		<%end%>
-		<% if @event.status == 4%>
+		<% if @event.status == 3%>
 			Cancelado
 		<%end%>
-		<% if @event.status == 5%>
+		<% if @event.status == 4%>
 			Caducado
 		<%end%>
 		</p>
@@ -42,11 +39,11 @@
 		<h2>Comentarios</h2>
 		<div class="comment">
 			<%if user_signed_in? %>
-				<%=render 'comments/form'%>
+				<%=render 'comments/formEvent'%>
 			<%end%>
 			<% @event.comments.order('created_at DESC').each do |comment|%>
 			<p>	
-				<%if !@event.user.photo.blank?%>
+				<%if !comment.user.photo.blank?%>
 					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
 				<%end %>
 				<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>

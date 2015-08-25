@@ -9,10 +9,12 @@
 				<p><% @users.each  do |user|%>
 					<%if user.photo.present?%>
 						<%=link_to image_tag(user.photo.url(:mini),:class=>'RoundPicture'),user%>
+					<%else%>
+						<%=link_to image_tag("mini/miniphoto.png",:class=>'RoundPicture'),user%>
 					<%end%>
 				<%end%></p>
 			<%else%>
-				<%if User.last.photo.present?%>
+				<%if User.last.photo.present? %>
 					<%=link_to image_tag(User.last.photo.url(:mini),:class=>'RoundPicture'),User.last%>
 				<%else%>
 					<p>Las últimas semanas no se han registrado usuarios</p>
@@ -26,8 +28,8 @@
 			Última acta de REASE
 		</div>
 		<div class="panel-body">
-			<%if @minute.present?%>
-				<p><%=l @minute.date%>: <%= @minute.name%> - <%=	link_to "Ver", @minute.archive.url %> </p>
+			<%if @acta.present?%>
+				<p><%=l @acta.date%>: <%= @acta.name.truncate(20)%> - <%=	link_to "Ver", @acta.archive.url %> </p>
 			<%else%>
 				<p>No hay actas disponibles</p>
 			<%end%>			
@@ -48,3 +50,5 @@
 		</div>
 	</div>
 <%end%>
+
+<%= will_paginate @sections %>

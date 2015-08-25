@@ -36,10 +36,14 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 		Listado de actas
 	</div>
 	<div class="panel-body">
-		<% @minutes.each do |minute| %>
-			<p><%=minute.name%>: <%=minute.date%> - 
-			<%= link_to 'Ver acta', minute.archive.url %> 
-			</p>
+		<%if @resources.present?%>
+			<% @resources.each do |resource| %>
+				<p><%=resource.name%>: <%=resource.date%> - 
+				<%= link_to 'Ver acta', resource.archive.url, :target => "_blank" %> 
+				</p>
+			<%end%>
+		<%else%>
+			<p>Aún no hay actas disponibles.</p>
 		<%end%>
 	</div>
 </div>

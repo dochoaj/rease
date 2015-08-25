@@ -2,8 +2,12 @@ class Request < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :community
 	belongs_to :area
+	belongs_to :institution
 
-	has_many :comment_requests
+	has_many :comments, as: :post
+
+	has_many :experiences, as: :servicio
+	has_many :services, as: :publication
 
 	#validaciones
 	validates :title, presence: true, uniqueness: true #no pueden haber dos titulos iguales

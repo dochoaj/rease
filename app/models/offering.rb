@@ -2,9 +2,13 @@ class Offering < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :community
 	belongs_to :area
-
-	has_many :comment_offerings
-
+	belongs_to :institution
+	
+	has_many :comments, as: :post
+	
+	has_many :experiences, as: :servicio
+	has_many :services, as: :publication
+	
 	#validaciones
 	validates :title, presence: true, uniqueness: true #no pueden haber dos titulos iguales
 	validates :description, presence: true, length: {minimum: 20, maximum: 10000} #validar maximos y minimos de caracteres

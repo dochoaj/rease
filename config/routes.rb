@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
 	get 'users/listarUsuarios'
 	get 'presentation/index'
 	get 'presentation/contacto'
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatutos'
-	post 'presentation/searchPage'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'
@@ -19,34 +19,44 @@ Rails.application.routes.draw do
 	get 'sections/newEstatutos'
 	get 'sections/newAprendizaje'
 	get 'sections/newNovedades'
+	get 'resources/muestra'
+	post 'presentation/searchPage'
 	post 'requests/searchRequest'
 	post 'offerings/searchOffering'
 	post 'experiences/searchExperience'
-	resources :experiences, only:[:index]
+	post 'resources/searchResource'
+	post 'events/searchEvent'
 
+	
 	resources :sections
 	resources :events do
 		resources :comments
 	end
 	resources :offerings do
-		resources :comment_offerings
+		resources :comments
+		resources :services
 	end
 	resources :requests do
-		resources :comment_requests
+		resources :comments
+		resources :services 
 	end
+	resources :services, only: [:index,:show]
+	resources :services do
+		resources :experiences
+		resources :comments
+	end
+	resources :experiences
 	resources :institutions
 	resources :contacts
-	resources :minutes
+	resources :resources
 	resources :interest_links
 	resources :bulletins, except: [:edit]
 	resources :areas
 	
-	
-	###:controllers => { :registrations => "users/registrations" }
-	### preguntar qué realmente significa esto.
 
-	devise_for :users, :controllers => { :registrations => "users/registrations" }
-	resources :users, only: [:index, :show, :edit, :update]
+	devise_for :users, :controllers => { :registrations => "users/registrations", :omniauth_callbacks => 'users/omniauth_callbacks'}
+	match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+	resources :users
 
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".

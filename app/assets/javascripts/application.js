@@ -39,3 +39,4 @@
 //= require plugins/urls.min.js
 //= require plugins/inline_styles.min.js
 //= require plugins/entities.min.js
+//= require langs/es.js

@@ -12,18 +12,12 @@
 		<p><strong>Estado: </strong>
 			<% if @offering.status == 1%>
 				Disponible
-			<%end%>
-			<% if @offering.status == 2%>
-				En proceso
-			<%end%>
-			<% if @offering.status == 3%>
-				Realizado
-			<%end%>
-			<% if @offering.status == 4%>
+			<% elsif @offering.status == 2%>
 				Cancelado
-			<%end%>
-			<% if @offering.status == 5%>
+			<% elsif @offering.status == 3%>
 				Caducado
+			<% elsif @offering.status == 4%>
+				Aceptado
 			<%end%>
 		</p>
 
@@ -33,6 +27,12 @@
 		<%if @offering.area_id.present?%>
 			<p><strong>Área de trabajo: </strong> <%= @offering.area.name%></p>
 		<%end%>
+		<%if @offering.institution_id.present?%>
+			<p><strong>Institución: </strong> <%= @offering.institution.name%></p>
+		<%end%>
+		<%if @offering.location.present?%>
+			<p><strong>Ubicación de desarrollo: </strong> <%= @offering.location%></p>
+		<%end%>
 
 		<p><strong>Creado por:</strong>
 		<%= link_to @offering.user.nickname, user_path(@offering.user.id) %>
@@ -40,22 +40,51 @@
 			<%= image_tag @offering.user.photo.url(:mini), :class =>"RoundPicture" %>
 		<%end %>
 		<p>
+
+		<h2>Peticiones de Servicio</h2>
+		<% if @aceptados.blank?%>
+			<%if @offering.services.count == 0%>
+				<p>Aún no se han generado peticiones para participar en este servicio</p>
+			<%elsif @offering.services.count == 1%>
+				<p>Se ha generado <strong>1</strong> peticiones de servicio</p>
+				<%= link_to "Ver peticiones", offering_services_path(@offering), :class=>'btn btnCRUD'%>
+			<%else%>
+				<p>Se han generado <strong><%=@offering.services.count%></strong> peticiones de servicio</p>
+				<%= link_to "Ver peticiones", offering_services_path(@offering), :class=>'btn btnCRUD'%>
+		<%end%>
+
+		<%if @offering.user != current_user and current_user.category != 2%>
+			<%if @petition.blank?%>
+				<%= link_to "Solicitar participación", new_offering_service_path(@offering), :class=>'btn btnCRUD'%>
+			<%end%>
+		<%end%>
+			
+		<%else%>
+			<% @aceptados.each do |aceptado|%>
+				<p><%= link_to aceptado.acceptor.nickname, aceptado.acceptor%> ha aceptado a trabajar con <%= link_to aceptado.creator.nickname, aceptado.creator%></p>
+			<%end%>
+		<%end%>
 	</div>
 	<div class="panel-footer">
 		<h2>Comentarios</h2>
-		<%=render 'comment_offerings/form'%>
-
-		<% @offering.comment_offerings.order('created_at DESC').each do |comment|%>
-		<p>	
-			<%if !@offering.user.photo.blank?%>
-				<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
-			<%end %>
-			<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%> - <%=l comment.created_at%>
-			<%if current_user == comment.user or current_user.category == 1 %> - 
-					<%= link_to 'Eliminar', offering_comment_offering_path(@offering,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+		<div class="comment">
+			<%if user_signed_in? %>
+				<%=render 'comments/formOffering'%>
 			<%end%>
-		</p>
-		<%end%>
+			<% @offering.comments.order('created_at DESC').each do |comment|%>
+			<p>	
+				<%if !comment.user.photo.blank?%>
+					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
+				<%end %>
+				<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>
+				<%if user_signed_in? %>
+					<%if current_user == comment.user or current_user.category == 1 %> - 
+						<%= link_to 'Eliminar', offering_comment_path(@offering,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>
+					<%end%>
+				<%end%>
+			</p>
+			<%end%>
+		</div>
 	</div>
 </div>
 

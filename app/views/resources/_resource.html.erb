@@ -1,0 +1,10 @@
+<p><strong>
+<% if resource.category == 1%>
+	Acta de reunion:
+<% elsif resource.category == 2%>
+	Plantilla de recurso:
+<% elsif resource.category == 3%>
+	Formación AS:
+<%else%>
+	Recurso:
+<%end%> </strong> <%=resource.name%> - <%=	link_to "Ver", resource.archive.url %> </p>

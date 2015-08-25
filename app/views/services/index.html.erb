@@ -1,0 +1,44 @@
+<h1>Peticiones partipacion del servicio <%=@services.first.title%></h1>
+<%if @pendientes.present?%>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Pendientes
+		</div>
+		<div class="panel-body">
+			<% @pendientes.each do |servicio| %>
+				<p>
+				<%if servicio.creator.present?%>
+					<%=image_tag servicio.creator.photo.url(:mini)%>
+				<%end%>
+				<%= link_to servicio.creator.nickname, servicio.creator%>:   <%= servicio.message%> - 
+
+				<%if servicio.publication_type == "Offering"%>
+					<%=link_to "Ver detalles", offering_service_path(@publication,servicio)%></p>
+				<%else%>
+					<%=link_to "Ver detalles", request_service_path(@publication,servicio)%></p>
+				<%end%>
+			<% end %>	
+		</div>
+	</div>
+<%end%>
+
+<%if @rechazados.present?%>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Rechazadas
+		</div>
+		<div class="panel-body">
+			<% @rechazados.each do |servicio| %>
+				<p><%=image_tag servicio.creator.photo.url(:mini)%> <%= link_to servicio.creator.nickname, servicio.creator%>:   <%= servicio.message%> - 
+
+				<%if servicio.publication_type == "Offering"%>
+					<%=link_to "Ver detalles", offering_service_path(@publication,servicio)%></p>
+				<%else%>
+					<%=link_to "Ver detalles", request_service_path(@publication,servicio)%></p>
+				<%end%>
+			<% end %>
+		</div>
+	</div>
+<%end%>
+
+<%= link_to "Volver a la oferta", @publication, :class => 'btn btn-lg btnCRUD' %>
