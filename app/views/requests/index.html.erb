@@ -132,11 +132,16 @@
 		document.getElementById("req2").className = "";
 		document.getElementById("req3").className = "active";
 	}
+	var content = '<p>Una <strong>solicitud de servicio</strong> es el proceso previo para concretar una actividad AS, esta es publicada por un socio comunitario y pretenden encontrar un profesor con quien realizar dicha actividad.</p><p>A continuación se presenta el proceso completo de una actividad AS</p></p><div id = \"image"> <%= image_tag("Services.png",:class=>"popoverImage") %></div>';
 	$(function () {
 		$('[data-toggle="btnSolicitud"]').popover(
 			{
 				html: 'true', 
-				content: '<p>Una <strong>solicitud de servicio</strong> es el proceso previo para concretar una actividad AS, esta es publicada por un socio comunitario y pretenden encontrar un profesor con quien realizar dicha actividad.</p>'
+				content: content,
+				title: 'Solicitud de servicio',
+				placement: "bottom", 
+				template: '<div class="popover popover-rease"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+
 			}
 		)
 	})

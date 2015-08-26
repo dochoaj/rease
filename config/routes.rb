@@ -6,17 +6,17 @@ Rails.application.routes.draw do
 	get 'presentation/somos'
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
-	get 'presentation/estatutos'
+	get 'presentation/estatuto'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'
 	get 'sections/aprendizaje'
-	get 'sections/estatutos'
+	get 'sections/estatuto'
 	get 'sections/novedades'
 	get 'sections/linkInteres'
 	get 'sections/newHacemos'
 	get 'sections/newSomos'
-	get 'sections/newEstatutos'
+	get 'sections/newEstatuto'
 	get 'sections/newAprendizaje'
 	get 'sections/newNovedades'
 	get 'resources/muestra'
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 	post 'experiences/searchExperience'
 	post 'resources/searchResource'
 	post 'events/searchEvent'
+	post 'services/searchService'
 
 	
 	resources :sections

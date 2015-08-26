@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 				format.html { redirect_to post_url(post), notice: 'Ha agregado un comentario' }
 				format.json { render :show, status: :created, location: @comment }
 			else
-				format.html { render :new }
+				format.html { redirect_to post_url(post), alert: 'Recuerde que el comentario debe tener entre 10 y 150 caracteres.' }
 				format.json { render json: @comment.errors, status: :unprocessable_entity }
 			end
 		end

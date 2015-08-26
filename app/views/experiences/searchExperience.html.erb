@@ -1,9 +1,9 @@
-<h1>Búsqueda de ofertas de servicio</h1>
+<h1>Búsqueda de Experiencias</h1>
 
 <div class="buscador">
 	<%= form_tag(experiences_searchExperience_path, :method => "post",:class=>"form-inline") do %>
 	<div class="input-group">
-		<%= text_field_tag :search, params[:search], placeholder: "Buscar experiencias y servicios",:class => 'form-control',:required=>true %>
+		<%= text_field_tag :search, params[:search], placeholder: "Buscar experiencias",:class => 'form-control',:required=>true %>
 		<span class="input-group-btn">
 			<%= button_tag(type: "submit", class: "btn btn-default ") do %>
 				<i class="glyphicon glyphicon-search"></i>
@@ -13,20 +13,19 @@
 	<%end%>
 </div>
 
-<% if @experiences.present? || @services.present? %>
+<% if @experiences.present? %>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
-		Experiencias y servicios: <%= params[:search] %>
+		Experiencias: <%= params[:search] %>
 	</div>
 	<div class="panel-body">
 		<%= render @experiences %>
-		<%= render @services %>
 	</div>
 </div>
 <%else%>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
-		Experiencias y servicios: <%= params[:search] %>
+		Experiencias y : <%= params[:search] %>
 	</div>
 	<div class="panel-body">
 		<p>No se encontraron resultados en la búsqueda de <strong><%= params[:search] %></strong></p>

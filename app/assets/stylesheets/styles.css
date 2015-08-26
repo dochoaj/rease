@@ -148,8 +148,8 @@ p
 {
 	display: inline-block;
 }
-/*estilo de los indices de lso estatutos*/
-.estatutos
+/*estilo de los indices de lso estatuto*/
+.estatuto
 {
 	color: #30aaaa;
 	font-style: inherit;
@@ -159,7 +159,7 @@ p
 	display: block;
 }
 
-.estatutos:hover
+.estatuto:hover
 {
 	color: #30aaaa;
 	font-weight: bold;
@@ -200,6 +200,15 @@ p
 	max-height: 30px;
 	max-width: 30px;
 	display: inline-block;
+}
+.popoverImage
+{
+	width: 650px;
+}
+.popover-rease
+{
+	max-width: 700px;
+	margin-left: 200px;
 }
 .RoundPicture
 {

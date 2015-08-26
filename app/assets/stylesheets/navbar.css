@@ -6,12 +6,12 @@
 	color: white;
 	padding-left: 5px;
 	padding-right: 5px;
-	min-width: 120px;
+	min-width: 115px;
 
 }
-.navbar-default .navbar-nav>li>.destroySession
+.navbar-default .navbar-nav>li>.rightNav
 {
-	min-width: 40px;
+	min-width: 30px;
 	font-size: 15px;
 }
 .navbar-default .navbar-nav>li>a:hover
@@ -124,7 +124,7 @@ p.navbar-text.navbar-right
 {
 	color: #30aaaa;
 }
-.destroySession
+.rightNav
 {
 	max-width: 100px;
 	text-align: left;

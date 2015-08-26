@@ -1,4 +1,4 @@
-<h1>Ofertas de servicio <button type="button" class="btn btn-default btnWhite" id:"btnOferta" data-trigger="focus" data-container="body" data-toggle="btnOferta"> ? </button></h1>
+<h1>Ofertas de servicio <button type="button" class="btn btn-default btnWhite" id:"btnOferta" data-placement="bottom" data-trigger="focus" data-container="body" data-toggle="btnOferta"> ? </button></h1>
 
 <% if current_user.category == 2 %>
 	<%= link_to "Nueva oferta de servicio", new_offering_path, :class => 'btn btn-lg' %>
@@ -132,12 +132,17 @@
 		document.getElementById("off2").className = "";
 		document.getElementById("off3").className = "active";
 	}
+	var content = '<p>Una <strong>oferta de servicio</strong> es el proceso previo para concretar una actividad AS, esta es publicada por un profesor y pretenden encontrar un socio comunitario con quien realizar dicha actividad. <p>A continuación se presenta el proceso completo de una actividad AS</p></p><div id = \"image"> <%= image_tag("Services.png",:class=>"popoverImage") %></div>';
 	$(function () {
 		$('[data-toggle="btnOferta"]').popover(
 			{
 				html: 'true', 
-				content: '<p>Una <strong>oferta de servicio</strong> es el proceso previo para concretar una actividad AS, esta es publicada por un profesor y pretenden encontrar un socio comunitario con quien realizar dicha actividad.</p>'
+				content: content,
+				title: 'Oferta de servicio',
+				template: '<div class="popover popover-rease"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+
 			}
 		)
 	})
 </script>
+

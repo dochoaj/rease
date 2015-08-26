@@ -1,15 +1,16 @@
 class ServicesController < ApplicationController
 	before_action :set_service, only: [:update, :destroy]
-	before_action :set_status, only: [:index, :update, :create]
+	before_action :set_status, only: [:update, :create]
 	before_action :validate_category_new, only: [:new]
 	before_action :validate_professor , only: [:edit,:destroy]
 	before_action :validate_owner, only: [:new]
 
 
 	add_breadcrumb "Inicio", :root_path
-	add_breadcrumb "Servicio", :experiences_path
+	add_breadcrumb "Servicio", :services_path
 
 	def index
+		@activos = Service.where(status: 2).order("updated_at DESC")
 	end
 
 	def show
@@ -80,6 +81,16 @@ class ServicesController < ApplicationController
 			respond_to do |format|
 			format.html { redirect_to services_url, notice: 'El servicio se ha eliminado correctamente.' }
 			format.json { head :no_content }
+		end
+	end
+
+	def searchService
+		add_breadcrumb "Búsqueda"
+		@service = Service.where(status: 2).order("created DESC")
+		if params[:search]
+			@services = Service.where(status: 2).search(params[:search]).order("updated_at DESC")
+		else
+			@service = Service.where(status: 2).order("created DESC")
 		end
 	end
 

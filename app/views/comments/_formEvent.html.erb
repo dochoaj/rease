@@ -12,7 +12,7 @@
 	<% end %>
 
 	<div class="field">
-		<%= f.text_area :body, :class => 'form-control',:placeholder=>'Escriba acá su comentario respecto a este evento...', :id=>"eg-custom-toolbar", :required=>true %>
+		<%= f.text_area :body, :class => 'form-control',:placeholder=>'Escriba acá su comentario respecto a este evento...(entre 10 y 150 caracteres)', :id=>"eg-custom-toolbar", :required=>true %>
 	</div>
 	<div class="actions">
 		<%= f.submit "Enviar comentario", :class => 'btn btn-default btnCRUD ' %>
@@ -25,7 +25,7 @@
 			inlineMode: false,
 			language: 'es',
 			// Set custom buttons with separator between them.
-			buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline','color', 'formatBlock', 'blockStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'createLink' ] 
+			buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline','color', 'blockStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'createLink' ] 
 		})
 	});
 </script>

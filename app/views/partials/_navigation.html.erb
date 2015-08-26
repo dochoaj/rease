@@ -25,8 +25,8 @@
 					<%= link_to '¿Quiénes somos? <i class="glyphicon glyphicon-pushpin"></i>'.html_safe, presentation_somos_path %>
 				</li>
 
-				<li role="presentation" class="<%= 'active' if current_page?(presentation_estatutos_path) %>">
-					<%= link_to 'Estatuto <i class="glyphicon glyphicon-book"></i>'.html_safe, presentation_estatutos_path %>
+				<li role="presentation" class="<%= 'active' if current_page?(presentation_estatuto_path) %>">
+					<%= link_to 'Estatuto <i class="glyphicon glyphicon-book"></i>'.html_safe, presentation_estatuto_path %>
 				</li>
 
 				<li role="presentation" class="<%= 'active' if current_page?(contacts_path) %>">
@@ -47,8 +47,8 @@
 			</ul>
 				<%else%>
 
-				<li role="presentation" class="<%= 'active' if current_page?(presentation_estatutos_path) %>">
-					<%= link_to 'Estatuto <i class="glyphicon glyphicon-book"></i>'.html_safe, presentation_estatutos_path %>
+				<li role="presentation" class="<%= 'active' if current_page?(presentation_estatuto_path) %>">
+					<%= link_to 'Estatuto <i class="glyphicon glyphicon-book"></i>'.html_safe, presentation_estatuto_path %>
 				</li>
 
 				<li role="presentation" class="<%= 'active' if current_page?(requests_path) %>">
@@ -59,6 +59,10 @@
 					<%= link_to 'Ofertas <i class="glyphicon glyphicon-log-out"></i>'.html_safe, offerings_path %>
 				</li>
 
+				<li role="presentation" class="<%= 'active' if current_page?(services_path) %>">
+					<%= link_to 'Servicios <i class="glyphicon glyphicon-new-window"></i>'.html_safe, services_path %>
+				</li>
+
 				<li role="presentation" class="<%= 'active' if current_page?(experiences_path) %>">
 					<%= link_to 'Experiencias <i class="glyphicon glyphicon-education"></i>'.html_safe, experiences_path %>
 				</li>
@@ -66,11 +70,6 @@
 				<li role="presentation" class="<%= 'active' if current_page?(events_path) %>">
 					<%= link_to 'Eventos <i class="glyphicon glyphicon-calendar"></i>'.html_safe, events_path %>
 				</li>
-				<%if current_user.category == 1%>
-					<li role="presentation" class="<%= 'active' if current_page?(sections_path) %>">
-					 <%= link_to 'Administrar <i class="glyphicon glyphicon-cog"></i>'.html_safe, sections_path %>
-					</li>
-				<%end%>
 
 				<li role="presentation" class="navCenter">
 					<%= form_tag(presentation_searchPage_path, :method => "post",:class=>"form-inline") do %>
@@ -89,8 +88,13 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
+				<%if current_user.category == 1%>
+					<li>
+						<%= link_to '<i class="glyphicon glyphicon-cog"></i>'.html_safe, sections_path, :class=>"rightNav"%>
+					</li>
+				<%end%>	
 				<li>
-					<%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete, :class=>"destroySession"%>
+					<%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete, :class=>"rightNav"%>
 				</li>				
 			</ul>
 			

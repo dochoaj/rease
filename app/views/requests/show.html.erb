@@ -74,11 +74,14 @@
 				<%=render 'comments/formRequest'%>
 			<%end%>
 			<% @request.comments.order('created_at DESC').each do |comment|%>
+			<hr>
 			<p>	
-				<%if !comment.user.photo.blank?%>
-					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %>   	
+				<%if comment.user.photo.present?%>
+					<%= image_tag comment.user.photo.url(:mini), :class =>"RoundPicture" %> 
+				<%else%>
+					<%= image_tag ("mini/missingPhoto.png") %> 
 				<%end %>
-				<%= link_to comment.user.nickname, comment.user%>: 	<%=comment.body%>
+				<%= link_to comment.user.nickname, comment.user%> [ <%=comment.created_at.strftime("%d/%m/%Y - %H:%M")%> ]: 	<%=raw comment.body%>
 				<%if user_signed_in? %>
 					<%if current_user == comment.user or current_user.category == 1 %> - 
 						<%= link_to 'Eliminar', request_comment_path(@request,comment), method: :delete, data: { confirm: '¿Está seguro de eliminar el comentario?' }%>

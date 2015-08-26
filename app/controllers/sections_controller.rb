@@ -20,9 +20,9 @@ class SectionsController < ApplicationController
 		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
 		@sections = Section.order("priority ASC").where("module = ?","Hacemos")
 	end
-	def estatutos
-		add_breadcrumb "Estatutos", :sections_estatutos_path
-		@sections = Section.order("created_at ASC").where("module = ?","Estatutos")
+	def estatuto
+		add_breadcrumb "Estatuto", :sections_estatuto_path
+		@sections = Section.order("created_at ASC").where("module = ?","Estatuto")
 	end
 	def aprendizaje
 		add_breadcrumb "Aprendizaje Servicio", :sections_aprendizaje_path
@@ -41,8 +41,8 @@ class SectionsController < ApplicationController
 		add_breadcrumb "¿Qué hacemos?", :sections_hacemos_path
 		add_breadcrumb "Nuevo"
 	end
-	def newEstatutos
-		add_breadcrumb "Estatutos", :sections_estatutos_path
+	def newEstatuto
+		add_breadcrumb "Estatuto", :sections_estatuto_path
 		add_breadcrumb "Nuevo"
 	end
 	def newAprendizaje

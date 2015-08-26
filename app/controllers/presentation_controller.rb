@@ -1,5 +1,5 @@
 class PresentationController < ApplicationController
-	before_action :set_presentation, except: [:estatutos]
+	before_action :set_presentation, except: [:estatuto]
 	add_breadcrumb "Inicio", :root_path
 	
 	def index
@@ -29,18 +29,18 @@ class PresentationController < ApplicationController
 		@sections = Section.order("priority ASC").where("module = ?","Aprendizaje Servicio")
 	end
 
-	def estatutos
-		add_breadcrumb "Estatutos", :presentation_estatutos_path
+	def estatuto
+		add_breadcrumb "Estatuto", :presentation_estatuto_path
 		@events = Event.all
     	@interest_links = InterestLink.order("name ASC").all
-		@sections = Section.where("module = ?","Estatutos")
+		@sections = Section.where("module = ?","Estatuto")
 	end
 	
 	def searchPage
 		add_breadcrumb "Búsqueda"
 		if user_signed_in? ##SEARCH PARA LA INTRANET
 			@users = User.order("nickname ASC")
-			@sections = Section.where("module = ? or module = ?", "Estatutos", "Novedad")
+			@sections = Section.where("module = ? or module = ?", "Estatuto", "Novedad")
 			@resources = Resource.order("created_at DESC").all
 			@institutions = Institution.order("name DESC").all
 			@interest_links = InterestLink.order("created_at DESC").all
@@ -50,7 +50,7 @@ class PresentationController < ApplicationController
 			@experiences = Experience.order("created_at DESC").all
 			if params[:search]
 				@users = User.search(params[:search]).order("nickname ASC")
-				@sections = Section.search(params[:search]).where("module = ? or module = ?", "Estatutos", "Novedad")
+				@sections = Section.search(params[:search]).where("module = ? or module = ?", "Estatuto", "Novedad")
 				@resources = Resource.search(params[:search]).order("created_at DESC")
 				@institutions = Institution.search(params[:search]).order("name DESC")
 				@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
@@ -60,7 +60,7 @@ class PresentationController < ApplicationController
 				@experiences = Experience.search(params[:search]).order("created_at DESC")			
 			else
 				@users = User.order("nickname ASC")
-				@sections = Section.where("module = ? or module = ?", "Estatutos", "Novedad")
+				@sections = Section.where("module = ? or module = ?", "Estatuto", "Novedad")
 				@resources = Resource.order("created_at DESC").all
 				@institutions = Institution.order("name DESC").all
 				@interest_links = InterestLink.order("created_at DESC").all

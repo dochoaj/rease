@@ -11,7 +11,6 @@ class ExperiencesController < ApplicationController
 
 	def index
 		@experiences =Experience.all
-		@activos = Service.where(status: 2).order("updated_at DESC")
 	end
 
 	def new
@@ -97,13 +96,10 @@ class ExperiencesController < ApplicationController
 	def searchExperience
 		add_breadcrumb "Búsqueda"
 		@experiences = Experience.order("created_at DESC").all
-		@service = Service.where(status: 2).order("created DESC")
 		if params[:search]
 			@experiences = Experience.search(params[:search]).order("created_at DESC")
-			@services = Service.where(status: 2).search(params[:search]).order("updated_at DESC")
 		else
 			@experiences = Experience.order("created_at DESC").all
-			@service = Service.where(status: 2).order("created DESC")
 		end
 	end
 	

@@ -91,7 +91,7 @@ institution_list = [
 	["#{Rails.root}/app/assets/images/institution/ucentral.png", "Universidad Central", "http://www.ucentral.cl/"],
 	["#{Rails.root}/app/assets/images/institution/uchile.png", "Universidad de Chile", "http://www.uchile.cl/"],
 	["#{Rails.root}/app/assets/images/institution/uconce.gif", "Universidad de Concepción", "http://www.udec.cl/pexterno/"],
-	["#{Rails.root}/app/assets/images/institution/ufro.png", "Universidad de la Frotera", "http://www.ufro.cl/"],
+	["#{Rails.root}/app/assets/images/institution/ufro.png", "Universidad de la Frontera", "http://www.ufro.cl/"],
 	["#{Rails.root}/app/assets/images/institution/usach.png", "Universidad de Santiago de Chile", "http://rsu.usach.cl/"]
 ]
 

@@ -3,7 +3,7 @@
 <div class="buscador">
 	<%= form_tag(experiences_searchExperience_path, :method => "post",:class=>"form-inline") do %>
 	<div class="input-group">
-		<%= text_field_tag :search, params[:search], placeholder: "Buscar experiencias y servicios",:class => 'form-control',:required=>true %>
+		<%= text_field_tag :search, params[:search], placeholder: "Buscar experiencias",:class => 'form-control',:required=>true %>
 		<span class="input-group-btn">
 			<%= button_tag(type: "submit", class: "btn btn-default ") do %>
 				<i class="glyphicon glyphicon-search"></i>
@@ -12,85 +12,40 @@
 	</div>
 	<%end%>
 </div>
-<ul class="nav nav-tabs tabRease nav-justified">
-<li id="exp1" onclick="exp1()"><a>Servicios Activos</a></li>
-<li id="exp2" onclick="exp2()"><a>Experiencias</a></li>
-</ul>
-<div id="FServicios">
-	<%if @activos.present?%>
-		<% @activos.each do |activo| %>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					<%=activo.title%>
-				</div>
-				<div class="panel-body">
-					<h2>Resumen:</h2>
-					<p><%=activo.resume%></p>
-					<%= link_to "Ver servicio",activo, :class =>'btn btnCRUD'%>
-				</div>
+	
+<%if @experiences.present?%>
+	<% @experiences.order('created_at DESC').each do |experience| %>
+		<div class="panel panel-default panelRease">
+			<div class="panel-heading">
+				Folio N° <%= experience.id %>
 			</div>
-		<%end%>
-	<%else%>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					Servicios Activos
-				</div>
-				<div class="panel-body">
-					<p>No hay servicios activo disponibles</p>
-				</div>
+			<div class="panel-body">
+				<h2>Objetivos de servicio:</h2>
+				<p><%=experience.service_objectives%></p>
+				<%= link_to "Ver experiencia", experience, :class =>'btn btnCRUD'%>
+				<%= link_to "Ver servicio relacionado", experience.service, :class => 'btn btnCRUD'%>
 			</div>
-	<%end%>      
-</div>
+		</div>
+	<%end%>
+<%else%>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Experiencias
+		</div>
+		<div class="panel-body">
+			<p>No hay experiencias disponibles</p>
+		</div>
+	</div>
+<%end%>      
 
-<div id="FExperiences">
-	<%if @experiences.present?%>
-		<% @experiences.order('created_at DESC').each do |experience| %>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					Folio N° <%= experience.id %>
-				</div>
-				<div class="panel-body">
-					<h2>Objetivos de servicio:</h2>
-					<p><%=experience.service_objectives%></p>
-					<%= link_to "Ver experiencia", experience, :class =>'btn btnCRUD'%>
-					<%= link_to "Ver servicio relacionado", experience.service, :class => 'btn btnCRUD'%>
-				</div>
-			</div>
-		<%end%>
-	<%else%>
-			<div class="panel panel-default panelRease">
-				<div class="panel-heading">
-					Experiencias
-				</div>
-				<div class="panel-body">
-					<p>No hay experiencias disponibles</p>
-				</div>
-			</div>
-	<%end%>      
-</div>
 
 <script type="text/javascript">
-	document.getElementById('FServicios').style.display='block';	
-	document.getElementById('FExperiences').style.display='none';	
-	document.getElementById("exp1").className = "active";	
-
-	function exp1(){
-		document.getElementById('FServicios').style.display='block';	
-		document.getElementById('FExperiences').style.display='none';	
-		document.getElementById("exp1").className = "active";	
-		document.getElementById("exp2").className = "";
-	}
-	function exp2(){
-		document.getElementById('FServicios').style.display='none';	
-		document.getElementById('FExperiences').style.display='block';		
-		document.getElementById("exp1").className = "";
-		document.getElementById("exp2").className = "active";
-	}
 	$(function () {
 		$('[data-toggle="btnExperiencia"]').popover(
 			{
+				title: 'Experiencias',
 				html: 'true', 
-				content: '<p><strong>Servicio activo:</strong> Son solicitudes u ofertas de servicio que ya han sido concretadas y tienen un profesor y un socio comunitario comprometidos en la realización de dicha actividad AS.</strong></p><p><strong>Experiencias:</strong> Son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p>'
+				content: '<p>Las <strong>Experiencias:</strong> Son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p>'
 			}
 		)
 	})
