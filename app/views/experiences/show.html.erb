@@ -5,12 +5,12 @@
 	</div>
 	<div class="panel-body">
 		<div>
-			<h3><strong><%=@experience.title%></strong></h3>
-			<h3><strong>Folio N°:</strong> <%=@experience.id%> </h3>
-			<h3><strong>Fecha creación: </strong> <%=l @experience.created_at%></h3>
+			<h2><strong><%=@experience.title%></strong></h2>
+			<h2><strong>Folio N°:</strong> <%=@experience.id%> </h2>
+			<h2><strong>Fecha creación: </strong> <%=l @experience.created_at%></h2>
 		</div>
 
-		<h2>I. Antecedentes generales</h2>
+		<h3>I. Antecedentes generales</h3>
 		<div  class="experiencia">
 			<p><strong>Título del servicio relacionado: </strong><%= link_to @experience.service.title,@experience.service %> </p>
 			<p><strong>Area: </strong><%=@experience.area.name%></p>
@@ -48,7 +48,7 @@
 			<p><strong>Nombre del socio comunitario responsable: </strong> <%=link_to @experience.partner.name, @experience.partner%></p>
 		</div>
 
-		<h2>II. Antecedentes de la actividad de Aprendizaje Servicio </h2>
+		<h3>II. Antecedentes de la actividad de Aprendizaje Servicio </h3>
 		<div class="experiencia">
 			<p><strong>Objetivos de aprendizaje y/o Competencias asociadas</strong></p>
 				<p><%=@experience.learning_objectives%></p><br>
@@ -83,11 +83,12 @@
 			<p><strong>Instancias de reflexión: </strong></p>
 				<p><%=@experience.reflection_moments%></p>
 		</div>
-	</div>
-</div>
-
 <%= link_to 'Servicio relacionado', @experience.service, :class => "btn btn-lg btnCRUD" %>
 <%if @experience.professor == current_user%>
 	<%= link_to 'Editar', edit_service_experience_path(@experience.service,@experience), :class => "btn btn-lg btnCRUD" %>
 <%end%>
+<%= link_to "Descargar como PDF", experience_path(@experience, format: "pdf"), :class=> "btn btn-lg btnCRUD", :target=>'_blank'%>
 <%= link_to 'Volver', experiences_path, :class => "btn btn-lg btnCRUD" %>
+	</div>
+</div>
+

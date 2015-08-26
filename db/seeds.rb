@@ -77,6 +77,7 @@ area_list.each do |discipline, name, description|
   Area.create(discipline: discipline, name: name, description: description )
 end
 
+Institution.destroy_all
 institution_list = [
 	["#{Rails.root}/app/assets/images/institution/hdc.png", "Hogar de Cristo", "http://www.hogardecristo.cl/"],
 	["#{Rails.root}/app/assets/images/institution/maristas.png", "Maristas Chile", "http://www.maristas.cl/"],

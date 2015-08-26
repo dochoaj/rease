@@ -31,6 +31,16 @@ class ExperiencesController < ApplicationController
 	def show
 		@experience = Experience.find(params[:id])
 		add_breadcrumb "Mostrando "+@experience.title
+		respond_to do |format|
+			format.html
+			format.pdf  do
+				pdf = ExperiencePdf.new(@experience)
+				send_data pdf.render, :filename => "Experiencia_#{@experience.id}.pdf", 
+									:type => 'application/pdf',
+									:disposition => 'inline'
+									
+			end
+		end
 	end
 
 	# POST /experiences

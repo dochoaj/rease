@@ -21,7 +21,7 @@ class ResourcesController < ApplicationController
   # GET /resources/1.json
   def show
     add_breadcrumb "Recursos", :resources_muestra_path 
-    add_breadcrumb "Detalle" 
+    add_breadcrumb "Detalle"
   end
 
   # GET /resources/new
