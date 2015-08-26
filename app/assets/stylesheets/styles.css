@@ -7,16 +7,23 @@
 /*Formato principal*/
 #wrapper {
 	padding: 0;
+	margin: 0;
 	min-height:100%;
 	position:relative;
 }
 #header {
+	margin: 0;
 	padding: 0;
 }
 #content {
-	padding-bottom:75px; /* Height of the footer element */
+	margin: 0;
+	padding: 0;
+	padding-bottom: 115px;
+
 }
 #footer {
+	padding: 0;
+	margin: 0;
 	background:#30bbbb;
 	width:100%;
 	position:absolute;
@@ -39,25 +46,20 @@ a:hover
 /*Estilos para diseño responsive*/
 section#contenedor
 {
-	margin: 0.25em auto;
 	padding: 0;
 	text-align: center;
 }
 section#principal, aside
 {
 	display: inline-block;
-	margin: 0.25 auto;
 	min-width: 300px;
-	padding: 0.25em;
 	vertical-align: top;
 	width: 65%;
     min-height: 100%;
-    margin-bottom: 50px;
 }
 article
 {
 	min-height: 140px;
-	padding: 0.25em;
 }
 aside
 {
@@ -77,9 +79,10 @@ body
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#30aaaa',GradientType=1 );
 	color: black;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-	font-size: 12px;
-	padding-top: 60px;
+	font-size: 14px;
+	padding-top: 75px;
 	height: 100%;
+	min-height: 100hv;
 }
 
 /*pies de la página para contacto*/
@@ -111,16 +114,16 @@ h2 /*Campos*/
 	font-weight: bold;
 	text-align: left;
 	text-decoration:none;
-	font-size: 18px;
+	font-size: 16px;
 	margin: 2%;
 }
 h3 /*Fuente para las listas de textos que pertenezcan al párrafo*/
 {
-	color: black;
+	color: #30aaaa;
 	font-weight: bold;
 	font-style: inherit;
 	text-align: justify;
-	font-size: 16px;
+	font-size: 14px;
 	margin: 2%;
 }
 
@@ -236,7 +239,6 @@ p
 {
 	margin-left: 25%;
 	margin-right: 25%;
-	margin-bottom: 19px;
 	width: 50%;
 	padding: 0;
 	display: block;

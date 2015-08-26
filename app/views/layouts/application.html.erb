@@ -54,7 +54,7 @@
 					</article>
 				</section>
 				<aside>
-					<%= link_to(image_tag("LogoRease.png", id: "logo"),root_path) %>
+					<%= link_to(image_tag("LogoRease.png", id: "logo"),root_path) %><br>
 					<% if !user_signed_in? %>
 						<%= render "partials/intranet"%>
 					<%else%>

@@ -27,7 +27,7 @@
 
 <%= link_to "Ver listado de usuarios", users_listarUsuarios_path, class:"btn btn-lg btnAdmin"%>
 
-<%= link_to "Enviar correo a todos", bulletins_path, class:"btn btn-lg btnAdmin"%>
+<%= link_to "Generar boletín", bulletins_path, class:"btn btn-lg btnAdmin"%>
 
 <script type="text/javascript">
 	$(function () {
@@ -52,7 +52,7 @@
 	$('[data-toggle="btnAdmin3"]').popover(
 	{
 	html: 'true', 
-	content: '<p>Los siguientes dos módulos estan relacionados directamente con el comportamiento de los usuarios del sitio.</p><p>El <strong>Listado de usuarios</strong>, permite modificar el rol o tipo de usuario, lo cual influye en los privilegios de estos</p><p><strong>Enviar correo a todos</strong> permite enviar un mail masivo, de manera sencilla, a todos los usuarios registrados.</p>'
+	content: '<p>Los siguientes dos módulos estan relacionados directamente con el comportamiento de los usuarios del sitio.</p><p>El <strong>Listado de usuarios</strong>, permite modificar el rol o tipo de usuario, lo cual influye en los privilegios de estos</p><p> Los <strong>boletines</strong> permiten enviar un mail masivo, de manera sencilla a los usuarios con las actividades AS y artículos publicados en la página a partir de una fecha estipulada.</p>'
 	}
 	)
 	})

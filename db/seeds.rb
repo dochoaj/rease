@@ -13,7 +13,7 @@ User.create([{
 	nickname: 'Admin', 
 	category: 1, 
 	autorization_level: 1, 
-	confirmed_at: Time.now
+	confirmed_at: Time.now,
 }])
 
 usuarios_prueba_list =[
@@ -23,9 +23,10 @@ usuarios_prueba_list =[
 ]
 
 usuarios_prueba_list.each do |email, password, name, nickname, category, autorization_level|
-  User.create(email: email, password: password, name: name, nickname: nickname, category: category, autorization_level:autorization_level, confirmed_at: Time.now )
+  User.create( email: email, password: password, name: name, nickname: nickname, category: category, autorization_level:autorization_level, confirmed_at: Time.now)
 end
 
+Area.destroy_all
 area_list = [
 	["Ciencias Naturales","Matemáticas","Disciplina: Ciencias Naturales"],
 	["Ciencias Naturales","Computación y Ciencias de la Información","Disciplina: Ciencias Naturales"],
@@ -94,7 +95,7 @@ institution_list = [
 ]
 
 institution_list.each do |logo,name, web|
-  	Institution.create( logo: File.new(logo), name: name, web: web)
+  	Institution.create(logo: File.new(logo), name: name, web: web)
 end
 
 interestLinks_list = [
@@ -109,5 +110,19 @@ interestLinks_list = [
 ]
 
 interestLinks_list.each do |name,url, description|
-  	InterestLink.create( name: name, url: url, description: description)
+  	InterestLink.create(name: name, url: url, description: description)
+end
+
+Resource.destroy_all
+actas_list = [
+ ["#{Rails.root}/app/assets/resources/actas/2014_04_10_ampliada.pdf", "Acta reunión ampliada 1", "2014-04-10", "Acta de reunión ampliada 2014-04-10"],
+ ["#{Rails.root}/app/assets/resources/actas/2014_07_11_ampliada.pdf", "Acta reunión ampliada 2", "2014-07-11", "Acta de reunión ampliada 2014-07-11"],
+ ["#{Rails.root}/app/assets/resources/actas/2014_09_12_ampliada.pdf", "Acta reunión ampliada 3", "2014-09-12", "Acta de reunión ampliada 2014-09-12"],
+ ["#{Rails.root}/app/assets/resources/actas/2014_11_07_ampliada.pdf", "Acta reunión ampliada 4", "2014-11-07", "Acta de reunión ampliada 2014-11-07"],
+ ["#{Rails.root}/app/assets/resources/actas/2015_04_10.pdf", "Acta reunión ampliada 5", "2015-04-10", "Acta de reunión ampliada 2015-04-10"],
+ ["#{Rails.root}/app/assets/resources/actas/2015_06_05_ampliada.pdf", "Acta reunión ampliada 6", "2015-06-05", "Acta de reunión ampliada 2015-06-05"]
+]
+
+actas_list.each do |archive,name, date, description|
+ Resource.create(archive: File.new(archive), name: name, date: date, description: description, category: 1)
 end

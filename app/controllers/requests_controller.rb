@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
 	add_breadcrumb "Solicitudes", :requests_path
 
 	def index
-		@disponible = Request.where(status: 1).order("created_at DESC")
+		@disponible = Request.where(status: 1).paginate(page: params[:page],per_page: 5).order("created_at DESC")
 		@cancelada = Request.where(status: 2).order("created_at DESC")
 		@caducada = Request.where(status: 3).order("created_at DESC")
 		if params[:search]
@@ -40,6 +40,14 @@ class RequestsController < ApplicationController
 		@request = current_user.requests.new(defined_params)
 		@request.status = 1
 		if @request.save
+			if @request.start_time < @request.created_at
+				@request.update(start_time: Time.now) 
+				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+			end
+			if @request.end_time < @request.start_time
+				@request.update(end_time: @request.start_time) 
+				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+			end
 			flash[:notice] = "La solicitud de servicio ha sido creada correctamente"
 			redirect_to :action => 'index'
 		else
@@ -50,6 +58,14 @@ class RequestsController < ApplicationController
 
 	def update
 		if @request.update_attributes(defined_params)
+			if @request.start_time < @request.created_at
+				@request.update(start_time: Time.now) 
+				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+			end
+			if @request.end_time < @request.start_time
+				@request.update(end_time: @request.start_time) 
+				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+			end
 			flash[:notice] = "La solicitud de servicio ha sido actualizada correctamente"
 			redirect_to :action => 'show', :id => @request
 		else

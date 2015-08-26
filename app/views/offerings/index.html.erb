@@ -23,18 +23,19 @@
 
 <div id="Disponible">
 	<%if @disponible.present?%>
-	<% @disponible.each do |offering| %>
-		<div class="panel panel-default panelRease">
-			<div class="panel-heading">
-				<%= offering.title %>
+		<% @disponible.each do |offering| %>
+			<div class="panel panel-default panelRease">
+				<div class="panel-heading">
+					<%= offering.title %>
+				</div>
+				<div class="panel-body">
+					<h2>Resumen: </h2>
+					<p><%=raw offering.resume %></p>
+					<%= link_to "Ver oferta", offering %>
+				</div>
 			</div>
-			<div class="panel-body">
-				<h2>Resumen: </h2>
-				<p><%=raw offering.resume %></p>
-				<%= link_to "Ver oferta", offering %>
-			</div>
-		</div>
-	<%end%>
+		<%end%>
+		<%= will_paginate @disponible %>
 	<%else%>
 		<div class="panel panel-default panelRease">
 			<div class="panel-heading">

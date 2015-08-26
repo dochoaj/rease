@@ -10,6 +10,6 @@ class Service < ActiveRecord::Base
 	has_many :comments, as: :post
 
 	def self.search(search)
-		where("area_id LIKE ?", "%#{search}%") 
+		where("title LIKE ? or message LIKE ? or description LIKE ? or resume LIKE ? ", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
 	end
 end

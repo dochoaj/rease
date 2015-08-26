@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 	end
 
 	def listado
-		@disponibles = Event.where(status: 1).order("end_time DESC")
+		@disponibles = Event.where(status: 1).paginate(page: params[:disponibles],per_page: 5).order("end_time DESC")
 		@realizados = Event.where(status: 2).order("end_time DESC")
 		@cancelados = Event.where(status: 3).order("end_time DESC")
 		@caducados = Event.where(status: 4).order("end_time DESC")
@@ -54,6 +54,15 @@ class EventsController < ApplicationController
 
 		respond_to do |format|
 			if @event.save
+				if @event.start_time < @event.created_at
+					@event.update(start_time: Time.now) 
+					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+				end
+				if @event.end_time < @event.start_time
+					@event.update(end_time: @event.start_time) 
+					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+
+				end
 				format.html { redirect_to @event, notice: 'El evento se ha creado exitosamente.' }
 				format.json { render :show, status: :created, location: @event }
 			else
@@ -68,6 +77,15 @@ class EventsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @event.update(event_params)
+				if @event.start_time < @event.created_at
+					@event.update(start_time: Time.now) 
+					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+				end
+				if @event.end_time < @event.start_time
+					@event.update(end_time: @event.start_time) 
+					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+
+				end
 				format.html { redirect_to @event, notice: 'El evento se ha modificado exitosamente.' }
 				format.json { render :show, status: :ok, location: @event }
 			else

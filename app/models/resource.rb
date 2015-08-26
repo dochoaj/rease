@@ -8,6 +8,7 @@ class Resource < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :description, presence: true
 	validates :category, presence: true
+	validates :date, presence: true
 	def self.search(search)
 		where("name LIKE ? or category LIKE ? or description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
 	end

@@ -11,14 +11,9 @@ class OfferingsController < ApplicationController
 	# GET /offerings
 	# GET /offerings.json
 	def index
-		@disponible = Offering.where(status: 1).order("created_at DESC")
+		@disponible = Offering.where(status: 1).paginate(page: params[:page],per_page: 5).order("created_at DESC")
 		@cancelada = Offering.where(status: 2).order("created_at DESC")
 		@caducada = Offering.where(status: 3).order("created_at DESC")
-		if params[:search]
-			@offerings = Offering.search(params[:search]).order("created_at DESC")
-		else
-			@offerings = Offering.order("created_at DESC").all
-		end
 	end
 
 	# GET /offerings/1
@@ -51,6 +46,15 @@ class OfferingsController < ApplicationController
 		@offering.status = 1
 		respond_to do |format|
 		if @offering.save
+			if @offering.start_time < @offering.created_at
+				@offering.update(start_time: Time.now) 
+				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+			end
+			if @offering.end_time < @offering.start_time
+				@offering.update(end_time: @offering.start_time) 
+				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+
+			end
 			format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido creada correctamente.' }
 			format.json { render :show, status: :created, location: @offering }
 		else
@@ -65,6 +69,15 @@ class OfferingsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @offering.update(offering_params)
+				if @offering.start_time < @offering.created_at
+					@offering.update(start_time: Time.now) 
+					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
+				end
+				if @offering.end_time < @offering.start_time
+					@offering.update(end_time: @offering.start_time) 
+					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+
+				end
 				format.html { redirect_to @offering, notice: 'La oferta de servicio ha sido actualizada correctamente.' }
 				format.json { render :show, status: :ok, location: @offering }
 			else

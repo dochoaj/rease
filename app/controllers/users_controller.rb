@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def listarUsuarios
 		add_breadcrumb "Usuarios registrados"
-		@user = User.order("nickname ASC").all
+		@user = User.paginate(page: params[:page],per_page: 20).order("nickname ASC").all
 	end
 	
 	def show
