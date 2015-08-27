@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
 
 
 	add_breadcrumb "Inicio", :root_path
-	add_breadcrumb "Servicios", :services_path
+	add_breadcrumb "Servicios", :services_index_activos_path
 	def index
 
 	end

@@ -143,6 +143,7 @@ class ExperiencesController < ApplicationController
 			:department,
 			:course_name,
 			:course_type,
+			:course_type_other,
 			:period,
 			:professor_name,
 			:professor_email,

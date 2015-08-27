@@ -26,8 +26,14 @@ class ExperiencePdf < Prawn::Document
 		text "\n<b>Área de trabajo:</b> #{@experience.area.name}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
 		text "\n<b>Departamento/Carrera:</b> #{@experience.department}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
 		text "\n<b>Nombre de asignatura/curso:</b> #{@experience.course_name}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
-		text "\n<b>Tipo de asignatura/curso:</b> #{@experience.course_type}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
 		
+		
+		if @experience.course_type == "Otro"
+			text "\n<b>Tipo de asignatura/curso:</b> #{@experience.course_type_other}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
+		else
+			text "\n<b>Tipo de asignatura/curso:</b> #{@experience.course_type}", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
+		end
+
 		if @experience.period == 1
 			text "\n<b>Periodo:</b> Primer semestre", size: 11, indent_paragraphs: 30, align: :justify, :inline_format => true
 		elsif @experience.period == 2

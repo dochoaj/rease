@@ -19,7 +19,7 @@
 			<p><strong>Departamento: </strong><%=@experience.department%></p>
 			<p><strong>Nombre de Asignatura/curso: </strong><%=@experience.course_name%></p>
 			<p><strong>Tipo de Asignatura/curso: </strong> 
-				<% if @experience.course_type == "Otros" %>
+				<% if @experience.course_type == "Otro" %>
 					<%= @experience.course_type_other %>
 				<%else%>
 					<%= @experience.course_type %>
