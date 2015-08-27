@@ -29,7 +29,7 @@
 		</div>
 		<div class="panel-body">
 			<%if @acta.present?%>
-				<p><%=l @acta.date%>: <%= @acta.name.truncate(20)%> - <%=	link_to "Ver", @acta.archive.url %> </p>
+				<p><%=l @acta.date%>: <%= @acta.name.truncate(20)%> - <%=	link_to "Ver", @acta.archive.url,:target=>'_blank' %> </p>
 			<%else%>
 				<p>No hay actas disponibles</p>
 			<%end%>			

@@ -1,1 +1,13 @@
-<p><strong>Servicio: </strong>  <%=service.title%> <%= link_to "Ver", service %> </p>
+<tr>
+	<td>Servicio</td>
+	<td><%=service.title%>
+		<%if service.status == 2%>
+			(Activo)
+		<%elsif service.status == 4%>
+			(Activo)
+		<%elsif service.status == 5%>
+			(Experiencia)
+		<%end%>
+	</td>
+	<td><%= link_to "Ver", service %></td>
+</tr>

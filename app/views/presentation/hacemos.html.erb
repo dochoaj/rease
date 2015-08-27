@@ -37,14 +37,25 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 	</div>
 	<div class="panel-body">
 		<%if @resources.present?%>
-			<% @resources.each do |resource| %>
-				<p><%=resource.name%>: <%=resource.date%> - 
-				<%= link_to 'Ver acta', resource.archive.url, :target => "_blank" %> 
-				</p>
-			<%end%>
+			<table class="tabla-rease">
+				<tr>
+					<th><strong>Nombre</strong></th>
+					<th><strong>Fecha</strong></th>
+					<th><strong>Descargar</strong></th>
+
+				</tr>
+				<% @resources.each do |resource| %>
+				<tr>
+					<td><%=resource.name.truncate(40)%></td>
+					<td><%=l resource.date%></td>
+						<td><%= link_to '<center><i class="glyphicon glyphicon-circle-arrow-down"></i></center>'.html_safe, resource.archive.url, :target => "_blank"%></td>
+				</tr>
+				<%end%>
+			</table>
 		<%else%>
 			<p>Aún no hay actas disponibles.</p>
 		<%end%>
+		<%= will_paginate @resources%>
 	</div>
 </div>
 

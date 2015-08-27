@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+	before_action :authenticate_user!
 	before_action :set_service, only: [:update, :destroy]
 	before_action :set_status, only: [:index, :update, :create]
 	before_action :validate_category_new, only: [:new]

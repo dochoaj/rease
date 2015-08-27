@@ -19,7 +19,7 @@ class PresentationController < ApplicationController
 
 	def hacemos
 		add_breadcrumb "¿Qué hacemos?", :presentation_hacemos_path
-		@resources = Resource.where(category: 1).order("created_at DESC")
+		@resources = Resource.paginate(page: params[:page],per_page: 10).where(category: 1).order("date DESC")
 		@sections = Section.order("priority ASC").where("module = ?","Hacemos")
 
 	end
@@ -44,9 +44,9 @@ class PresentationController < ApplicationController
 			@resources = Resource.order("created_at DESC").all
 			@institutions = Institution.order("name DESC").all
 			@interest_links = InterestLink.order("created_at DESC").all
-			@requests = Request.where(status: 1).order("title ASC")
-			@offerings = Offering.where(status: 1).order("title ASC")
-			@services = Service.where(status: 2).order("updated_at DESC")
+			@requests = Request.order("title ASC").all
+			@offerings = Offering.order("title ASC").all
+			@services = Service.where("status = 2 or status = 4 or status = 5").order("updated_at DESC")
 			@experiences = Experience.order("created_at DESC").all
 			if params[:search]
 				@users = User.search(params[:search]).order("nickname ASC")
@@ -54,9 +54,9 @@ class PresentationController < ApplicationController
 				@resources = Resource.search(params[:search]).order("created_at DESC")
 				@institutions = Institution.search(params[:search]).order("name DESC")
 				@interest_links = InterestLink.search(params[:search]).order("created_at DESC")
-				@requests = Request.search(params[:search]).where(status: 1).order("title ASC")
-				@offerings = Offering.search(params[:search]).where(status: 1).order("title ASC")
-				@services = Service.search(params[:search]).where(status: 2).order("updated_at DESC")
+				@requests = Request.search(params[:search]).order("title ASC")
+				@offerings = Offering.search(params[:search]).order("title ASC")
+				@services = Service.search(params[:search]).where("status = 2 or status = 4 or status = 5").order("updated_at DESC")
 				@experiences = Experience.search(params[:search]).order("created_at DESC")			
 			else
 				@users = User.order("nickname ASC")
@@ -64,9 +64,9 @@ class PresentationController < ApplicationController
 				@resources = Resource.order("created_at DESC").all
 				@institutions = Institution.order("name DESC").all
 				@interest_links = InterestLink.order("created_at DESC").all
-				@requests = Request.where(status: 1).order("title ASC")
-				@offerings = Offering.where(status: 1).order("title ASC")
-				@services = Service.where(status: 2).order("updated_at DESC")
+				@requests = Request.order("title ASC")
+				@offerings = Offering.order("title ASC")
+				@services = Service.where("status = 2 or status = 4 or status = 5").order("updated_at DESC")
 				@experiences = Experience.order("created_at DESC").all
 			end
 		else ##SEARCH PARA EL PORTAL WEB

@@ -6,11 +6,19 @@
 			Resultados de la búsqueda: <%= params[:search] %>
 		</div>
 		<div class="panel-body">
-			<%= render @sections %>
-			<%= render @interest_links %>
-			<%= render @events %>
-			<%= render @resources %>
-			<%= render @institutions %>
+			<table class="tabla-rease">
+				<tr>
+					<th><strong>Tipo</strong></th>
+					<th><strong>Nombre</strong></th>
+					<th><strong>Detalles</strong></th>
+
+				</tr>
+				<%= render @sections %>
+				<%= render @interest_links %>
+				<%= render @events %>
+				<%= render @resources %>
+				<%= render @institutions %>
+			</table>
 		</div>
 	</div>
 	<%else%>
@@ -24,19 +32,29 @@
 	</div>
 	<% end %>
 <%else%>
-	<% if @sections.present?  || @events.present? || @resources.present? || @institutions.present? || @requests.present? || @offerings.present? || @users.present? %>
+	<% if @sections.present?  || @events.present? || @resources.present? || @institutions.present? || @requests.present? || @offerings.present? || @users.present? ||@services.present? || @experiences.present?%>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
 			Resultados de la búsqueda: <%= params[:search] %>
 		</div>
 		<div class="panel-body">
-			<%= render @users %>
-			<%= render @requests %>
-			<%= render @offerings %>
-			<%= render @events %>
-			<%= render @sections %>
-			<%= render @resources %>
-			<%= render @institutions %>
+			<table class="tabla-rease">
+				<tr>
+					<th><strong>Tipo</strong></th>
+					<th><strong>Nombre</strong></th>
+					<th><strong>Detalles</strong></th>
+
+				</tr>
+				<%= render @requests %>
+				<%= render @offerings %>
+				<%= render @services %>
+				<%= render @experiences %>
+				<%= render @events %>
+				<%= render @users %>
+				<%= render @sections %>
+				<%= render @resources %>
+				<%= render @institutions %>
+			</table>
 		</div>
 	</div>
 	<%else%>

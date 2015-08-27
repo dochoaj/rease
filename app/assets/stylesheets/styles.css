@@ -222,10 +222,15 @@ p
 	border-color: white;
 	text-align: right;
 }
-.recursos
+.tabla-rease
 {
 	width: 95%;
 	text-align: left;
+}
+.tabla-rease tr:hover, .tabla-rease tr:hover a
+{
+	background: #30bbbb;
+	color: white;
 }
 .sesion .btn-block
 {
@@ -261,7 +266,6 @@ p
 #logoNav /*estilos para el logo de la navbar*/
 {
 	margin-top:8px;
-	margin-right: 10px;
 	margin-right: 5px;
 	max-height: 40px;
 }

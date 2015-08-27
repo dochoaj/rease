@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!
   before_action :validate_category, except: [:show,:muestra,:searchResource]
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :set_categorizated, only: [:index, :muestra]
@@ -104,11 +104,11 @@ class ResourcesController < ApplicationController
     end
 
     def set_categorizated
-      @actas = Resource.where(category: 1)
-      @plantillas = Resource.where(category: 2)
-      @formacion = Resource.where(category: 3)
-      @enlaces = Resource.where(category: 4)
-      @otros = Resource.where(category: 5)
+      @actas = Resource.where(category: 1).order("date DESC")
+      @plantillas = Resource.where(category: 2).order("created_at DESC")
+      @formacion = Resource.where(category: 3).order("created_at DESC")
+      @enlaces = Resource.where(category: 4).order("name DESC")
+      @otros = Resource.where(category: 5).order("created_at DESC")
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params

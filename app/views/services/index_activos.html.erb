@@ -17,6 +17,9 @@
 	<% @activos.each do |activo| %>
 		<div class="panel panel-default panelRease">
 			<div class="panel-heading">
+				<%if activo.creator == current_user or activo.acceptor == current_user %>
+					<i class="glyphicon glyphicon-tags"></i>
+				<%end%>
 				<%=activo.title%>
 			</div>
 			<div class="panel-body">
@@ -44,7 +47,7 @@
 			{
 				title: 'Servicios activos',
 				html: 'true', 
-				content: '<p><strong>Servicios activos:</strong> Son solicitudes u ofertas de servicio que ya han sido concretadas y tienen un profesor y un socio comunitario comprometidos en la realización de dicha actividad AS.</strong></p>'
+				content: '<p><strong>Servicios activos:</strong> Son solicitudes u ofertas de servicio que ya han sido concretadas y tienen un profesor y un socio comunitario comprometidos en la realización de dicha actividad AS.</strong></p> <p><i class="glyphicon glyphicon-tags"></i> : Servicio activo en el cual usted participó.</p>'
 			}
 		)
 	})

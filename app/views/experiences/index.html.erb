@@ -17,7 +17,10 @@
 	<% @experiences.order('created_at DESC').each do |experience| %>
 		<div class="panel panel-default panelRease">
 			<div class="panel-heading">
-				Folio N° <%= experience.id %>
+				<%if experience.professor == current_user or experience.partner == current_user%>
+					<i class="glyphicon glyphicon-tags"></i>
+				<%end%>
+				 Folio N° <%= experience.id %>
 			</div>
 			<div class="panel-body">
 				<h2>Objetivos de servicio:</h2>
@@ -46,7 +49,7 @@
 			{
 				title: 'Experiencias',
 				html: 'true', 
-				content: '<p>Las <strong>Experiencias:</strong> Son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p>'
+				content: '<p>Las <strong>Experiencias</strong> son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p><p><i class="glyphicon glyphicon-tags"></i> : Experiencia en la cual usted participó.</p>'
 			}
 		)
 	})
