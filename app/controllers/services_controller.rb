@@ -7,12 +7,12 @@ class ServicesController < ApplicationController
 
 
 	add_breadcrumb "Inicio", :root_path
-	add_breadcrumb "Servicio", :services_path
+	add_breadcrumb "Servicios", :services_path
 	def index
 
 	end
 	def index_activos
-		@activos = Service.where(status: 2).order("updated_at DESC")
+		@activos = Service.paginate(page: params[:page],per_page: 5).where(status: 4).order("updated_at DESC")
 	end
 
 	def show
@@ -33,10 +33,29 @@ class ServicesController < ApplicationController
 	end
 
 	def edit
+		add_breadcrumb "Editando"
 		@publication = publication
 		@service = publication.services.find(params[:id])
-		if current_user == @service.creator and @service.status != 2
-			redirect_to root_path, alert: "No puede editar esta petición"
+		if current_user.category != 2
+			redirect_to root_path, alert: "Usted no es profesor. No puede editar esta servicio"
+		else
+			if @service.status == 1 or @service.status == 3
+				if Offering === publication
+					if publication.user != current_user
+						redirect_to root_path, alert: "Usted no es el dueño de la oferta, no puede aceptar esta petición"
+					end
+				end
+			elsif @service.status == 2 or @service.status == 4
+				if Request === publication
+					if @service.creator != current_user
+						redirect_to root_path, alert: "Usted no es el profesor responsable de este servicio"
+					end
+				else 
+					if @service.acceptor != current_user
+						redirect_to root_path, alert: "Usted no es el profesor responsable de este servicio"
+					end
+				end
+			end				
 		end
 	end
 
@@ -50,7 +69,7 @@ class ServicesController < ApplicationController
 		@service.resume = @publication.resume
 		@service.start_time = @publication.start_time
 		@service.end_time = @publication.end_time
-		@service.status = 1
+		@service.status = 1 #el servicio es solo una petición pendiente.
 
 		respond_to do |format|
 			if @service.save
@@ -68,8 +87,15 @@ class ServicesController < ApplicationController
 		@service = @publication.services.find(params[:id])
 			respond_to do |format|
 			if @service.update(service_params)
-				@publication.update(status: 4)
-				format.html { redirect_to publication_url(publication), notice: 'Se ha entregado su respuesta' }
+				if@service.status == 3
+					format.html { redirect_to publication_url(publication), notice: 'Se ha rechazado la petición.' }
+				elsif @service.status == 2
+					format.html { redirect_to publication_url(publication), notice: 'Se ha aceptado la petición. El profesor responsable puede modificar el servicio activo.' }
+					@publication.update(status: 4) #Cambia el estado de la oferta/solicitud a listo.
+					@service.update(status: 4)
+				elsif @service.status == 4
+					format.html { redirect_to service_path(@service), notice: 'El servicio se ha editado correctamente.' }
+				end
 				format.json { render :show, status: :ok, location: @service }
 			else
 				format.html { render :edit }
@@ -117,19 +143,19 @@ class ServicesController < ApplicationController
 
 		def validate_category_new
 			if Request === publication
-				if current_user.category == 3 || current_user.category == 4
+				if current_user.category != 2
 					redirect_to root_path, alert: "Solo un profesor puede pedir trabajar en esta solicitud de servicio."
 				end
 			else
-				if current_user.category == 2 || current_user.category == 3
+				if current_user.category != 4
 					redirect_to root_path, alert: "Solo un socio comunitario puede pedir trabajar en esta oferta de servicio."
 				end       
 			end
 		end
 
 		def validate_professor
-			if current_user.category != 2 and current_user.category != 1
-				redirect_to root_path, alert: "Solo un profesor puede editar una solicitud"
+			if current_user.category != 2
+				redirect_to root_path, alert: "Solo un profesor puede editar este servicio"
 			end
 		end
 

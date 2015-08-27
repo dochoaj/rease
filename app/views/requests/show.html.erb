@@ -55,7 +55,7 @@
 				<%= link_to "Ver peticiones", request_services_path(@request), :class=>'btn btnCRUD'%>
 			<%end%>
 
-			<% if @request.user != current_user and current_user.category != 4%>
+			<% if @request.user != current_user and current_user.category == 2%>
 				<%if @petition.blank?%>
 					<%= link_to "Solicitar participación", new_request_service_path(@request), :class=>'btn btnCRUD'%>
 				<%end%>

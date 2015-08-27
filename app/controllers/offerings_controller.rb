@@ -21,7 +21,7 @@ class OfferingsController < ApplicationController
 	def show
 		add_breadcrumb "Mostrar"
 		@comment = Comment.new
-		@aceptados = @offering.services.where(status: 2)
+		@aceptados = @offering.services.where("status= 2 or status= 4")
 	end
 
 

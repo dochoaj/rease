@@ -12,7 +12,7 @@
 	<% end %>
 
 	<div class="field">
-		<%= f.text_area :body, :class => 'form-control',:placeholder=>'Escriba acá su comentario respecto a esta oferta...entre 10 y 150 caracteres)', :id=>"eg-custom-toolbar", :required=>true %>
+		<%= f.text_area :body, :class => 'form-control',:placeholder=>'Escriba acá su comentario respecto a esta oferta...entre 10 y 150 caracteres)', :id=>"eg-custom-toolbar" %>
 	</div>
 	<div class="actions">
 		<%= f.submit "Enviar comentario", :class => 'btn btn-default btnCRUD' %>
@@ -22,10 +22,11 @@
 <script>
 	$(function() {
 		$('textarea#eg-custom-toolbar').editable({
+			theme: 'rease',
 			inlineMode: false,
 			language: 'es',
 			// Set custom buttons with separator between them.
-			buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline','color', 'blockStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'createLink' ] 
+			buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline','color', 'blockStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'createLink' ]
 		})
 	});
 </script>

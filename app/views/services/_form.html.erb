@@ -14,7 +14,9 @@
 		<div class="panel-heading"><%=accion%> <%= @service.title%></div>
 		<div class="panel-body">
 			<%if accion == "Aceptar" || accion == "Editar" %>
-				<%= f.hidden_field :status, :value=>2%>
+				<%if accion == "Aceptar"%>
+					<%= f.hidden_field :status, :value=>2%>
+				<%end%>
 
 				<div class="field"><p>
 					<%= f.label :title, "Título: "%>
@@ -77,6 +79,7 @@
 
 <script>
 	$(function() {$('textarea#eg-basic').editable({
+		theme: 'rease',
 		inlineMode: false,
 		language: 'es'
 		})

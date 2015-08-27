@@ -1,4 +1,4 @@
-<%if @service.status!=2 and @service.status!= 4%>
+<%if @service.status==1 and @service.status==3%>
 	<h1><%= @service.title%></h1>
 	<div class="panel panel-default panelRease">
 		<div class="panel-heading">
@@ -69,12 +69,20 @@
 				<p><strong>Institución: </strong> <%= @service.institution.name%> </p>
 			<%end%>
 
-			<%if @service.status == 4%>
-				<p><strong>Estado: </strong> Experiencia </p>
+			<%if @service.status == 2%>
+				<p><strong>Estado: </strong> Aceptado </p>
+			<%elsif @service.status == 4%>
+				<p><strong>Estado: </strong> Activo </p>
+			<%else%>
+				<p><strong>Estado: </strong> <%= link_to "Experiencia", @service.experiences.last%> </p>
 			<%end%>
 			<h2>Descripción</h2>
 			<p><%=raw @service.publication.description %></p>
-			<p><strong>Objetivos: </strong><%= @service.objectives%></p>
+			<%if @service.objectives.present?%>
+				<p><strong>Objetivos: </strong><%= @service.objectives%></p>
+			<%else%>
+			<p style="color: red; font-weight:bold;">Recuerde informar al profesor responsable editar este servicio con sus respectivos datos.</p>
+			<%end%>
 			<h2> Información </h2>
 			<p><strong>Fecha de inicio: </strong><%=l @service.publication.start_time %></p>
 
@@ -118,10 +126,14 @@
 	<%end%>
 
 	<%if @service.publication_type == "Offering"%>
-		<%= link_to "Editar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+		<% if @service.acceptor == current_user %>
+			<%= link_to "Editar", edit_offering_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+		<%end%>
 	<%else%>
-		<%= link_to "Editar", edit_request_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+		<% if @service.creator == current_user %>
+			<%= link_to "Editar", edit_request_service_path(@service.publication, @service), :class=>'btn btn-lg btnCRUD'%>
+		<%end%>
 	<% end %>
 
-	<%=link_to "Volver", experiences_path, :class => 'btn btn-lg btnCRUD'%>
+	<%=link_to "Volver", services_index_activos_path, :class => 'btn btn-lg btnCRUD'%>
 <%end%>

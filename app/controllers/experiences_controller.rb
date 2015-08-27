@@ -10,7 +10,7 @@ class ExperiencesController < ApplicationController
 	add_breadcrumb "Experiencias", :experiences_path
 
 	def index
-		@experiences =Experience.all
+		@experiences =Experience.paginate(page: params[:page],per_page: 5).all.order("created_at DESC")
 	end
 
 	def new
@@ -57,7 +57,7 @@ class ExperiencesController < ApplicationController
 		end
 		respond_to do |format|
 			if @experience.save
-				@service.update(status: 4)
+				@service.update(status: 5)
 				format.html { redirect_to experience_path(@experience), notice: 'La experiencia se ha creado exitosamente.' }
 				format.json { render :show, status: :created, location: @experience }
 			else

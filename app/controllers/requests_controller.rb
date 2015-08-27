@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
 	def show
 		add_breadcrumb "Mostrar"
 		@comment = Comment.new
-		@aceptados = @request.services.where(status: 2)
+		@aceptados = @request.services.where("status= 2 or status= 4")
 	end
 
 	def new

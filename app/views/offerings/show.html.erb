@@ -53,7 +53,7 @@
 				<%= link_to "Ver peticiones", offering_services_path(@offering), :class=>'btn btnCRUD'%>
 		<%end%>
 
-		<%if @offering.user != current_user and current_user.category != 2%>
+		<%if @offering.user != current_user and current_user.category == 4%>
 			<%if @petition.blank?%>
 				<%= link_to "Solicitar participación", new_offering_service_path(@offering), :class=>'btn btnCRUD'%>
 			<%end%>
