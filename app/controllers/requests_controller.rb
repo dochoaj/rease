@@ -40,11 +40,11 @@ class RequestsController < ApplicationController
 		@request = current_user.requests.new(defined_params)
 		@request.status = 1
 		if @request.save
-			if @request.start_time < @request.created_at
+			if @request.start_time < @request.created_at - 1.days 
 				@request.update(start_time: Time.now) 
 				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 			end
-			if @request.end_time < @request.start_time
+			if @request.end_time + 1.minutes < @request.start_time
 				@request.update(end_time: @request.start_time) 
 				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 			end
@@ -58,11 +58,11 @@ class RequestsController < ApplicationController
 
 	def update
 		if @request.update_attributes(defined_params)
-			if @request.start_time < @request.created_at
+			if @request.start_time < @request.created_at - 1.days
 				@request.update(start_time: Time.now) 
 				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 			end
-			if @request.end_time < @request.start_time
+			if @request.end_time + 1.minutes < @request.start_time
 				@request.update(end_time: @request.start_time) 
 				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 			end

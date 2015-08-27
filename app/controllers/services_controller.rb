@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
 	before_action :set_service, only: [:update, :destroy]
-	before_action :set_status, only: [:update, :create]
+	before_action :set_status, only: [:index, :update, :create]
 	before_action :validate_category_new, only: [:new]
 	before_action :validate_professor , only: [:edit,:destroy]
 	before_action :validate_owner, only: [:new]
@@ -8,8 +8,10 @@ class ServicesController < ApplicationController
 
 	add_breadcrumb "Inicio", :root_path
 	add_breadcrumb "Servicio", :services_path
-
 	def index
+
+	end
+	def index_activos
 		@activos = Service.where(status: 2).order("updated_at DESC")
 	end
 

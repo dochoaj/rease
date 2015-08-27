@@ -54,11 +54,11 @@ class EventsController < ApplicationController
 
 		respond_to do |format|
 			if @event.save
-				if @event.start_time < @event.created_at
+				if @event.start_time < @event.created_at - 30.minutes 
 					@event.update(start_time: Time.now) 
 					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 				end
-				if @event.end_time < @event.start_time
+				if @event.end_time + 1.minutes < @event.start_time
 					@event.update(end_time: @event.start_time) 
 					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 
@@ -77,11 +77,11 @@ class EventsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @event.update(event_params)
-				if @event.start_time < @event.created_at
+				if @event.start_time < @event.created_at - 30.minutes
 					@event.update(start_time: Time.now) 
 					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 				end
-				if @event.end_time < @event.start_time
+				if @event.end_time + 1.minutes < @event.start_time
 					@event.update(end_time: @event.start_time) 
 					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 

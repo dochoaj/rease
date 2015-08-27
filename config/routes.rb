@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 	get 'sections/newEstatuto'
 	get 'sections/newAprendizaje'
 	get 'sections/newNovedades'
+	get 'services/index_activos'
 	get 'resources/muestra'
 	post 'presentation/searchPage'
 	post 'requests/searchRequest'

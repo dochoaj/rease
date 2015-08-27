@@ -46,11 +46,11 @@ class OfferingsController < ApplicationController
 		@offering.status = 1
 		respond_to do |format|
 		if @offering.save
-			if @offering.start_time < @offering.created_at
+			if @offering.start_time < @offering.created_at - 1.days 
 				@offering.update(start_time: Time.now) 
 				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 			end
-			if @offering.end_time < @offering.start_time
+			if @offering.end_time + 1.minutes < @offering.start_time
 				@offering.update(end_time: @offering.start_time) 
 				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 
@@ -69,11 +69,11 @@ class OfferingsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @offering.update(offering_params)
-				if @offering.start_time < @offering.created_at
+				if @offering.start_time < @offering.created_at - 1.days 
 					@offering.update(start_time: Time.now) 
 					flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
 				end
-				if @offering.end_time < @offering.start_time
+				if @offering.end_time + 1.minutes < @offering.start_time
 					@offering.update(end_time: @offering.start_time) 
 					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
 
