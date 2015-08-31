@@ -44,18 +44,25 @@
 					<%= f.text_area :description, :placeholder=> "Descripción del servicio", :id=>"eg-basic"%>
 				</div>
 
-				<div class="field"><p>
-					<%= f.label :objectives, "Objetivos: "%>	
-					<%= f.text_area :objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>
+				<div class="field">
+				<br>
+					<h2><strong>Propositos del proyecto:</strong></h2>
+					<p class="note">En el área de aprendizaje se ingresan los aspectos curriculares asociados al proyecto.</p>
+					<p><%= f.label :learning_objectives, "De aprendizaje: "%>	
+					<%= f.text_area :learning_objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %></p>
+					<p class="note">En el área de servicio se ingresan los objetivos del servicio.</p>
+					<p>
+					<%= f.label :service_objectives, "De servicio"%>
+					<%= f.text_area :service_objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>		
 				</p></div>
 
 				<div class="field">
-					<p><%= f.label :start_time, "Fecha de inicio" %>
+					<p><%= f.label :start_time, "Fecha de inicio del proyecto" %>
 					<%= f.date_select :start_time %></p>
 				</p></div>
 
 				<div class="field">
-					<p><%= f.label :end_time, "Fecha de término" %>
+					<p><%= f.label :end_time, "Fecha de término del proyecto" %>
 					<%= f.date_select :end_time %></p>
 				</p></div>
 				
@@ -64,7 +71,8 @@
 				<%end%>
 				
 
-			<%elsif accion == "Solicitar"%>
+			<%elsif accion == "Manifestar"%>
+				<p class="note">El hecho que usted manifieste interés no significa que vaya ser seleccionado en este proyecto.</p>
 				<div class="field"><p>
 					<%= f.label :message, "Mensaje: "%>	
 					<%= f.text_field :message, :class => 'form-control', :placeholder => 'Deje algún mensaje', required: true%>

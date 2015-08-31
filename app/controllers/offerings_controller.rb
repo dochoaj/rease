@@ -22,6 +22,9 @@ class OfferingsController < ApplicationController
 		add_breadcrumb "Mostrar"
 		@comment = Comment.new
 		@aceptados = @offering.services.where("status= 2 or status= 4")
+		if @offering.end_time < Time.now && @offering.status == 1
+			@offering.update(status: 3)
+		end
 	end
 
 
@@ -44,12 +47,9 @@ class OfferingsController < ApplicationController
 	def create
 		@offering = current_user.offerings.new(offering_params)
 		@offering.status = 1
+		@offering.start_time = Time.now
 		respond_to do |format|
 		if @offering.save
-			if @offering.start_time < @offering.created_at - 1.days 
-				@offering.update(start_time: Time.now) 
-				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
-			end
 			if @offering.end_time + 1.minutes < @offering.start_time
 				@offering.update(end_time: @offering.start_time) 
 				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"

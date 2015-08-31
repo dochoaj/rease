@@ -35,6 +35,20 @@
 			<%end%>			
 		</div>
 	</div>
+	<%if @bulletin.present? && @bulletin.created_at >= Time.now - 1.days %>
+		<div  class="panel panel-default panelClick">
+			<div class="panel-heading" data-toggle="collapse" data-target="#boletin">
+				<i class="glyphicon glyphicon-circle-arrow-down"></i> Último boletín:  <%= @bulletin.title %> 
+			</div>
+			<div class="collapsing" id="boletin">
+				<div class="panel-body">
+					<p><%=raw @bulletin.description %></p>
+					<%=link_to "ver", @bulletin%>
+					<p class="note">Enviado el <%=l @bulletin.created_at%></p>
+				</div>
+			</div>
+		</div>
+	<%end%>
 <%end%>
 <% @sections.each do |seccion| %>
 	<% div_id = seccion.id -%>

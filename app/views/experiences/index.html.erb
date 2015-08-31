@@ -18,9 +18,9 @@
 		<div class="panel panel-default panelRease">
 			<div class="panel-heading">
 				<%if experience.professor == current_user or experience.partner == current_user%>
-					<i class="glyphicon glyphicon-tags"></i>
+					<i class="glyphicon glyphicon-tags"> </i>
 				<%end%>
-				 Folio N° <%= experience.id %>
+				 Folio N° <%= experience.id %>: <%= experience.title%>
 			</div>
 			<div class="panel-body">
 				<h2>Objetivos de servicio:</h2>
@@ -49,7 +49,8 @@
 			{
 				title: 'Experiencias',
 				html: 'true', 
-				content: '<p>Las <strong>Experiencias</strong> son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p><p><i class="glyphicon glyphicon-tags"></i> : Experiencia en la cual usted participó.</p>'
+				content: '<p>Las <strong>Experiencias</strong> son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p><p><i class="glyphicon glyphicon-tags"></i> : Experiencia en la cual usted participó.</p>',
+				template: '<div class="popover popover-rease"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
 			}
 		)
 	})

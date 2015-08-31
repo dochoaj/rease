@@ -22,6 +22,9 @@ class RequestsController < ApplicationController
 		add_breadcrumb "Mostrar"
 		@comment = Comment.new
 		@aceptados = @request.services.where("status= 2 or status= 4")
+		if @request.end_time < Time.now && @request.status == 1
+			@request.update(status: 3)
+		end
 	end
 
 	def new
@@ -39,11 +42,8 @@ class RequestsController < ApplicationController
 	def create
 		@request = current_user.requests.new(defined_params)
 		@request.status = 1
+		@request.start_time = Time.now
 		if @request.save
-			if @request.start_time < @request.created_at - 1.days 
-				@request.update(start_time: Time.now) 
-				flash[:alert] = "La fecha de inicio no puede ser menor a la de hoy, esta se ha modificado automáticamente"
-			end
 			if @request.end_time + 1.minutes < @request.start_time
 				@request.update(end_time: @request.start_time) 
 				flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"

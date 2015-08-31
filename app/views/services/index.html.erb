@@ -15,13 +15,13 @@
 					<%=link_to image_tag("mini/missingPhoto.png"), servicio.creator%>
 				<%end%>
 				<%=link_to servicio.creator.nickname, servicio.creator%> realizó una petición: <i>"<%= servicio.message.truncate(50)%>"</i>  
-				<%if current_user == @publication.user%>
-					- <%= link_to "responder", servicio %> </p>
+				<%if current_user == @publication.user or current_user == servicio.creator%>
+					- <%= link_to "Ver", servicio %>
 				<%end%>
 			<%end%>
 		<%end%>
 		<%if @rechazados.present?%>
-			<h2>Rechazadas: </h2>
+			<h2>Desistidos: </h2>
 			<% @rechazados.each do |servicio| %>
 				<p>
 				<%if servicio.creator.photo.present?%>
@@ -30,7 +30,7 @@
 					<%=link_to image_tag("mini/missingPhoto.png"), servicio.creator%>
 				<%end%>
 				<%=link_to servicio.creator.nickname, servicio.creator%> realizó una petición: <i>"<%= servicio.message.truncate(50)%>"</i>	
-				<%if current_user == @publication.user%>
+				<%if current_user == @publication.user or current_user == servicio.creator%>
 					- <%= link_to "responder", servicio %> </p>
 				<%end%>
 			<%end%>

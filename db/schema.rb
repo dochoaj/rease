@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819234105) do
+ActiveRecord::Schema.define(version: 20150831155015) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150819234105) do
     t.date     "start_date"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "receiver",    limit: 4
   end
 
   create_table "categories", force: :cascade do |t|
@@ -228,22 +229,23 @@ ActiveRecord::Schema.define(version: 20150819234105) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer  "publication_id",   limit: 4
-    t.string   "publication_type", limit: 255
-    t.integer  "creator_id",       limit: 4
-    t.integer  "acceptor_id",      limit: 4
-    t.integer  "area_id",          limit: 4
-    t.integer  "institution_id",   limit: 4
-    t.text     "title",            limit: 65535
-    t.integer  "status",           limit: 4
-    t.text     "message",          limit: 65535
-    t.text     "description",      limit: 65535
-    t.text     "resume",           limit: 65535
+    t.integer  "publication_id",      limit: 4
+    t.string   "publication_type",    limit: 255
+    t.integer  "creator_id",          limit: 4
+    t.integer  "acceptor_id",         limit: 4
+    t.integer  "area_id",             limit: 4
+    t.integer  "institution_id",      limit: 4
+    t.text     "title",               limit: 65535
+    t.integer  "status",              limit: 4
+    t.text     "message",             limit: 65535
+    t.text     "description",         limit: 65535
+    t.text     "resume",              limit: 65535
     t.date     "start_time"
     t.date     "end_time"
-    t.text     "objectives",       limit: 65535
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.text     "learning_objectives", limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.text     "service_objectives",  limit: 65535
   end
 
   add_index "services", ["publication_type", "publication_id"], name: "index_services_on_publication_type_and_publication_id", using: :btree

@@ -108,22 +108,6 @@ p.navbar-text.navbar-right
 {
 	background: white;
 }
-.tabRease>li>a:hover
-{
-	font-weight: bold;
-	background: #30cccc;
-	color: white;
-}
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
-{
-	color: white;
-	background: #30bbbb;
-	font-weight: bold;
-}
-.tabRease>li>a
-{
-	color: #30aaaa;
-}
 .rightNav
 {
 	max-width: 100px;
@@ -132,7 +116,41 @@ p.navbar-text.navbar-right
 }
 .tabRease
 {
-	margin-right: 2%;
-	margin-left: 2%;
+	margin: 0;
+	width: 100%;
+	max-width: 96%;
+
+}
+
+.tabRease>li>a
+{
+	color: #30aaaa;
+	margin: 0;
+}
+.tabRease>li>a:hover
+{
+	font-weight: bold;
+	background: #30cccc;
+	color: white;
+	margin: 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+{
+	color: white;
+	background: #30bbbb;
+	font-weight: bold;
+	margin: 0;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+	border-bottom-color: #30aaaa;
+}
+.borderTab
+{	
+	margin: 0;
+	border: solid 1px;
+	border-color: #30aaaa;
+	background: white;
 	max-width: 96%;
 }

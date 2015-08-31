@@ -7,6 +7,7 @@ class PresentationController < ApplicationController
 		if user_signed_in?
 			@users = User.where("created_at >= ?", 2.week.ago.utc)
 			@acta = Resource.where(category: 1).last
+			@bulletin = Bulletin.last
 		end
 	end
 

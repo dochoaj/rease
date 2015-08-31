@@ -68,13 +68,13 @@ class ServicesController < ApplicationController
 		@service.area = @publication.area
 		@service.description = @publication.description
 		@service.resume = @publication.resume
-		@service.start_time = @publication.start_time
-		@service.end_time = @publication.end_time
+		@service.start_time = Time.now
+		@service.end_time = Time.now
 		@service.status = 1 #el servicio es solo una petición pendiente.
 
 		respond_to do |format|
 			if @service.save
-				format.html { redirect_to publication_url(publication), notice: 'Se ha enviado su petición.' }
+				format.html { redirect_to publication_url(publication), notice: 'Se ha enviado su interés de trabajo.' }
 				format.json { render :show, status: :created, location: @service }
 			else	
 				format.html { render :new }
@@ -88,11 +88,15 @@ class ServicesController < ApplicationController
 		@service = @publication.services.find(params[:id])
 			respond_to do |format|
 			if @service.update(service_params)
+				if @service.end_time + 1.minutes < @service.start_time
+					@service.update(end_time: @service.start_time) 
+					flash[:alert] = "La fecha de término no puede ser menor a la de inicio, esta se ha modificado automáticamente"
+				end
 				if@service.status == 3
-					format.html { redirect_to publication_url(publication), notice: 'Se ha rechazado la petición.' }
+					format.html { redirect_to publication_url(publication), notice: 'Se ha rechazado la manifestación de interés de trabajo.' }
 				elsif @service.status == 2
-					format.html { redirect_to publication_url(publication), notice: 'Se ha aceptado la petición. El profesor responsable puede modificar el servicio activo.' }
-					@publication.update(status: 4) #Cambia el estado de la oferta/solicitud a listo.
+					format.html { redirect_to publication_url(publication), notice: 'Se ha aceptado la manifestacion de interés de trabajo. El profesor responsable puede modificar el servicio activo.' }
+					@publication.update(status: 4) #Cambia el estado de la oferta/solicitud a servicio.
 					@service.update(status: 4)
 				elsif @service.status == 4
 					format.html { redirect_to service_path(@service), notice: 'El servicio se ha editado correctamente.' }
@@ -193,6 +197,7 @@ class ServicesController < ApplicationController
 				:title,
 				:message,
 				:status,
-				:objectives)
+				:learning_objectives,
+				:service_objectives)
 		end
 end

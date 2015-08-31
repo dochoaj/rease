@@ -39,7 +39,7 @@
 			<div class="field"><p>
 				<% if accion == "Actualizar" %>
 					<%= f.label :status, "Estado: "%>
-					<%= f.select(:status, [['Disponible', 1],['Cancelado', 2],['Caducado',3], ['Activo',4]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
+					<%= f.select(:status, [['Disponible', 1],['Cancelado', 2],['Caducado',3]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 				<% else %>
 					<p><strong>Estado: </strong> Disponible </p>
 				<% end %>
@@ -51,11 +51,16 @@
 			</div>
 
 			<div class="field">
-				<p><%= f.label :start_time, "Fecha de inicio" %>
-				<%= f.date_select :start_time %></p>
+				<% if accion == "Crear" %>
+					<p><%= f.label :start_time, "Fecha de licitación de  inicio: " %>
+					<%= Time.now.strftime("%d/%m/%Y")%></p>
+				<%else%>
+					<p><%= f.label :start_time, "Fecha de licitación de inicio: " %>
+					<%= f.date_select :start_time %></p>
+				<%end%>
 			</div>
 			<div class="field">
-				<p><%= f.label :end_time, "Fecha de término" %>
+				<p><%= f.label :end_time, "Fecha de licitación de término" %>
 				<%= f.date_select :end_time %></p>
 			</div>
 			
@@ -63,7 +68,7 @@
 	</div>
 
 	<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
-	<%= link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-lg btnCRUD' %>
+	<%= link_to "Volver", requests_path, :class => 'btn btn-lg btnCRUD' %>
 
 <% end %>
 

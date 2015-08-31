@@ -1,10 +1,10 @@
 class BulletinsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :validate_category
+	before_action :validate_category, except: [:show]
 	before_action :set_bulletin, only: [:show, :update, :destroy]
 	add_breadcrumb "Inicio", :root_path
-	add_breadcrumb "Administración", :sections_path
-	add_breadcrumb "Boletines", :bulletins_path
+	add_breadcrumb "Administración", :sections_path, except:[:show]
+	add_breadcrumb "Boletines", :bulletins_path, except:[:show]
 
 	# GET /bulletins
 	# GET /bulletins.json
@@ -15,6 +15,10 @@ class BulletinsController < ApplicationController
 	# GET /bulletins/1
 	# GET /bulletins/1.json
 	def show
+		if current_user.category == 1
+			add_breadcrumb "Administración", :sections_path, except:[:show]
+			add_breadcrumb "Boletines", :bulletins_path, except:[:show]
+		end
 		add_breadcrumb "Boletin "+@bulletin.title, :bulletins_path
 		@sections = Section.where(['created_at >= ? AND module = ?',@bulletin.start_date, "Novedad"])
 		@events = Event.where(['created_at >= ? AND status = ?',@bulletin.start_date,1])
@@ -33,9 +37,15 @@ class BulletinsController < ApplicationController
 	# POST /bulletins.json
 	def create
 		@bulletin = Bulletin.new(bulletin_params)
-		@user = User.all
 		respond_to do |format|
 			if @bulletin.save
+				if @bulletin.receiver == 1
+					@user = User.where(autorization_level: 1)
+				elsif @bulletin.receiver == 2
+					@user = User.where(autorization_level: 2)
+				else
+					@user = User.all
+				end
 				if @bulletin.start_date > @bulletin.created_at
 					@bulletin.update(start_date: Time.now) 
 					flash[:alert] = "La fecha no puede ser mayor a la de hoy, por lo que se asignó la actual automáticamente"
@@ -44,7 +54,7 @@ class BulletinsController < ApplicationController
 				@events = Event.where(['created_at >= ? AND status = ?',@bulletin.start_date,1])
 				@offerings = Offering.where(['created_at >= ? AND status = ?',@bulletin.start_date,1])
 				@requests = Request.where(['created_at >= ? AND status = ?',@bulletin.start_date,1])
-				@services = Service.where(['created_at >= ? AND status = ?',@bulletin.start_date,2])
+				@services = Service.where(['created_at >= ? AND status = ?',@bulletin.start_date,4])
 				@experiences = Experience.where(['created_at >= ?',@bulletin.start_date])
 				@user.each do |user|
 					BulletinMailer.bulletin(@bulletin,user,@sections,@events,@offerings,@requests,@services,@experiences).deliver
@@ -96,7 +106,7 @@ class BulletinsController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def bulletin_params
-			params.require(:bulletin).permit(:title, :description, :start_date)
+			params.require(:bulletin).permit(:title, :description, :start_date, :receiver)
 		end
 
 end

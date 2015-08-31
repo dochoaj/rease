@@ -9,23 +9,23 @@ class EventsController < ApplicationController
 	# GET /events
 	# GET /events.json
 	def index
-		@events = Event.order("end_time DESC").all
+		@events = Event.order("start_time ASC").where(status: 1)
 	end
 
 	def listado
-		@disponibles = Event.where(status: 1).paginate(page: params[:disponibles],per_page: 5).order("end_time DESC")
-		@realizados = Event.where(status: 2).order("end_time DESC")
-		@cancelados = Event.where(status: 3).order("end_time DESC")
-		@caducados = Event.where(status: 4).order("end_time DESC")
+		@disponibles = Event.where(status: 1).paginate(page: params[:disponibles],per_page: 5).order("start_time ASC")
+		@realizados = Event.where(status: 2).order("updated_at ASC")
+		@cancelados = Event.where(status: 3).order("updated_at ASC")
+		@caducados = Event.where(status: 4).order("start_time ASC")
 	end
 
 	def searchEvent
 		add_breadcrumb "Búsqueda"
-		@events = Event.order("end_time DESC").all
+		@events = Event.order("start_time ASC").all
 		if params[:search]
-			@events = Event.search(params[:search]).order("end_time DESC")
+			@events = Event.search(params[:search]).order("start_time ASC")
 		else
-			@events = Event.order("end_time DESC").all
+			@events = Event.order("start_time ASC").all
 		end
 	end
 	# GET /events/1
@@ -33,6 +33,9 @@ class EventsController < ApplicationController
 	def show
 		add_breadcrumb "Mostrar"
 		@comment = Comment.new
+		if @event.end_time < Time.now && @event.status == 1
+			@event.update(status: 4)
+		end
 	end
 
 	# GET /events/new

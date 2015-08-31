@@ -1,4 +1,17 @@
 <h1>Detalles de la oferta de servicio</h1>
+
+<% if user_signed_in? && current_user.category != 4 %>
+	<% if @offering.user.id == current_user.id %>
+		<%if @offering.status != 4%>
+			<%= link_to 'Editar ', edit_offering_path(@offering), :class => "btn btn-lg btnCRUD" %>
+			<%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :class => "btn btn-lg btnCRUD" %>
+		<%end%>
+	<% end %>
+<% end %>
+
+<%= link_to 'Volver', offerings_path, :class => "btn btn-lg btnCRUD" %>
+
+
 <div class="panel panel-default panelRease" >
 	<div class="panel-heading">
 		<%= @offering.title %>
@@ -18,13 +31,13 @@
 			<% elsif @offering.status == 3%>
 				Caducado
 			<% elsif @offering.status == 4%>
-				Aceptado
+				Aceptado para servicio
 			<%end%>
 		</p>
 
-		<p><strong>Fecha de inicio: </strong><%=l @offering.start_time %></p>
+		<p><strong>Fecha de licitación de inicio: </strong><%=l @offering.start_time %></p>
 
-		<p><strong>Fecha de término: </strong><%=l @offering.end_time %></p>
+		<p><strong>Fecha de licitación de término: </strong><%=l @offering.end_time %></p>
 		<%if @offering.area_id.present?%>
 			<p><strong>Área de trabajo: </strong> <%= @offering.area.name%></p>
 		<%end%>
@@ -42,21 +55,21 @@
 		<%end %>
 		<p>
 
-		<h2>Peticiones de Servicio</h2>
+		<h2>Manifestaciones</h2>
 		<% if @aceptados.blank?%>
 			<%if @offering.services.count == 0%>
-				<p>Aún no se han generado peticiones para participar en este servicio</p>
+				<p>Aún no se han manifestado para participar en este proyecto</p>
 			<%elsif @offering.services.count == 1%>
-				<p>Se ha generado <strong>1</strong> peticiones de servicio</p>
+				<p>Se ha manifestado <strong>1</strong> persona para este proyecto</p>
 				<%= link_to "Ver peticiones", offering_services_path(@offering), :class=>'btn btnCRUD'%>
 			<%else%>
-				<p>Se han generado <strong><%=@offering.services.count%></strong> peticiones de servicio</p>
+				<p>Se han manifestado <strong><%=@offering.services.count%></strong> personas para este proyecto</p>
 				<%= link_to "Ver peticiones", offering_services_path(@offering), :class=>'btn btnCRUD'%>
 		<%end%>
 
 		<%if @offering.user != current_user and current_user.category == 4%>
 			<%if @petition.blank?%>
-				<%= link_to "Solicitar participación", new_offering_service_path(@offering), :class=>'btn btnCRUD'%>
+				<%= link_to "Manifestar interés de trabajo", new_offering_service_path(@offering), :class=>'btn btnCRUD'%>
 			<%end%>
 		<%end%>
 			
@@ -68,6 +81,13 @@
 	</div>
 	<div class="panel-footer">
 		<h2>Comentarios</h2>
+		<%if @offering.comments.count == 0%>
+			<p>¡<%= current_user.nickname%>, sé el primero en comentar esta oferta!</p>
+		<%elsif @offering.comments.count == 1%>
+			<p>Hay <strong>1</strong> comentario en esta oferta.</p>
+		<%else%>
+			<p>Hay un total de <strong><%= @offering.comments.count%></strong> comentarios en esta oferta.</p>
+		<%end%>
 		<div class="comment">
 			<%if user_signed_in? %>
 				<%=render 'comments/formOffering'%>
@@ -92,11 +112,3 @@
 	</div>
 </div>
 
-<% if user_signed_in? && current_user.category != 4 %>
-	<% if @offering.user.id == current_user.id %>
-		<%= link_to 'Editar ', edit_offering_path(@offering), :class => "btn btn-lg btnCRUD" %>
-		<%= link_to 'Eliminar', @offering, method: :delete, data: { confirm: '¿Está seguro de eliminar la oferta?' }, :class => "btn btn-lg btnCRUD" %>
-	<% end %>
-<% end %>
-
-<%= link_to 'Volver', offerings_path, :class => "btn btn-lg btnCRUD" %>

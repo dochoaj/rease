@@ -10,9 +10,15 @@
     <div class="panel-heading">I. Antecedentes generales</div>
     <div class="panel-body">
 
+		<%if accion == "nuevo"%>
+			<%titulo="Experiencia de "+@service.title %>
+		<%else%>
+			<%titulo=@experience.title%>
+		<%end%>
+
 		<div class="field"><p>
 			<%= f.label :title, "Título de la experiencia: "%>
-			<%= f.text_field :title, :class => 'form-control', :placeholder => 'Título de la experiencia  ', :value=>"Experiencia de "+@service.title, required: true%>
+			<%= f.text_field :title, :class => 'form-control', :placeholder => 'Título de la experiencia  ', :value=>titulo, required: true%>
 		</p></div>
 		
 		<div class="field"><p>
@@ -79,14 +85,28 @@
 	<div class="panel-heading">II. Antecedentes de la actividad de Aprendizaje Servicio </div>
 	<div class="panel-body">
 
+
+		<%if accion == "nuevo"%>
+			<%obj1=@service.learning_objectives %>
+		<%else%>
+			<%obj1=@experience.learning_objectives%>
+		<%end%>
+
 		<div class="field"><p>
 			<%= f.label :learning_objectives, "Objetivos de aprendizaje y/o Competencias asociadas:" %>
-			<%= f.text_area :learning_objectives, :class => 'form-control', :placeholder => 'Objetivos de aprendizaje y/o Competencias asociadas', :required => true%>
+			<%= f.text_area :learning_objectives, :class => 'form-control', :placeholder => 'Objetivos de aprendizaje y/o Competencias asociadas', :value=> obj1, :required => true%>
 		</p></div>
+
+
+		<%if accion == "nuevo"%>
+			<%obj2=@service.service_objectives %>
+		<%else%>
+			<%obj2=@experience.service_objectives%>
+		<%end%>
 
 		<div class="field"><p>
 			<%= f.label :service_objectives,  "Objetivos de servicio: "%>
-			<%= f.text_area :service_objectives, :class => 'form-control', :placeholder => 'Objetivos de servicio', :value=> @service.objectives, :required => true%>
+			<%= f.text_area :service_objectives, :class => 'form-control', :placeholder => 'Objetivos de servicio', :value=> obj2, :required => true%>
 		</p></div>
 
 		<div class="field"><p>
