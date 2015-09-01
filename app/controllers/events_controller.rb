@@ -35,6 +35,7 @@ class EventsController < ApplicationController
 		@comment = Comment.new
 		if @event.end_time < Time.now && @event.status == 1
 			@event.update(status: 4)
+      flash[:alert] = "La fecha límite del evento ya ha sido sobrepasada, por lo cual ha caducado."
 		end
 	end
 

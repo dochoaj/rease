@@ -24,6 +24,7 @@ class OfferingsController < ApplicationController
 		@aceptados = @offering.services.where("status= 2 or status= 4")
 		if @offering.end_time < Time.now && @offering.status == 1
 			@offering.update(status: 3)
+			flash[:alert] = "La fecha límite de la oferta ya ha sido sobrepasada. La oferta ha caducado"
 		end
 	end
 
