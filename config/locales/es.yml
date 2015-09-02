@@ -1,5 +1,9 @@
 ---
 es:
+  will_paginate:
+    previous_label: "anterior "
+    next_label: " siguiente"
+    truncate: "..."
   activerecord:
       attributes:
         area:
@@ -27,7 +31,27 @@ es:
           end_time: "Fecha de término"
         experience:
           title: "Título"
-        identity:
+          description: "Descripción"
+          faculty: "Facultad"
+          department: "Departamento/Carrera"
+          course_name: "Nombre de la asignatura/curso"
+          course_type: "Tipo de curso"
+          course_type_other: "Otro tipo de curso"
+          period: "Periodo del curso" 
+          professor_phone: "Teléfono profesor responsable"
+          professor_degree: "Grado académico del profesor responsable" 
+          learning_objectives: "Objetivos de aprendizaje y/o Competencias asociadas" 
+          service_objectives: "Objetivos de servicio" 
+          institutional_support: "Respaldo institucional"
+          frequency: "Frecuencia"
+          weekly_hours: "Horas cronológicas semanale"
+          participants: "Número estudiantes participantes" 
+          students_level: "Nivel de la carrera de los Estudiantes" 
+          organization_type: "Tipo de organización comunitaria" 
+          benefit: "Número de beneficiados" 
+          results: "Resultados de aprendizaje" 
+          tools: "Herramientas de medición" 
+          reflection_moments: "Mencione las instancias de reflexión"
         institution:
           name: "Nombre"
           web: "Página web"
@@ -35,7 +59,7 @@ es:
           name: "Nombre"
           url: "link o página"
           description: "Descripción"
-        minute:
+        resource:
           name: "Nombre"
           date: "Fecha"
         offering:
@@ -52,6 +76,12 @@ es:
           start_time: "Fecha de inicio"
           end_time: "Fecha de término"
           resume: "Resumen"
+        service:
+          title: "Título"
+          status: "Estado"
+          description: "Descripción"
+          resume: "Resumen"
+          objectives: "Objetivos"
         section:
           title: "Título"
           description: "Descripción"
@@ -133,8 +163,8 @@ es:
       almost_x_years:
         one: casi 1 año
         other: casi %{count} años
-      half_a_minute: medio minuto
-      less_than_x_minutes:
+      half_a_resource: medio minuto
+      less_than_x_resources:
         one: menos de 1 minuto
         other: menos de %{count} minutos
       less_than_x_seconds:
@@ -146,7 +176,7 @@ es:
       x_days:
         one: 1 día
         other: "%{count} días"
-      x_minutes:
+      x_resources:
         one: 1 minuto
         other: "%{count} minutos"
       x_months:
@@ -158,7 +188,7 @@ es:
     prompts:
       day: Día
       hour: Hora
-      minute: Minutos
+      resource: Minutos
       month: Mes
       second: Segundos
       year: Año
@@ -253,7 +283,7 @@ es:
   time:
     am: am
     formats:
-      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      default: "%A, %d de %B de %Y %H:%M"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm

@@ -18,19 +18,25 @@ class User < ActiveRecord::Base
 	has_many :meetings
 	has_many :experiences
 
+	has_many :accepted_services,:class_name => "Service"
+	has_many :created_services, :class_name => "Service"
+
+	has_many :taught_experiences,:class_name => "Experience"
+	has_many :cooperated_experiences, :class_name => "Experience"
+
 	has_and_belongs_to_many :messages
 
-	has_attached_file :photo, styles: {mini:"30x30", medium: "500x200", thumb:"700x300"}
+	has_attached_file :photo, styles: {mini:"30x30", medium: "500x200", thumb:"700x300"}, :default_url => ":style/missingPhoto.png"
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
 	validates :name, presence: true, length:{maximum:50}
-	validates :nickname, presence: true, length:{maximum:14}
+	validates :nickname, length:{maximum:14}
 	
 
 	def self.search(search)
 		where("nickname LIKE ? or name LIKE ? or email LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
 	end
-validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+	validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
 	def self.find_for_oauth(auth, signed_in_resource = nil)
 

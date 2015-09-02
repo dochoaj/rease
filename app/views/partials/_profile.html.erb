@@ -24,7 +24,7 @@
 		</p>
 		<p><strong>Correo: </strong> <%= @user.email%></p>
 		<%if !@user.institution_id.blank?%>
-			<p><strong>Institución: </strong> <%=link_to @user.institution.name, @user.institution.web%></p>
+			<p><strong>Institución: </strong> <%=link_to @user.institution.name, @user.institution.web,:target=>'_blank'%></p>
 		<%end%>
 		<%if !@user.description.blank? %>
 			<p><strong>Sobre mí:</strong> <%= @user.description%></p>

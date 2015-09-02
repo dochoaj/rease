@@ -1,0 +1,15 @@
+<tr>
+	<td>
+		<% if resource.category == 1%>
+			Acta de reunión
+		<% elsif resource.category == 2%>
+			Plantilla de recurso
+		<% elsif resource.category == 3%>
+			Formación AS
+		<%else%>
+			Recurso
+		<%end%>
+	</td>
+	<td><%= link_to resource.name, resource%></td>
+	<td><%=	link_to "Descargar", resource.archive.url,:target=>'_blank' %></td>
+</tr>

@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805034026) do
+ActiveRecord::Schema.define(version: 20150831155015) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
     t.string "name",        limit: 255
+    t.text   "discipline",  limit: 65535
   end
 
   create_table "bulletins", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.date     "start_date"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "receiver",    limit: 4
   end
 
   create_table "categories", force: :cascade do |t|
@@ -53,9 +55,12 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
-    t.integer  "event_id",   limit: 4
     t.text     "body",       limit: 65535
+    t.integer  "post_id",    limit: 4
+    t.string   "post_type",  limit: 255
   end
+
+  add_index "comments", ["post_type", "post_id"], name: "index_comments_on_post_type_and_post_id", using: :btree
 
   create_table "communities", force: :cascade do |t|
     t.integer "request_id",           limit: 4
@@ -86,11 +91,7 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.text     "description",           limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",               limit: 4
-    t.integer  "request_id",            limit: 4
-    t.integer  "folio",                 limit: 4
     t.string   "title",                 limit: 255
-    t.integer  "offering_id",           limit: 4
     t.integer  "institution_id",        limit: 4
     t.text     "faculty",               limit: 65535
     t.text     "department",            limit: 65535
@@ -101,14 +102,14 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.text     "professor_name",        limit: 65535
     t.text     "professor_email",       limit: 65535
     t.text     "professor_phone",       limit: 65535
-    t.text     "professor_degree",      limit: 65535
+    t.integer  "professor_degree",      limit: 4
     t.text     "learning_objectives",   limit: 65535
     t.text     "service_objectives",    limit: 65535
     t.integer  "institutional_support", limit: 4
-    t.integer  "frequency",             limit: 4
-    t.integer  "weekly_hours",          limit: 4
+    t.text     "frequency",             limit: 65535
+    t.text     "weekly_hours",          limit: 65535
     t.integer  "participants",          limit: 4
-    t.integer  "students_level",        limit: 4
+    t.text     "students_level",        limit: 65535
     t.text     "community_partner",     limit: 65535
     t.text     "organization_type",     limit: 65535
     t.text     "benefit",               limit: 65535
@@ -116,6 +117,11 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.text     "tools",                 limit: 65535
     t.text     "reflection_moments",    limit: 65535
     t.integer  "area_id",               limit: 4
+    t.integer  "service_id",            limit: 4
+    t.date     "start_time"
+    t.date     "end_time"
+    t.integer  "professor_id",          limit: 4
+    t.integer  "partner_id",            limit: 4
   end
 
   create_table "identities", force: :cascade do |t|
@@ -166,45 +172,51 @@ ActiveRecord::Schema.define(version: 20150805034026) do
   add_index "messages_users", ["message_id"], name: "index_messages_users_on_message_id", using: :btree
   add_index "messages_users", ["user_id"], name: "index_messages_users_on_user_id", using: :btree
 
-  create_table "minutes", force: :cascade do |t|
-    t.string   "name",                 limit: 255
-    t.date     "date"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.string   "archive_file_name",    limit: 255
-    t.string   "archive_content_type", limit: 255
-    t.integer  "archive_file_size",    limit: 4
-    t.datetime "archive_updated_at"
-  end
-
   create_table "offerings", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
+    t.integer  "user_id",        limit: 4
+    t.string   "title",          limit: 255
+    t.text     "description",    limit: 65535
     t.date     "start_time"
     t.date     "end_time"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.text     "resume",      limit: 65535
-    t.integer  "status",      limit: 4,     default: 1
-    t.integer  "area_id",     limit: 4
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.text     "resume",         limit: 65535
+    t.integer  "status",         limit: 4,     default: 1
+    t.integer  "area_id",        limit: 4
+    t.text     "location",       limit: 65535
+    t.integer  "institution_id", limit: 4
   end
 
   add_index "offerings", ["user_id"], name: "index_offerings_on_user_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.integer  "user_id",       limit: 4
-    t.integer  "experience_id", limit: 4
-    t.integer  "community_id",  limit: 4
-    t.integer  "area_id",       limit: 4
-    t.string   "title",         limit: 255
-    t.text     "description",   limit: 65535
+    t.integer  "user_id",        limit: 4
+    t.integer  "experience_id",  limit: 4
+    t.integer  "community_id",   limit: 4
+    t.integer  "area_id",        limit: 4
+    t.string   "title",          limit: 255
+    t.text     "description",    limit: 65535
     t.date     "start_time"
     t.date     "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "resume",        limit: 65535
-    t.integer  "status",        limit: 4,     default: 1
+    t.text     "resume",         limit: 65535
+    t.integer  "status",         limit: 4,     default: 1
+    t.text     "location",       limit: 65535
+    t.integer  "institution_id", limit: 4
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "name",                 limit: 255
+    t.date     "date"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "archive_file_name",    limit: 255
+    t.string   "archive_content_type", limit: 255
+    t.integer  "archive_file_size",    limit: 4
+    t.datetime "archive_updated_at"
+    t.integer  "category",             limit: 4,     default: 1
+    t.text     "description",          limit: 65535
   end
 
   create_table "sections", force: :cascade do |t|
@@ -215,6 +227,28 @@ ActiveRecord::Schema.define(version: 20150805034026) do
     t.datetime "updated_at"
     t.integer  "priority",   limit: 4,     default: 1
   end
+
+  create_table "services", force: :cascade do |t|
+    t.integer  "publication_id",      limit: 4
+    t.string   "publication_type",    limit: 255
+    t.integer  "creator_id",          limit: 4
+    t.integer  "acceptor_id",         limit: 4
+    t.integer  "area_id",             limit: 4
+    t.integer  "institution_id",      limit: 4
+    t.text     "title",               limit: 65535
+    t.integer  "status",              limit: 4
+    t.text     "message",             limit: 65535
+    t.text     "description",         limit: 65535
+    t.text     "resume",              limit: 65535
+    t.date     "start_time"
+    t.date     "end_time"
+    t.text     "learning_objectives", limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.text     "service_objectives",  limit: 65535
+  end
+
+  add_index "services", ["publication_type", "publication_id"], name: "index_services_on_publication_type_and_publication_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false

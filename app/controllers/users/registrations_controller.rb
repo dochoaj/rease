@@ -2,7 +2,7 @@
   # before_filter :configure_sign_up_params, only: [:create]
   # before_filter :configure_account_update_params, only: [:update]
     before_filter :configure_permitted_parameters
-    before_action :estatutos
+    before_action :estatuto
 
     add_breadcrumb "Inicio", :root_path
     add_breadcrumb "Datos de usuario"
@@ -15,7 +15,7 @@
     
     private
     
-    def estatutos
+    def estatuto
       @sections = Section.all
       @institutions = Institution.all
     end

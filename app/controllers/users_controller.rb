@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def listarUsuarios
 		add_breadcrumb "Usuarios registrados"
-		@user = User.order("nickname ASC").all
+		@user = User.paginate(page: params[:page],per_page: 20).order("nickname ASC").all
 	end
 	
 	def show
@@ -35,6 +35,13 @@ class UsersController < ApplicationController
 				format.html { render action: 'edit' }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
 			end
+		end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			redirect_to users_listarUsuarios_path, notice: "El usuario ha sido eliminado"
 		end
 	end
 
