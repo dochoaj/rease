@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 	has_many :comment_requests
 	has_many :meetings
 	has_many :experiences
+	has_many :projects
 
 	has_many :accepted_services,:class_name => "Service"
 	has_many :created_services, :class_name => "Service"
