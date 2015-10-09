@@ -83,7 +83,7 @@
 
 
 			<div class="field">
-				<p><%= f.label :autorization_level, "Tipo de usuario"%>
+				<p><%= f.label :autorization_level, "Adhesión a la Red"%>
 
 				<button type="button" class="btn btn-default btnWhite" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnTipoUsuario"> ? </button>
 
@@ -108,7 +108,7 @@
 $(function () {
   $('[data-toggle="btnTipoUsuario"]').popover(
   {
-	title: 'Rol de usuario',	
+	title: 'Adhesión a la Red',	
   	html: 'true', 
     content: '<p><strong>Activo:</strong> Recibirá bimensualmente las actas de reuniones, invitaciones a todos los eventos y actividades de la Red y tendrá que participar en las reuniones de ampliadas y comisiones de trabajo de REASE.</p><p><strong>Adherente:</strong> Recibirá semestralmente los avances de la Red e invitaciones a eventos masivos, así como invitaciones a eventos masivos de REASE.</p>'
   }

@@ -28,7 +28,6 @@ class SectionsController < ApplicationController
 		add_breadcrumb "Aprendizaje Servicio", :sections_aprendizaje_path
 		@sections = Section.order("priority ASC").where("module = ?","Aprendizaje Servicio")
 	end
-
 	def newNovedades
 		add_breadcrumb "Novedades", :sections_novedades_path
 		add_breadcrumb "Nuevo"
@@ -49,7 +48,6 @@ class SectionsController < ApplicationController
 		add_breadcrumb "Aprendizaje Servicio", :sections_aprendizaje_path
 		add_breadcrumb "Nuevo"
 	end
-
 
 	def new
 		add_breadcrumb "Nueva sección", :new_section_path

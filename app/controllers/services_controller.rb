@@ -121,7 +121,7 @@ class ServicesController < ApplicationController
 		add_breadcrumb "Búsqueda"
 		@service = Service.where(status: 2).order("created DESC")
 		if params[:search]
-			@services = Service.where(status: 2).search(params[:search]).order("updated_at DESC")
+			@services = Service.search(params[:search]).order("updated_at DESC")
 		else
 			@service = Service.where(status: 2).order("created DESC")
 		end

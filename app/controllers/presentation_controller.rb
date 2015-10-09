@@ -37,6 +37,12 @@ class PresentationController < ApplicationController
 		@sections = Section.where("module = ?","Estatuto")
 	end
 	
+	def about
+		add_breadcrumb "Acerca de", :presentation_estatuto_path
+		@events = Event.all
+    	@interest_links = InterestLink.order("name ASC").all
+		@questions = Question.all
+	end
 	def searchPage
 		add_breadcrumb "Búsqueda"
 		if user_signed_in? ##SEARCH PARA LA INTRANET

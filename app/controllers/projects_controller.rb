@@ -9,13 +9,23 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects =Project.paginate(page: params[:page],per_page: 5).all.order("created_at DESC")
+    @projects = Project.paginate(page: params[:page],per_page: 5).all.order("created_at DESC")
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
     add_breadcrumb "Mostrando"
+    respond_to do |format|
+      format.html
+      format.pdf  do
+        pdf = ProjectPdf.new(@project)
+        send_data pdf.render, :filename => "Experiencia_#{@project.id}.pdf", 
+                  :type => 'application/pdf',
+                  :disposition => 'inline'
+                  
+      end
+    end
   end
 
   # GET /projects/new

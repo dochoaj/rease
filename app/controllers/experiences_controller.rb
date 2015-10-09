@@ -96,10 +96,13 @@ class ExperiencesController < ApplicationController
 	def searchExperience
 		add_breadcrumb "Búsqueda"
 		@experiences = Experience.order("created_at DESC").all
+		@projects = Project.order("created_at DESC").all
 		if params[:search]
 			@experiences = Experience.search(params[:search]).order("created_at DESC")
+			@projects = Project.search(params[:search]).order("created_at DESC")
 		else
 			@experiences = Experience.order("created_at DESC").all
+			@projects = Project.order("created_at DESC").all
 		end
 	end
 	

@@ -45,6 +45,12 @@
 					<%end%>
 				</li>
 			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<%= link_to '<i class="glyphicon glyphicon-question-sign"></i>'.html_safe, presentation_about_path,:class=>"rightNav"%>
+				</li>				
+			</ul>
+			
 				<%else%>
 
 				<li role="presentation" class="<%= 'active' if current_page?(presentation_estatuto_path) %>">
@@ -93,6 +99,9 @@
 						<%= link_to '<i class="glyphicon glyphicon-cog"></i>'.html_safe, sections_path,:class=>"rightNav"%>
 					</li>
 				<%end%>	
+				<li>
+					<%= link_to '<i class="glyphicon glyphicon-question-sign"></i>'.html_safe, presentation_about_path,:class=>"rightNav"%>
+				</li>
 				<li>
 					<%= link_to '<i class="glyphicon glyphicon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete, :class=>"rightNav"%>
 				</li>				

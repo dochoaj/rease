@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects
+
 	match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
 	get 'users/listarUsuarios'
 	get 'presentation/index'
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 	get 'presentation/hacemos'
 	get 'presentation/aprendizaje'
 	get 'presentation/estatuto'
+	get 'presentation/pregunta'
+	get 'presentation/about'
 	get 'events/listado'
 	get 'sections/somos'
 	get 'sections/hacemos'
@@ -29,8 +31,10 @@ Rails.application.routes.draw do
 	post 'resources/searchResource'
 	post 'events/searchEvent'
 	post 'services/searchService'
+	post 'questions/searchQuestion'
 
-	
+	resources :questions
+	resources :projects
 	resources :sections
 	resources :events do
 		resources :comments
