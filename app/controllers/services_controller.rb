@@ -34,7 +34,7 @@ class ServicesController < ApplicationController
 	end
 
 	def edit
-		add_breadcrumb "Editando"
+		add_breadcrumb "Editar servicio"
 		@publication = publication
 		@service = publication.services.find(params[:id])
 		if current_user.category != 2

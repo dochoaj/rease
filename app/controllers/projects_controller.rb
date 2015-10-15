@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :validate_category, except: [:show, :index]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   add_breadcrumb "Inicio", :root_path
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    add_breadcrumb "Mostrando"
+    add_breadcrumb "Mostrar"
     respond_to do |format|
       format.html
       format.pdf  do
@@ -30,7 +31,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    add_breadcrumb "Nuevo"
+    add_breadcrumb "Nuevo proyecto antiguo"
     @project = Project.new
   end
 
@@ -85,6 +86,13 @@ class ProjectsController < ApplicationController
     def set_project
       @project = Project.find(params[:id])
     end
+
+    def validate_category
+      if current_user.category != 2
+        redirect_to root_path, alert: "Sólo un profesor puede trabajar las experiencias."
+      end   
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
