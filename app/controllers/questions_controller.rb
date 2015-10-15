@@ -3,6 +3,10 @@ class QuestionsController < ApplicationController
   before_action :validate_category, except: [:show,:searchQuestion]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "Inicio", :root_path
+  add_breadcrumb "Administrar", :sections_path
+  add_breadcrumb "Preguntas frecuentes", :questions_path
+
   # GET /questions
   # GET /questions.json
   def index
@@ -12,6 +16,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    add_breadcrumb "Mostrar"
   end
 
   def searchQuestion
@@ -30,11 +35,13 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
+    add_breadcrumb "Nuevo"
     @question = Question.new
   end
 
   # GET /questions/1/edit
   def edit
+    add_breadcrumb "Editar"
   end
 
   # POST /questions
@@ -44,7 +51,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @question, notice: 'La pregunta ha sido agregada' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -58,7 +65,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to @question, notice: 'Se ha modificado la pregunta.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
@@ -72,7 +79,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
+      format.html { redirect_to questions_url, notice: 'Se ha eliminado la pregunta.' }
       format.json { head :no_content }
     end
   end
