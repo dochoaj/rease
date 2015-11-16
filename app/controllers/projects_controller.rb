@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   add_breadcrumb "Inicio", :root_path
   add_breadcrumb "Experiencias", :experiences_path
-  add_breadcrumb "Proyectos Antiguos", :projects_path
+  add_breadcrumb "Experiencias reportadas", :projects_path
 
   # GET /projects
   # GET /projects.json
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    add_breadcrumb "Nuevo proyecto antiguo"
+    add_breadcrumb "Nueva experiencia reportada"
     @project = Project.new
   end
 

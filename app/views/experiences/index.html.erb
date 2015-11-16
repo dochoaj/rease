@@ -13,7 +13,7 @@
 	<%end%>
 </div>
 
-<%= link_to "Proyectos antiguos", projects_path, :class => 'btn btn-lg' %>
+<%= link_to "Experiencias reportadas", projects_path, :class => 'btn btn-lg' %>
 
 <%if @experiences.present?%>
 	<% @experiences.order('created_at DESC').each do |experience| %>
@@ -51,7 +51,7 @@
 			{
 				title: 'Experiencias',
 				html: 'true', 
-				content: '<p>Las <strong>Experiencias</strong> son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p><p>Los <strong>Proyectos Antiguos</strong> son experiencias realizadas antes de la creación del sitio actual, las cuales son agregadas manualmente para poder almacenar la información de estas.</p><p><i class="glyphicon glyphicon-tags"></i> : Experiencia en la cual usted participó.</p>',
+				content: '<p>Las <strong>Experiencias</strong> son servicios activos finalizados correctamente. La cual el profesor responsable ha documentado.</p><p>Las <strong>Experiencias reportadas</strong> son experiencias realizadas antes de la creación del sitio actual, las cuales son agregadas manualmente para poder almacenar la información de estas.</p><p><i class="glyphicon glyphicon-tags"></i> : Experiencia en la cual usted participó.</p>',
 				template: '<div class="popover popover-rease"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
 			}
 		)
