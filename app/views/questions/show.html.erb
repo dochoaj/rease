@@ -6,7 +6,7 @@
 		<h2>Tipo: <%= @question.reader %></h2>
 		<p>	<%=raw @question.answer %></p>
 	</div>
-	<p>Fecha de Creacion: <%=l @question.created_at%></p>			
+	<p>Fecha de Creación: <%=l @question.created_at%></p>			
 </div>
 <%if user_signed_in? and current_user.category == 1%>
 	<%= link_to "Editar", edit_question_path( @question), :class => "btn btn-lg btnCRUD"%>
