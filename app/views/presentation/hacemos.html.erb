@@ -30,7 +30,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 <%end%>
 
 <br>
-<h1>Actas de reuniones de REASE:</h1>
+<h1>Últimas de reuniones de REASE:</h1>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">
 		Listado de actas
@@ -48,7 +48,7 @@ La Red Nacional de Aprendizaje Servicio Chile a definido su rol a desempeñar a 
 				<tr>
 					<td><%=resource.name.truncate(40)%></td>
 					<td><%=l resource.date%></td>
-						<td><%= link_to '<center><i class="glyphicon glyphicon-circle-arrow-down"></i></center>'.html_safe, resource.archive.url, :target => "_blank"%></td>
+						<td><%= render 'resources/extensiones', :resource => resource %></td>
 				</tr>
 				<%end%>
 			</table>

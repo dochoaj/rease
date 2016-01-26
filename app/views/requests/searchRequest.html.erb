@@ -16,14 +16,22 @@
 </div>
 
 <% if @requests.present? %>
-<div class="panel panel-default panelRease">
-	<div class="panel-heading">
-		Resultados de la búsqueda: <%= params[:search] %>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Resultados de la búsqueda: <%= params[:search] %>
+		</div>
+		<div class="panel-body">
+			<table class="tabla-rease">
+				<tr>
+					<th><strong>Tipo</strong></th>
+					<th><strong>Nombre</strong></th>
+					<th><strong>Detalles</strong></th>
+
+				</tr>
+					<%= render @requests %>
+			</table>
+		</div>
 	</div>
-	<div class="panel-body">
-		<%= render @requests %>
-	</div>
-</div>
 <%else%>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">

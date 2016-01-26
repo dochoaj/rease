@@ -25,8 +25,6 @@
 
 				<p>Nuestro enfoque es el servicio, por lo que es necesario mantener un estándar dentro de la Red para que sus participantes cumplan con el objetivo. </p>
 				<p>Es por esto que se le pide a cada nuevo miembro de la red, dé su concentimiento para que pueda ser evaluado en las actividades que realice a nombre de REASE. </p>
-				<p>Además, así como se le evalúa a usted, usted deberá evaluar a otros miembros.
-				De no aprobar éste requisito, usted no podrá registarse en la Red.</p>
 				<p class="note">*Todos los campos son obligatorios.</p>
 			</div>
 		</div>
@@ -83,15 +81,13 @@
 
 
 			<div class="field">
-				<p><%= f.label :autorization_level, "Tipo de usuario"%>
+				<p><%= f.label :autorization_level, "Adhesión a la Red"%>
 
 				<button type="button" class="btn btn-default btnWhite" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnTipoUsuario"> ? </button>
 
 				</p>
 
 				<%= f.select(:autorization_level,[['Activo', 1], ['Adherente', 2]], {:include_blank => '-- Seleccione una Opción --' }, { :class => 'form-control', :required => true }) %>
-
-
 			</div>
 		
 			<div class="actions">
@@ -108,7 +104,7 @@
 $(function () {
   $('[data-toggle="btnTipoUsuario"]').popover(
   {
-	title: 'Rol de usuario',	
+	title: 'Adhesión a la Red',	
   	html: 'true', 
     content: '<p><strong>Activo:</strong> Recibirá bimensualmente las actas de reuniones, invitaciones a todos los eventos y actividades de la Red y tendrá que participar en las reuniones de ampliadas y comisiones de trabajo de REASE.</p><p><strong>Adherente:</strong> Recibirá semestralmente los avances de la Red e invitaciones a eventos masivos, así como invitaciones a eventos masivos de REASE.</p>'
   }
@@ -119,7 +115,7 @@ $(function () {
   {
   	title: 'Tipo de usuario',
   	html: 'true', 
-    content: '<p><strong>Profesor:</strong> Es quien imparte la asignatura y que está cargo del curso. Realiza la asignatura y sus evaluaciones correspondiente, mediante la actividad de AS.</p><p><strong>Socio comunitario:</strong> Representante de la comunidad que se beneficia de esta actividad. También tiene labores en el proceso de AS, como cumplir con los acuerdos con el docente.</p><p><strong>Vinculador social: </strong> Actúa como intermediario entre el docente y el socio comunitario para realizar la actividad de AS.</p>'
+    content: '<color='white'>><p><strong>Profesor:</strong> Es quien imparte la asignatura y que está cargo del curso. Realiza la asignatura y sus evaluaciones correspondiente, mediante la actividad de AS.</p><p><strong>Socio comunitario:</strong> Representante de la comunidad que se beneficia de esta actividad. También tiene labores en el proceso de AS, como cumplir con los acuerdos con el docente.</p><p><strong>Vinculador social: </strong> Actúa como intermediario entre el docente y el socio comunitario para realizar la actividad de AS.</p>'
 
   }
   	)

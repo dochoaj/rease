@@ -5,7 +5,7 @@
 			¡USUARIO ADMINISTRADOR!
 		</div>
 		<div class="panel-body">
-			<p>No se puede cambiar el tipo ni rol de usuario de los administradores</p>
+			<p>No se puede cambiar el tipo de adhesión ni rol de usuario de los administradores</p>
 	<%= link_to "Volver", sections_path, :class=>'btn btn-lg btnCRUD' %>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="field">
-				<p><%= f.label :autorization_level, "Tipo de usuario"%>
+				<p><%= f.label :autorization_level, "Adhesión a la red"%>
 
 				<button type="button" class="btn btn-default btnWhite" id:"btnTipoUsuario"  data-trigger="focus" data-container="body" data-toggle="btnTipoUsuario"> ? </button>
 
@@ -47,7 +47,7 @@
 $(function () {
   $('[data-toggle="btnTipoUsuario"]').popover(
   {
-  	title: 'Tipo de usuario',
+  	title: 'Adhesión a la red',
   	html: 'true', 
     content: '<p><strong>Activo:</strong> El usuario recibirá bimensualmente las actas de reuniones, invitaciones a todos los eventos y actividades de la Red y tendrá que participar en las reuniones de ampliadas y comisiones de trabajo de REASE.</p><p><strong>Adherente:</strong> El usuario recibirá semestralmente los avances de la Red e invitaciones a eventos masivos, así como invitaciones a eventos masivos de REASE.</p>'
   }

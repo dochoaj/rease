@@ -105,6 +105,7 @@
 	border-radius: 3px;
 	padding: 9px;
 	padding-left: 15px;
+	margin-top: 7px;
 }
 .form-control
 {
@@ -123,3 +124,7 @@
 	padding-bottom: 5px;
 }
 
+#btnPerdfil
+{
+	margin-top: 0px;
+}

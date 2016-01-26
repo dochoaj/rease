@@ -1,4 +1,4 @@
-<%= link_to users_path, :class=>'btn btnAside' do %>
+<%= link_to users_path, :class=>'btn btnAside', :id=>'btnPerdfil' do %>
 	¡Hola <%=current_user.nickname%>!
 	<%if current_user.photo.present?%>
 		<%= image_tag(current_user.photo, :class=>'SquarePicture') %>

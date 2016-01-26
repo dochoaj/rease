@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831155015) do
+ActiveRecord::Schema.define(version: 20151009172454) do
 
   create_table "areas", force: :cascade do |t|
     t.string "description", limit: 255
@@ -189,6 +189,54 @@ ActiveRecord::Schema.define(version: 20150831155015) do
 
   add_index "offerings", ["user_id"], name: "index_offerings_on_user_id", using: :btree
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "title",                 limit: 255
+    t.text     "description",           limit: 65535
+    t.text     "faculty",               limit: 65535
+    t.text     "department",            limit: 65535
+    t.text     "course_name",           limit: 65535
+    t.text     "course_type",           limit: 65535
+    t.text     "course_type_other",     limit: 65535
+    t.text     "professor_name",        limit: 65535
+    t.text     "professor_phone",       limit: 65535
+    t.text     "professor_email",       limit: 65535
+    t.text     "learning_objectives",   limit: 65535
+    t.text     "service_objectives",    limit: 65535
+    t.text     "frequency",             limit: 65535
+    t.text     "weekly_hours",          limit: 65535
+    t.text     "students_level",        limit: 65535
+    t.text     "community_partner",     limit: 65535
+    t.text     "organization_type",     limit: 65535
+    t.text     "benefit",               limit: 65535
+    t.text     "results",               limit: 65535
+    t.text     "tools",                 limit: 65535
+    t.text     "reflection_moments",    limit: 65535
+    t.integer  "period",                limit: 4
+    t.integer  "professor_degree",      limit: 4
+    t.integer  "participants",          limit: 4
+    t.integer  "institutional_support", limit: 4
+    t.integer  "area_id",               limit: 4
+    t.integer  "user_id",               limit: 4
+    t.integer  "institution_id",        limit: 4
+    t.date     "start_time"
+    t.date     "end_time"
+    t.text     "partner",               limit: 65535
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "projects", ["area_id"], name: "index_projects_on_area_id", using: :btree
+  add_index "projects", ["institution_id"], name: "index_projects_on_institution_id", using: :btree
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "title",      limit: 65535
+    t.text     "answer",     limit: 65535
+    t.integer  "reader",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "requests", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
     t.integer  "experience_id",  limit: 4
@@ -286,4 +334,7 @@ ActiveRecord::Schema.define(version: 20150831155015) do
   add_foreign_key "comment_requests", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "offerings", "users"
+  add_foreign_key "projects", "areas"
+  add_foreign_key "projects", "institutions"
+  add_foreign_key "projects", "users"
 end

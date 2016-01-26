@@ -14,14 +14,22 @@
 </div>
 
 <% if @services.present? %>
-<div class="panel panel-default panelRease">
-	<div class="panel-heading">
-		Experiencias y servicios: <%= params[:search] %>
+	<div class="panel panel-default panelRease">
+		<div class="panel-heading">
+			Resultados de la búsqueda: <%= params[:search] %>
+		</div>
+		<div class="panel-body">
+			<table class="tabla-rease">
+				<tr>
+					<th><strong>Tipo</strong></th>
+					<th><strong>Nombre</strong></th>
+					<th><strong>Detalles</strong></th>
+
+				</tr>
+					<%=render @services%>
+			</table>
+		</div>
 	</div>
-	<div class="panel-body">
-		<%= render @services %>
-	</div>
-</div>
 <%else%>
 <div class="panel panel-default panelRease">
 	<div class="panel-heading">

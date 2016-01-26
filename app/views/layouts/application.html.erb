@@ -48,7 +48,7 @@
 			<section id="contenedor">
 				<section id="principal">
 					<article>
-						<%= render_breadcrumbs %>
+						<%= render_breadcrumbs("", { class: '', item_class: '', divider_class: '', active_class: 'active' }) %>
 						<%= bootstrap_flash %>
 						<%= yield %>
 					</article>
@@ -64,7 +64,7 @@
 					
 					<div  class="panel panel-default panelClick">
 						<div class="panel-heading">
-							<%= link_to 'Calendario de eventos <i class="glyphicon glyphicon-circle-arrow-right"></i>'.html_safe, events_path, :id => "calendarPanelTitle"%>
+							<%= link_to 'Calendario de eventos <i class="glyphicon glyphicon-circle-arrow-left"></i>'.html_safe, events_path, :id => "calendarPanelTitle"%>
 						</div>
 						<div class="panel-body" id = "calendarAside">
 						</div>
@@ -78,7 +78,7 @@
 			<div  id="pies" class = "navbar-default pies">
 				REASE - Red Nacional de Aprendizaje Servicio
 				<br>
-				Contacto: reasechile@gmail.com
+				Contacto: redrease@gmail.com
 			</div>
 		</div>
 	</div>

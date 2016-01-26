@@ -13,7 +13,7 @@
 	<div class="panel panel-default panelRease" >
 		<div class="panel-heading"><%=accion%> <%= @service.title%></div>
 		<div class="panel-body">
-			<%if accion == "Aceptar" || accion == "Editar" %>
+			<%if accion == "Aceptar" || accion == "Actualizar" %>
 				<%if accion == "Aceptar"%>
 					<%= f.hidden_field :status, :value=>2%>
 				<%end%>

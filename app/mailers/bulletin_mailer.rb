@@ -1,5 +1,5 @@
 class BulletinMailer < ApplicationMailer
-	default from: 'coordinacion.rease@gmail.com'
+	default from: 'redrease@gmail.com'
 
 	def bulletin(bulletin,user,sections,events,offerings,requests, services, experiences)
 		@bulletin = bulletin
