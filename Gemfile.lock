@@ -236,7 +236,7 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.1.0)
-    wysiwyg-rails (2.0.5)
+    wysiwyg-rails (2.0.1)
       font-awesome-rails (~> 4.4, >= 4.4.0.0)
       railties (>= 3.2, < 5.0)
 
@@ -271,7 +271,7 @@ DEPENDENCIES
   unicorn
   web-console (~> 2.0)
   will_paginate
-  wysiwyg-rails
+  wysiwyg-rails (= 2.0.1)
 
 BUNDLED WITH
    1.10.6

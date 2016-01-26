@@ -33,7 +33,7 @@ gem 'unicorn'
 gem 'mina'
 gem 'mina-unicorn', :require => false
 
-gem 'wysiwyg-rails'
+gem 'wysiwyg-rails', '2.0.1'
 gem "breadcrumbs_on_rails"
 gem 'fullcalendar-rails', '~> 2.0.2.0'
 gem 'paperclip'
