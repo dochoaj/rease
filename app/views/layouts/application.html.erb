@@ -48,7 +48,6 @@
 			<section id="contenedor">
 				<section id="principal">
 					<article>
-						<%= render_breadcrumbs("", { class: '', item_class: '', divider_class: '', active_class: 'active' }) %>
 						<%= bootstrap_flash %>
 						<%= yield %>
 					</article>
@@ -61,7 +60,7 @@
 						<%= render "partials/user"%>
 						<%= render "partials/resources"%>
 					<%end%>
-					
+
 					<div  class="panel panel-default panelClick">
 						<div class="panel-heading">
 							<%= link_to 'Calendario de eventos <i class="glyphicon glyphicon-circle-arrow-left"></i>'.html_safe, events_path, :id => "calendarPanelTitle"%>

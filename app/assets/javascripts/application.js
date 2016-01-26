@@ -23,7 +23,7 @@
 #= require twitter/bootstrap/button
 #= require twitter/bootstrap/collapse
 
-
+//= require froala_editor.min.js
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js
 //= require plugins/colors.min.js
