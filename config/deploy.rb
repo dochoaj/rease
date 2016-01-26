@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'
+require 'mina/rvm'
 require 'mina/unicorn'
 
 # Basic settings:
@@ -10,7 +10,7 @@ require 'mina/unicorn'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '104.131.119.33'
+set :domain, '104.236.76.234'
 set :deploy_to, '/home/deployer/rease/'
 set :repository, 'https://github.com/dochoaj/rease.git'
 set :branch, 'develop'
@@ -31,7 +31,7 @@ task :environment do
 echo "-----> Loading environment"
 #{echo_cmd %[source ~/.bashrc]}
 }
-  invoke :'rbenv:load'
+  invoke :'rvm:use[ruby-2.2.1@gemset_name]'
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .rbenv-version to your repository.
 end
