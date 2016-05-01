@@ -29,13 +29,15 @@
 				<%= f.label :description, "Sobre mí: "%>
 				<%= f.text_area :description, :class => 'form-control', :placeholder => 'Anote aquí algo sobre usted' %>
 			</p></div>
-				<p class="note">Sí no se encuentra su institución comuníquese con un administrador</p>
+				
 			<div class="field"><p>
-				<%= f.label :institution_id, "Institución adherida: "%>
+				<%= f.label :institution_id, "Institución adherida: (*)"%>
 				<%= f.select :institution_id, @institutions.collect {|ins| [ins.name, ins.id]},{:include_blank => "Institución a la que pertenece (Opcional)"},{ :class => 'form-control'} %>
+				<p class="note">* Si no se encuentra su institución comuníquese con un administrador</p>
 			</p></div>
-			<h2>Foto de perfil</h2>	
+			<h2>Foto de perfil (**)</h2>	
 				<%= f.file_field :photo %>
+				<p class="note">** Usted debe aparecer vertical en la foto a subir.</p>
 			
 			<div data-toggle="collapse" data-target="#CambiarPass">
 					<h2>Modificar contraseña</h2>	
