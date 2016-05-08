@@ -29,18 +29,18 @@
 				</p></div>
 
 				<div class="field"><p>
-					<%= f.label :institution_id, "Institución adherida: "%>		
+					<%= f.label :institution_id, "Institución adherida: "%>
 					<%= f.select(:institution_id, Institution.order("name ASC").all.collect {|inst| [inst.name, inst.id]},{:include_blank => " -- Institución asociada -- ", :selected => @publication.institution_id },{ :class => 'form-control',:required=>true}) -%>
 				</p></div>
 
 				<p class="note">Sí no se encuentra su área de trabajo comuníquese con un administrador</p>
 				<div class="field"><p>
-					<%= f.label :area_id, "Área de trabajo: "%>	
+					<%= f.label :area_id, "Área de trabajo: "%>
 					<%= f.select(:area_id, Area.order("discipline ASC").order("name ASC").all.collect {|area| [area.discipline+": "+area.name, area.id]},{:include_blank => " -- Área de trabajo -- "},{ :class => 'form-control',:required=>true}) -%>
 				</p></div>
 
 				<div class="field"><p>
-					<%= f.label :description, "Descripción: "%>	
+					<%= f.label :description, "Descripción: "%>
 					<%= f.text_area :description, :placeholder=> "Descripción del servicio", :id=>"eg-basic"%>
 				</div>
 
@@ -48,12 +48,12 @@
 				<br>
 					<h2><strong>Propositos del proyecto:</strong></h2>
 					<p class="note">En el área de aprendizaje se ingresan los aspectos curriculares asociados al proyecto.</p>
-					<p><%= f.label :learning_objectives, "De aprendizaje: "%>	
+					<p><%= f.label :learning_objectives, "De aprendizaje: "%>
 					<%= f.text_area :learning_objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %></p>
 					<p class="note">En el área de servicio se ingresan los objetivos del servicio.</p>
 					<p>
 					<%= f.label :service_objectives, "De servicio"%>
-					<%= f.text_area :service_objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>		
+					<%= f.text_area :service_objectives, :placeholder=> "Objetivos principales del servicio.", :class=>'form-control', :required=>true %>
 				</p></div>
 
 				<div class="field">
@@ -65,16 +65,16 @@
 					<p><%= f.label :end_time, "Fecha de término del proyecto" %>
 					<%= f.date_select :end_time %></p>
 				</p></div>
-				
+
 				<% if @service.acceptor.blank? %>
 					<%= f.hidden_field :acceptor_id, :value => current_user.id%>
 				<%end%>
-				
+
 
 			<%elsif accion == "Manifestar"%>
 				<p class="note">El hecho que usted manifieste interés no significa que vaya ser seleccionado en este proyecto.</p>
 				<div class="field"><p>
-					<%= f.label :message, "Mensaje: "%>	
+					<%= f.label :message, "Mensaje: "%>
 					<%= f.text_field :message, :class => 'form-control', :placeholder => 'Deje algún mensaje', required: true%>
 				</p></div>
 			<%end%>
@@ -86,7 +86,7 @@
 	<% end %>
 
 <script>
-	$(function() {$('textarea#eg-basic').editable({
+	$(function() {$('textarea#eg-basic').froalaEditor({
 		theme: 'rease',
 		inlineMode: false,
 		language: 'es'

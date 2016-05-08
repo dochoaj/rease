@@ -35,15 +35,15 @@
 		<%= f.submit "Enviar Correo",:class=>'btn btn-lg btnCRUD' %>
 		<%= link_to 'Volver', bulletins_path,:class=>'btn btn-lg btnCRUD' %>
 
-	</div>	
+	</div>
 <% end %>
 
 
 <script>
   $(function() {
-    $('textarea#eg-basic').editable({
+    $('textarea#eg-basic').froalaEditor({
       theme: 'rease',
-	inlineMode: false,
+			inlineMode: false,
       language: 'es'
     })
   });

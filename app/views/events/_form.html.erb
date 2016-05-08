@@ -14,7 +14,7 @@
 		<div class="field"><p>
 			<%= f.label :title, "Título: "%>
 			<%= f.text_field :title, :placeholder => "Nombre del evento" , :class => 'form-control',autofocus: true, :required => true %>
-		</div>	
+		</div>
 		<div class="field"><p>
 			<%= f.label :address, "Dirección o ubicación: "%>
 			<%= f.text_area :address, :placeholder => "Lugar y/o dirección donde se realizará el evento", :class => 'form-control',autofocus: true, :required => true  %>
@@ -43,7 +43,6 @@
 			<p><%= f.label :end_time, "Fecha y hora de término" %></p>
 			<%= f.datetime_select :end_time %>
 		</div>
-		
 	</div>
 </div>
 	<%= f.submit orden, :class => 'btn btn-lg btnCRUD' %>
@@ -53,7 +52,8 @@
 
 
 <script>
-$(function() {$('textarea#eg-basic').editable({
+
+$(function() {$('textarea#eg-basic').froalaEditor({
 	theme: 'rease',
 	inlineMode: false,
 	language: 'es'

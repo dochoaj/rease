@@ -63,7 +63,7 @@
 				<p><%= f.label :end_time, "Fecha de licitación de término" %>
 				<%= f.date_select :end_time %></p>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -73,9 +73,9 @@
 <% end %>
 
 <script>
-	 $(function() {$('textarea#eg-basic').editable({
+	 $(function() {$('textarea#eg-basic').froalaEditor({
       theme: 'rease',
-		inlineMode: false,
+			inlineMode: false,
       language: 'es'
     })
   });

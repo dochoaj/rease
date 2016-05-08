@@ -12,9 +12,9 @@
 	<% end %>
 	<div class="panel panel-default panelRease" >
     	<div class="panel-heading">Información de la pregunta</div>
-    	<div class="panel-body">	
+    	<div class="panel-body">
 		<div class="field"><p>
-			<%= f.label :title, "Pregunta: "%>    
+			<%= f.label :title, "Pregunta: "%>
 			<%= f.text_area :title, :class => 'form-control', :placeholder => 'Ingrese la pregunta frecuente', :required=>true%>
 		</p></div>
 
@@ -25,8 +25,8 @@
 			</p></div>
 		</div>
 
-		<div class="field"><p>	
-		<%= f.label :reader, "Tipo de usuario: "%>	
+		<div class="field"><p>
+		<%= f.label :reader, "Tipo de usuario: "%>
 		<%= f.select(:reader, [['El usuario debe estar registrado para ver esta pregunta', 1],['El usuario NO debe estar registrado para ver esta pregunta', 2]], {:include_blank => '-- Seleccione una opción --' }, { :class => 'form-control', :required => true }) %>
 		</p></div>
 		</div>
@@ -37,9 +37,9 @@
 
 
 <script>
-	 $(function() {$('textarea#eg-basic').editable({
+	 $(function() {$('textarea#eg-basic').froalaEditor({
       theme: 'rease',
-		inlineMode: false,
+			inlineMode: false,
       language: 'es'
     })
   });

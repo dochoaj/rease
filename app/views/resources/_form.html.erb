@@ -32,16 +32,17 @@
 		<div class="field">
 			<p><%= f.file_field :archive %></p>
 		</div>
-	</div>	
+	</div>
 </div>
 	<%= f.submit orden+" recurso", :class=>"btn btn-lg btnCRUD" %>
 	<%= link_to 'Volver', resources_path, :class =>"btn btn-lg btnCRUD" %>
 <% end %>
 
 <script>
-	 $(function() {$('textarea#eg-basic').editable({
+	 $(function() {$('textarea#eg-basic').froalaEditor({
       	theme: 'rease',
-		inlineMode: false,
+				inlineMode: false,
+				language: 'es'
     })
   });
 </script>

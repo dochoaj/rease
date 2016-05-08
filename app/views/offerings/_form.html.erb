@@ -23,22 +23,22 @@
 			</div>
 			<p class="note">Sí no se encuentra su área de trabajo comuníquese con un administrador</p>
 			<div class="field"><p>
-				<%= f.label :area_id, "Área de trabajo: "%>		
+				<%= f.label :area_id, "Área de trabajo: "%>
 				<%= f.select(:area_id, Area.order("discipline ASC").order("name ASC").all.collect {|area| [area.discipline+": "+area.name, area.id]},{:include_blank => "Área de trabajo (Opcional)"},{ :class => 'form-control'}) -%>
 			</p></div>
 
 			<div class="field"><p>
-				<%= f.label :institution_id, "Institución adherida: "%>		
+				<%= f.label :institution_id, "Institución adherida: "%>
 				<%= f.select(:institution_id, Institution.order("name ASC").all.collect {|inst| [inst.name, inst.id]},{:include_blank => "Institución (Opcional)"},{ :class => 'form-control'}) -%>
 			</p></div>
-			
+
 			<div class="field"><p>
-				<%= f.label :location, "Dirección o Ubicación: "%>		
+				<%= f.label :location, "Dirección o Ubicación: "%>
 				<%= f.text_area :location, :class => 'form-control', :placeholder => 'Indique dónde se realizaría este servicio. Ubicación o dirección (opcional)'%>
 			</p></div>
-			<div class="field"><p>	
+			<div class="field"><p>
 				<% if accion == "Actualizar" %>
-					<%= f.label :status, "Estado: "%>	
+					<%= f.label :status, "Estado: "%>
 					<%= f.select(:status, [['Disponible', 1],['Cancelado', 2],['Caducado',3]], {:include_blank => '-- Seleccione un estado --' }, { :class => 'form-control', :required => true }) %>
 				<% else %>
 					<p><strong>Estado: </strong> Disponible </p>
@@ -65,7 +65,7 @@
 				<p><%= f.label :end_time, "Fecha de licitación de término" %>
 				<%= f.date_select :end_time %></p>
 			</div>
-			
+
 		</div>
 	</div>
 
@@ -75,9 +75,9 @@
 <% end %>
 
 <script>
-	 $(function() {$('textarea#eg-basic').editable({
+	 $(function() {$('textarea#eg-basic').froalaEditor({
       theme: 'rease',
-		inlineMode: false,
+			inlineMode: false,
       language: 'es'
     })
   });

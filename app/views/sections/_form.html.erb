@@ -20,19 +20,16 @@
 					<%= f.label :module, "Sección: "%>
 					<%= f.select(:module, [['Novedad','Novedad'],['Aprendizaje Servicio', 'Aprendizaje Servicio'],['Hacemos', 'Hacemos'],['Somos', 'Somos'],['Estatuto', 'Estatuto']],  {:include_blank => '— Seleccione una sección —',:selected => orden }, { :class => 'form-control', :required => true }) %>
 				</p></div>
-				
+
 				<div class="field"><p>
 					<%= f.label :prority, "Prioridad: "%>
 					<%= f.select(:priority, [['Alta', 1],['Media', 2],['Baja', 3]], {:include_blank => '— Prioridad —' }, { :class => 'form-control', :required => true }) %>
 				</p></div>
-				
 				<div class="field"><p>
 					<%= f.label :body, "Cuerpo: "%>
 					<%= f.text_area :body, :placeholder=> "Escriba acá el contenido de la sección", :id=>"eg-basic"%>
 				</p></div>
-				
-
-				<div class="field"> 
+				<div class="field">
 					<%= f.submit accion, :class => 'btn btn-lg btnCRUD' %>
 					<%= link_to "Cancelar", sections_path, :class => 'btn btn-lg btnCRUD' %>
 				</div>
@@ -42,9 +39,9 @@
 </div>
 
 <script>
-	 $(function() {$('textarea#eg-basic').editable({
+	 $(function() {$('textarea#eg-basic').froalaEditor({
       theme: 'rease',
-		inlineMode: false,
+			inlineMode: false,
       language: 'es'
     })
   });
