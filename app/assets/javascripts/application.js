@@ -47,3 +47,5 @@
 //= require plugins/url.min.js
 //= require plugins/video.min.js
 //= require languages/es.js
+
+$.FroalaEditor.DEFAULTS.key = 'NE-13knctF1px==';
