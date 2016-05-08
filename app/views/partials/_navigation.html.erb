@@ -17,12 +17,12 @@
 						<%= link_to '¿Qué es AS?', presentation_aprendizaje_path %>
 					</li>
 
-					<li role="presentation" class="<%= 'active' if current_page?(presentation_hacemos_path) %>">
-						<%= link_to '¿Qué hacemos?', presentation_hacemos_path %>
-					</li>
-
 					<li role="presentation" class="<%= 'active' if current_page?(presentation_somos_path) %>">
 						<%= link_to '¿Quiénes somos?', presentation_somos_path %>
+					</li>
+					
+					<li role="presentation" class="<%= 'active' if current_page?(presentation_hacemos_path) %>">
+						<%= link_to '¿Qué hacemos?', presentation_hacemos_path %>
 					</li>
 
 					<li role="presentation" class="<%= 'active' if current_page?(presentation_estatuto_path) %>">
