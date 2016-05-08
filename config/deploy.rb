@@ -13,7 +13,7 @@ require 'mina/unicorn'
 set :domain, '104.236.76.234'
 set :deploy_to, '/home/deployer/rease/'
 set :repository, 'https://github.com/dochoaj/rease.git'
-set :branch, 'develop'
+set :branch, 'release/16.0.0'
 set :user, 'deployer'
 set :forward_agent, true
 set :port, '22'
