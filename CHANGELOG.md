@@ -1,5 +1,12 @@
 # Changelog
 
+## [Release 15.1.0](https://github.com/dochoaj/rease/pull/30)
+Sunday 2016, May 8th
+* **Feature:** [Social login](https://github.com/dochoaj/rease/pull/24)
+* **Feature:** [Experiences](https://github.com/dochoaj/rease/pull/25)
+* **Feature:** [Service](https://github.com/dochoaj/rease/pull/27)
+* **Feature:** [Project](https://github.com/dochoaj/rease/pull/29)
+
 ## [Release 15.1.0](https://github.com/dochoaj/rease/pull/23)
 Sunday 2015, July 26th
 * **Feature:** [form validation](https://github.com/dochoaj/rease/pull/22)
