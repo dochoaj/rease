@@ -11,9 +11,9 @@ class UsersController < ApplicationController
 
 	def listarUsuarios
 		add_breadcrumb "Usuarios registrados"
-		@user = User.paginate(page: params[:page],per_page: 20).order("nickname ASC").all
+		@users = User.paginate(page: params[:page],per_page: 20).order("nickname ASC").all
 	end
-	
+
 	def show
 		add_breadcrumb "Perfil", :users_path
 		add_breadcrumb "Perfil de "+@user.nickname
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 	# GET/PATCH /users/:id/finish_signup
 	def finish_signup
 		@sections = Section.all
-		# authorize! :update, @user 
+		# authorize! :update, @user
 		if request.patch? && params[:user] #&& params[:user][:email]
 			if @user.update(user_params)
 				# @user.skip_reconfirmation!
@@ -60,20 +60,20 @@ class UsersController < ApplicationController
 		end
 	end
 
-	
+
 	private
 
 	def validate_category
 		if current_user.category != 1
 			redirect_to root_path, alert: "Solo el administrador tiene este privilegio"
-		end   
+		end
 	end
 
 	# Use callbacks to share common setup or constraints between actions.
 	def set_user
 		@user = User.find(params[:id])
 	end
-	
+
 	def user_params
 		accessible = [ :name, :email,:category,:autorization_level,:nickname ] # extend with your own params
      	accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
